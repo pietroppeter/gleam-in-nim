@@ -55,6 +55,6 @@ nbText: "## Latest posts"
 nbCards "the latest posts":
   for i, p in posts:
     if i >= 6: break
-    nbCard(p.title, "devlog/" & p.slug & "/", &"{p.date} · {p.kind}", (if p.kind == "port": nkGleam elif p.kind == "research": nkNim else: nkInfo)):
+    nbCard(p.title, "devlog/" & p.slug & "/", &"{p.stamp} · {p.kind}", (if p.kind == "port": nkGleam elif p.kind == "research": nkNim else: nkInfo)):
       nbText p.lede
 nbSave
