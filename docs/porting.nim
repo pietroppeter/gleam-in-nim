@@ -39,9 +39,10 @@ nbText: """
    plain word, listed in the table of names below so that everyone picks the same.
 5. **Comments come along.** Doc comments (`///`) become `##`, ordinary ones stay where they were.
    They are part of the program we are porting.
-6. **Only the standard library** in `src/`. A Rust crate is replaced by the standard library or
-   by a small module of ours that is itself a port, never by a new dependency without a decision
-   record.
+6. **Only the standard library** in `src/`, and `bigints`
+   ([decision 0009](../decisions/#0009-the-compiler-depends-on-one-package-bigints)). A Rust
+   crate is replaced by the standard library or by a small module of ours that is itself a port,
+   never by a new dependency without a decision record.
 7. **Three states.** `draft` when translated, `verified` when a second pass with fresh eyes has
    read it against the Rust, `conformant` when the upstream tests pass on it
    ([decision 0005](../decisions/#0005-every-file-goes-through-translate-verify-conform)).
@@ -59,13 +60,14 @@ nbText: """
 | `Option<T>` | `Option[T]` from `std/options`. *Also for refs: do not use `nil` for "none"* |
 | `Result<T, E>` and `?` | see *Errors* below |
 | `String`, `&str`, `EcoString` | `string`. *Both are UTF-8 bytes, so every offset agrees* |
-| `char` | `Rune`. *A Nim `char` is a byte* |
+| `char` | `Rune`. *A Nim `char` is a byte. The lexer keeps its two characters of lookahead as `int32` code points, with `noChar` for `None`, and hands out `Rune`s* |
 | `Vec<T>`, `&[T]` | `seq[T]`, `openArray[T]` |
 | `Vec1<T>` | `seq[T]`. *With a `doAssert` where upstream builds it* |
 | `HashMap<K, V>`, `HashSet<K>` | `Table[K, V]`, `HashSet[K]`. *Never let their order reach the output: see the traps* |
 | `im::HashMap` (persistent) | `Table`. *A Nim table is a value: assigning it copies, which gives the same meaning; speed comes later* |
 | `u32`, `usize`, `i64` | `uint32`, `int`, `int64`. *Spans stay `uint32`* |
-| `BigInt` | a small module of ours. *To be ported when the first file needs it* |
+| `BigInt` | `BigInt` from `pkg/bigints`. *The one dependency of `src/`* |
+| `"1.5".parse::<f64>()` | `parseLiteralFloat` from `parse/literals`. *Never `parseFloat`: see the traps* |
 | `x.clone()` | `x`. *For a ref, sharing is what `Arc::clone` did; for a value, Nim copies* |
 | `&mut self` method | `proc p(self: var S)` or `proc p(self: S)` for a ref |
 | `impl Trait for T` (one or two types) | plain procs with the same names |
@@ -83,9 +85,13 @@ nbNote("""
 `Result<T, E>` and the `?` operator appear on 417 lines of the core. Two ways to write them in
 Nim: exceptions (short, but they hide the early returns that the Rust shows) or a small `Result`
 type with a `?` template (the Nim then reads like the Rust, line by line). This guide recommends
-the second, because the port is verified by reading the two files side by side. The first port
-step that meets `Result` settles it and replaces this note with the rule.
-""", nkQuestion, "Errors: to be settled by the first step that needs it")
+the second, because the port is verified by reading the two files side by side.
+
+The lexer, the first step, has few of them and took a middle way: inside the module a private
+exception is raised where the Rust has `?`, and it is caught once, in `next`, which returns the
+error as a value (`LexResult`). Nothing outside the module sees an exception. The parser has
+hundreds of `?` and settles the general rule.
+""", nkQuestion, "Errors: the lexer's way, and what the parser must settle")
 
 nbText: """
 ## Names that change
@@ -93,6 +99,10 @@ nbText: """
 | Rust | Nim | Why |
 | --- | --- | --- |
 | `type_` (module and fields) | `typ` | Nim identifiers cannot end with an underscore |
+| `end` (the field of `SrcSpan`, and every `end` variable) | `stop` | `end` is a Nim keyword |
+| `Token::LeftParen` and the other tokens | `tkLeftParen` | enum values share one namespace in Nim; the Rust name is the Nim name without `tk` |
+| `LexicalErrorType` (the enum) | `LexicalErrorKind` for the kinds, `LexicalErrorType` for the object | an enum with data is a kind plus an object |
+| `tokenize`, `escape` and other names of `std/strutils` | another name (`lex`, `escapeBytes`) | Nim resolves a call across every imported module and can pick the standard library's without a word |
 | `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
 | `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
 

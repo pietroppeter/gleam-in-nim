@@ -57,7 +57,8 @@ the site as *For coding agents*, so a change here is reviewed like any page.
 - `nim r tests/all.nim` runs the tests. `nim r docs/all.nim` builds every page (add
   `-d:release` when the pages run heavy code). The HTML is not committed: CI builds it and
   deploys `docs/` to GitHub Pages from `main`.
-- The compiler (`src/`) needs only Nim's standard library. nimib and tabelline are for the pages.
+- The compiler (`src/`) needs Nim's standard library and one package, `bigints`, for integer
+  literals of any size. nimib and tabelline are for the pages.
 - To change a dependency, change its commit in `deps.lock` (and `nim.cfg` for a new one), rerun
   the setup, build the pages.
 

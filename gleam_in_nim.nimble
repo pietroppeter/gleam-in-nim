@@ -9,5 +9,6 @@ srcDir        = "src"
 # Dependencies
 
 requires "nim >= 2.2.0"
-# The compiler needs only the standard library. The pages (docs/) use nimib and tabelline,
+requires "https://github.com/nim-lang/bigints#64288c8ff9d91523e6ac9746900efb12ca87f6f7"
+# The compiler needs the standard library and bigints. The pages (docs/) use nimib and tabelline,
 # pinned by commit in deps.lock and cloned by `sh tools/setup.sh`.

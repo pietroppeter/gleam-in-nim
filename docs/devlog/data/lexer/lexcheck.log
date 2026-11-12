@@ -1,0 +1,6 @@
+560 files
+ok: corpus, 448091 lines identical
+ok: fuzz, 28166116 lines identical
+3000000
+ok: floats, 500000 lines identical
+ok: ints, 500000 lines identical
