@@ -355,7 +355,7 @@
           ],
           "post": "",
           "pr": "",
-          "owner": "Explain the BEAM and Elm roots"
+          "owner": "Port the Erlang backend foundations"
         },
         {
           "id": "explain-names",
@@ -543,7 +543,7 @@
           ],
           "post": "",
           "pr": "",
-          "owner": "Explain the BEAM and Elm roots"
+          "owner": "Port the Erlang backend foundations"
         },
         {
           "id": "erlang-expressions",
@@ -787,6 +787,20 @@
           "pr": ""
         },
         {
+          "id": "erlang-term-format",
+          "kind": "port",
+          "status": "done",
+          "title": "Erlang term format encoder",
+          "what": "The encoder of Erlang's External Term Format that the binary builder writes through, and a small BigInt module for the integers of the source.",
+          "done_when": "Upstream tests pass; Erlang decodes what we encode to the same terms.",
+          "components": [
+            "erlgen"
+          ],
+          "post": "the-erlang-term-format",
+          "pr": "12",
+          "owner": "Port the Erlang backend foundations"
+        },
+        {
           "id": "erlang-abstract-format",
           "kind": "port",
           "status": "planned",
@@ -797,7 +811,8 @@
             "erlgen"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Port the Erlang backend foundations"
         },
         {
           "id": "dependency-resolution",
