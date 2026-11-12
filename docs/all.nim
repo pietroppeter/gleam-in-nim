@@ -20,3 +20,4 @@ import devlog/the_port_plan
 import devlog/the_pretty_printer
 import devlog/what_the_reference_says
 import devlog/what_a_lexer_is
+import devlog/erlang_in_ci

@@ -1,0 +1,7 @@
+OTP 28, erts 16.4.0.7
+v22.23.4
+gleam 1.19.2
+ok erlang-source: hello from gleam 27 111,107,255
+ok erlang-abstr: hello from gleam 27 111,107,255
+ok javascript: hello from gleam 27 111,107,255
+smoke: 3 routes run, 0 errors (gleam 1.19.2)

@@ -57,6 +57,9 @@ the site as *For coding agents*, so a change here is reviewed like any page.
 - `nim r tests/all.nim` runs the tests. `nim r docs/all.nim` builds every page (add
   `-d:release` when the pages run heavy code). The HTML is not committed: CI builds it and
   deploys `docs/` to GitHub Pages from `main`.
+- `sh tools/smoke.sh` compiles a tiny package (`tests/smoke/hello`) and runs the output on the
+  BEAM and on Node; CI runs it with OTP 28 (workflow *Smoke*). `GLEAM_BIN` picks the compiler,
+  `SMOKE_SKIP_MISSING=1` skips the routes whose runtime is not installed.
 - The compiler (`src/`) needs Nim's standard library and one package, `bigints`, for integer
   literals of any size. nimib and tabelline are for the pages.
 - To change a dependency, change its commit in `deps.lock` (and `nim.cfg` for a new one), rerun
