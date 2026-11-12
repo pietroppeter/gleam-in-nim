@@ -1,0 +1,49 @@
+{
+  "about": "Numbers quoted in the post, each with where it comes from. Collected on 2026-11-12.",
+  "gleam": {
+    "latest_release": "v1.19.2",
+    "latest_minor": "v1.19.0",
+    "latest_minor_date": "2026-10-05",
+    "v1_date": "2024-03-04",
+    "first_release_date": "2019-04-15",
+    "github_stars": 22050,
+    "github_forks": 1046,
+    "source": "GitHub search API for repo:gleam-lang/gleam; dates from the front matter of the release posts in gleam-lang/website"
+  },
+  "compiler_snapshot": {
+    "tag": "v1.19.2",
+    "commit": "ed41eace2d",
+    "rust_lines": {
+      "compiler-core": 137715,
+      "language-server": 54588,
+      "compiler-cli": 12419,
+      "compiler-wasm": 496
+    },
+    "snapshot_files": {
+      "compiler-core": 2749,
+      "language-server": 1530,
+      "compiler-cli": 10
+    },
+    "source": "wc -l over *.rs (tests included) and a count of *.snap files in each crate of gleam-lang/gleam at the tag"
+  },
+  "ecosystem": {
+    "github_repos_in_gleam": 5339,
+    "awesome_gleam_entries": 210,
+    "sponsors_listed": 288,
+    "featured_sponsors": ["Lambda Class", "Atuin", "NineFX", "n8n"],
+    "source": "GitHub search API for language:gleam; packages/ in gleam-lang/awesome-gleam; priv/sponsors.toml and src/website/sponsor.gleam in gleam-lang/website at 744f93a81e"
+  },
+  "survey_2024": {
+    "responses": 841,
+    "gleam_users": 632,
+    "not_currently_users": 173,
+    "in_production": 52,
+    "not_yet_in_production": 572,
+    "source": "https://gleam.run/news/developer-survey-2024-results/"
+  },
+  "stack_overflow_2025": {
+    "admired_percent": 70,
+    "rank": 2,
+    "source": "https://survey.stackoverflow.co/2025/technology/"
+  }
+}

@@ -1,0 +1,64 @@
+date	slug	title	subtitle	author
+2019-04-15	hello-gleam	Hello, Gleam!	There's a new friendly language in town	Louis Pilfold
+2019-08-07	gleam-v0.3-released	Gleam v0.3 released!		Louis Pilfold
+2019-09-19	gleam-v0.4-released	Gleam v0.4 released!		Louis Pilfold
+2019-12-16	gleam-v0.5-released	Gleam v0.5 released!		Louis Pilfold
+2019-12-25	gleam-v0.6-released	Gleam v0.6 released!		Louis Pilfold
+2020-03-01	gleam-v0.7-released	Gleam v0.7 released!		Louis Pilfold
+2020-05-07	gleam-v0.8-released	Gleam v0.8 released!		Louis Pilfold
+2020-06-01	gleam-v0.9-released	Gleam v0.9 released!		Louis Pilfold
+2020-07-01	gleam-v0.10-released	Gleam v0.10 released!		Louis Pilfold
+2020-08-28	gleam-v0.11-released	Gleam v0.11 released!		Louis Pilfold
+2020-10-31	gleam-v0.12-and-gleam-otp-v0.1-released	Gleam v0.12 and Gleam OTP v0.1 released! 🎃		Louis Pilfold
+2021-01-13	gleam-v0.13-released	Gleam v0.13 released!		Louis Pilfold
+2021-02-18	gleam-v0.14-released	Gleam v0.14 released!		Louis Pilfold
+2021-05-06	gleam-v0.15-released	Gleam v0.15 released!		Louis Pilfold
+2021-06-17	v0.16-gleam-compiles-to-javascript	Gleam compiles to JavaScript!	Gleam v0.16 released	Louis Pilfold
+2021-09-20	gleam-v0.17-released	Gleam v0.17 released!		Louis Pilfold
+2021-12-06	gleam-v0.18-released	Gleam v0.18 released!		Louis Pilfold
+2022-01-12	gleam-v0.19-released	Gleam v0.19 released!		Louis Pilfold
+2022-02-23	gleam-v0.20-released	Gleam v0.20 released!		Louis Pilfold
+2022-04-24	v0.21-introducing-the-gleam-language-server	Introducing the Gleam language server!		Louis Pilfold
+2022-06-19	gleam-v0.22-released	Gleam v0.22 released!		Louis Pilfold
+2022-09-18	gleam-v0.23-released	Gleam v0.23 released!		Louis Pilfold
+2022-10-25	gleam-v0.24-released	Gleam v0.24 released!		Louis Pilfold
+2022-11-24	v0.25-introducing-use-expressions	Introducing use expressions!	Gleam v0.25 released	Louis Pilfold
+2022-12-16	developer-survey-2022-results	Developer Survey 2022 Results	What did we learn about the Gleamers?	Louis Pilfold
+2023-01-19	v0.26-incremental-compilation-and-deno	Incremental compilation, and hello Deno!	Gleam v0.26 released	Louis Pilfold
+2023-03-01	v0.27-hello-panic-goodbye-try	Hello panic, goodbye try	Gleam v0.27 released	Louis Pilfold
+2023-04-03	v0.28-monorepos-fast-maps-and-more	Monorepos, fast maps, and more	Gleam v0.28 released	Louis Pilfold
+2023-04-30	introducing-the-gleam-package-index	Introducing the Gleam package index	Find packages for your Gleam projects	Louis Pilfold
+2023-05-23	v0.29-gleam-gets-autocompletion	Gleam gets autocompletion	Gleam v0.29 released	Louis Pilfold
+2023-07-12	v0.30-local-dependencies-and-enhanced-externals	Local dependencies and enhanced externals	Gleam v0.30 released	Louis Pilfold
+2023-09-25	v0.31-keeping-dependencies-explicit	Keeping dependencies explicit	Gleam v0.31 released	Louis Pilfold
+2023-11-01	v0.32-polishing-syntax-for-stability	Polishing syntax for stability	Gleam v0.32 released	Louis Pilfold
+2023-12-18	v0.33-exhaustive-gleam	Exhaustive Gleam	Gleam v0.33 released	Louis Pilfold
+2024-01-16	v0.34-multi-target-projects	Multi-target projects	Gleam v0.34 released	Louis Pilfold
+2024-01-19	gleams-new-interactive-language-tour	Gleam's new interactive language tour	Learn Gleam in your browser!	Louis Pilfold
+2024-03-04	gleam-version-1	Gleam version 1	It's finally here! 🎉	Louis Pilfold
+2024-04-16	gleam-v1.1	Gleam version v1.1	Hot on the heels of v1	Louis Pilfold
+2024-05-27	fault-tolerant-gleam	Fault tolerant Gleam	Gleam v1.2.0 released	Louis Pilfold
+2024-07-09	auto-imports-and-tolerant-expressions	Auto-imports and tolerant expressions	Gleam v1.3.0 released	Louis Pilfold
+2024-08-02	supercharged-labels	Supercharged labels	Gleam v1.4.0 released	Louis Pilfold
+2024-08-26	welcome-lambda	Welcome Lambda!	Gleam's new corporate sponsor	Louis Pilfold
+2024-09-19	convenient-code-actions	Convenient code actions	Gleam v1.5.0 released	Louis Pilfold
+2024-11-05	developer-survey-2024	Developer Survey 2024	Who are the Gleamlins anyway?	Louis Pilfold
+2024-11-18	context-aware-compilation	Context aware compilation	Gleam v1.6.0 released	Louis Pilfold
+2024-12-06	introducing-the-gleam-roadmap	Introducing the Gleam roadmap!	A bird's eye view of what's happening in Gleam	Louis Pilfold
+2025-01-05	improved-performance-and-publishing	Improved performance and publishing	Gleam v1.7.0 released	Louis Pilfold
+2025-02-06	developer-survey-2024-results	Developer Survey 2024 Results	A look at the Gleam community after version one	Louis Pilfold
+2025-02-07	gleam-gets-rename-variable	Gleam gets “rename variable”	Gleam v1.8.0 released	Louis Pilfold
+2025-03-08	hello-echo-hello-git	Hello echo! Hello git!	Gleam v1.9.0 released	Louis Pilfold
+2025-04-14	global-rename-and-find-references	Global rename and find references	Gleam v1.10.0 released	Louis Pilfold
+2025-06-02	gleam-javascript-gets-30-percent-faster	Gleam JavaScript gets 30% faster	Gleam v1.11.0 released	Louis Pilfold
+2025-08-05	no-more-dependency-management-headaches	No more dependency management headaches	Gleam v1.12.0 released	Louis Pilfold
+2025-10-19	formalising-external-apis	Formalising external APIs	Gleam v1.13.0 released	Louis Pilfold
+2025-12-25	the-happy-holidays-2025-release	The happy holidays release 2025 🎁	Gleam v1.14.0 released	Louis Pilfold
+2026-02-11	join-us-at-gleam-gathering	Join us at Gleam Gathering	The first ever all Gleam conference!	Louis Pilfold
+2026-03-16	upgrading-hex-security	Upgrading Hex security	Gleam v1.15.0 released!	Louis Pilfold
+2026-04-24	javascript-source-maps	JavaScript source maps	Gleam v1.16.0 released!	Louis Pilfold
+2026-06-02	single-file-gleam-beam-programs-with-escript	Single file Gleam BEAM programs with escript	Gleam v1.17.0 released!	Louis Pilfold
+2026-07-29	a-field-day-for-gleams-language-server	A field day for Gleam’s language server	Gleam v1.18.0 released!	Louis Pilfold
+2026-08-17	help-from-the-github-security-lab	Help from the Github Security Lab	Takeaways from the GitHub Secure Open Source Fund	Louis Pilfold
+2026-09-11	gleam-gathering-2027-is-coming-to-london	Gleam Gathering 2027 is coming to London!	Join us next year at the all-Gleam conference	Kamila Pokój
+2026-10-05	gleam-doesnt-compile-to-erlang-source-anymore	Gleam doesn't compile to Erlang source anymore	Gleam v1.19.0 released!	Louis Pilfold
