@@ -1,8 +1,32 @@
-# The reference
+# reference
 
-The Gleam compiler this repository ports, and tools that run it.
+The Gleam compiler we are porting, pinned.
 
-- `PIN`: the snapshot being ported (repository, tag, commit).
-- `lexdump/`: a small Rust program that links Gleam's compiler core at the pinned commit and
-  prints what its lexer makes of a source. `tools/lexcheck.sh` compares it with the Nim lexer;
-  `tools/lexdump.nim` describes the output. Needs Rust 1.99 or later.
+- `PIN` records the release tag and commit. Everything in this repository (ported modules, tests,
+  line counts, explainers) refers to this exact snapshot: Gleam **v1.19.2**.
+- `fetch.sh` downloads the source into `reference/gleam/` and the official release binary into
+  `reference/bin/gleam`. Neither is committed.
+
+- `lexdump/` is a small Rust program that links Gleam's compiler core at the pinned commit and
+  prints what its lexer makes of a source: an oracle for a stage the binary cannot show.
+  `tools/lexcheck.sh` compares it with the Nim lexer. Needs Rust 1.99 or later.
+
+The source is the specification. The binary is the oracle: for any Gleam input, the port is right
+when it prints what the binary prints. Three ways to ask the oracle, none of which needs Erlang or
+a network connection:
+
+```sh
+# formatter (exercises the lexer and the parser)
+reference/bin/gleam format --stdin < some.gleam
+
+# Erlang, as text
+reference/bin/gleam compile-package --target erlang --no-beam \
+  --package path/to/package --out out --lib lib
+
+# JavaScript
+reference/bin/gleam compile-package --target javascript --javascript-prelude prelude.mjs \
+  --package path/to/package --out out --lib lib
+```
+
+Gleam is Apache-2.0 licensed, copyright the Gleam contributors. Files ported from it keep a header
+that says where they come from.

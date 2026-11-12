@@ -14,3 +14,6 @@ import devlog/workflow
 import devlog/gleam_and_its_people
 import devlog/where_gleam_decisions_live
 import devlog/a_corpus_of_real_gleam
+import devlog/how_gleam_compiles
+import devlog/the_port_plan
+import devlog/the_pretty_printer

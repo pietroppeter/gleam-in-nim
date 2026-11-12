@@ -103,6 +103,8 @@ nbText: """
 | `Token::LeftParen` and the other tokens | `tkLeftParen` | enum values share one namespace in Nim; the Rust name is the Nim name without `tk` |
 | `LexicalErrorType` (the enum) | `LexicalErrorKind` for the kinds, `LexicalErrorType` for the object | an enum with data is a kind plus an object |
 | `tokenize`, `escape` and other names of `std/strutils` | another name (`lex`, `escapeBytes`) | Nim resolves a call across every imported module and can pick the standard library's without a word |
+| `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
+| `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
 
 Add a row when a name cannot be kept. Search this table before inventing one.
 

@@ -1,0 +1,38 @@
+{
+  "about": "Measured on gleam-lang/gleam with git, 12 Nov 2026. Sizes are lines in all .rs files of a shallow clone of each tag; test lines are files named tests.rs, *test*.rs or under tests/. Events are the dates of the commits named in `commit`.",
+  "commits_at_pin": 11647,
+  "contributors_at_pin": 388,
+  "sizes": [
+    {"tag": "v0.1.0", "date": "2019-04-15", "rust_lines": 8231, "test_lines": 0, "snapshots": 0},
+    {"tag": "v0.5.0", "date": "2019-12-16", "rust_lines": 10844, "test_lines": 0, "snapshots": 0},
+    {"tag": "v0.10.0", "date": "2020-07-01", "rust_lines": 24062, "test_lines": 9625, "snapshots": 0},
+    {"tag": "v0.13.0", "date": "2021-01-13", "rust_lines": 36396, "test_lines": 11574, "snapshots": 0},
+    {"tag": "v0.16.0", "date": "2021-06-17", "rust_lines": 47442, "test_lines": 18066, "snapshots": 0},
+    {"tag": "v0.20.0", "date": "2022-02-23", "rust_lines": 50983, "test_lines": 16033, "snapshots": 519},
+    {"tag": "v0.25.0", "date": "2022-11-24", "rust_lines": 59512, "test_lines": 18531, "snapshots": 675},
+    {"tag": "v0.30.0", "date": "2023-07-12", "rust_lines": 74951, "test_lines": 23701, "snapshots": 877},
+    {"tag": "v1.0.0", "date": "2024-03-04", "rust_lines": 86595, "test_lines": 29961, "snapshots": 1085},
+    {"tag": "v1.5.0", "date": "2024-09-19", "rust_lines": 117299, "test_lines": 43452, "snapshots": 1731},
+    {"tag": "v1.10.0", "date": "2025-04-14", "rust_lines": 157756, "test_lines": 61081, "snapshots": 2507},
+    {"tag": "v1.14.0", "date": "2025-12-25", "rust_lines": 199356, "test_lines": 78056, "snapshots": 3366},
+    {"tag": "v1.19.2", "date": "2026-10-12", "rust_lines": 235550, "test_lines": 99828, "snapshots": 4377}
+  ],
+  "events": [
+    {"date": "2016-06-30", "commit": "4d791cbf8", "what": "First commit: \"Innit, with the start of a tokenizer\". The prototype is written in Erlang, with a leex tokenizer and a yecc parser."},
+    {"date": "2018-12-06", "commit": "4a1694246", "what": "\"AST in Rust\": the compiler restarts in Rust. Pretty printing and Erlang rendering follow within a day."},
+    {"date": "2019-04-15", "commit": "v0.1.0", "what": "First release."},
+    {"date": "2020-03-22", "commit": "1b15eacfc", "what": "The formatter arrives."},
+    {"date": "2020-12-09", "commit": "19f62e449", "what": "A hand written lexer and parser are hooked up; the generated LALRPOP grammar is removed three weeks later."},
+    {"date": "2021-04-16", "commit": "6ba4d8fb6", "what": "First JavaScript backend commits; released in v0.16."},
+    {"date": "2021-06-19", "commit": "59c58b3e2", "what": "The compiler is split into a pure core and a CLI that does the IO. A WebAssembly build follows a week later."},
+    {"date": "2022-02-25", "commit": "2b65d476e", "what": "The language server starts, inside the compiler."},
+    {"date": "2023-01-15", "commit": "327919395", "what": "A call graph orders functions by use, so definitions can appear in any order."},
+    {"date": "2023-07-28", "commit": "c5917c2f9", "what": "Exhaustiveness checking with decision trees."},
+    {"date": "2024-03-04", "commit": "v1.0.0", "what": "Gleam 1.0."},
+    {"date": "2024-05-09", "commit": "a170d3c8e", "what": "Analysis becomes fault tolerant: keep going after an error, for better diagnostics and a better language server."},
+    {"date": "2025-03-22", "commit": "17ab0e58b", "what": "The JavaScript backend starts generating code from the decision trees."},
+    {"date": "2025-12-15", "commit": "e866380d6", "what": "The language server moves to its own crate."},
+    {"date": "2026-02-08", "commit": "c5088fab9", "what": "Module metadata switches from Cap'n Proto to serde."},
+    {"date": "2026-06-10", "commit": "bdcd83338", "what": "The Erlang backend learns to write Erlang abstract format directly; an arena based pretty printer, the formatter and the Erlang builders become separate crates over the following weeks."}
+  ]
+}

@@ -3,8 +3,8 @@
   "code": 105534,
   "totals": {
     "todo": {
-      "files": 137,
-      "code": 103808
+      "files": 136,
+      "code": 102760
     },
     "draft": {
       "files": 0,
@@ -15,8 +15,8 @@
       "code": 0
     },
     "conformant": {
-      "files": 2,
-      "code": 1726
+      "files": 3,
+      "code": 2774
     },
     "skip": {
       "files": 0,
@@ -110,10 +110,10 @@
     },
     {
       "crate": "pretty-arena",
-      "todo": 1048,
+      "todo": 0,
       "draft": 0,
       "verified": 0,
-      "conformant": 0,
+      "conformant": 1048,
       "skip": 0
     },
     {
@@ -3650,8 +3650,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "src/gleam_in_nim/pretty.nim"
+      ]
     },
     {
       "path": "src-span/src/lib.rs",
