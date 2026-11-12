@@ -1,0 +1,20 @@
+# The Rust half of the diagnostics' differential test: a driver over upstream's own
+# `Diagnostic::write`. It does not build the whole of compiler-core (which needs a newer Rust
+# than the sandbox has): it compiles upstream's diagnostic.rs as a module, straight from the
+# pinned checkout, with the `wrap` function that build.rs cuts out of upstream's error.rs, over
+# the codespan-reporting, termcolor and unicode-width of upstream's lock file. See run.sh.
+[package]
+name = "diagnostic-driver"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+codespan-reporting = "=0.13.1"
+unicode-width = "=0.2.2"
+src-span = { path = "../../../reference/gleam/src-span" }
+termcolor = "=1.4.1"
+ecow = "*"
+camino = "*"
+
+[workspace]

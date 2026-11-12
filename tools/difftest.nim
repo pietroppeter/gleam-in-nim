@@ -15,6 +15,13 @@
 ##   --max-errors:N    print at most N ERROR lines (default 20); all are counted and logged
 ##   --record          add the result to docs/data/difftest.json, for the dashboard
 ##   --ref:PATH        the reference checkout the inputs come from
+##   --cases:FILE      (erlang, javascript) compare the candidate with results recorded earlier,
+##                     without running the reference: FILE (or `-` for stdin) has one JSON
+##                     object per line, as `nim r tools/golden.nim list` prints them:
+##                     {"id", "target", "package", "lib", "expected", "args"}. The candidate
+##                     is run in `package` the way golden ran the reference, and its out/,
+##                     stdout, stderr and exit code are compared with those in `expected`.
+##                     Lines of the other target are skipped.
 ##
 ## The inputs are the Gleam sources embedded in the upstream snapshots, and for `format` the
 ## sources of the `assert_format!` tests too. No Erlang and no network are needed: both backends
@@ -32,9 +39,11 @@ type
     source: string      ## Gleam source
     origin: string      ## where it comes from (a .snap, a Rust file and line, a corpus file)
     package: string     ## for the backends: a package folder to copy instead of one source
+    lib, expected: string   ## with --cases: the compiled dependencies, the recorded results
+    args: seq[string]   ## with --cases: the extra arguments the reference was given
   Options = object
     mode: Mode
-    reference, candidate, corpus, only, refArg: string
+    reference, candidate, corpus, only, refArg, cases: string
     fast, seed, maxErrors: int
     record: bool
 
@@ -130,10 +139,10 @@ proc firstDifference(a, b: string): string =
         "` candidate `" & y.strip[0 ..< min(60, y.strip.len)] & "`"
   "same lines, different bytes"
 
-proc compare(caseDir: string): string =
+proc compare(referenceDir, candidateDir: string): string =
   ## "" when the two runs agree, else one line saying where they first differ.
-  let r = outputs(caseDir / "reference")
-  let c = outputs(caseDir / "candidate")
+  let r = outputs(referenceDir)
+  let c = outputs(candidateDir)
   for name, text in r:
     if name notin c: return name & ": written by the reference only"
     if c[name] != text:
@@ -142,18 +151,56 @@ proc compare(caseDir: string): string =
   for name in c.keys:
     if name notin r: return name & ": written by the candidate only"
 
+proc recorded(opts: Options): seq[Input] =
+  ## The cases of --cases:FILE that are for this mode's target.
+  let text = if opts.cases == "-": stdin.readAll else: readFile(opts.cases)
+  var n = 0
+  for line in text.splitLines:
+    inc n
+    if line.strip.len == 0: continue
+    var j: JsonNode
+    try: j = parseJson(line)
+    except JsonParsingError: quit "ERROR " & opts.cases & " line " & $n & ": not JSON", 2
+    for key in ["id", "target", "package", "lib", "expected"]:
+      if not j.hasKey(key): quit "ERROR " & opts.cases & " line " & $n & ": no \"" & key & "\"", 2
+    if j["target"].getStr != $opts.mode: continue
+    var input = Input(id: safeId(j["id"].getStr), package: j["package"].getStr.absolutePath,
+                      lib: j["lib"].getStr.absolutePath, expected: j["expected"].getStr.absolutePath,
+                      origin: j["package"].getStr)
+    if j.hasKey("args"):
+      for a in j["args"]: input.args.add a.getStr
+    result.add input
+  result.sort(proc (a, b: Input): int = cmp(a.id, b.id))
+
+proc recordedCommand(mode: Mode, bin: string, input: Input, caseDir: string): string =
+  ## The candidate, run in the package folder with the arguments golden gave the reference.
+  ## `--lib` is given relative to the package when it is inside it, as golden gives it.
+  let lib = if input.lib.isRelativeTo(input.package): input.lib.relativePath(input.package) else: input.lib
+  var call = "cd " & quoteShell(input.package) & " && " & bin.quoteShell & " compile-package --target " & $mode
+  for a in input.args: call.add " " & quoteShell(a)
+  call & " --package . --out " & quoteShell(caseDir / "candidate" / "out") & " --lib " & quoteShell(lib) &
+    " > " & quoteShell(caseDir / "candidate" / "stdout") & " 2> " & quoteShell(caseDir / "candidate" / "stderr") &
+    "; echo $? > " & quoteShell(caseDir / "candidate" / "code")
+
 proc run(opts: Options): int =
   let started = epochTime()
-  let refDir = if opts.refArg == "none": "" else: refDirFrom(opts.refArg)
+  let useCases = opts.cases.len > 0
+  let refDir = if opts.refArg == "none" or useCases: "" else: refDirFrom(opts.refArg)
   let work = repoDir / "build" / "difftest" / $opts.mode
   var inputs: seq[Input]
-  let all = collect(opts, refDir)
+  let all = if useCases: recorded(opts) else: collect(opts, refDir)
   for input in all:
     if sampled(input.id, opts): inputs.add input
   if inputs.len == 0: quit "ERROR no cases (" & $all.len & " before --only and --fast)", 2
   var commands: seq[string]
   for input in inputs:
     let caseDir = work / input.id
+    if useCases:
+      removeDir caseDir
+      createDir caseDir / "candidate"
+      writeFile caseDir / "origin", input.origin & "\nexpected: " & input.expected & "\n"
+      commands.add recordedCommand(opts.mode, opts.candidate, input, caseDir)
+      continue
     prepare(opts.mode, input, caseDir)
     writeFile caseDir / "origin", input.origin & "\n"
     for (side, bin) in [("reference", opts.reference), ("candidate", opts.candidate)]:
@@ -162,7 +209,9 @@ proc run(opts: Options): int =
   var same, different, crashed = 0
   var log: seq[string]
   for input in inputs:
-    let verdict = compare(work / input.id)
+    let verdict =
+      if useCases: compare(input.expected, work / input.id / "candidate")
+      else: compare(work / input.id / "reference", work / input.id / "candidate")
     if verdict.len == 0:
       inc same
       removeDir work / input.id   # keep only what needs a look
@@ -179,7 +228,7 @@ proc run(opts: Options): int =
   if opts.record:
     let path = dataDir / "difftest.json"
     var j = if fileExists(path): parseFile(path) else: newJObject()
-    j[$opts.mode] = %*{"cases": inputs.len, "of": all.len, "same": same, "different": different,
+    j[(if useCases: "corpus_" else: "") & $opts.mode] = %*{"cases": inputs.len, "of": all.len, "same": same, "different": different,
                         "pin": (if refDir.len > 0: pinOf(refDir) else: "")}
     writeFile path, j.pretty & "\n"
   echo "difftest ", opts.mode, ": ", inputs.len, " cases",
@@ -225,10 +274,14 @@ proc main() =
       of "max-errors": opts.maxErrors = parseInt(val)
       of "record": opts.record = true
       of "ref": opts.refArg = val
+      of "cases": opts.cases = val
       else: quit "ERROR unknown option --" & key, 2
     of cmdArgument: modeArg = key
     of cmdEnd: discard
-  if findExe(opts.reference).len == 0 and not fileExists(opts.reference):
+  if opts.cases.len > 0:
+    if modeArg notin ["erlang", "javascript"]: quit "ERROR --cases works with erlang and javascript", 2
+    if opts.cases != "-" and not fileExists(opts.cases): quit "ERROR no file " & opts.cases, 2
+  elif findExe(opts.reference).len == 0 and not fileExists(opts.reference):
     quit "ERROR no reference compiler `" & opts.reference & "` (pass --reference:PATH or set GLEAM_BIN)", 2
   if fileExists(opts.reference): opts.reference = opts.reference.absolutePath
   if modeArg == "selftest": quit selfTest(opts)
