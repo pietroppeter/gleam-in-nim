@@ -11,3 +11,8 @@ tests/all
 tests/test_*
 !tests/test_*.nim
 !tests/test_*/
+# real Gleam code fetched by tools/corpus.nim at pinned commits
+.corpus-cache/
+tools/corpus
+# what the tools of the port write while they work (tools/difftest.nim, compiled tools)
+build/

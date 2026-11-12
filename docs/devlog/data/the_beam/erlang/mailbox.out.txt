@@ -1,0 +1,3 @@
+took the parcel: second
+then a letter:   first
+then a letter:   third

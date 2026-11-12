@@ -3,3 +3,4 @@
 {.warning[UnusedImport]: off.}
 import test_graphemes
 import test_pretty
+import test_tools

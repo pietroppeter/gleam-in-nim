@@ -1,0 +1,11 @@
+error: Recursive type
+  ┌─ src/errs.gleam:2:8
+  │
+2 │   loop([x])
+  │        ^^^
+
+I don't know how to work out what type this value has. It seems to be
+defined in terms of itself.
+
+Hint: Add some type annotations and try again.
+
