@@ -157,6 +157,17 @@
           "owner": "Learn from other compiler rewrites"
         },
         {
+          "id": "corpus-goldens",
+          "kind": "tooling",
+          "status": "done",
+          "title": "What the real compiler says",
+          "what": "The reference compiler run over every package of the corpus, for Erlang and for JavaScript: abstract forms, Erlang source, JavaScript, package interface and diagnostics kept as expected results (corpus/golden.json, tools/golden.nim).",
+          "done_when": "Every corpus package has a recorded reference result for both targets, with hashes; a second run of a sample gives the same hashes; tools/golden.nim list feeds tools/difftest.nim.",
+          "post": "what-the-reference-says",
+          "pr": "15",
+          "owner": "Research Gleam, its community and corpus"
+        },
+        {
           "id": "erlang-in-ci",
           "kind": "tooling",
           "status": "planned",
