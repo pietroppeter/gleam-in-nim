@@ -325,11 +325,11 @@ suite "erlang source builder: a real module, call by call":
             b.bitArraySegment(at)
             v("Name")
             b.bitArraySegmentDefaultSize()
-            b.bitArraySegmentSpecifiers([specifier(BitArraySegmentSpecifierKind.Binary)])
+            b.bitArraySegmentSpecifiers([specifier(spBinary)])
             b.bitArraySegment(at)
             str("!")
             b.bitArraySegmentDefaultSize()
-            b.bitArraySegmentSpecifiers([specifier(BitArraySegmentSpecifierKind.Utf8)])
+            b.bitArraySegmentSpecifiers([specifier(spUtf8)])
             b.endBitArray(bits)
           b.consList(at)
           str("unused")
@@ -342,11 +342,11 @@ suite "erlang source builder: a real module, call by call":
           b.bitArraySegment(at)
           str("Hello, ")
           b.bitArraySegmentDefaultSize()
-          b.bitArraySegmentSpecifiers([specifier(BitArraySegmentSpecifierKind.Utf8)])
+          b.bitArraySegmentSpecifiers([specifier(spUtf8)])
           b.bitArraySegment(at)
           v("First")
           b.bitArraySegmentDefaultSize()
-          b.bitArraySegmentSpecifiers([specifier(BitArraySegmentSpecifierKind.Binary)])
+          b.bitArraySegmentSpecifiers([specifier(spBinary)])
           b.endBitArray(bits)
         clause(b.variablePattern(at, "_value")):
           remote("erlang", "error"):
@@ -406,7 +406,7 @@ suite "erlang source builder: a real module, call by call":
             b.bitArraySegment(at)
             b.variablePattern(at, "Rest")
             b.bitArraySegmentDefaultSize()
-            b.bitArraySegmentSpecifiers([specifier(BitArraySegmentSpecifierKind.Binary)])
+            b.bitArraySegmentSpecifiers([specifier(spBinary)])
             b.endBitArrayPattern(bits))):
           tup:
             atom("ok")

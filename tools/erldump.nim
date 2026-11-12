@@ -70,18 +70,18 @@ func builtIn(s: string): ErlangBuiltInType =
 
 func segmentSpecifier(s: string): BitArraySegmentSpecifier =
   case s
-  of "utf8": specifier(BitArraySegmentSpecifierKind.Utf8)
-  of "utf16": specifier(BitArraySegmentSpecifierKind.Utf16)
-  of "utf32": specifier(BitArraySegmentSpecifierKind.Utf32)
-  of "integer": specifier(BitArraySegmentSpecifierKind.Integer)
-  of "float": specifier(BitArraySegmentSpecifierKind.Float)
-  of "binary": specifier(BitArraySegmentSpecifierKind.Binary)
-  of "bitstring": specifier(BitArraySegmentSpecifierKind.Bitstring)
-  of "signed": specifier(BitArraySegmentSpecifierKind.Signed)
-  of "unsigned": specifier(BitArraySegmentSpecifierKind.Unsigned)
-  of "little": specifier(BitArraySegmentSpecifierKind.Little)
-  of "big": specifier(BitArraySegmentSpecifierKind.Big)
-  of "native": specifier(BitArraySegmentSpecifierKind.Native)
+  of "utf8": specifier(spUtf8)
+  of "utf16": specifier(spUtf16)
+  of "utf32": specifier(spUtf32)
+  of "integer": specifier(spInteger)
+  of "float": specifier(spFloat)
+  of "binary": specifier(spBinary)
+  of "bitstring": specifier(spBitstring)
+  of "signed": specifier(spSigned)
+  of "unsigned": specifier(spUnsigned)
+  of "little": specifier(spLittle)
+  of "big": specifier(spBig)
+  of "native": specifier(spNative)
   else:
     doAssert s.startsWith("unit:"), "specifier"
     unitSpecifier(uint8(parseInt(s[5 .. ^1])))

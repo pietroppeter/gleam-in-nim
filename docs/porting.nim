@@ -120,9 +120,8 @@ nbText: """
 | `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
 | `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
 | `ErlangBuilder` (the trait of `erlang-generation`) | no type: each builder has procs with the names of the trait's functions | two implementations, so plain procs; code for both builders is generic |
-| `()` as the associated types of `ErlangBuilder` | `Unit`, the empty tuple | a `start` proc must return a value for its `end` proc to take |
+| `()` as the associated types of `ErlangBuilder` | `Unit` of `rust_enum` | a `start` proc must return a value for its `end` proc to take |
 | `string` (the function of `ErlangBuilder`) | `stringExpression` | `string` is the type |
-| `ErlangSourceBuilderPosition` and other enums whose variants have fields with the same name | one flat object: a `kind` and every field | an object variant cannot repeat a field name in two branches |
 
 Add a row when a name cannot be kept. Search this table before inventing one.
 

@@ -22,12 +22,13 @@
 # `ErlangSourceBuilder`, the first implementation.
 #
 # The associated types of the trait (`Function`, `Call`, `Tuple`...) are all
-# `()` for the source builder. Here that is `Unit`, the empty tuple, so that a
+# `()` for the source builder. Here that is `Unit` (of `rust_enum`), so that a
 # `start` proc returns a value and the matching `end` proc takes it, as
 # upstream.
 import std/[math, options, strutils]
 import pkg/bigints
-import src_span
+import rust_enum, src_span
+export rust_enum.Unit
 
 ## Upstream, this is the documentation of the trait `ErlangBuilder<Output>`:
 ##
@@ -44,9 +45,6 @@ import src_span
 ## You might want to keep a reference to it open as you go over this module,
 ## it's gonna be handy:
 ## https://www.erlang.org/doc/apps/erts/absform.html
-
-type Unit* = tuple[]
-  ## Rust's `()`: what the `start` procs of `ErlangSourceBuilder` return.
 
 proc invalidCodeForPosition(message: string) {.noreturn.} =
   ## This is to raise an `unreachable` pretty printed error when we try producing
@@ -97,40 +95,44 @@ func asStr(self: ErlangBuiltInType): string =
   of ErlangBuiltInType.List: "list"
 
 type
-  BitArraySegmentSpecifierKind* {.pure.} = enum
-    Utf8, Utf16, Utf32, Integer, Float, Binary, Bitstring, Signed, Unsigned, Little, Big, Native,
-    Unit
+  BitArraySegmentSpecifierKind* = enum
+    spUtf8, spUtf16, spUtf32, spInteger, spFloat, spBinary, spBitstring, spSigned, spUnsigned,
+    spLittle, spBig, spNative, spUnit
 
   BitArraySegmentSpecifier* = object
-    ## Upstream this is an enum whose only variant with data is `Unit(u8)`.
     case kind*: BitArraySegmentSpecifierKind
-    of BitArraySegmentSpecifierKind.Unit: unit*: uint8
-    else: discard
+    of spUnit: vUnit*: uint8
+    of spUtf8, spUtf16, spUtf32, spInteger, spFloat, spBinary, spBitstring, spSigned,
+       spUnsigned, spLittle, spBig, spNative: discard
 
-  DocContentKind* {.pure.} = enum
-    False, String
+  DocContentKind* = enum
+    dcFalse, dcString
 
   DocContent* = object
     case kind*: DocContentKind
-    of DocContentKind.String: content*: string
-    of DocContentKind.False: discard
+    of dcFalse: discard
+    of dcString: vString*: string
 
 func specifier*(kind: BitArraySegmentSpecifierKind): BitArraySegmentSpecifier =
   ## A specifier without data: `BitArraySegmentSpecifier::Utf8` and the like.
-  doAssert kind != BitArraySegmentSpecifierKind.Unit
-  result = BitArraySegmentSpecifier(kind: BitArraySegmentSpecifierKind.Utf8)
+  doAssert kind != spUnit
+  result = BitArraySegmentSpecifier(kind: spUtf8)
   {.cast(uncheckedAssign).}: result.kind = kind
 
 func unitSpecifier*(unit: uint8): BitArraySegmentSpecifier =
   ## `BitArraySegmentSpecifier::Unit(unit)`
-  BitArraySegmentSpecifier(kind: BitArraySegmentSpecifierKind.Unit, unit: unit)
+  BitArraySegmentSpecifier(kind: spUnit, vUnit: unit)
 
-func docFalse*(): DocContent = DocContent(kind: DocContentKind.False)
+func docFalse*(): DocContent = DocContent(kind: dcFalse)
   ## `DocContent::False`
-func docString*(content: string): DocContent = DocContent(kind: DocContentKind.String, content: content)
+func docString*(content: string): DocContent = DocContent(kind: dcString, vString: content)
   ## `DocContent::String(content)`
 
 # --- ErlangSourceBuilder ------------------------------------------------------------------------
+#
+# The enums with data below have the one shape of this port (decision 0010,
+# `rust_enum.nim`): a `kind`, and one field `v<Variant>` per variant with data,
+# holding an object with the variant's fields.
 
 type
   ListKind {.pure.} = enum
@@ -155,24 +157,36 @@ type
     ## So we need to keep track of which we're expecting to be generated next.
     Name, Type
 
-  ExpectedCaseClauseItem {.pure.} = enum
+  ExpectedCaseClauseItemKind = enum
+    ccPattern, ccGuards, ccBody
+  ExpectedCaseClauseItemGuards = object of StructVariant
+    first: bool  ## This is true if no guard has been generated yet.
+  ExpectedCaseClauseItemBody = object of StructVariant
+    first: bool  ## This is true if no body statement has been generated yet.
+  ExpectedCaseClauseItem = object
     ## Generating a case clause is done in three separate steps: first we generate
     ## a single pattern, then we have to generate the guards for the clause,
     ## finally we will be generating the statements making up the clause's body.
-    Pattern
-    Guards  ## `first` is true if no guard has been generated yet.
-    Body    ## `first` is true if no body statement has been generated yet.
+    case kind: ExpectedCaseClauseItemKind
+    of ccPattern: discard
+    of ccGuards: vGuards: ExpectedCaseClauseItemGuards
+    of ccBody: vBody: ExpectedCaseClauseItemBody
 
-  ExpectedCaseItem {.pure.} = enum
+  ExpectedCaseItemKind = enum
+    ciSubject
+      ## We're waiting for the expression to be matched on to be generated.
+    ciBranches
+      ## We've generated the expression to be matched on, and now are waiting for
+      ## the case branches to be generated.
+  ExpectedCaseItemBranches = object of StructVariant
+    first: bool  ## This is `true` is no branch has been generated yet.
+  ExpectedCaseItem = object
     ## Generating a case expression is done in two steps: first we generate the
     ## subject being matched on, then we generate the branches of the case
     ## expression.
-    Subject
-      ## We're waiting for the expression to be matched on to be generated.
-    Branches
-      ## We've generated the expression to be matched on, and now are waiting for
-      ## the case branches to be generated.
-      ## `first` is `true` is no branch has been generated yet.
+    case kind: ExpectedCaseItemKind
+    of ciSubject: discard
+    of ciBranches: vBranches: ExpectedCaseItemBranches
 
   ExpectedBinaryOperatorSide {.pure.} = enum
     ## When generating a binary operator, that is made of three parts: the operator
@@ -183,29 +197,46 @@ type
     ## pretty print the output.
     Left, Right, BinaryOperatorIsOver
 
-  ExpectedBitArraySegmentItem {.pure.} = enum
+  ExpectedBitArraySegmentItemKind = enum
+    bsValue, bsSize, bsSpecifiers
+  ExpectedBitArraySegmentItemValue = object of StructVariant
+    kind: BitArrayKind
+      ## This is telling us if the value of the segment has to be a pattern
+      ## or an expression.
+  ExpectedBitArraySegmentItem = object
     ## When generating a bit array segment we need to generate exactly three
     ## things: the value, the size, and the type specifiers.
     ## This keeps track of which one we're expecting to be generated next.
-    Value
-      ## `bitArrayKind` is telling us if the value of the segment has to be a
-      ## pattern or an expression.
-    Size, Specifiers
+    case kind: ExpectedBitArraySegmentItemKind
+    of bsValue: vValue: ExpectedBitArraySegmentItemValue
+    of bsSize, bsSpecifiers: discard
 
-  ExpectedCallItem {.pure.} = enum
+  ExpectedCallItemKind = enum
+    clFunctionToBeCalled
+      ## We're waiting for the function to be called to be generated
+    clArguments
+      ## The function to be called was generated, now we're waiting for its
+      ## arguments.
+  ExpectedCallItemArguments = object of StructVariant
+    first: bool
+  ExpectedCallItem = object
     ## When generating a function call, that is made of two parts: the function to
     ## be called (that could be a simple literal atom, denoting a function from the
     ## current module, or any expression), and its arguments.
-    FunctionToBeCalled
-      ## We're waiting for the function to be called to be generated
-    Arguments
-      ## The function to be called was generated, now we're waiting for its
-      ## arguments.
+    case kind: ExpectedCallItemKind
+    of clFunctionToBeCalled: discard
+    of clArguments: vArguments: ExpectedCallItemArguments
 
-  ExpectedFunctionTypeItem {.pure.} = enum
+  ExpectedFunctionTypeItemKind = enum
+    ftArguments, ftReturnType
+  ExpectedFunctionTypeItemArguments = object of StructVariant
+    first: bool
+  ExpectedFunctionTypeItem = object
     ## When generating a function type, that is made of two parts: the type
     ## arguments of the function, and the return type.
-    Arguments, ReturnType
+    case kind: ExpectedFunctionTypeItemKind
+    of ftArguments: vArguments: ExpectedFunctionTypeItemArguments
+    of ftReturnType: discard
 
   TypeSpecExpectedItem {.pure.} = enum
     ## Type specs don't have a "end_" function. They are implicitly over once a
@@ -239,125 +270,152 @@ type
     ## the list is actually over.
     First, Rest, ListIsOver
 
-  PositionKind {.pure.} = enum
-    ## The variants of upstream's `ErlangSourceBuilderPosition`.
-    FunctionSpec
+  ErlangSourceBuilderPositionKind = enum
+    posFunctionSpec
       ## We're generating a function spec like `-spec wibble(atom()) -> atom()`.
-    TypeSpec
+    posTypeSpec
       ## We're generating code for a type spec like
       ## `-type wibble() :: {ok, integer()}`.
-    FunctionType
+    posFunctionType
       ## We're generating a function type, there's a couple of things that make
       ## it up that we will need to generate: its arguments and the return type.
       ## Which one we're expecting to see is described by the `expected` field.
-    NamedType
+    posNamedType
       ## We're generating a named type like `integer()`, or `list(atom())`.
-    UnionType
+    posUnionType
       ## We're generating a union type like `integer() | atom()`.
-    TupleType
+    posTupleType
       ## We're generating a tuple type like `{integer(), atom()}`.
-    FunctionStatement
+    posFunctionStatement
       ## We're generating the statements of a function.
-    AnonymousFunctionStatement
+    posAnonymousFunctionStatement
       ## We're generating the statements of an anonymous function.
-    MatchOperator
+    posMatchOperator
       ## We're generating code for a match operator like `X = 1`.
       ## This is something that happens in multiple steps: first the pattern on
       ## the left hand side, second the expression on the right.
-    MatchPattern
+    posMatchPattern
       ## We're generating code for a match pattern like `[1, A | _] = List`.
       ## This is something that happens in multiple steps: first the pattern on
       ## the left hand side, second the pattern on the right hand side.
-    List
+    posList
       ## We're generating a list.
-    UnaryOperator
+    posUnaryOperator
       ## We're generating code for a unary operator. We're waiting for the
       ## expression to apply the operator to.
-    Tuple
+    posTuple
       ## We're generating a tuple.
-    TuplePattern
+    posTuplePattern
       ## We're generating a tuple pattern.
-    BitArray
+    posBitArray
       ## We're generating the segments of a bit array.
-    BitArraySegment
+    posBitArraySegment
       ## We're generating code for a segment of a bit array, like `10:1/signed`.
-    Block
+    posBlock
       ## We're generating a `begin ... end` block.
-    FunctionCall
+    posFunctionCall
       ## We're generating code for a function call like `wibble(1, 2)`.
       ## This needs to happen in steps: first we generate the function being
       ## called (that could be any arbitrary expression after all), then we
       ## generate the arguments it's being called with.
-    BinaryOperator
+    posBinaryOperator
       ## We're generating code for a binary operator like `1 + 3`.
-    Case
+    posCase
       ## We're generating code for a case expression.
-    CaseClause
+    posCaseClause
       ## We're generating code for a case clause.
-    Map
+    posMap
       ## We're generating the key-value pairs of a map.
-    MapField
+    posMapField
       ## We're generating a key-value pair inside a map.
-    RecordAttribute
+    posRecordAttribute
       ## We're generating the fields of a record attribute.
-    RecordField
+    posRecordField
       ## We're generating the field of a record attribute. That needs to happen
       ## in two steps: first we generate the name, second we generate the type of
       ## the field.
-    ClauseGuard
+    posClauseGuard
       ## We're generating a guard in a possible series of guards in a clause.
 
-  ErlangSourceBuilderPosition = object
-    ## This is used to keep track of the current position when generating pretty
-    ## printed code from an `ErlangSourceBuilder`.
-    ##
-    ## Upstream this is an enum whose variants carry their own fields, some of
-    ## them enums with fields of their own. Nim's object variants cannot have a
-    ## field of the same name in two branches, so here it is one flat object: a
-    ## `kind`, and every field any variant has. A variant reads and writes only
-    ## its own fields, listed beside each one.
-    kind: PositionKind
-    first: bool
-      ## `true` when the first item (statement, element, argument, alternative,
-      ## segment, field, branch, guard) has not been generated yet: every
-      ## `first` field upstream, including those of `Arguments { first }`,
-      ## `Guards { first }`, `Body { first }` and `Branches { first }`.
+  ErlangSourceBuilderPositionTypeSpec = object of StructVariant
+    expected: TypeSpecExpectedItem
+  ErlangSourceBuilderPositionFunctionType = object of StructVariant
+    expected: ExpectedFunctionTypeItem
     needsWrapping: bool
-      ## `FunctionType`: `true` if the type has to be wrapped in `fun(...)`,
-      ## which is the case when it does not appear at the top level of a spec.
-      ## `BinaryOperator`: whether this binary operation needs to be wrapped in
-      ## parentheses or not.
-    typeSpecExpected: TypeSpecExpectedItem          ## `TypeSpec`
-    functionTypeExpected: ExpectedFunctionTypeItem  ## `FunctionType`
-    matchExpected: ExpectedMatchSide
-      ## `MatchOperator`: this keeps track of what we need to generate next.
-    matchPatternExpected: ExpectedMatchPatternSide
-      ## `MatchPattern`: this keeps track of what we need to generate next.
-    listKind: ListKind
-      ## `List`: this is telling us if we're generating a list expression, or a
-      ## list pattern.
-    listExpected: ExpectedListItem
-      ## `List`: the list item we're expecting to see next.
-    bitArrayKind: BitArrayKind
-      ## `BitArray`: whether we're dealing with a bit array pattern, or a bit
-      ## array expression. `BitArraySegment`: the `kind` of
-      ## `ExpectedBitArraySegmentItem::Value`.
-    segmentExpected: ExpectedBitArraySegmentItem    ## `BitArraySegment`
+      ## If a function type doesn't appear at the top level as a spec
+      ## annotation, then we must wrap it in a `fun(...)`. For example:
+      ##
+      ## ```erl
+      ## % in a spec annotation it simply comes after the function name:
+      ## -spec wibble () -> integer().
+      ## wibble() -> 11.
+      ##
+      ## % but inside another type it has to be wrapped in `fun(...)`:
+      ## -spec wobble () -> fun(() -> integer())
+      ## wobble() -> fun wibble/0.
+      ## ```
+      ##
+      ## This is `true` if the type has to be wrapped in `fun(...)`
+  ErlangSourceBuilderPositionNamedType = object of StructVariant
+    first: bool
+      ## This is `true` is the first type argument of the named type has not
+      ## been generated yet.
+  ErlangSourceBuilderPositionUnionType = object of StructVariant
+    first: bool
+      ## This is `true` is the first alternative of the union type has not
+      ## been generated yet.
+  ErlangSourceBuilderPositionTupleType = object of StructVariant
+    first: bool
+      ## This is `true` is the first item of the tuple type has not been
+      ## generated yet.
+  ErlangSourceBuilderPositionFunctionStatement = object of StructVariant
+    first: bool  ## This is `true` if the first statement has not been generated yet.
+  ErlangSourceBuilderPositionAnonymousFunctionStatement = object of StructVariant
+    first: bool  ## This is `true` if the first statement has not been generated yet.
+  ErlangSourceBuilderPositionMatchOperator = object of StructVariant
+    expected: ExpectedMatchSide  ## This keeps track of what we need to generate next.
+  ErlangSourceBuilderPositionMatchPattern = object of StructVariant
+    expected: ExpectedMatchPatternSide  ## This keeps track of what we need to generate next.
+  ErlangSourceBuilderPositionList = object of StructVariant
+    kind: ListKind
+      ## This is telling us if we're generating a list expression, or a list
+      ## pattern.
+    expected: ExpectedListItem
+      ## The list item we're expecting to see next.
+  ErlangSourceBuilderPositionTuple = object of StructVariant
+    first: bool  ## This is `true` is the first tuple item has not been generated yet.
+  ErlangSourceBuilderPositionTuplePattern = object of StructVariant
+    first: bool
+      ## This is `true` if the first pattern of the tuple has not been
+      ## generated ywt.
+  ErlangSourceBuilderPositionBitArray = object of StructVariant
+    kind: BitArrayKind
+      ## Whether we're dealing with a bit array pattern, or a bit array
+      ## expression.
+    first: bool
+      ## This is `true` if the first segment has not been generated yet.
+  ErlangSourceBuilderPositionBitArraySegment = object of StructVariant
+    expected: ExpectedBitArraySegmentItem
     segmentValueNeedsWrapping: bool
-      ## `BitArraySegment`: this is `true` if the value of the bit array segment
-      ## needs to be wrapped in parentheses. For example function calls need to
-      ## be wrapped, or they would result in invalid Erlang being produced.
+      ## This is `true` if the value of the bit array segment needs to be wrapped
+      ## in parentheses. For example function calls need to be wrapped, or they
+      ## would result in invalid Erlang being produced.
       ##
       ## ```erl
       ## <<x()/binary>>   % This is a syntax error!
       ## <<(x())/binary>> % This is fine.
       ## ```
-    segmentSizeNeedsWrapping: bool                  ## `BitArraySegment`
-    callExpected: ExpectedCallItem                  ## `FunctionCall`
+    segmentSizeNeedsWrapping: bool
+  ErlangSourceBuilderPositionBlock = object of StructVariant
+    first: bool
+      ## This is `true` is the first statement of the block has not been
+      ## generated yet.
+  ErlangSourceBuilderPositionFunctionCall = object of StructVariant
+    expected: ExpectedCallItem
     calledItemNeedsWrapping: bool
-      ## `FunctionCall`: this is `true` if the thing that is being called needs
-      ## to be wrapped in parentheses. This appears to be needed in just one
-      ## case: if we are calling another function call expression. For example:
+      ## This is `true` if the thing that is being called needs to be wrapped
+      ## in parentheses. This appears to be needed in just one case: if we
+      ## are calling another function call expression. For example:
       ##
       ## ```erl
       ## wibble()()   % this is invalid Erlang
@@ -367,12 +425,54 @@ type
       ## Actually this seems to be needed for OTP versions up to 28, in OTP
       ## 29 we can simply write `wibble()()`. However, since we have to
       ## support OTP 28 we will add the wrapping when needed.
-    binaryExpected: ExpectedBinaryOperatorSide      ## `BinaryOperator`
-    operator: string                                ## `BinaryOperator`
-    caseExpected: ExpectedCaseItem                  ## `Case`
-    clauseExpected: ExpectedCaseClauseItem          ## `CaseClause`
-    mapFieldExpected: ExpectedMapFieldItem          ## `MapField`
-    recordFieldExpected: ExpectedRecordFieldItem    ## `RecordField`
+  ErlangSourceBuilderPositionBinaryOperator = object of StructVariant
+    expected: ExpectedBinaryOperatorSide
+    needsWrapping: bool
+      ## Wether this binary operation needs to be wrapped in parentheses or
+      ## not.
+    operator: string
+  ErlangSourceBuilderPositionCase = object of StructVariant
+    expected: ExpectedCaseItem
+  ErlangSourceBuilderPositionCaseClause = object of StructVariant
+    expected: ExpectedCaseClauseItem
+  ErlangSourceBuilderPositionMap = object of StructVariant
+    first: bool  ## This is `true` if no key-value pair has been generated yet.
+  ErlangSourceBuilderPositionMapField = object of StructVariant
+    expected: ExpectedMapFieldItem
+  ErlangSourceBuilderPositionRecordAttribute = object of StructVariant
+    first: bool  ## This is `true` if no field has been generated yet.
+  ErlangSourceBuilderPositionRecordField = object of StructVariant
+    expected: ExpectedRecordFieldItem
+
+  ErlangSourceBuilderPosition = object
+    ## This is used to keep track of the current position when generating pretty
+    ## printed code from an `ErlangSourceBuilder`.
+    case kind: ErlangSourceBuilderPositionKind
+    of posFunctionSpec, posUnaryOperator, posClauseGuard: discard
+    of posTypeSpec: vTypeSpec: ErlangSourceBuilderPositionTypeSpec
+    of posFunctionType: vFunctionType: ErlangSourceBuilderPositionFunctionType
+    of posNamedType: vNamedType: ErlangSourceBuilderPositionNamedType
+    of posUnionType: vUnionType: ErlangSourceBuilderPositionUnionType
+    of posTupleType: vTupleType: ErlangSourceBuilderPositionTupleType
+    of posFunctionStatement: vFunctionStatement: ErlangSourceBuilderPositionFunctionStatement
+    of posAnonymousFunctionStatement:
+      vAnonymousFunctionStatement: ErlangSourceBuilderPositionAnonymousFunctionStatement
+    of posMatchOperator: vMatchOperator: ErlangSourceBuilderPositionMatchOperator
+    of posMatchPattern: vMatchPattern: ErlangSourceBuilderPositionMatchPattern
+    of posList: vList: ErlangSourceBuilderPositionList
+    of posTuple: vTuple: ErlangSourceBuilderPositionTuple
+    of posTuplePattern: vTuplePattern: ErlangSourceBuilderPositionTuplePattern
+    of posBitArray: vBitArray: ErlangSourceBuilderPositionBitArray
+    of posBitArraySegment: vBitArraySegment: ErlangSourceBuilderPositionBitArraySegment
+    of posBlock: vBlock: ErlangSourceBuilderPositionBlock
+    of posFunctionCall: vFunctionCall: ErlangSourceBuilderPositionFunctionCall
+    of posBinaryOperator: vBinaryOperator: ErlangSourceBuilderPositionBinaryOperator
+    of posCase: vCase: ErlangSourceBuilderPositionCase
+    of posCaseClause: vCaseClause: ErlangSourceBuilderPositionCaseClause
+    of posMap: vMap: ErlangSourceBuilderPositionMap
+    of posMapField: vMapField: ErlangSourceBuilderPositionMapField
+    of posRecordAttribute: vRecordAttribute: ErlangSourceBuilderPositionRecordAttribute
+    of posRecordField: vRecordField: ErlangSourceBuilderPositionRecordField
 
   ErlangSourceBuilder* = object
     code: string
@@ -382,6 +482,98 @@ type
       ## The current indentation to use when generating stuff like case
       ## expressions, block statements, etc.
 
+# The positions are built in many places: one short constructor each, named
+# after the variant, so that a call reads like the Rust literal
+# (`ErlangSourceBuilderPosition::Tuple { first: true }` is `inTuple(first = true)`).
+func inFunctionSpec(): ErlangSourceBuilderPosition = ErlangSourceBuilderPosition(kind: posFunctionSpec)
+func inUnaryOperator(): ErlangSourceBuilderPosition = ErlangSourceBuilderPosition(kind: posUnaryOperator)
+func inClauseGuard(): ErlangSourceBuilderPosition = ErlangSourceBuilderPosition(kind: posClauseGuard)
+
+func expectArguments(first: bool): ExpectedFunctionTypeItem =
+  ExpectedFunctionTypeItem(kind: ftArguments, vArguments: ExpectedFunctionTypeItemArguments(first: first))
+func expectCallArguments(first: bool): ExpectedCallItem =
+  ExpectedCallItem(kind: clArguments, vArguments: ExpectedCallItemArguments(first: first))
+func expectBranches(first: bool): ExpectedCaseItem =
+  ExpectedCaseItem(kind: ciBranches, vBranches: ExpectedCaseItemBranches(first: first))
+func expectGuards(first: bool): ExpectedCaseClauseItem =
+  ExpectedCaseClauseItem(kind: ccGuards, vGuards: ExpectedCaseClauseItemGuards(first: first))
+func expectBody(first: bool): ExpectedCaseClauseItem =
+  ExpectedCaseClauseItem(kind: ccBody, vBody: ExpectedCaseClauseItemBody(first: first))
+func expectValue(kind: BitArrayKind): ExpectedBitArraySegmentItem =
+  ExpectedBitArraySegmentItem(kind: bsValue, vValue: ExpectedBitArraySegmentItemValue(kind: kind))
+
+func inTypeSpec(expected: TypeSpecExpectedItem): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posTypeSpec,
+    vTypeSpec: ErlangSourceBuilderPositionTypeSpec(expected: expected))
+func inFunctionType(expected: ExpectedFunctionTypeItem, needsWrapping: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posFunctionType,
+    vFunctionType: ErlangSourceBuilderPositionFunctionType(expected: expected, needsWrapping: needsWrapping))
+func inNamedType(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posNamedType,
+    vNamedType: ErlangSourceBuilderPositionNamedType(first: first))
+func inUnionType(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posUnionType,
+    vUnionType: ErlangSourceBuilderPositionUnionType(first: first))
+func inTupleType(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posTupleType,
+    vTupleType: ErlangSourceBuilderPositionTupleType(first: first))
+func inFunctionStatement(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posFunctionStatement,
+    vFunctionStatement: ErlangSourceBuilderPositionFunctionStatement(first: first))
+func inAnonymousFunctionStatement(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posAnonymousFunctionStatement,
+    vAnonymousFunctionStatement: ErlangSourceBuilderPositionAnonymousFunctionStatement(first: first))
+func inMatchOperator(expected: ExpectedMatchSide): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posMatchOperator,
+    vMatchOperator: ErlangSourceBuilderPositionMatchOperator(expected: expected))
+func inMatchPattern(expected: ExpectedMatchPatternSide): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posMatchPattern,
+    vMatchPattern: ErlangSourceBuilderPositionMatchPattern(expected: expected))
+func inList(kind: ListKind, expected: ExpectedListItem): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posList,
+    vList: ErlangSourceBuilderPositionList(kind: kind, expected: expected))
+func inTuple(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posTuple, vTuple: ErlangSourceBuilderPositionTuple(first: first))
+func inTuplePattern(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posTuplePattern,
+    vTuplePattern: ErlangSourceBuilderPositionTuplePattern(first: first))
+func inBitArray(kind: BitArrayKind, first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posBitArray,
+    vBitArray: ErlangSourceBuilderPositionBitArray(kind: kind, first: first))
+func inBitArraySegment(expected: ExpectedBitArraySegmentItem, segmentValueNeedsWrapping,
+                        segmentSizeNeedsWrapping: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posBitArraySegment,
+    vBitArraySegment: ErlangSourceBuilderPositionBitArraySegment(
+      expected: expected, segmentValueNeedsWrapping: segmentValueNeedsWrapping,
+      segmentSizeNeedsWrapping: segmentSizeNeedsWrapping))
+func inBlock(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posBlock, vBlock: ErlangSourceBuilderPositionBlock(first: first))
+func inFunctionCall(expected: ExpectedCallItem, calledItemNeedsWrapping: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posFunctionCall,
+    vFunctionCall: ErlangSourceBuilderPositionFunctionCall(
+      expected: expected, calledItemNeedsWrapping: calledItemNeedsWrapping))
+func inBinaryOperator(expected: ExpectedBinaryOperatorSide, needsWrapping: bool,
+                       operator: string): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posBinaryOperator,
+    vBinaryOperator: ErlangSourceBuilderPositionBinaryOperator(
+      expected: expected, needsWrapping: needsWrapping, operator: operator))
+func inCase(expected: ExpectedCaseItem): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posCase, vCase: ErlangSourceBuilderPositionCase(expected: expected))
+func inCaseClause(expected: ExpectedCaseClauseItem): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posCaseClause,
+    vCaseClause: ErlangSourceBuilderPositionCaseClause(expected: expected))
+func inMap(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posMap, vMap: ErlangSourceBuilderPositionMap(first: first))
+func inMapField(expected: ExpectedMapFieldItem): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posMapField,
+    vMapField: ErlangSourceBuilderPositionMapField(expected: expected))
+func inRecordAttribute(first: bool): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posRecordAttribute,
+    vRecordAttribute: ErlangSourceBuilderPositionRecordAttribute(first: first))
+func inRecordField(expected: ExpectedRecordFieldItem): ErlangSourceBuilderPosition =
+  ErlangSourceBuilderPosition(kind: posRecordField,
+    vRecordField: ErlangSourceBuilderPositionRecordField(expected: expected))
+
 const INDENT = 4
 
 func debug(position: ErlangSourceBuilderPosition): string =
@@ -390,56 +582,57 @@ func debug(position: ErlangSourceBuilderPosition): string =
   func b(value: bool): string = (if value: "true" else: "false")
   let p = position
   case p.kind
-  of PositionKind.FunctionSpec: "FunctionSpec"
-  of PositionKind.TypeSpec: "TypeSpec { expected: " & $p.typeSpecExpected & " }"
-  of PositionKind.FunctionType:
-    "FunctionType { expected: " & (case p.functionTypeExpected
-      of ExpectedFunctionTypeItem.Arguments: "Arguments { first: " & b(p.first) & " }"
-      of ExpectedFunctionTypeItem.ReturnType: "ReturnType") &
-      ", needs_wrapping: " & b(p.needsWrapping) & " }"
-  of PositionKind.NamedType: "NamedType { first: " & b(p.first) & " }"
-  of PositionKind.UnionType: "UnionType { first: " & b(p.first) & " }"
-  of PositionKind.TupleType: "TupleType { first: " & b(p.first) & " }"
-  of PositionKind.FunctionStatement: "FunctionStatement { first: " & b(p.first) & " }"
-  of PositionKind.AnonymousFunctionStatement:
-    "AnonymousFunctionStatement { first: " & b(p.first) & " }"
-  of PositionKind.MatchOperator: "MatchOperator { expected: " & $p.matchExpected & " }"
-  of PositionKind.MatchPattern: "MatchPattern { expected: " & $p.matchPatternExpected & " }"
-  of PositionKind.List: "List { kind: " & $p.listKind & ", expected: " & $p.listExpected & " }"
-  of PositionKind.UnaryOperator: "UnaryOperator"
-  of PositionKind.Tuple: "Tuple { first: " & b(p.first) & " }"
-  of PositionKind.TuplePattern: "TuplePattern { first: " & b(p.first) & " }"
-  of PositionKind.BitArray: "BitArray { kind: " & $p.bitArrayKind & ", first: " & b(p.first) & " }"
-  of PositionKind.BitArraySegment:
-    "BitArraySegment { expected: " & (case p.segmentExpected
-      of ExpectedBitArraySegmentItem.Value: "Value { kind: " & $p.bitArrayKind & " }"
-      of ExpectedBitArraySegmentItem.Size: "Size"
-      of ExpectedBitArraySegmentItem.Specifiers: "Specifiers") &
-      ", segment_value_needs_wrapping: " & b(p.segmentValueNeedsWrapping) &
-      ", segment_size_needs_wrapping: " & b(p.segmentSizeNeedsWrapping) & " }"
-  of PositionKind.Block: "Block { first: " & b(p.first) & " }"
-  of PositionKind.FunctionCall:
-    "FunctionCall { expected: " & (case p.callExpected
-      of ExpectedCallItem.FunctionToBeCalled: "FunctionToBeCalled"
-      of ExpectedCallItem.Arguments: "Arguments { first: " & b(p.first) & " }") &
-      ", called_item_needs_wrapping: " & b(p.calledItemNeedsWrapping) & " }"
-  of PositionKind.BinaryOperator:
-    "BinaryOperator { expected: " & $p.binaryExpected & ", needs_wrapping: " &
-      b(p.needsWrapping) & ", operator: \"" & p.operator & "\" }"
-  of PositionKind.Case:
-    "Case { expected: " & (case p.caseExpected
-      of ExpectedCaseItem.Subject: "Subject"
-      of ExpectedCaseItem.Branches: "Branches { first: " & b(p.first) & " }") & " }"
-  of PositionKind.CaseClause:
-    "CaseClause { expected: " & (case p.clauseExpected
-      of ExpectedCaseClauseItem.Pattern: "Pattern"
-      of ExpectedCaseClauseItem.Guards: "Guards { first: " & b(p.first) & " }"
-      of ExpectedCaseClauseItem.Body: "Body { first: " & b(p.first) & " }") & " }"
-  of PositionKind.Map: "Map { first: " & b(p.first) & " }"
-  of PositionKind.MapField: "MapField { expected: " & $p.mapFieldExpected & " }"
-  of PositionKind.RecordAttribute: "RecordAttribute { first: " & b(p.first) & " }"
-  of PositionKind.RecordField: "RecordField { expected: " & $p.recordFieldExpected & " }"
-  of PositionKind.ClauseGuard: "ClauseGuard"
+  of posFunctionSpec: "FunctionSpec"
+  of posTypeSpec: "TypeSpec { expected: " & $p.vTypeSpec.expected & " }"
+  of posFunctionType:
+    "FunctionType { expected: " & (case p.vFunctionType.expected.kind
+      of ftArguments: "Arguments { first: " & b(p.vFunctionType.expected.vArguments.first) & " }"
+      of ftReturnType: "ReturnType") &
+      ", needs_wrapping: " & b(p.vFunctionType.needsWrapping) & " }"
+  of posNamedType: "NamedType { first: " & b(p.vNamedType.first) & " }"
+  of posUnionType: "UnionType { first: " & b(p.vUnionType.first) & " }"
+  of posTupleType: "TupleType { first: " & b(p.vTupleType.first) & " }"
+  of posFunctionStatement: "FunctionStatement { first: " & b(p.vFunctionStatement.first) & " }"
+  of posAnonymousFunctionStatement:
+    "AnonymousFunctionStatement { first: " & b(p.vAnonymousFunctionStatement.first) & " }"
+  of posMatchOperator: "MatchOperator { expected: " & $p.vMatchOperator.expected & " }"
+  of posMatchPattern: "MatchPattern { expected: " & $p.vMatchPattern.expected & " }"
+  of posList: "List { kind: " & $p.vList.kind & ", expected: " & $p.vList.expected & " }"
+  of posUnaryOperator: "UnaryOperator"
+  of posTuple: "Tuple { first: " & b(p.vTuple.first) & " }"
+  of posTuplePattern: "TuplePattern { first: " & b(p.vTuplePattern.first) & " }"
+  of posBitArray:
+    "BitArray { kind: " & $p.vBitArray.kind & ", first: " & b(p.vBitArray.first) & " }"
+  of posBitArraySegment:
+    "BitArraySegment { expected: " & (case p.vBitArraySegment.expected.kind
+      of bsValue: "Value { kind: " & $p.vBitArraySegment.expected.vValue.kind & " }"
+      of bsSize: "Size"
+      of bsSpecifiers: "Specifiers") &
+      ", segment_value_needs_wrapping: " & b(p.vBitArraySegment.segmentValueNeedsWrapping) &
+      ", segment_size_needs_wrapping: " & b(p.vBitArraySegment.segmentSizeNeedsWrapping) & " }"
+  of posBlock: "Block { first: " & b(p.vBlock.first) & " }"
+  of posFunctionCall:
+    "FunctionCall { expected: " & (case p.vFunctionCall.expected.kind
+      of clFunctionToBeCalled: "FunctionToBeCalled"
+      of clArguments: "Arguments { first: " & b(p.vFunctionCall.expected.vArguments.first) & " }") &
+      ", called_item_needs_wrapping: " & b(p.vFunctionCall.calledItemNeedsWrapping) & " }"
+  of posBinaryOperator:
+    "BinaryOperator { expected: " & $p.vBinaryOperator.expected & ", needs_wrapping: " &
+      b(p.vBinaryOperator.needsWrapping) & ", operator: \"" & p.vBinaryOperator.operator & "\" }"
+  of posCase:
+    "Case { expected: " & (case p.vCase.expected.kind
+      of ciSubject: "Subject"
+      of ciBranches: "Branches { first: " & b(p.vCase.expected.vBranches.first) & " }") & " }"
+  of posCaseClause:
+    "CaseClause { expected: " & (case p.vCaseClause.expected.kind
+      of ccPattern: "Pattern"
+      of ccGuards: "Guards { first: " & b(p.vCaseClause.expected.vGuards.first) & " }"
+      of ccBody: "Body { first: " & b(p.vCaseClause.expected.vBody.first) & " }") & " }"
+  of posMap: "Map { first: " & b(p.vMap.first) & " }"
+  of posMapField: "MapField { expected: " & $p.vMapField.expected & " }"
+  of posRecordAttribute: "RecordAttribute { first: " & b(p.vRecordAttribute.first) & " }"
+  of posRecordField: "RecordField { expected: " & $p.vRecordField.expected & " }"
+  of posClauseGuard: "ClauseGuard"
 
 func errorWithPosition(self: ErlangSourceBuilder, expected: string): string =
   ## This produces a pretty printed error message including the current
@@ -458,7 +651,7 @@ template invalid(self: ErlangSourceBuilder, expected: string) =
 template top(self: ErlangSourceBuilder): untyped = self.position[^1]
   ## `self.position.last_mut()`, when there is one.
 
-func isAt(self: ErlangSourceBuilder, kind: PositionKind): bool =
+func isAt(self: ErlangSourceBuilder, kind: ErlangSourceBuilderPositionKind): bool =
   ## Whether the last position is of this kind.
   self.position.len > 0 and self.position[^1].kind == kind
 
@@ -637,45 +830,56 @@ proc popLeftoverItems(self: var ErlangSourceBuilder) =
     return
 
   case self.top.kind
-  of PositionKind.TypeSpec:
-    if self.top.typeSpecExpected == TypeSpecExpectedItem.TypeSpecIsOver:
+  of posTypeSpec:
+    case self.top.vTypeSpec.expected
+    of TypeSpecExpectedItem.TypeSpecIsOver:
       self.code.add ".\n"
       discard self.position.pop()
       self.popLeftoverItems()
+    of TypeSpecExpectedItem.TypeDefinition: discard
 
   # The expression we're generating is preceded by a list
   # that has been closed. Lists are a bit tricky because they
   # are built as a list of cons cells, so we can't really
   # tell when a list is over until we get to the next
   # expression.
-  of PositionKind.List:
-    if self.top.listExpected == ExpectedListItem.ListIsOver:
+  of posList:
+    case self.top.vList.expected
+    of ExpectedListItem.ListIsOver:
       self.code.add ']'
       # We remove this leftover list...
       discard self.position.pop()
       # ...and then we can keep going until there's no leftover
       # items left.
       self.popLeftoverItems()
+    of ExpectedListItem.First, ExpectedListItem.Rest: discard
 
   # Like with lists, we don't really know when a binary operator is
   # over until we get to the following operation (or we try closing
   # the current item and notice there's a closed operator left).
   # Also, just like lists, we might still need to add some
   # parentheses _after_ the operator is over.
-  of PositionKind.BinaryOperator:
-    if self.top.binaryExpected == ExpectedBinaryOperatorSide.BinaryOperatorIsOver:
+  of posBinaryOperator:
+    case self.top.vBinaryOperator.expected
+    of ExpectedBinaryOperatorSide.BinaryOperatorIsOver:
       # If needed add the closing parentheses...
-      if self.top.needsWrapping:
+      if self.top.vBinaryOperator.needsWrapping:
         self.code.add ')'
       # ...we remove this leftover binary operator...
       discard self.position.pop()
       # ...and then we can keep going until there's no leftover items
       # left.
       self.popLeftoverItems()
+    of ExpectedBinaryOperatorSide.Left, ExpectedBinaryOperatorSide.Right: discard
 
   # All of these items are not leftovers. They are either still open,
   # require manual closing, or things that don't need closing at all!
-  else: discard
+  of posNamedType, posUnionType, posTupleType, posFunctionStatement,
+     posAnonymousFunctionStatement, posFunctionSpec, posTuple, posTuplePattern, posBitArray,
+     posMap, posBlock, posClauseGuard, posUnaryOperator, posFunctionType, posMapField,
+     posBitArraySegment, posFunctionCall, posMatchPattern, posCase, posCaseClause,
+     posRecordAttribute, posMatchOperator, posRecordField:
+    discard
 
 proc newTopLevelForm(self: var ErlangSourceBuilder) =
   ## This has to be called before generating any new top level form: those
@@ -703,106 +907,106 @@ proc newExpression(self: var ErlangSourceBuilder) =
   if self.position.len == 0:
     self.invalid("expression")
 
-  template statement() =
-    if not self.top.first:
+  template statement(first: untyped) =
+    if not first:
       self.code.add ','
-    self.top.first = false
+    first = false
     self.code.add '\n'
     self.pushIndentation()
 
   case self.top.kind
-  of PositionKind.RecordField:
-    case self.top.recordFieldExpected
-    of ExpectedRecordFieldItem.Name: self.top.recordFieldExpected = ExpectedRecordFieldItem.Type
+  of posRecordField:
+    case self.top.vRecordField.expected
+    of ExpectedRecordFieldItem.Name:
+      self.top.vRecordField.expected = ExpectedRecordFieldItem.Type
     of ExpectedRecordFieldItem.Type: self.invalid("expression")
 
-  of PositionKind.Case:
-    case self.top.caseExpected
-    of ExpectedCaseItem.Subject:
-      self.top.caseExpected = ExpectedCaseItem.Branches
-      self.top.first = true
-    of ExpectedCaseItem.Branches: self.invalid("expression")
+  of posCase:
+    case self.top.vCase.expected.kind
+    of ciSubject: self.top.vCase.expected = expectBranches(first = true)
+    of ciBranches: self.invalid("expression")
 
-  of PositionKind.FunctionCall:
-    case self.top.callExpected
-    of ExpectedCallItem.FunctionToBeCalled:
-      if self.top.calledItemNeedsWrapping:
+  of posFunctionCall:
+    case self.top.vFunctionCall.expected.kind
+    of clFunctionToBeCalled:
+      if self.top.vFunctionCall.calledItemNeedsWrapping:
         self.code.add '('
-      self.top.callExpected = ExpectedCallItem.Arguments
-      self.top.first = true
-    of ExpectedCallItem.Arguments:
-      if self.top.calledItemNeedsWrapping:
-        self.top.calledItemNeedsWrapping = false
+      self.top.vFunctionCall.expected = expectCallArguments(first = true)
+    of clArguments:
+      if self.top.vFunctionCall.calledItemNeedsWrapping:
+        self.top.vFunctionCall.calledItemNeedsWrapping = false
         self.code.add ')'
-      if self.top.first:
+      if self.top.vFunctionCall.expected.vArguments.first:
         self.code.add '('
       else:
         self.code.add ", "
-      self.top.first = false
+      self.top.vFunctionCall.expected.vArguments.first = false
 
-  of PositionKind.Tuple:
-    if not self.top.first:
+  of posTuple:
+    if not self.top.vTuple.first:
       self.code.add ", "
-    self.top.first = false
+    self.top.vTuple.first = false
 
-  of PositionKind.List:
-    if self.top.listKind != ListKind.Expression:
-      self.invalid("expression")
-    case self.top.listExpected
-    # We're expecting the list's head. We don't have to add
-    # anything!
-    of ExpectedListItem.First: self.top.listExpected = ExpectedListItem.Rest
-    of ExpectedListItem.Rest:
-      self.top.listExpected = ExpectedListItem.ListIsOver
-      self.code.add " | "
-    of ExpectedListItem.ListIsOver: self.invalid("expression")
+  of posList:
+    case self.top.vList.kind
+    of ListKind.Expression:
+      case self.top.vList.expected
+      # We're expecting the list's head. We don't have to add
+      # anything!
+      of ExpectedListItem.First: self.top.vList.expected = ExpectedListItem.Rest
+      of ExpectedListItem.Rest:
+        self.top.vList.expected = ExpectedListItem.ListIsOver
+        self.code.add " | "
+      of ExpectedListItem.ListIsOver: self.invalid("expression")
+    of ListKind.Pattern: self.invalid("expression")
 
-  of PositionKind.BinaryOperator:
-    case self.top.binaryExpected
+  of posBinaryOperator:
+    case self.top.vBinaryOperator.expected
     of ExpectedBinaryOperatorSide.Left:
-      self.top.binaryExpected = ExpectedBinaryOperatorSide.Right
+      self.top.vBinaryOperator.expected = ExpectedBinaryOperatorSide.Right
     of ExpectedBinaryOperatorSide.Right:
-      self.top.binaryExpected = ExpectedBinaryOperatorSide.BinaryOperatorIsOver
+      self.top.vBinaryOperator.expected = ExpectedBinaryOperatorSide.BinaryOperatorIsOver
       self.code.add ' '
-      self.code.add self.top.operator
+      self.code.add self.top.vBinaryOperator.operator
       self.code.add ' '
     of ExpectedBinaryOperatorSide.BinaryOperatorIsOver: self.invalid("expression")
 
-  of PositionKind.FunctionStatement, PositionKind.AnonymousFunctionStatement, PositionKind.Block:
-    statement()
+  of posFunctionStatement: statement(self.top.vFunctionStatement.first)
+  of posAnonymousFunctionStatement: statement(self.top.vAnonymousFunctionStatement.first)
+  of posBlock: statement(self.top.vBlock.first)
+  of posCaseClause:
+    case self.top.vCaseClause.expected.kind
+    of ccBody: statement(self.top.vCaseClause.expected.vBody.first)
+    of ccPattern, ccGuards: self.invalid("expression")
 
-  of PositionKind.CaseClause:
-    case self.top.clauseExpected
-    of ExpectedCaseClauseItem.Body: statement()
-    of ExpectedCaseClauseItem.Pattern, ExpectedCaseClauseItem.Guards: self.invalid("expression")
-
-  of PositionKind.BitArraySegment:
-    case self.top.segmentExpected
-    of ExpectedBitArraySegmentItem.Value:
-      if self.top.bitArrayKind != BitArrayKind.Expression:
-        self.invalid("expression")
-      if self.top.segmentValueNeedsWrapping:
-        self.code.add '('
-      self.top.segmentExpected = ExpectedBitArraySegmentItem.Size
-    of ExpectedBitArraySegmentItem.Size:
-      if self.top.segmentValueNeedsWrapping:
+  of posBitArraySegment:
+    case self.top.vBitArraySegment.expected.kind
+    of bsValue:
+      case self.top.vBitArraySegment.expected.vValue.kind
+      of BitArrayKind.Expression:
+        if self.top.vBitArraySegment.segmentValueNeedsWrapping:
+          self.code.add '('
+        self.top.vBitArraySegment.expected = ExpectedBitArraySegmentItem(kind: bsSize)
+      of BitArrayKind.Pattern: self.invalid("expression")
+    of bsSize:
+      if self.top.vBitArraySegment.segmentValueNeedsWrapping:
         self.code.add ')'
         # We've finished wrapping the value, we set this to
         # false so we don't add other parentheses when we get
         # to the specifiers list!
-        self.top.segmentValueNeedsWrapping = false
-      self.top.segmentExpected = ExpectedBitArraySegmentItem.Specifiers
+        self.top.vBitArraySegment.segmentValueNeedsWrapping = false
+      self.top.vBitArraySegment.expected = ExpectedBitArraySegmentItem(kind: bsSpecifiers)
       self.code.add ':'
-      if self.top.segmentSizeNeedsWrapping:
+      if self.top.vBitArraySegment.segmentSizeNeedsWrapping:
         self.code.add '('
-    of ExpectedBitArraySegmentItem.Specifiers: self.invalid("expression")
+    of bsSpecifiers: self.invalid("expression")
 
-  of PositionKind.ClauseGuard:
+  of posClauseGuard:
     self.code.add " when "
 
-  of PositionKind.MapField:
-    case self.top.mapFieldExpected
-    of ExpectedMapFieldItem.Key: self.top.mapFieldExpected = ExpectedMapFieldItem.Value
+  of posMapField:
+    case self.top.vMapField.expected
+    of ExpectedMapFieldItem.Key: self.top.vMapField.expected = ExpectedMapFieldItem.Value
     # We've generated a key and now the value is being generated.
     # So we need to add the `=>` separating key and value and we
     # can pop this position that is now complete.
@@ -810,8 +1014,8 @@ proc newExpression(self: var ErlangSourceBuilder) =
       self.code.add " => "
       discard self.position.pop()
 
-  of PositionKind.MatchOperator:
-    case self.top.matchExpected
+  of posMatchOperator:
+    case self.top.vMatchOperator.expected
     # We were expecting an expression and someone is about to generate
     # it, we can pop this off the stack and need to add the ` = `
     # separating the previous pattern from this new expression.
@@ -822,14 +1026,12 @@ proc newExpression(self: var ErlangSourceBuilder) =
 
   # We were expecting an expression and someone generated it, we can
   # now pop this off the stack.
-  of PositionKind.UnaryOperator:
+  of posUnaryOperator:
     discard self.position.pop()
 
   # Expressions are not allowed in any of these positions.
-  of PositionKind.BitArray, PositionKind.TuplePattern, PositionKind.MatchPattern,
-     PositionKind.FunctionSpec, PositionKind.TypeSpec, PositionKind.NamedType,
-     PositionKind.FunctionType, PositionKind.UnionType, PositionKind.TupleType, PositionKind.Map,
-     PositionKind.RecordAttribute:
+  of posBitArray, posTuplePattern, posMatchPattern, posFunctionSpec, posTypeSpec, posNamedType,
+     posFunctionType, posUnionType, posTupleType, posMap, posRecordAttribute:
     self.invalid("expression")
 
 proc newType(self: var ErlangSourceBuilder) =
@@ -844,42 +1046,41 @@ proc newType(self: var ErlangSourceBuilder) =
   if self.position.len == 0:
     self.invalid("type")
 
-  template separated(separator: string) =
-    if not self.top.first:
+  template separated(first: untyped, separator: string) =
+    if not first:
       self.code.add separator
-    self.top.first = false
+    first = false
 
   case self.top.kind
-  of PositionKind.FunctionSpec: discard
+  of posFunctionSpec: discard
 
-  of PositionKind.FunctionType:
-    case self.top.functionTypeExpected
-    of ExpectedFunctionTypeItem.ReturnType: discard
-    of ExpectedFunctionTypeItem.Arguments: separated(", ")
+  of posFunctionType:
+    case self.top.vFunctionType.expected.kind
+    of ftReturnType: discard
+    of ftArguments: separated(self.top.vFunctionType.expected.vArguments.first, ", ")
 
-  of PositionKind.TypeSpec:
-    case self.top.typeSpecExpected
+  of posTypeSpec:
+    case self.top.vTypeSpec.expected
     of TypeSpecExpectedItem.TypeDefinition:
-      self.top.typeSpecExpected = TypeSpecExpectedItem.TypeSpecIsOver
+      self.top.vTypeSpec.expected = TypeSpecExpectedItem.TypeSpecIsOver
     of TypeSpecExpectedItem.TypeSpecIsOver: self.invalid("type")
 
-  of PositionKind.TupleType, PositionKind.NamedType: separated(", ")
+  of posTupleType: separated(self.top.vTupleType.first, ", ")
+  of posNamedType: separated(self.top.vNamedType.first, ", ")
 
-  of PositionKind.UnionType: separated(" | ")
+  of posUnionType: separated(self.top.vUnionType.first, " | ")
 
-  of PositionKind.RecordField:
-    case self.top.recordFieldExpected
+  of posRecordField:
+    case self.top.vRecordField.expected
     of ExpectedRecordFieldItem.Type:
       self.code.add " :: "
       discard self.position.pop()
     of ExpectedRecordFieldItem.Name: self.invalid("type")
 
-  of PositionKind.FunctionCall, PositionKind.Block, PositionKind.Tuple, PositionKind.BitArray,
-     PositionKind.BitArraySegment, PositionKind.List, PositionKind.FunctionStatement,
-     PositionKind.AnonymousFunctionStatement, PositionKind.UnaryOperator, PositionKind.Case,
-     PositionKind.ClauseGuard, PositionKind.BinaryOperator, PositionKind.CaseClause,
-     PositionKind.Map, PositionKind.MapField, PositionKind.MatchOperator,
-     PositionKind.RecordAttribute, PositionKind.MatchPattern, PositionKind.TuplePattern:
+  of posFunctionCall, posBlock, posTuple, posBitArray, posBitArraySegment, posList,
+     posFunctionStatement, posAnonymousFunctionStatement, posUnaryOperator, posCase,
+     posClauseGuard, posBinaryOperator, posCaseClause, posMap, posMapField, posMatchOperator,
+     posRecordAttribute, posMatchPattern, posTuplePattern:
     self.invalid("type")
 
 proc newPattern(self: var ErlangSourceBuilder) =
@@ -895,53 +1096,56 @@ proc newPattern(self: var ErlangSourceBuilder) =
     self.invalid("pattern")
 
   case self.top.kind
-  of PositionKind.List:
-    if self.top.listKind != ListKind.Pattern:
-      self.invalid("pattern")
-    case self.top.listExpected
-    # We're expecting the list's head. We don't have to add
-    # anything!
-    of ExpectedListItem.First: self.top.listExpected = ExpectedListItem.Rest
-    of ExpectedListItem.Rest:
-      self.top.listExpected = ExpectedListItem.ListIsOver
-      self.code.add " | "
-    of ExpectedListItem.ListIsOver: self.invalid("pattern")
+  of posList:
+    case self.top.vList.kind
+    of ListKind.Pattern:
+      case self.top.vList.expected
+      # We're expecting the list's head. We don't have to add
+      # anything!
+      of ExpectedListItem.First: self.top.vList.expected = ExpectedListItem.Rest
+      of ExpectedListItem.Rest:
+        self.top.vList.expected = ExpectedListItem.ListIsOver
+        self.code.add " | "
+      of ExpectedListItem.ListIsOver: self.invalid("pattern")
+    of ListKind.Expression: self.invalid("pattern")
 
-  of PositionKind.BitArraySegment:
-    if self.top.segmentExpected == ExpectedBitArraySegmentItem.Value and
-        self.top.bitArrayKind == BitArrayKind.Pattern:
-      if self.top.segmentValueNeedsWrapping:
-        self.code.add '('
-      self.top.segmentExpected = ExpectedBitArraySegmentItem.Size
-    else:
-      self.invalid("pattern")
+  of posBitArraySegment:
+    case self.top.vBitArraySegment.expected.kind
+    of bsValue:
+      case self.top.vBitArraySegment.expected.vValue.kind
+      of BitArrayKind.Pattern:
+        if self.top.vBitArraySegment.segmentValueNeedsWrapping:
+          self.code.add '('
+        self.top.vBitArraySegment.expected = ExpectedBitArraySegmentItem(kind: bsSize)
+      of BitArrayKind.Expression: self.invalid("pattern")
+    of bsSize, bsSpecifiers: self.invalid("pattern")
 
-  of PositionKind.MatchOperator:
-    case self.top.matchExpected
+  of posMatchOperator:
+    case self.top.vMatchOperator.expected
     # We were waiting for the pattern to be generated, now we're done
     # and can start generating an expression for the right-hand side.
-    of ExpectedMatchSide.Pattern: self.top.matchExpected = ExpectedMatchSide.Expression
+    of ExpectedMatchSide.Pattern: self.top.vMatchOperator.expected = ExpectedMatchSide.Expression
     of ExpectedMatchSide.Expression: self.invalid("pattern")
 
-  of PositionKind.CaseClause:
-    case self.top.clauseExpected
+  of posCaseClause:
+    case self.top.vCaseClause.expected.kind
     # We were waiting for the pattern and a pattern has been generated.
     # We don't change this ourselves since the pattern has to be closed
     # explicitly calling `end_clause_pattern`.
     # We don't have to do anything here!
-    of ExpectedCaseClauseItem.Pattern: discard
-    of ExpectedCaseClauseItem.Guards, ExpectedCaseClauseItem.Body: self.invalid("pattern")
+    of ccPattern: discard
+    of ccGuards, ccBody: self.invalid("pattern")
 
-  of PositionKind.TuplePattern:
-    if self.top.first:
-      self.top.first = false
+  of posTuplePattern:
+    if self.top.vTuplePattern.first:
+      self.top.vTuplePattern.first = false
     else:
       self.code.add ", "
 
-  of PositionKind.MatchPattern:
-    case self.top.matchPatternExpected
+  of posMatchPattern:
+    case self.top.vMatchPattern.expected
     of ExpectedMatchPatternSide.Left:
-      self.top.matchPatternExpected = ExpectedMatchPatternSide.Right
+      self.top.vMatchPattern.expected = ExpectedMatchPatternSide.Right
     # The right hand side is about to be generated so we have to
     # push the ` = ` to separate it from the left hand side, and we
     # can remove this position since the match pattern has now been
@@ -950,13 +1154,10 @@ proc newPattern(self: var ErlangSourceBuilder) =
       self.code.add " = "
       discard self.position.pop()
 
-  of PositionKind.FunctionCall, PositionKind.Block, PositionKind.FunctionStatement,
-     PositionKind.AnonymousFunctionStatement, PositionKind.BitArray, PositionKind.UnaryOperator,
-     PositionKind.BinaryOperator, PositionKind.Case, PositionKind.ClauseGuard, PositionKind.Map,
-     PositionKind.MapField, PositionKind.Tuple, PositionKind.FunctionType,
-     PositionKind.FunctionSpec, PositionKind.TypeSpec, PositionKind.NamedType,
-     PositionKind.UnionType, PositionKind.TupleType, PositionKind.RecordField,
-     PositionKind.RecordAttribute:
+  of posFunctionCall, posBlock, posFunctionStatement, posAnonymousFunctionStatement,
+     posBitArray, posUnaryOperator, posBinaryOperator, posCase, posClauseGuard, posMap,
+     posMapField, posTuple, posFunctionType, posFunctionSpec, posTypeSpec, posNamedType,
+     posUnionType, posTupleType, posRecordField, posRecordAttribute:
     self.invalid("pattern")
 
 proc closeCurrentlyOpenItem(self: var ErlangSourceBuilder) =
@@ -969,20 +1170,20 @@ proc closeCurrentlyOpenItem(self: var ErlangSourceBuilder) =
   # When we're done generating statements for a function we need to
   # add one final `.` to the last statement. Then we also want to
   # add an empty line to make our code breath a bit better.
-  of PositionKind.FunctionStatement:
+  of posFunctionStatement:
     self.indentation -= INDENT
     self.code.add ".\n"
   # When we're done generating statements for an anonymous function
   # we need to add the closing `end` after the last statement on a
   # new line.
-  of PositionKind.AnonymousFunctionStatement:
+  of posAnonymousFunctionStatement:
     self.indentation -= INDENT
     self.code.add '\n'
     self.pushIndentation()
     self.code.add "end"
   # When we're done generating statements for a block we need to add
   # the closing `end`, and reduce the nesting level.
-  of PositionKind.Block:
+  of posBlock:
     self.indentation -= INDENT
     self.code.add '\n'
     self.pushIndentation()
@@ -995,45 +1196,44 @@ proc closeCurrentlyOpenItem(self: var ErlangSourceBuilder) =
   # functions that have no annotation (like the echo functions
   # automatically added by the compiler), they will be spaced
   # correctly!
-  of PositionKind.FunctionSpec: self.code.add '.'
-  of PositionKind.FunctionCall:
-    case position.callExpected
+  of posFunctionSpec: self.code.add '.'
+  of posFunctionCall:
+    case position.vFunctionCall.expected.kind
     # When we're done generating the arguments of a function we need
     # to add the closed parentheses for the function call!
-    of ExpectedCallItem.Arguments:
-      if position.calledItemNeedsWrapping:
+    of clArguments:
+      if position.vFunctionCall.calledItemNeedsWrapping:
         self.code.add ')'
 
       # If the function is closed with no arguments being generated
       # then we will need to add both the open and closed
       # parentheses. That's because the open paren is added when the
       # first argument is generated.
-      if position.first:
+      if position.vFunctionCall.expected.vArguments.first:
         self.code.add "()"
       else:
         self.code.add ')'
     # If we try and close a function for which no called item was
     # generated, then that's an error!
-    of ExpectedCallItem.FunctionToBeCalled: self.invalid("pop leftover item")
+    of clFunctionToBeCalled: self.invalid("pop leftover item")
 
   # When we're done generating the items of a tuple we need
   # to add the closed curly brace to actually close the tuple.
-  of PositionKind.TupleType, PositionKind.Tuple, PositionKind.TuplePattern: self.code.add '}'
+  of posTupleType, posTuple, posTuplePattern: self.code.add '}'
   # When we're done generating a bit array we can add its closing
   # element.
-  of PositionKind.BitArray: self.code.add ">>"
+  of posBitArray: self.code.add ">>"
 
-  of PositionKind.FunctionType:
-    case position.functionTypeExpected
+  of posFunctionType:
+    case position.vFunctionType.expected.kind
     # When the function type arguments are over we add what we need for
     # the return type.
-    of ExpectedFunctionTypeItem.Arguments:
+    of ftArguments:
       # After popping the argument, we now need to wait for the
       # return type!
-      self.position.add ErlangSourceBuilderPosition(
-        kind: PositionKind.FunctionType,
-        functionTypeExpected: ExpectedFunctionTypeItem.ReturnType,
-        needsWrapping: position.needsWrapping)
+      self.position.add inFunctionType(
+        expected = ExpectedFunctionTypeItem(kind: ftReturnType),
+        needsWrapping = position.vFunctionType.needsWrapping)
       self.code.add ") -> "
     # If we close a function type we need to check what the current
     # state is. If we were generating this for a type spec we're done.
@@ -1051,48 +1251,47 @@ proc closeCurrentlyOpenItem(self: var ErlangSourceBuilder) =
     # %                                     ^ We're adding this bit here!
     # wobble() -> fun wibble/0.
     # ```
-    of ExpectedFunctionTypeItem.ReturnType:
-      if position.needsWrapping:
+    of ftReturnType:
+      if position.vFunctionType.needsWrapping:
         self.code.add ')'
   # When a named type is over we need to add the closing parentheses.
-  of PositionKind.NamedType: self.code.add ')'
+  of posNamedType: self.code.add ')'
   # There's nothing left to do when a union type ends.
-  of PositionKind.UnionType: discard
-  of PositionKind.Case:
-    case position.caseExpected
+  of posUnionType: discard
+  of posCase:
+    case position.vCase.expected.kind
     # When a case expression is over, we need to add the closing `end`.
-    of ExpectedCaseItem.Branches:
+    of ciBranches:
       self.indentation -= INDENT
       self.code.add '\n'
       self.pushIndentation()
       self.code.add "end"
-    of ExpectedCaseItem.Subject: self.invalid("pop leftover item")
+    of ciSubject: self.invalid("pop leftover item")
 
-  of PositionKind.ClauseGuard: discard
-  of PositionKind.CaseClause:
-    case position.clauseExpected
-    of ExpectedCaseClauseItem.Pattern: discard
+  of posClauseGuard: discard
+  of posCaseClause:
+    case position.vCaseClause.expected.kind
+    of ccPattern: discard
     # When the guards of a case clause are over we need to add the
     # arrow before the body is generated.
-    of ExpectedCaseClauseItem.Guards: self.code.add " ->"
-    of ExpectedCaseClauseItem.Body:
+    of ccGuards: self.code.add " ->"
+    of ccBody:
       self.indentation -= INDENT
   # We're done with a map, we can add the closed parentheses and
   # reduce nesting.
-  of PositionKind.Map:
+  of posMap:
     self.indentation -= INDENT
     self.code.add '\n'
     self.pushIndentation()
     self.code.add '}'
-  of PositionKind.RecordAttribute:
+  of posRecordAttribute:
     self.indentation -= INDENT
     self.code.add '\n'
     self.pushIndentation()
     self.code.add "})."
 
-  of PositionKind.MapField, PositionKind.RecordField, PositionKind.MatchPattern,
-     PositionKind.UnaryOperator, PositionKind.List, PositionKind.BinaryOperator,
-     PositionKind.MatchOperator, PositionKind.TypeSpec, PositionKind.BitArraySegment:
+  of posMapField, posRecordField, posMatchPattern, posUnaryOperator, posList,
+     posBinaryOperator, posMatchOperator, posTypeSpec, posBitArraySegment:
     self.invalid("pop leftover item")
 
 proc escapeStringContent(self: ErlangSourceBuilder, content: string): string =
@@ -1127,18 +1326,14 @@ proc escapeStringContent(self: ErlangSourceBuilder, content: string): string =
     raiseAssert "escaping string in the top level scope"
 
   case self.position[^1].kind
-  of PositionKind.FunctionSpec, PositionKind.TypeSpec, PositionKind.FunctionType,
-     PositionKind.NamedType, PositionKind.UnionType, PositionKind.RecordAttribute,
-     PositionKind.TupleType:
+  of posFunctionSpec, posTypeSpec, posFunctionType, posNamedType, posUnionType,
+     posRecordAttribute, posTupleType:
     self.invalid("escaping string")
 
-  of PositionKind.FunctionCall, PositionKind.FunctionStatement,
-     PositionKind.AnonymousFunctionStatement, PositionKind.List, PositionKind.UnaryOperator,
-     PositionKind.Tuple, PositionKind.TuplePattern, PositionKind.BitArray,
-     PositionKind.BitArraySegment, PositionKind.Block, PositionKind.BinaryOperator,
-     PositionKind.Case, PositionKind.CaseClause, PositionKind.ClauseGuard, PositionKind.Map,
-     PositionKind.MapField, PositionKind.MatchPattern, PositionKind.RecordField,
-     PositionKind.MatchOperator:
+  of posFunctionCall, posFunctionStatement, posAnonymousFunctionStatement, posList,
+     posUnaryOperator, posTuple, posTuplePattern, posBitArray, posBitArraySegment, posBlock,
+     posBinaryOperator, posCase, posCaseClause, posClauseGuard, posMap, posMapField,
+     posMatchPattern, posRecordField, posMatchOperator:
     # When pretty printing we want the resulting code to be regular
     # executable Erlang code.
     # If we're tasked with escaping the content of a literal string
@@ -1148,23 +1343,23 @@ proc escapeStringContent(self: ErlangSourceBuilder, content: string): string =
 
 proc newBitArraySegment(self: var ErlangSourceBuilder): BitArrayKind =
   self.popLeftoverItems()
-  if not self.isAt(PositionKind.BitArray):
+  if not self.isAt(posBitArray):
     self.invalid("bit array segment")
 
-  if self.top.first:
-    self.top.first = false
+  if self.top.vBitArray.first:
+    self.top.vBitArray.first = false
   else:
     self.code.add ", "
 
-  self.top.bitArrayKind
+  self.top.vBitArray.kind
 
 proc newCaseClause(self: var ErlangSourceBuilder) =
   self.popLeftoverItems()
-  if not (self.isAt(PositionKind.Case) and self.top.caseExpected == ExpectedCaseItem.Branches):
+  if not (self.isAt(posCase) and self.top.vCase.expected.kind == ciBranches):
     self.invalid("case clause")
 
-  if self.top.first:
-    self.top.first = false
+  if self.top.vCase.expected.vBranches.first:
+    self.top.vCase.expected.vBranches.first = false
     self.code.add " of\n"
     self.indentation += INDENT
   else:
@@ -1173,11 +1368,11 @@ proc newCaseClause(self: var ErlangSourceBuilder) =
 
 proc newMapField(self: var ErlangSourceBuilder) =
   self.popLeftoverItems()
-  if not self.isAt(PositionKind.Map):
+  if not self.isAt(posMap):
     self.invalid("map field")
 
-  if self.top.first:
-    self.top.first = false
+  if self.top.vMap.first:
+    self.top.vMap.first = false
     self.code.add '\n'
   else:
     self.code.add ",\n"
@@ -1185,11 +1380,11 @@ proc newMapField(self: var ErlangSourceBuilder) =
 
 proc newClauseGuard(self: var ErlangSourceBuilder) =
   self.popLeftoverItems()
-  if not (self.isAt(PositionKind.CaseClause) and
-      self.top.clauseExpected == ExpectedCaseClauseItem.Guards and self.top.first):
+  if not (self.isAt(posCaseClause) and self.top.vCaseClause.expected.kind == ccGuards and
+      self.top.vCaseClause.expected.vGuards.first):
     self.invalid("new clause guard")
 
-  self.top.first = false
+  self.top.vCaseClause.expected.vGuards.first = false
 
 proc doNotWrapIfSegmentValueOrSize(self: var ErlangSourceBuilder) =
   ## You can call this before generating any expression (before the
@@ -1209,11 +1404,11 @@ proc doNotWrapIfSegmentValueOrSize(self: var ErlangSourceBuilder) =
   self.popLeftoverItems()
   # If we're about to generate a bit array segment value, or a size,
   # then we can skip the wrapping, otherwise this is not needed at all!
-  if self.isAt(PositionKind.BitArraySegment):
-    case self.top.segmentExpected
-    of ExpectedBitArraySegmentItem.Value: self.top.segmentValueNeedsWrapping = false
-    of ExpectedBitArraySegmentItem.Size: self.top.segmentSizeNeedsWrapping = false
-    of ExpectedBitArraySegmentItem.Specifiers: discard
+  if self.isAt(posBitArraySegment):
+    case self.top.vBitArraySegment.expected.kind
+    of bsValue: self.top.vBitArraySegment.segmentValueNeedsWrapping = false
+    of bsSize: self.top.vBitArraySegment.segmentSizeNeedsWrapping = false
+    of bsSpecifiers: discard
 
 proc doPrintStringContent(self: var ErlangSourceBuilder, content: string) =
   ## This can be used to output the content of a string wether that is a
@@ -1231,8 +1426,7 @@ proc doPrintStringContent(self: var ErlangSourceBuilder, content: string) =
   # We can't move the `new_expression` call down, that _must_ be the
   # first thing we do, so we check to see if the size if the next
   # thing we're expecting to see.
-  if self.isAt(PositionKind.BitArraySegment) and
-      self.top.segmentExpected == ExpectedBitArraySegmentItem.Size:
+  if self.isAt(posBitArraySegment) and self.top.vBitArraySegment.expected.kind == bsSize:
     self.code.add '"'
     self.code.add content
     self.code.add '"'
@@ -1246,9 +1440,9 @@ proc consListOfKind(self: var ErlangSourceBuilder, listKind: ListKind) =
   # If we were expecting the rest of a list and we generate a new
   # cons cell we can keep adding commas to separate items: we want
   # to show `[1, 2, 3]` rather than `[1 | [2 | [3 | []]]]`
-  if self.isAt(PositionKind.List) and self.top.listExpected == ExpectedListItem.Rest and
-      self.top.listKind == listKind:
-    self.top.listExpected = ExpectedListItem.First
+  if self.isAt(posList) and self.top.vList.expected == ExpectedListItem.Rest and
+      self.top.vList.kind == listKind:
+    self.top.vList.expected = ExpectedListItem.First
     self.code.add ", "
   # Otherwise we have to properly start a new list: push the `[` and
   # wait for the first item to be generated.
@@ -1257,16 +1451,15 @@ proc consListOfKind(self: var ErlangSourceBuilder, listKind: ListKind) =
     of ListKind.Pattern: self.newPattern()
     of ListKind.Expression: self.newExpression()
     self.code.add '['
-    self.position.add ErlangSourceBuilderPosition(
-      kind: PositionKind.List, listKind: listKind, listExpected: ExpectedListItem.First)
+    self.position.add inList(kind = listKind, expected = ExpectedListItem.First)
 
 proc emptyListOfKind(self: var ErlangSourceBuilder, listKind: ListKind) =
   self.popLeftoverItems()
   # If we were building a cons list and were expecting the end of the
   # list then we have to special case this: we don't want to render
   # it as: `[1, 2 | []]`, but as `[1, 2]`.
-  if self.isAt(PositionKind.List) and self.top.listExpected == ExpectedListItem.Rest and
-      self.top.listKind == listKind:
+  if self.isAt(posList) and self.top.vList.expected == ExpectedListItem.Rest and
+      self.top.vList.kind == listKind:
     # Crucially we don't want to call `new_expression` here: we
     # don't want the default handling.
     self.code.add ']'
@@ -1280,11 +1473,11 @@ proc emptyListOfKind(self: var ErlangSourceBuilder, listKind: ListKind) =
 
 proc newRecordField(self: var ErlangSourceBuilder) =
   self.popLeftoverItems()
-  if not self.isAt(PositionKind.RecordAttribute):
+  if not self.isAt(posRecordAttribute):
     raiseAssert "tried generating record field outside of record attribute"
 
-  if self.top.first:
-    self.top.first = false
+  if self.top.vRecordAttribute.first:
+    self.top.vRecordAttribute.first = false
   else:
     self.code.add ','
   self.code.add '\n'
@@ -1292,15 +1485,16 @@ proc newRecordField(self: var ErlangSourceBuilder) =
 
 proc docContent(self: var ErlangSourceBuilder, content: DocContent) =
   case content.kind
-  of DocContentKind.False: self.code.add "false"
+  of dcFalse: self.code.add "false"
   # Escaping strings generated inside doc attributes is a little
   # different: since their content doesn't come from a Gleam
   # literal string but freeform text, their content might contain
   # all sorts of unescaped characters.
-  of DocContentKind.String:
+  of dcString:
     self.code.add "~\""
-    self.code.add content.content.replace("\\", "\\\\").replace("\"", "\\\"")
+    self.code.add content.vString.replace("\\", "\\\\").replace("\"", "\\\"")
     self.code.add '"'
+
 
 ## How does pretty printing work? Here's a high level overview of how it works:
 ##
@@ -1543,7 +1737,7 @@ proc startRecordAttribute*(self: var ErlangSourceBuilder, recordName: string): U
   self.code.add quoteAtomName(recordName)
   self.code.add ", {"
   self.indentation += INDENT
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.RecordAttribute, first: true)
+  self.position.add inRecordAttribute(first = true)
 
 proc endRecordAttribute*(self: var ErlangSourceBuilder, record: Unit) =
   ## This closes the currently open record attribute.
@@ -1559,8 +1753,7 @@ proc recordField*(self: var ErlangSourceBuilder) =
   ## For an example on how to use this you can check the
   ## `start_record_attribute` docs.
   self.newRecordField()
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.RecordField, recordFieldExpected: ExpectedRecordFieldItem.Name)
+  self.position.add inRecordField(expected = ExpectedRecordFieldItem.Name)
 
 proc startFunctionSpec*(self: var ErlangSourceBuilder, name: string, arity: int): Unit =
   ## This starts a function type spec.
@@ -1589,7 +1782,7 @@ proc startFunctionSpec*(self: var ErlangSourceBuilder, name: string, arity: int)
   self.newTopLevelForm()
   self.code.add "\n-spec "
   self.code.add quoteAtomName(name)
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.FunctionSpec)
+  self.position.add inFunctionSpec()
 
 proc endFunctionSpec*(self: var ErlangSourceBuilder, functionSpec: Unit) =
   ## This closes the currently open function spec.
@@ -1638,8 +1831,7 @@ proc startTypeSpec*(self: var ErlangSourceBuilder, opaque: bool, name: string,
       self.code.add ", "
     self.code.add typeVariable
   self.code.add ") :: "
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.TypeSpec, typeSpecExpected: TypeSpecExpectedItem.TypeDefinition)
+  self.position.add inTypeSpec(expected = TypeSpecExpectedItem.TypeDefinition)
 
 proc endTypeSpec*(self: var ErlangSourceBuilder, typeSpec: Unit) =
   # For the pretty printer type specs do not need any extra book keeping.
@@ -1673,16 +1865,15 @@ proc startFunctionType*(self: var ErlangSourceBuilder): Unit =
   self.newType()
 
   let needsWrapping =
-    if self.isAt(PositionKind.FunctionSpec):
+    if self.isAt(posFunctionSpec):
       self.code.add '('
       false
     else:
       self.code.add "fun(("
       true
 
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.FunctionType, functionTypeExpected: ExpectedFunctionTypeItem.Arguments,
-    first: true, needsWrapping: needsWrapping)
+  self.position.add inFunctionType(
+    expected = expectArguments(first = true), needsWrapping = needsWrapping)
 
 proc endFunctionTypeArguments*(self: var ErlangSourceBuilder, functionType: Unit): Unit =
   ## This closes the currently open function type arguments list.
@@ -1720,7 +1911,7 @@ proc startBuiltInNamedType*(self: var ErlangSourceBuilder, typ: ErlangBuiltInTyp
   ## any().
   ## ```
   self.newType()
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.NamedType, first: true)
+  self.position.add inNamedType(first = true)
   self.code.add typ.asStr
   self.code.add '('
 
@@ -1742,7 +1933,7 @@ proc startCustomNamedType*(self: var ErlangSourceBuilder, name: string): Unit =
   ## wibble().
   ## ```
   self.newType()
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.NamedType, first: true)
+  self.position.add inNamedType(first = true)
   self.code.add quoteAtomName(name)
   self.code.add '('
 
@@ -1770,7 +1961,7 @@ proc startRemoteNamedType*(self: var ErlangSourceBuilder, module: ErlangModuleNa
   ## wibble:wobble().
   ## ```
   self.newType()
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.NamedType, first: true)
+  self.position.add inNamedType(first = true)
   self.code.add quoteAtomName(module.name)
   self.code.add ':'
   self.code.add quoteAtomName(name)
@@ -1800,7 +1991,7 @@ proc startTupleType*(self: var ErlangSourceBuilder): Unit =
   ## {nil, ok}.
   ## ```
   self.newType()
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.TupleType, first: true)
+  self.position.add inTupleType(first = true)
   self.code.add '{'
 
 proc endTupleType*(self: var ErlangSourceBuilder, tupl: Unit) =
@@ -1828,7 +2019,7 @@ proc startUnionType*(self: var ErlangSourceBuilder): Unit =
   ## ok | error.
   ## ```
   self.newType()
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.UnionType, first: true)
+  self.position.add inUnionType(first = true)
 
 proc endUnionType*(self: var ErlangSourceBuilder, unionType: Unit) =
   ## This takes a union type and closes it.
@@ -1920,7 +2111,7 @@ proc startFunction*(self: var ErlangSourceBuilder, location: SrcSpan, name: stri
 
   self.code.add ") ->"
   self.indentation += INDENT
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.FunctionStatement, first: true)
+  self.position.add inFunctionStatement(first = true)
 
 proc startAnonymousFunction*(self: var ErlangSourceBuilder, location: SrcSpan,
                              argumentsNames: openArray[(SrcSpan, string)]): Unit =
@@ -1954,8 +2145,7 @@ proc startAnonymousFunction*(self: var ErlangSourceBuilder, location: SrcSpan,
 
   self.code.add ") ->"
   self.indentation += INDENT
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.AnonymousFunctionStatement, first: true)
+  self.position.add inAnonymousFunctionStatement(first = true)
 
 proc endFunction*(self: var ErlangSourceBuilder, function: Unit) =
   ## This closes the currently open function spec.
@@ -1987,7 +2177,7 @@ proc startBlock*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   self.newExpression()
   self.code.add "begin"
   self.indentation += INDENT
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.Block, first: true)
+  self.position.add inBlock(first = true)
 
 proc endBlock*(self: var ErlangSourceBuilder, blck: Unit) =
   ## This takes a block and closes it.
@@ -2002,9 +2192,8 @@ proc wrapIfBeingCalled(self: var ErlangSourceBuilder) =
   # it is going to need to be wrapped in parentheses to be valid in
   # OTP 28: it is not ok to write `wibble()()`, but we have to write
   # `(wibble())()`.
-  if self.isAt(PositionKind.FunctionCall) and
-      self.top.callExpected == ExpectedCallItem.FunctionToBeCalled:
-    self.top.calledItemNeedsWrapping = true
+  if self.isAt(posFunctionCall) and self.top.vFunctionCall.expected.kind == clFunctionToBeCalled:
+    self.top.vFunctionCall.calledItemNeedsWrapping = true
 
 proc startRemoteCall*(self: var ErlangSourceBuilder, location: SrcSpan, module: ErlangModuleName,
                       function: string): Unit =
@@ -2032,9 +2221,8 @@ proc startRemoteCall*(self: var ErlangSourceBuilder, location: SrcSpan, module: 
   self.code.add quoteAtomName(module.name)
   self.code.add ':'
   self.code.add quoteAtomName(function)
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.FunctionCall, callExpected: ExpectedCallItem.Arguments, first: true,
-    calledItemNeedsWrapping: false)
+  self.position.add inFunctionCall(
+    expected = expectCallArguments(first = true), calledItemNeedsWrapping = false)
 
 proc startCall*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   ## This starts a function call.
@@ -2062,9 +2250,8 @@ proc startCall*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   self.wrapIfBeingCalled()
 
   self.newExpression()
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.FunctionCall, callExpected: ExpectedCallItem.FunctionToBeCalled,
-    calledItemNeedsWrapping: false)
+  self.position.add inFunctionCall(
+    expected = ExpectedCallItem(kind: clFunctionToBeCalled), calledItemNeedsWrapping = false)
 
 proc endCalledExpression*(self: var ErlangSourceBuilder, called: Unit): Unit =
   ## This must be called after generating the expression that is called in a
@@ -2075,8 +2262,8 @@ proc endCalledExpression*(self: var ErlangSourceBuilder, called: Unit): Unit =
   # So we can assert that we're no longer expecting the called expression
   # but the arguments, and none has been generated yet.
   self.popLeftoverItems()
-  if not (self.isAt(PositionKind.FunctionCall) and
-      self.top.callExpected == ExpectedCallItem.Arguments and self.top.first):
+  if not (self.isAt(posFunctionCall) and self.top.vFunctionCall.expected.kind == clArguments and
+      self.top.vFunctionCall.expected.vArguments.first):
     self.invalid("end called expression")
 
 proc endCall*(self: var ErlangSourceBuilder, call: Unit) =
@@ -2105,7 +2292,7 @@ proc startTuple*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   ## ```
   self.newExpression()
   self.code.add '{'
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.Tuple, first: true)
+  self.position.add inTuple(first = true)
 
 proc endTuple*(self: var ErlangSourceBuilder, tupl: Unit) =
   ## This takes a tuple type and closes it.
@@ -2142,7 +2329,7 @@ proc startMap*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   self.newExpression()
   self.code.add "#{"
   self.indentation += INDENT
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.Map, first: true)
+  self.position.add inMap(first = true)
 
 proc endMap*(self: var ErlangSourceBuilder, map: Unit) =
   ## This takes an open map and closes it.
@@ -2155,8 +2342,7 @@ proc mapField*(self: var ErlangSourceBuilder, location: SrcSpan) =
   ## is going to be the key, while the second one is going to be the
   ## associated value.
   self.newMapField()
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.MapField, mapFieldExpected: ExpectedMapFieldItem.Key)
+  self.position.add inMapField(expected = ExpectedMapFieldItem.Key)
 
 proc startBitArray*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   ## This starts an Erlang bitstring (that's a Gleam's BitArray).
@@ -2188,8 +2374,7 @@ proc startBitArray*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   self.doNotWrapIfSegmentValueOrSize()
   self.newExpression()
   self.code.add "<<"
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.BitArray, bitArrayKind: BitArrayKind.Expression, first: true)
+  self.position.add inBitArray(kind = BitArrayKind.Expression, first = true)
 
 proc endBitArray*(self: var ErlangSourceBuilder, bitArray: Unit) =
   ## This takes an open bit array and closes it.
@@ -2219,32 +2404,30 @@ proc bitArraySegment*(self: var ErlangSourceBuilder, location: SrcSpan) =
   ## If you wanna check an example of how this is used you can have a read at
   ## the ones in `start_bit_array`.
   let kind = self.newBitArraySegment()
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.BitArraySegment,
-    segmentExpected: ExpectedBitArraySegmentItem.Value, bitArrayKind: kind,
+  self.position.add inBitArraySegment(
+    expected = expectValue(kind),
     # We assume all values are going to have to be wrapped, better
     # be safe than sorry!
     # We will turn this off only for certain expressions we know
     # are safe to not wrap, like bare integers and strings.
-    segmentValueNeedsWrapping: true,
-    segmentSizeNeedsWrapping: true)
+    segmentValueNeedsWrapping = true,
+    segmentSizeNeedsWrapping = true)
 
 proc bitArraySegmentDefaultSize*(self: var ErlangSourceBuilder) =
   ## You can call this when a bit array segment has no explicit size, and the
   ## default Erlang behaviour is fine.
   self.popLeftoverItems()
 
-  if self.isAt(PositionKind.BitArraySegment) and
-      self.top.segmentExpected == ExpectedBitArraySegmentItem.Size:
+  if self.isAt(posBitArraySegment) and self.top.vBitArraySegment.expected.kind == bsSize:
     # We are now expecting to see the specifiers list
-    self.top.segmentExpected = ExpectedBitArraySegmentItem.Specifiers
-    if self.top.segmentValueNeedsWrapping:
+    self.top.vBitArraySegment.expected = ExpectedBitArraySegmentItem(kind: bsSpecifiers)
+    if self.top.vBitArraySegment.segmentValueNeedsWrapping:
       self.code.add ')'
-      self.top.segmentValueNeedsWrapping = false
+      self.top.vBitArraySegment.segmentValueNeedsWrapping = false
     # We have the default atom as a size, that means we don't have to
     # print anything at all! The size doesn't need any wrapping because
     # there's no size at all.
-    self.top.segmentSizeNeedsWrapping = false
+    self.top.vBitArraySegment.segmentSizeNeedsWrapping = false
   else:
     self.invalid("segment default size")
 
@@ -2256,16 +2439,16 @@ proc bitArraySegmentSpecifiers*(self: var ErlangSourceBuilder,
   ## specifiers; in that case you can pass this an empty list and the
   ## Erlang's default will be applied.
   self.popLeftoverItems()
-  if not (self.isAt(PositionKind.BitArraySegment) and
-      self.top.segmentExpected == ExpectedBitArraySegmentItem.Specifiers):
+  if not (self.isAt(posBitArraySegment) and
+      self.top.vBitArraySegment.expected.kind == bsSpecifiers):
     self.invalid("bit array segment specifier")
 
-  if self.top.segmentValueNeedsWrapping:
+  if self.top.vBitArraySegment.segmentValueNeedsWrapping:
     self.code.add ')'
-    self.top.segmentValueNeedsWrapping = false
-  elif self.top.segmentSizeNeedsWrapping:
+    self.top.vBitArraySegment.segmentValueNeedsWrapping = false
+  elif self.top.vBitArraySegment.segmentSizeNeedsWrapping:
     self.code.add ')'
-    self.top.segmentSizeNeedsWrapping = false
+    self.top.vBitArraySegment.segmentSizeNeedsWrapping = false
 
   var firstSpecifier = true
   # Upstream sorts the specifiers with a stable sort and a comparison that
@@ -2274,25 +2457,25 @@ proc bitArraySegmentSpecifiers*(self: var ErlangSourceBuilder,
   # and what the sort does then is not specified; a segment has one at most.)
   var sorted: seq[BitArraySegmentSpecifier]
   for specifier in specifiers:
-    if specifier.kind != BitArraySegmentSpecifierKind.Unit: sorted.add specifier
+    if specifier.kind != spUnit: sorted.add specifier
   for specifier in specifiers:
-    if specifier.kind == BitArraySegmentSpecifierKind.Unit: sorted.add specifier
+    if specifier.kind == spUnit: sorted.add specifier
 
   for specifier in sorted:
     let text = case specifier.kind
-      of BitArraySegmentSpecifierKind.Utf8: "utf8"
-      of BitArraySegmentSpecifierKind.Utf16: "utf16"
-      of BitArraySegmentSpecifierKind.Utf32: "utf32"
-      of BitArraySegmentSpecifierKind.Integer: "integer"
-      of BitArraySegmentSpecifierKind.Float: "float"
-      of BitArraySegmentSpecifierKind.Binary: "binary"
-      of BitArraySegmentSpecifierKind.Bitstring: "bitstring"
-      of BitArraySegmentSpecifierKind.Signed: "signed"
-      of BitArraySegmentSpecifierKind.Unsigned: "unsigned"
-      of BitArraySegmentSpecifierKind.Little: "little"
-      of BitArraySegmentSpecifierKind.Big: "big"
-      of BitArraySegmentSpecifierKind.Native: "native"
-      of BitArraySegmentSpecifierKind.Unit: "unit:" & $specifier.unit
+      of spUtf8: "utf8"
+      of spUtf16: "utf16"
+      of spUtf32: "utf32"
+      of spInteger: "integer"
+      of spFloat: "float"
+      of spBinary: "binary"
+      of spBitstring: "bitstring"
+      of spSigned: "signed"
+      of spUnsigned: "unsigned"
+      of spLittle: "little"
+      of spBig: "big"
+      of spNative: "native"
+      of spUnit: "unit:" & $specifier.vUnit
     if firstSpecifier:
       firstSpecifier = false
       self.code.add '/'
@@ -2370,8 +2553,7 @@ proc startCase*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   ## ```
   self.newExpression()
   self.code.add "case "
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.Case, caseExpected: ExpectedCaseItem.Subject)
+  self.position.add inCase(expected = ExpectedCaseItem(kind: ciSubject))
 
 proc endCaseSubject*(self: var ErlangSourceBuilder, cas: Unit): Unit =
   ## This ends the open case subject, after this you can start generating the
@@ -2381,8 +2563,8 @@ proc endCaseSubject*(self: var ErlangSourceBuilder, cas: Unit): Unit =
   # So we can assert that we're no longer expecting the subject but the
   # clauses and none has been generated yet.
   self.popLeftoverItems()
-  if not (self.isAt(PositionKind.Case) and self.top.caseExpected == ExpectedCaseItem.Branches and
-      self.top.first):
+  if not (self.isAt(posCase) and self.top.vCase.expected.kind == ciBranches and
+      self.top.vCase.expected.vBranches.first):
     self.invalid("end case subject")
 
 proc endCase*(self: var ErlangSourceBuilder, cas: Unit) =
@@ -2398,8 +2580,7 @@ proc startCaseClause*(self: var ErlangSourceBuilder, location: SrcSpan): Unit =
   ## For an example on how to generate a full case clause check the
   ## `start_case` documentation.
   self.newCaseClause()
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.CaseClause, clauseExpected: ExpectedCaseClauseItem.Pattern)
+  self.position.add inCaseClause(expected = ExpectedCaseClauseItem(kind: ccPattern))
 
 proc endClausePattern*(self: var ErlangSourceBuilder, clausePattern: Unit): Unit =
   ## This ends the case clause's pattern. After this you must generate the
@@ -2407,8 +2588,7 @@ proc endClausePattern*(self: var ErlangSourceBuilder, clausePattern: Unit): Unit
   ## If the clause you're generating has no guards you can immediately call
   ## that function without generating anything inbetween.
   self.closeCurrentlyOpenItem()
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.CaseClause, clauseExpected: ExpectedCaseClauseItem.Guards, first: true)
+  self.position.add inCaseClause(expected = expectGuards(first = true))
 
 proc startClauseGuard*(self: var ErlangSourceBuilder): Unit =
   ## You must call this before generating the guard of a case clause.
@@ -2436,7 +2616,7 @@ proc startClauseGuard*(self: var ErlangSourceBuilder): Unit =
   ## should always call this function just once. A gleam guard is always
   ## compiled as a single Erlang guard with a single expression.
   self.newClauseGuard()
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.ClauseGuard)
+  self.position.add inClauseGuard()
 
 proc endClauseGuard*(self: var ErlangSourceBuilder, clauseGuard: Unit) =
   ## This ends an open clause guards. Anything that is generated after
@@ -2449,8 +2629,7 @@ proc endClauseGuards*(self: var ErlangSourceBuilder, clauseGuards: Unit): Unit =
   ## `end_clause_body` is called.
   self.closeCurrentlyOpenItem()
   self.indentation += INDENT
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.CaseClause, clauseExpected: ExpectedCaseClauseItem.Body, first: true)
+  self.position.add inCaseClause(expected = expectBody(first = true))
 
 proc endClauseBody*(self: var ErlangSourceBuilder, clauseBody: Unit) =
   ## This takes an open clause body and ends it.
@@ -2488,7 +2667,7 @@ proc unaryOperator*(self: var ErlangSourceBuilder, location: SrcSpan, operator: 
   self.newExpression()
   self.code.add operator
   self.code.add ' '
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.UnaryOperator)
+  self.position.add inUnaryOperator()
 
 proc binaryOperator*(self: var ErlangSourceBuilder, location: SrcSpan, operator: string) =
   ## This generated the code that is going to apply the given binary operator
@@ -2513,14 +2692,13 @@ proc binaryOperator*(self: var ErlangSourceBuilder, location: SrcSpan, operator:
   # side), then we want to wrap it in parentheses to avoid precedence
   # confusion!
   let needsWrapping =
-    self.isAt(PositionKind.BinaryOperator) or self.isAt(PositionKind.UnaryOperator)
+    self.isAt(posBinaryOperator) or self.isAt(posUnaryOperator)
 
   self.newExpression()
   if needsWrapping:
     self.code.add '('
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.BinaryOperator, binaryExpected: ExpectedBinaryOperatorSide.Left,
-    needsWrapping: needsWrapping, operator: operator)
+  self.position.add inBinaryOperator(
+    expected = ExpectedBinaryOperatorSide.Left, needsWrapping = needsWrapping, operator = operator)
 
 proc functionReference*(self: var ErlangSourceBuilder, location: SrcSpan,
                         module: Option[ErlangModuleName], name: string, arity: int) =
@@ -2567,8 +2745,7 @@ proc matchOperator*(self: var ErlangSourceBuilder, location: SrcSpan) =
   ## X = 1.
   ## ```
   self.newExpression()
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.MatchOperator, matchExpected: ExpectedMatchSide.Pattern)
+  self.position.add inMatchOperator(expected = ExpectedMatchSide.Pattern)
 
 proc matchPattern*(self: var ErlangSourceBuilder, location: SrcSpan) =
   ## This is used to create the code that corresponds to a match pattern.
@@ -2595,8 +2772,7 @@ proc matchPattern*(self: var ErlangSourceBuilder, location: SrcSpan) =
   ## this only when generating code for Gleam's "as" patterns where the right
   ## hand side is just a variable pattern.
   self.newPattern()
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.MatchPattern, matchPatternExpected: ExpectedMatchPatternSide.Left)
+  self.position.add inMatchPattern(expected = ExpectedMatchPatternSide.Left)
 
 proc variablePattern*(self: var ErlangSourceBuilder, location: SrcSpan, name: string) =
   ## This creates a variable pattern with the given name.
@@ -2696,7 +2872,7 @@ proc startTuplePattern*(self: var ErlangSourceBuilder, location: SrcSpan): Unit 
   ## ```
   self.newPattern()
   self.code.add '{'
-  self.position.add ErlangSourceBuilderPosition(kind: PositionKind.TuplePattern, first: true)
+  self.position.add inTuplePattern(first = true)
 
 proc endTuplePattern*(self: var ErlangSourceBuilder, tupl: Unit) =
   ## This takes an open tuple pattern and closes it.
@@ -2732,8 +2908,7 @@ proc startBitArrayPattern*(self: var ErlangSourceBuilder, location: SrcSpan): Un
   ## ```
   self.newPattern()
   self.code.add "<<"
-  self.position.add ErlangSourceBuilderPosition(
-    kind: PositionKind.BitArray, bitArrayKind: BitArrayKind.Pattern, first: true)
+  self.position.add inBitArray(kind = BitArrayKind.Pattern, first = true)
 
 proc endBitArrayPattern*(self: var ErlangSourceBuilder, bitArray: Unit) =
   ## This takes an open bit array pattern and closes it.
