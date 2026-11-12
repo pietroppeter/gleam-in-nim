@@ -365,7 +365,7 @@
           "what": "What every name refers to: environments, scopes, shadowing, definitions used before they are written.",
           "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
           "post": "names-and-scopes",
-          "pr": "",
+          "pr": "19",
           "owner": "Explain compiler stages from scratch"
         },
         {
@@ -397,11 +397,11 @@
         {
           "id": "explain-types",
           "kind": "research",
-          "status": "planned",
+          "status": "done",
           "title": "From scratch: what a type checker is",
           "what": "Type inference from nothing: type variables, unification, generalisation, and why Gleam needs no annotations.",
           "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
-          "post": "",
+          "post": "what-a-type-checker-is",
           "pr": "",
           "owner": "Explain compiler stages from scratch"
         },

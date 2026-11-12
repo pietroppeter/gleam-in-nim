@@ -1,4 +1,4 @@
-## devlog: 12 Nov 2026 R | Names and scopes | The parser built a tree full of names. This stage works out what each one refers to: scopes, shadowing, two passes over the top level, and why Gleam and Nimony do it in the middle of something else.
+## devlog: 12 Nov 2026 S | Names and scopes | The parser built a tree full of names. This stage works out what each one refers to: scopes, shadowing, two passes over the top level, and why Gleam and Nimony do it in the middle of something else.
 ## kind: research
 import std/[strformat, strutils]
 import nimib
