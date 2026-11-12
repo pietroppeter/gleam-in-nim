@@ -11,8 +11,8 @@ the site as *For coding agents*, so a change here is reviewed like any page.
   (`docs/data/coverage.json` holds the pin the pages show; `reference/` holds how to fetch it).
 - The Rust compiler is the specification. When the Nim and the Rust disagree, the Nim is wrong,
   unless a decision record says the difference is wanted.
-- Gleam is Apache-2.0. A file ported from it starts with a header naming the Rust file it comes
-  from and the pinned commit, and keeps the Apache-2.0 notice. Never copy from a source whose
+- Gleam is Apache-2.0, and so is this repository (`LICENSE`, `NOTICE`). A file ported from it
+  starts with a header naming the Rust file it comes from (`## port-of:`). Never copy from a source whose
   licence does not allow it.
 - Everything outside this repository is read only: no issues, comments or pull requests on other
   projects, Gleam's included.
@@ -119,6 +119,11 @@ nbSave
   from code or a data file, not typed by hand. Code in other languages is a fence with its
   language (`gleam`, `rust`, `erlang`, `elixir`, `js`, `python`, `sh`, `toml`, `json`), highlighted
   at build time.
+- The series on the stages of a compiler (*What a lexer is*, and the parts after it) explains
+  each stage from scratch with a toy language, Barlume, whose compiler grows by one file per
+  post in `docs/devlog/data/barlume/`. `series.json` there lists the parts: a new part sets its
+  `post`, and every post of the series prints the list with `seriesTable`. Barlume is ours,
+  not a port, and stays out of `src/`.
 - Say what was checked and what was not. A claim about Gleam, the BEAM or a person links its
   source. If a source could not be read, say so.
 
@@ -146,7 +151,13 @@ nbSave
 - A living page (home, roadmap, coverage map, this one) is kept up to date and reads its data
   from `docs/data/`. A new living page gets a card on the home page (`docs/index.nim`).
 - Every link leads somewhere. Pages are served as `<name>/index.html`, so a post links the
-  roadmap as `../../roadmap/` and another post as `../<slug>/`.
+  roadmap as `../../roadmap/` and another post as `../<slug>/`. After building the pages,
+  `nim r tools/links.nim` checks every link inside the site (files and `#anchors`) and to files
+  of this repository; `nim r -d:ssl tools/links.nim --external` asks other sites too (404 and
+  410 fail). CI runs the first on every run and the second once a week.
+- `nim r tools/drift.nim --fail --allow:docs/theme.nim --allow:docs/blocks.nim
+  --allow:docs/review.nim docs/` (in CI) fails when a page holds HTML, a style, a script or a
+  hex colour.
 
 ## Review mode
 

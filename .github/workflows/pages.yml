@@ -8,6 +8,9 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  # once a week, so a link to another site that broke is caught even when nothing here changed
+  schedule:
+    - cron: "17 5 * * 1"
 
 concurrency:
   group: pages-${{ github.event.pull_request.number || github.ref }}
@@ -58,6 +61,15 @@ jobs:
 
       - name: Build the pages
         run: docs/all
+
+      # Every link of the pages leads to a page (and its #anchor) of the site, or to a file of
+      # this repository. Links to other sites (no 404 or 410) are checked only once a week and by
+      # hand: they break without a change here, and they slow every run.
+      - name: Links
+        run: nim r -d:ssl tools/links.nim ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && '--external' || '' }}
+
+      - name: No HTML, styles or colours in the pages
+        run: nim r tools/drift.nim --fail --allow:docs/theme.nim --allow:docs/blocks.nim --allow:docs/review.nim docs/
 
       - name: Assemble site
         run: |
