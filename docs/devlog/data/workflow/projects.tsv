@@ -1,0 +1,6 @@
+project	what	specs	posts	took
+nanuq	Polars data frames for Nim	48	15	The first big one: a coverage map against a reference (Polars), specs with OpenSpec, a devlog, and for every release a design post and an explainer on real data.
+tabelline	great tables for Nim, after gt and Great Tables	9	20	The most advanced: three threads per release (build it, use it, port the references), a design system with two looks, blocks instead of HTML, and the review mode.
+parloku	a word puzzle game	14	0	Specs whose scenarios run and animate on the specs page; no coverage map, because a game follows no reference.
+cicak	a REPL for Nim, an experiment	2	5	A devlog and benchmarks; the whole site built by one program, which made CI fast.
+cadero	a mini CAD for furniture	0	0	Explainers as the product: nimib pages with a 3D viewer, a look of its own, no specs.

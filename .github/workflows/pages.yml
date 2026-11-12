@@ -1,0 +1,93 @@
+name: Pages
+
+# Runs the tests, builds every page (home, roadmap, coverage map, devlog) and, on main, deploys
+# docs/ to GitHub Pages. The HTML is not committed: it is built here, so it always matches the
+# sources. Pages must use "GitHub Actions" as its source (Settings > Pages).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # the whole history: a page's version is the commits that changed it
+
+      - name: No committed HTML
+        run: |
+          html=$(git ls-files '*.html')
+          if [ -n "$html" ]; then
+            for f in $html; do echo "::error file=$f::generated page committed: CI builds it, remove it with git rm --cached $f"; done
+            exit 1
+          fi
+
+      - uses: jiro4989/setup-nim-action@v2
+        with:
+          nim-version: "2.2.4"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # the same setup as a laptop or a coding-agent sandbox: PCRE for nimib's markdown, and
+      # the docs' dependencies at the commits of deps.lock
+      - uses: actions/cache@v4
+        with:
+          path: deps
+          key: deps-${{ hashFiles('deps.lock') }}
+      - run: sh tools/setup.sh
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/nim
+          key: nimcache-2.2.4-${{ hashFiles('src/**/*.nim', 'docs/**/*.nim', 'tests/**/*.nim', 'tools/*.nim', '*.nims', 'nim.cfg', 'deps.lock') }}
+          restore-keys: nimcache-2.2.4-
+
+      - name: Tests
+        run: |
+          if [ -f tests/all.nim ]; then nim r tests/all.nim; else echo "no tests/all.nim yet"; fi
+
+      # compiled and run as two steps, so the timings show which of the two is slow
+      - name: Compile the pages
+        run: nim c -d:nimibQuiet docs/all.nim
+
+      - name: Build the pages
+        run: docs/all
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          (cd docs && find . -name '*.html' | tar -c -T - | tar -x -C ../_site)
+          # the files every page shares: site.css (written by the build), the fonts, review.js
+          cp -r docs/assets _site/assets
+          # images and data that posts link to
+          if [ -d docs/devlog/data ]; then (cd docs && find devlog/data -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.svg' -o -name '*.gif' -o -name '*.webp' \) | tar -c -T - | tar -x -C ../_site); fi
+          touch _site/.nojekyll
+          find _site -name '*.html' | sort
+          du -sh _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,511 @@
+{
+  "pin": {
+    "repo": "https://github.com/gleam-lang/gleam",
+    "tag": "v1.19.2",
+    "commit": "ed41eace2dd89054eb2d744c33925261d1eff32e"
+  },
+  "stages": [
+    {
+      "id": "lex",
+      "name": "Lexer",
+      "what": "source text to tokens"
+    },
+    {
+      "id": "parse",
+      "name": "Parser",
+      "what": "tokens to the untyped tree"
+    },
+    {
+      "id": "format",
+      "name": "Formatter",
+      "what": "the tree back to source text"
+    },
+    {
+      "id": "analyse",
+      "name": "Type checker",
+      "what": "the untyped tree to the typed tree"
+    },
+    {
+      "id": "errors",
+      "name": "Diagnostics",
+      "what": "errors and warnings, as text a person can act on"
+    },
+    {
+      "id": "erlang",
+      "name": "Erlang backend",
+      "what": "the typed tree to Erlang source"
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript backend",
+      "what": "the typed tree to JavaScript and TypeScript declarations"
+    },
+    {
+      "id": "build",
+      "name": "Build tool",
+      "what": "packages, modules, caches, dependencies"
+    },
+    {
+      "id": "cli",
+      "name": "Command line",
+      "what": "gleam build, run, test, format, add..."
+    },
+    {
+      "id": "lsp",
+      "name": "Language server",
+      "what": "the compiler as an editor service"
+    }
+  ],
+  "modules": [
+    {
+      "module": "compiler-cli",
+      "stage": "cli",
+      "rust_code": 9518,
+      "rust_tests": 2931,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/(lib)",
+      "stage": "build",
+      "rust_code": 111,
+      "rust_tests": 205,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/analyse",
+      "stage": "analyse",
+      "rust_code": 2778,
+      "rust_tests": 24,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/ast",
+      "stage": "parse",
+      "rust_code": 10201,
+      "rust_tests": 1214,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/ast_folder",
+      "stage": "parse",
+      "rust_code": 1751,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/bit_array",
+      "stage": "parse",
+      "rust_code": 434,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/build",
+      "stage": "build",
+      "rust_code": 5394,
+      "rust_tests": 2247,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/call_graph",
+      "stage": "analyse",
+      "rust_code": 589,
+      "rust_tests": 752,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/codegen",
+      "stage": "build",
+      "rust_code": 353,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/config",
+      "stage": "build",
+      "rust_code": 1712,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/dep_tree",
+      "stage": "analyse",
+      "rust_code": 175,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/dependency",
+      "stage": "build",
+      "rust_code": 1571,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/derivation_tree",
+      "stage": "build",
+      "rust_code": 438,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/diagnostic",
+      "stage": "errors",
+      "rust_code": 157,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/docs",
+      "stage": "build",
+      "rust_code": 1849,
+      "rust_tests": 1448,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/encryption",
+      "stage": "build",
+      "rust_code": 41,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/erlang",
+      "stage": "erlang",
+      "rust_code": 6750,
+      "rust_tests": 6810,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/error",
+      "stage": "errors",
+      "rust_code": 5568,
+      "rust_tests": 291,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/exhaustiveness",
+      "stage": "analyse",
+      "rust_code": 5185,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/hex",
+      "stage": "build",
+      "rust_code": 454,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/io",
+      "stage": "build",
+      "rust_code": 1067,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/javascript",
+      "stage": "javascript",
+      "rust_code": 9771,
+      "rust_tests": 12032,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/manifest",
+      "stage": "build",
+      "rust_code": 1000,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/metadata",
+      "stage": "build",
+      "rust_code": 673,
+      "rust_tests": 2031,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/package_interface",
+      "stage": "build",
+      "rust_code": 694,
+      "rust_tests": 366,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/parse",
+      "stage": "parse",
+      "rust_code": 6759,
+      "rust_tests": 2962,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/parse/lexer",
+      "stage": "lex",
+      "rust_code": 1534,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/parse/token",
+      "stage": "lex",
+      "rust_code": 363,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/paths",
+      "stage": "build",
+      "rust_code": 212,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/reference",
+      "stage": "analyse",
+      "rust_code": 861,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/requirement",
+      "stage": "build",
+      "rust_code": 246,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/strings",
+      "stage": "errors",
+      "rust_code": 183,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/type_",
+      "stage": "analyse",
+      "rust_code": 16838,
+      "rust_tests": 20090,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/uid",
+      "stage": "analyse",
+      "rust_code": 44,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/version",
+      "stage": "build",
+      "rust_code": 8,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-core/warning",
+      "stage": "errors",
+      "rust_code": 1646,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "compiler-wasm",
+      "stage": "cli",
+      "rust_code": 369,
+      "rust_tests": 130,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "erlang-generation",
+      "stage": "erlang",
+      "rust_code": 5723,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "erlang-term-format",
+      "stage": "erlang",
+      "rust_code": 256,
+      "rust_tests": 379,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "format",
+      "stage": "format",
+      "rust_code": 4561,
+      "rust_tests": 11152,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "gleam-bin",
+      "stage": "cli",
+      "rust_code": 7,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "hexpm",
+      "stage": "build",
+      "rust_code": 3046,
+      "rust_tests": 1711,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "language-server",
+      "stage": "lsp",
+      "rust_code": 22647,
+      "rust_tests": 31969,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "pretty-arena",
+      "stage": "format",
+      "rust_code": 1542,
+      "rust_tests": 0,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    },
+    {
+      "module": "src-span",
+      "stage": "parse",
+      "rust_code": 234,
+      "rust_tests": 124,
+      "status": "planned",
+      "nim": "",
+      "post": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+deps/
+nimcache/
+# every page is generated (docs/all.nim) and built by CI (.github/workflows/pages.yml)
+*.html
+docs/assets/site.css
+_site/
+# compiled binaries
+docs/all
+tools/coverage_seed
+tests/all
+tests/test_*
+!tests/test_*.nim
+!tests/test_*/

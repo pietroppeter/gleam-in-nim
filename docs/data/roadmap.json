@@ -1,0 +1,42 @@
+{
+  "phases": [
+    {
+      "id": "0",
+      "title": "Before the first line",
+      "goal": "Know what is being ported, where it comes from, how others did such a thing, and how this project will work. Every step is an explainer.",
+      "steps": [
+        {"id": "workflow", "kind": "tooling", "status": "started", "title": "The workflow and the repo",
+         "what": "How Pietro has been working with nimib and AI, and this site made accordingly: devlog, review mode, the look, roadmap, coverage map, CI.",
+         "post": "workflow", "pr": ""},
+        {"id": "gleam", "kind": "research", "status": "started", "title": "Gleam, its people and its programs",
+         "what": "The language, how it is used, the projects big and small, the people; and the corpus of Gleam programs the port will be tested on.",
+         "post": "", "pr": ""},
+        {"id": "beam", "kind": "research", "status": "started", "title": "The BEAM and Erlang",
+         "what": "A short history, what it solves, how a language is built on it, how Gleam lives on it.",
+         "post": "", "pr": ""},
+        {"id": "elm", "kind": "research", "status": "started", "title": "Elm, the other root",
+         "what": "Its history and principles, the type system, developer experience, and what Gleam took from it.",
+         "post": "", "pr": ""},
+        {"id": "architecture", "kind": "plan", "status": "started", "title": "The compiler, taken apart, and the plan",
+         "what": "How compilers are made and how Gleam's is; its history; the components, the order to port them, which backend first, how each step is verified.",
+         "post": "", "pr": ""},
+        {"id": "rewrites", "kind": "research", "status": "started", "title": "Other rewrites",
+         "what": "How a big project is rewritten in another language, by people and by AI: what worked, what did not, what to copy.",
+         "post": "", "pr": ""},
+        {"id": "practices", "kind": "tooling", "status": "started", "title": "How to develop",
+         "what": "Specs, decision records, tooling to verify the port and tooling for Pietro to review it.",
+         "post": "", "pr": ""}
+      ]
+    },
+    {
+      "id": "1",
+      "title": "The front end",
+      "goal": "Gleam source in, a tree out, the same tree the Rust compiler builds. The plan thread fills in this phase and the next ones.",
+      "steps": [
+        {"id": "lexer", "kind": "port", "status": "started", "title": "The lexer",
+         "what": "Source text to tokens: the first piece of the compiler in Nim, checked token by token against the Rust lexer.",
+         "post": "", "pr": ""}
+      ]
+    }
+  ]
+}
