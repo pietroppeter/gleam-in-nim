@@ -1,4 +1,4 @@
-## devlog: 12 Nov 2026 M | What the real compiler says | The reference Gleam compiler was run over every package of the corpus, three ways, and its answers are now the expected results the Nim port is compared with.
+## devlog: 12 Nov 2026 N | What the real compiler says | The reference Gleam compiler was run over every package of the corpus, three ways, and its answers are now the expected results the Nim port is compared with.
 ## kind: tooling
 import std/[algorithm, json, os, strutils, sequtils, tables]
 import nimib
