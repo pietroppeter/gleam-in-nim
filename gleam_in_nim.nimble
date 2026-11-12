@@ -3,7 +3,7 @@
 version       = "0.0.1"
 author        = "Pietro Peterlongo"
 description   = "The Gleam compiler, ported to Nim one explained step at a time"
-license       = "MIT"
+license       = "Apache-2.0"
 srcDir        = "src"
 
 # Dependencies
