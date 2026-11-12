@@ -1,0 +1,23 @@
+{
+  "format": {
+    "cases": 3420,
+    "of": 3420,
+    "same": 3420,
+    "different": 0,
+    "pin": "1.19.2"
+  },
+  "erlang": {
+    "cases": 476,
+    "of": 476,
+    "same": 476,
+    "different": 0,
+    "pin": "1.19.2"
+  },
+  "javascript": {
+    "cases": 843,
+    "of": 843,
+    "same": 843,
+    "different": 0,
+    "pin": "1.19.2"
+  }
+}

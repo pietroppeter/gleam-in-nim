@@ -1,0 +1,1329 @@
+{
+  "pin": "1.19.2",
+  "total": 4377,
+  "with_source": 2535,
+  "sections": {
+    "SOURCE CODE": 2535,
+    "(plain)": 953,
+    "ERROR": 878,
+    "AFTER ACTION": 806,
+    "BEFORE ACTION": 806,
+    "COMPILED JAVASCRIPT": 789,
+    "COMPILED ERLANG": 467,
+    "WARNING": 355,
+    "AFTER RENAME": 195,
+    "BEFORE RENAME": 195,
+    "Hover content (markdown) -----": 141,
+    "Completion content -----": 136,
+    "Jumping from `src/app.gleam`": 53,
+    "TYPESCRIPT DEFINITIONS": 46,
+    "Signature help -----": 25,
+    "Jumped to `src/app.gleam`": 25,
+    "SOURCE MAP": 20,
+    "Ranges -----": 12,
+    "Code -----": 12,
+    "Jumped to `src/example_module.gleam`": 9,
+    "After applying completion -----": 7,
+    "Jumped to `build/packages/hex/src/example_module.gleam`": 5,
+    "Jumped to `src/wibble.gleam`": 4,
+    "Jumped to `dep/src/wibble.gleam`": 4,
+    "Fold 1 (lines 0..1) -----": 3,
+    "Fold 1 (lines 0..2) -----": 3,
+    "Jumped to `dep/src/box.gleam`": 3,
+    "FILE OPERATIONS -----": 3,
+    "Jumped to `dep/src/example_module.gleam`": 2,
+    "Jumped to `src/mod.gleam`": 2,
+    "Fold 1 (lines 0..3) -----": 2,
+    "Jumped to `dep/src/wobble.gleam`": 2,
+    "Fold 2 (lines 2..3) -----": 2,
+    "Jumped to `build/packages/hex/src/wibble.gleam`": 2,
+    "Fold 1 (lines 1..2) -----": 1,
+    "Fold 3 (lines 7..10) -----": 1,
+    "Fold 1 (lines 4..7) -----": 1,
+    "Fold 2 (lines 4..6) -----": 1,
+    "Fold 4 (lines 8..10) -----": 1,
+    "Fold 2 (lines 6..8) -----": 1,
+    "Fold 4 (lines 12..14) -----": 1,
+    "Fold 1 (lines 1..9) -----": 1,
+    "Fold 1 (lines 1..7) -----": 1,
+    "Fold 3 (lines 5..6) -----": 1,
+    "Fold 3 (lines 7..12) -----": 1,
+    "Fold 2 (lines 3..5) -----": 1,
+    "Fold 2 (lines 3..4) -----": 1
+  },
+  "areas": [
+    {
+      "crate": "compiler-cli",
+      "area": "dependencies",
+      "snaps": 5,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-cli",
+      "area": "lib",
+      "snaps": 1,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-cli",
+      "area": "new",
+      "snaps": 4,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "build",
+      "snaps": 3,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "codegen",
+      "snaps": 2,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "config",
+      "snaps": 16,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "dependency",
+      "snaps": 6,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "docs",
+      "snaps": 49,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 483,
+      "with_source": 476
+    },
+    {
+      "crate": "compiler-core",
+      "area": "error",
+      "snaps": 42,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 843,
+      "with_source": 843
+    },
+    {
+      "crate": "compiler-core",
+      "area": "manifest",
+      "snaps": 4,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "package_interface",
+      "snaps": 18,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "parse",
+      "snaps": 264,
+      "with_source": 203
+    },
+    {
+      "crate": "compiler-core",
+      "area": "requirement",
+      "snaps": 3,
+      "with_source": 0
+    },
+    {
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 1016,
+      "with_source": 1013
+    },
+    {
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 1530,
+      "with_source": 0
+    },
+    {
+      "crate": "test-commands",
+      "area": "tests",
+      "snaps": 6,
+      "with_source": 0
+    },
+    {
+      "crate": "test-output",
+      "area": "tests",
+      "snaps": 23,
+      "with_source": 0
+    },
+    {
+      "crate": "test-package-compiler",
+      "area": "tests",
+      "snaps": 41,
+      "with_source": 0
+    },
+    {
+      "crate": "test-project-compiler",
+      "area": "generated_tests",
+      "snaps": 18,
+      "with_source": 0
+    }
+  ],
+  "files": [
+    {
+      "source": "compiler-cli/src/dependencies.rs",
+      "crate": "compiler-cli",
+      "area": "dependencies",
+      "snaps": 1,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 1
+      }
+    },
+    {
+      "source": "compiler-cli/src/dependencies/tests.rs",
+      "crate": "compiler-cli",
+      "area": "dependencies",
+      "snaps": 4,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 4
+      }
+    },
+    {
+      "source": "compiler-cli/src/lib.rs",
+      "crate": "compiler-cli",
+      "area": "lib",
+      "snaps": 1,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 1
+      }
+    },
+    {
+      "source": "compiler-cli/src/new/tests.rs",
+      "crate": "compiler-cli",
+      "area": "new",
+      "snaps": 4,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 4
+      }
+    },
+    {
+      "source": "compiler-core/src/build/package_compiler/tests.rs",
+      "crate": "compiler-core",
+      "area": "build",
+      "snaps": 3,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 3
+      }
+    },
+    {
+      "source": "compiler-core/src/codegen.rs",
+      "crate": "compiler-core",
+      "area": "codegen",
+      "snaps": 2,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/config.rs",
+      "crate": "compiler-core",
+      "area": "config",
+      "snaps": 16,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 16
+      }
+    },
+    {
+      "source": "compiler-core/src/dependency.rs",
+      "crate": "compiler-core",
+      "area": "dependency",
+      "snaps": 6,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 6
+      }
+    },
+    {
+      "source": "compiler-core/src/docs.rs",
+      "crate": "compiler-core",
+      "area": "docs",
+      "snaps": 2,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/docs/tests.rs",
+      "crate": "compiler-core",
+      "area": "docs",
+      "snaps": 47,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 47
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 67,
+      "with_source": 66,
+      "sections": {
+        "COMPILED ERLANG": 66,
+        "SOURCE CODE": 66,
+        "(plain)": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/assert.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 13,
+      "with_source": 13,
+      "sections": {
+        "COMPILED ERLANG": 13,
+        "SOURCE CODE": 13
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/binops.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 28,
+      "with_source": 28,
+      "sections": {
+        "COMPILED ERLANG": 28,
+        "SOURCE CODE": 28
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/bit_arrays.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 48,
+      "with_source": 48,
+      "sections": {
+        "COMPILED ERLANG": 48,
+        "SOURCE CODE": 48
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/case.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 19,
+      "with_source": 19,
+      "sections": {
+        "COMPILED ERLANG": 19,
+        "SOURCE CODE": 19
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/conditional_compilation.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 2,
+      "with_source": 2,
+      "sections": {
+        "COMPILED ERLANG": 2,
+        "SOURCE CODE": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/consts.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 29,
+      "with_source": 29,
+      "sections": {
+        "COMPILED ERLANG": 29,
+        "SOURCE CODE": 29
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/custom_types.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 4,
+      "with_source": 4,
+      "sections": {
+        "COMPILED ERLANG": 4,
+        "SOURCE CODE": 4
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/documentation.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 9,
+      "with_source": 9,
+      "sections": {
+        "COMPILED ERLANG": 9,
+        "SOURCE CODE": 9
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/echo.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 15,
+      "with_source": 14,
+      "sections": {
+        "COMPILED ERLANG": 14,
+        "SOURCE CODE": 14,
+        "(plain)": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/external_fn.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 32,
+      "with_source": 32,
+      "sections": {
+        "SOURCE CODE": 32,
+        "COMPILED ERLANG": 23,
+        "ERROR": 9
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/functions.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 13,
+      "with_source": 13,
+      "sections": {
+        "COMPILED ERLANG": 13,
+        "SOURCE CODE": 13
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/guards.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 39,
+      "with_source": 39,
+      "sections": {
+        "COMPILED ERLANG": 39,
+        "SOURCE CODE": 39
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/let_assert.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 27,
+      "with_source": 27,
+      "sections": {
+        "COMPILED ERLANG": 27,
+        "SOURCE CODE": 27
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/lists.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 4,
+      "with_source": 4,
+      "sections": {
+        "COMPILED ERLANG": 4,
+        "SOURCE CODE": 4
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/numbers.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 7,
+      "with_source": 7,
+      "sections": {
+        "COMPILED ERLANG": 7,
+        "SOURCE CODE": 7
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/panic.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 5,
+      "with_source": 5,
+      "sections": {
+        "COMPILED ERLANG": 5,
+        "SOURCE CODE": 5
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/patterns.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 10,
+      "with_source": 10,
+      "sections": {
+        "COMPILED ERLANG": 10,
+        "SOURCE CODE": 10
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/pipes.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 11,
+      "with_source": 11,
+      "sections": {
+        "COMPILED ERLANG": 11,
+        "SOURCE CODE": 11
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/records.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 30,
+      "with_source": 25,
+      "sections": {
+        "COMPILED ERLANG": 25,
+        "SOURCE CODE": 25,
+        "(plain)": 5
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/reserved.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 2,
+      "with_source": 2,
+      "sections": {
+        "COMPILED ERLANG": 2,
+        "SOURCE CODE": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/strings.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 36,
+      "with_source": 36,
+      "sections": {
+        "COMPILED ERLANG": 36,
+        "SOURCE CODE": 36
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/todo.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 5,
+      "with_source": 5,
+      "sections": {
+        "COMPILED ERLANG": 5,
+        "SOURCE CODE": 5
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/tuples.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 6,
+      "with_source": 6,
+      "sections": {
+        "COMPILED ERLANG": 6,
+        "SOURCE CODE": 6
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/type_params.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 8,
+      "with_source": 8,
+      "sections": {
+        "COMPILED ERLANG": 8,
+        "SOURCE CODE": 8
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/use_.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 5,
+      "with_source": 5,
+      "sections": {
+        "COMPILED ERLANG": 5,
+        "SOURCE CODE": 5
+      }
+    },
+    {
+      "source": "compiler-core/src/erlang/tests/variables.rs",
+      "crate": "compiler-core",
+      "area": "erlang",
+      "snaps": 9,
+      "with_source": 9,
+      "sections": {
+        "COMPILED ERLANG": 9,
+        "SOURCE CODE": 9
+      }
+    },
+    {
+      "source": "compiler-core/src/error/tests.rs",
+      "crate": "compiler-core",
+      "area": "error",
+      "snaps": 42,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 42
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/assert.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 20,
+      "with_source": 20,
+      "sections": {
+        "COMPILED JAVASCRIPT": 20,
+        "SOURCE CODE": 20
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/assignments.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 27,
+      "with_source": 27,
+      "sections": {
+        "SOURCE CODE": 27,
+        "COMPILED JAVASCRIPT": 26,
+        "TYPESCRIPT DEFINITIONS": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/bit_arrays.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 225,
+      "with_source": 225,
+      "sections": {
+        "SOURCE CODE": 225,
+        "COMPILED JAVASCRIPT": 218,
+        "WARNING": 4,
+        "TYPESCRIPT DEFINITIONS": 3
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/blocks.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 22,
+      "with_source": 22,
+      "sections": {
+        "COMPILED JAVASCRIPT": 22,
+        "SOURCE CODE": 22
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/bools.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 18,
+      "with_source": 18,
+      "sections": {
+        "SOURCE CODE": 18,
+        "COMPILED JAVASCRIPT": 16,
+        "TYPESCRIPT DEFINITIONS": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/case.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 83,
+      "with_source": 83,
+      "sections": {
+        "COMPILED JAVASCRIPT": 83,
+        "SOURCE CODE": 83
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/case_clause_guards.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 36,
+      "with_source": 36,
+      "sections": {
+        "COMPILED JAVASCRIPT": 36,
+        "SOURCE CODE": 36
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/consts.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 18,
+      "with_source": 18,
+      "sections": {
+        "COMPILED JAVASCRIPT": 18,
+        "SOURCE CODE": 18
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/custom_types.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 86,
+      "with_source": 86,
+      "sections": {
+        "SOURCE CODE": 86,
+        "COMPILED JAVASCRIPT": 72,
+        "TYPESCRIPT DEFINITIONS": 14
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/echo.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 15,
+      "with_source": 15,
+      "sections": {
+        "COMPILED JAVASCRIPT": 15,
+        "SOURCE CODE": 15
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/externals.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 25,
+      "with_source": 25,
+      "sections": {
+        "SOURCE CODE": 25,
+        "COMPILED JAVASCRIPT": 20,
+        "TYPESCRIPT DEFINITIONS": 3,
+        "ERROR": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/functions.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 47,
+      "with_source": 47,
+      "sections": {
+        "SOURCE CODE": 47,
+        "COMPILED JAVASCRIPT": 43,
+        "TYPESCRIPT DEFINITIONS": 4
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/generics.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 5,
+      "with_source": 5,
+      "sections": {
+        "TYPESCRIPT DEFINITIONS": 5,
+        "SOURCE CODE": 5
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/lists.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 14,
+      "with_source": 14,
+      "sections": {
+        "SOURCE CODE": 14,
+        "COMPILED JAVASCRIPT": 13,
+        "TYPESCRIPT DEFINITIONS": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/modules.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 17,
+      "with_source": 17,
+      "sections": {
+        "COMPILED JAVASCRIPT": 17,
+        "SOURCE CODE": 17
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/numbers.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 53,
+      "with_source": 53,
+      "sections": {
+        "SOURCE CODE": 53,
+        "COMPILED JAVASCRIPT": 51,
+        "ERROR": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/panic.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 8,
+      "with_source": 8,
+      "sections": {
+        "SOURCE CODE": 8,
+        "COMPILED JAVASCRIPT": 7,
+        "TYPESCRIPT DEFINITIONS": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/prelude.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 8,
+      "with_source": 8,
+      "sections": {
+        "SOURCE CODE": 8,
+        "COMPILED JAVASCRIPT": 6,
+        "TYPESCRIPT DEFINITIONS": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/records.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 12,
+      "with_source": 12,
+      "sections": {
+        "COMPILED JAVASCRIPT": 12,
+        "SOURCE CODE": 12
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/recursion.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 4,
+      "with_source": 4,
+      "sections": {
+        "COMPILED JAVASCRIPT": 4,
+        "SOURCE CODE": 4
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/results.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 12,
+      "with_source": 12,
+      "sections": {
+        "COMPILED JAVASCRIPT": 12,
+        "SOURCE CODE": 12
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/sourcemaps.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 20,
+      "with_source": 20,
+      "sections": {
+        "(plain)": 171,
+        "COMPILED JAVASCRIPT": 20,
+        "SOURCE CODE": 20,
+        "SOURCE MAP": 20
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/strings.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 38,
+      "with_source": 38,
+      "sections": {
+        "COMPILED JAVASCRIPT": 38,
+        "SOURCE CODE": 38
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/todo.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 7,
+      "with_source": 7,
+      "sections": {
+        "SOURCE CODE": 7,
+        "COMPILED JAVASCRIPT": 6,
+        "TYPESCRIPT DEFINITIONS": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/tuples.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 11,
+      "with_source": 11,
+      "sections": {
+        "SOURCE CODE": 11,
+        "COMPILED JAVASCRIPT": 9,
+        "TYPESCRIPT DEFINITIONS": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/type_alias.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 3,
+      "with_source": 3,
+      "sections": {
+        "TYPESCRIPT DEFINITIONS": 3,
+        "SOURCE CODE": 3
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/typescript.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 4,
+      "with_source": 4,
+      "sections": {
+        "TYPESCRIPT DEFINITIONS": 4,
+        "SOURCE CODE": 4
+      }
+    },
+    {
+      "source": "compiler-core/src/javascript/tests/use_.rs",
+      "crate": "compiler-core",
+      "area": "javascript",
+      "snaps": 5,
+      "with_source": 5,
+      "sections": {
+        "COMPILED JAVASCRIPT": 5,
+        "SOURCE CODE": 5
+      }
+    },
+    {
+      "source": "compiler-core/src/manifest.rs",
+      "crate": "compiler-core",
+      "area": "manifest",
+      "snaps": 4,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 4
+      }
+    },
+    {
+      "source": "compiler-core/src/package_interface/tests.rs",
+      "crate": "compiler-core",
+      "area": "package_interface",
+      "snaps": 18,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 18
+      }
+    },
+    {
+      "source": "compiler-core/src/parse/tests.rs",
+      "crate": "compiler-core",
+      "area": "parse",
+      "snaps": 264,
+      "with_source": 203,
+      "sections": {
+        "ERROR": 203,
+        "SOURCE CODE": 203,
+        "(plain)": 61
+      }
+    },
+    {
+      "source": "compiler-core/src/requirement.rs",
+      "crate": "compiler-core",
+      "area": "requirement",
+      "snaps": 3,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 3
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 32,
+      "with_source": 32,
+      "sections": {
+        "SOURCE CODE": 32,
+        "ERROR": 30,
+        "WARNING": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/assert.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 6,
+      "with_source": 6,
+      "sections": {
+        "SOURCE CODE": 6,
+        "WARNING": 4,
+        "ERROR": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/custom_types.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 9,
+      "with_source": 9,
+      "sections": {
+        "SOURCE CODE": 9,
+        "ERROR": 7,
+        "WARNING": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/dead_code_detection.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 21,
+      "with_source": 21,
+      "sections": {
+        "WARNING": 21,
+        "SOURCE CODE": 21
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/errors.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 451,
+      "with_source": 451,
+      "sections": {
+        "ERROR": 451,
+        "SOURCE CODE": 451
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/exhaustiveness.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 105,
+      "with_source": 105,
+      "sections": {
+        "SOURCE CODE": 105,
+        "ERROR": 74,
+        "WARNING": 31
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/externals.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 11,
+      "with_source": 11,
+      "sections": {
+        "ERROR": 11,
+        "SOURCE CODE": 11
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/functions.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 29,
+      "with_source": 29,
+      "sections": {
+        "ERROR": 29,
+        "SOURCE CODE": 29
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/guards.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 1,
+      "with_source": 1,
+      "sections": {
+        "ERROR": 1,
+        "SOURCE CODE": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/imports.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 21,
+      "with_source": 21,
+      "sections": {
+        "ERROR": 21,
+        "SOURCE CODE": 21
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/let_assert.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 1,
+      "with_source": 1,
+      "sections": {
+        "ERROR": 1,
+        "SOURCE CODE": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/pipes.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 1,
+      "with_source": 1,
+      "sections": {
+        "ERROR": 1,
+        "SOURCE CODE": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/pretty.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 3,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 3
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/target_implementations.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 1,
+      "with_source": 1,
+      "sections": {
+        "ERROR": 1,
+        "SOURCE CODE": 1
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/type_alias.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 10,
+      "with_source": 10,
+      "sections": {
+        "ERROR": 10,
+        "SOURCE CODE": 10
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/use_.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 25,
+      "with_source": 25,
+      "sections": {
+        "SOURCE CODE": 25,
+        "ERROR": 23,
+        "WARNING": 2
+      }
+    },
+    {
+      "source": "compiler-core/src/type_/tests/warnings.rs",
+      "crate": "compiler-core",
+      "area": "type_",
+      "snaps": 289,
+      "with_source": 289,
+      "sections": {
+        "WARNING": 289,
+        "SOURCE CODE": 289
+      }
+    },
+    {
+      "source": "language-server/src/tests/action.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 806,
+      "with_source": 0,
+      "sections": {
+        "AFTER ACTION": 806,
+        "BEFORE ACTION": 806,
+        "FILE OPERATIONS -----": 3
+      }
+    },
+    {
+      "source": "language-server/src/tests/completion.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 145,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 145,
+        "Completion content -----": 136,
+        "After applying completion -----": 7
+      }
+    },
+    {
+      "source": "language-server/src/tests/definition.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 53,
+      "with_source": 0,
+      "sections": {
+        "Jumping from `src/app.gleam`": 53,
+        "Jumped to `src/app.gleam`": 25,
+        "Jumped to `src/example_module.gleam`": 9,
+        "(plain)": 6,
+        "Jumped to `build/packages/hex/src/example_module.gleam`": 5,
+        "Jumped to `src/wibble.gleam`": 4,
+        "Jumped to `dep/src/wibble.gleam`": 4,
+        "Jumped to `dep/src/box.gleam`": 3,
+        "Jumped to `build/packages/hex/src/wibble.gleam`": 2,
+        "Jumped to `dep/src/example_module.gleam`": 2,
+        "Jumped to `src/mod.gleam`": 2,
+        "Jumped to `dep/src/wobble.gleam`": 2
+      }
+    },
+    {
+      "source": "language-server/src/tests/document_highlight.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 52,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 52
+      }
+    },
+    {
+      "source": "language-server/src/tests/document_symbols.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 10,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 10
+      }
+    },
+    {
+      "source": "language-server/src/tests/folding_range.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 12,
+      "with_source": 0,
+      "sections": {
+        "Code -----": 12,
+        "Ranges -----": 12,
+        "Fold 1 (lines 0..1) -----": 3,
+        "Fold 1 (lines 0..2) -----": 3,
+        "Fold 2 (lines 2..3) -----": 2,
+        "Fold 1 (lines 0..3) -----": 2,
+        "Fold 1 (lines 1..7) -----": 1,
+        "Fold 1 (lines 1..2) -----": 1,
+        "Fold 3 (lines 7..10) -----": 1,
+        "Fold 1 (lines 4..7) -----": 1,
+        "Fold 2 (lines 4..6) -----": 1,
+        "Fold 3 (lines 5..6) -----": 1,
+        "Fold 3 (lines 7..12) -----": 1,
+        "Fold 4 (lines 8..10) -----": 1,
+        "Fold 2 (lines 3..5) -----": 1,
+        "Fold 2 (lines 3..4) -----": 1,
+        "Fold 2 (lines 6..8) -----": 1,
+        "Fold 4 (lines 12..14) -----": 1,
+        "Fold 1 (lines 1..9) -----": 1
+      }
+    },
+    {
+      "source": "language-server/src/tests/hover.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 141,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 141,
+        "Hover content (markdown) -----": 141
+      }
+    },
+    {
+      "source": "language-server/src/tests/reference.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 83,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 83
+      }
+    },
+    {
+      "source": "language-server/src/tests/rename.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 203,
+      "with_source": 0,
+      "sections": {
+        "AFTER RENAME": 195,
+        "BEFORE RENAME": 195,
+        "(plain)": 8
+      }
+    },
+    {
+      "source": "language-server/src/tests/signature_help.rs",
+      "crate": "language-server",
+      "area": "tests",
+      "snaps": 25,
+      "with_source": 0,
+      "sections": {
+        "Signature help -----": 25,
+        "(plain)": 25
+      }
+    },
+    {
+      "source": "test-commands/src/tests.rs",
+      "crate": "test-commands",
+      "area": "tests",
+      "snaps": 6,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 6
+      }
+    },
+    {
+      "source": "test-output/src/tests/output.rs",
+      "crate": "test-output",
+      "area": "tests",
+      "snaps": 23,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 23
+      }
+    },
+    {
+      "source": "test-package-compiler/src/tests.rs",
+      "crate": "test-package-compiler",
+      "area": "tests",
+      "snaps": 41,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 41
+      }
+    },
+    {
+      "source": "test-project-compiler/src/generated_tests.rs",
+      "crate": "test-project-compiler",
+      "area": "generated_tests",
+      "snaps": 18,
+      "with_source": 0,
+      "sections": {
+        "(plain)": 18
+      }
+    }
+  ]
+}

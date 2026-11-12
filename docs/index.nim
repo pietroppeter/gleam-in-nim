@@ -43,6 +43,10 @@ nbCards "the pages of the site":
     nbText "The phases and their steps, and where each one stands."
   nbCard("Coverage map", "coverage/", "kept up to date", nkInfo):
     nbText "The Rust compiler module by module, and how much of it is in Nim."
+  nbCard("Decisions", "decisions/", "kept up to date", nkInfo):
+    nbText "The choices of the port, each a short dated record: context, decision, consequences."
+  nbCard("Porting guide", "porting/", "kept up to date", nkInfo):
+    nbText "How the Rust of the Gleam compiler is written in Nim here: rules, idiom map, traps."
   nbCard("For coding agents", "agents/", "kept up to date", nkInfo):
     nbText "The working rules of the repository: how a step, a post and a pull request are made."
 

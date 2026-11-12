@@ -3,9 +3,11 @@
 ## initialised, in import order. A new page or post adds its name here (posts: one per line,
 ## sorted, so two branches adding a post rarely conflict).
 {.warning[UnusedImport]: off.}
-import index, roadmap, coverage, agents
+import index, roadmap, coverage, agents, decisions, porting
 import devlog/index as devlogIndex
 import devlog/the_beam
+import devlog/how_we_work
+import devlog/learning_from_rewrites
 import devlog/workflow
 import devlog/gleam_and_its_people
 import devlog/where_gleam_decisions_live
