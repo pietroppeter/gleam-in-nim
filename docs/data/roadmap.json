@@ -203,6 +203,17 @@
           "owner": "Port the Gleam lexer to Nim"
         },
         {
+          "id": "explain-lexer",
+          "kind": "research",
+          "status": "done",
+          "title": "From scratch: what a lexer is",
+          "what": "Characters to tokens, explained for someone who never wrote a compiler: a toy lexer in Nim, then Gleam, Nim and Nimony.",
+          "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
+          "post": "what-a-lexer-is",
+          "pr": "",
+          "owner": "Explain compiler stages from scratch"
+        },
+        {
           "id": "untyped-ast",
           "kind": "port",
           "status": "planned",
@@ -243,6 +254,17 @@
           "post": "",
           "pr": "",
           "owner": "Port the Gleam lexer to Nim"
+        },
+        {
+          "id": "explain-parser",
+          "kind": "research",
+          "status": "planned",
+          "title": "From scratch: what a parser is",
+          "what": "Tokens to a syntax tree: grammars, recursive descent, operator precedence, with the toy, Gleam and Nimony.",
+          "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
+          "post": "",
+          "pr": "",
+          "owner": "Explain compiler stages from scratch"
         },
         {
           "id": "diagnostics",
@@ -325,6 +347,17 @@
           "owner": "Explain the BEAM and Elm roots"
         },
         {
+          "id": "explain-names",
+          "kind": "research",
+          "status": "planned",
+          "title": "From scratch: names and scopes",
+          "what": "What every name refers to: environments, scopes, shadowing, definitions used before they are written.",
+          "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
+          "post": "",
+          "pr": "",
+          "owner": "Explain compiler stages from scratch"
+        },
+        {
           "id": "typed-ast",
           "kind": "port",
           "status": "planned",
@@ -349,6 +382,17 @@
           ],
           "post": "",
           "pr": ""
+        },
+        {
+          "id": "explain-types",
+          "kind": "research",
+          "status": "planned",
+          "title": "From scratch: what a type checker is",
+          "what": "Type inference from nothing: type variables, unification, generalisation, and why Gleam needs no annotations.",
+          "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
+          "post": "",
+          "pr": "",
+          "owner": "Explain compiler stages from scratch"
         },
         {
           "id": "infer-custom-types",
@@ -416,6 +460,17 @@
           ],
           "post": "",
           "pr": ""
+        },
+        {
+          "id": "explain-exhaustiveness",
+          "kind": "research",
+          "status": "planned",
+          "title": "From scratch: checking a case",
+          "what": "How a compiler knows a case forgot something: patterns, decision trees, missing patterns.",
+          "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
+          "post": "",
+          "pr": "",
+          "owner": "Explain compiler stages from scratch"
         },
         {
           "id": "type-errors",
@@ -491,6 +546,17 @@
           ],
           "post": "",
           "pr": ""
+        },
+        {
+          "id": "explain-codegen",
+          "kind": "research",
+          "status": "planned",
+          "title": "From scratch: what code generation is",
+          "what": "A typed tree to a program in another language, as text: Erlang and JavaScript, and the pretty printer that lays it out.",
+          "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
+          "post": "",
+          "pr": "",
+          "owner": "Explain compiler stages from scratch"
         },
         {
           "id": "erlang-patterns",
