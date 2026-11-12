@@ -22,6 +22,7 @@
 
 import std/[macros, options, strutils, unicode, tables, typetraits]
 import pkg/bigints
+import ./rust_debug_tables
 
 type Unit* = object ## Rust's `()`.
 
@@ -62,33 +63,19 @@ func baseName(name: string): string =
   if dot >= 0:
     result = result[dot + 1 .. ^1]
 
-func isPrintable(c: int32): bool =
-  ## An approximation of Rust's `char::is_printable` and grapheme extension
-  ## check, enough for what Gleam sources contain. To be made exact if a
-  ## comparison with the oracle ever disagrees on a string.
-  if c < 0x20 or c == 0x7F:
-    return false
-  if c < 0x7F:
-    return true
-  if c >= 0x80 and c < 0xA0:
-    return false
-  if c == 0xAD:
-    return false
-  # combining marks (grapheme extend)
-  if (c >= 0x300 and c <= 0x36F) or (c >= 0x1AB0 and c <= 0x1AFF) or
-      (c >= 0x1DC0 and c <= 0x1DFF) or (c >= 0x20D0 and c <= 0x20FF) or
-      (c >= 0xFE00 and c <= 0xFE0F) or (c >= 0xFE20 and c <= 0xFE2F) or
-      (c >= 0xE0100 and c <= 0xE01EF) or (c >= 0x1F3FB and c <= 0x1F3FF):
-    return false
-  # format and separator characters
-  if (c >= 0x200B and c <= 0x200F) or (c >= 0x2028 and c <= 0x202E) or
-      (c >= 0x2060 and c <= 0x206F) or c == 0xFEFF or (c >= 0xFFF9 and c <= 0xFFFB) or
-      (c >= 0xE0000 and c <= 0xE007F):
-    return false
-  # surrogates, private use
-  if (c >= 0xD800 and c <= 0xF8FF) or c >= 0xF0000:
-    return false
-  true
+func isEscaped(c: int32): bool =
+  ## Whether Rust's Debug writes this code point as `\u{..}`: it is not
+  ## printable, or it extends the grapheme before it. The table is Rust's own
+  ## answer for every code point (see rust_debug_tables.nim).
+  var
+    low = 0
+    high = escapedRanges.len
+  while low < high:
+    let mid = (low + high) div 2
+    if c < escapedRanges[mid].first: high = mid
+    elif c > escapedRanges[mid].last: low = mid + 1
+    else: return true
+  false
 
 func rustString*(s: string): string =
   ## A string as Rust's Debug prints it.
@@ -103,7 +90,7 @@ func rustString*(s: string): string =
     of ord('\t'): result.add "\\t"
     of 0: result.add "\\0"
     else:
-      if isPrintable(c):
+      if not isEscaped(c):
         result.add $rune
       else:
         result.add "\\u{" & toHex(c).strip(leading = true, trailing = false, chars = {'0'}).toLowerAscii & "}"

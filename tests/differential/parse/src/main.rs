@@ -1,6 +1,7 @@
 //! The parser oracle: what the reference Gleam parser makes of a source.
 //!
 //! Usage: parse-driver MODE FILE
+//!        parse-driver escaped-ranges
 //!
 //! MODE is `module`, `statements` or `const`: which entry point of the parser
 //! to call (`parse_module`, `parse_statement_sequence`, `parse_const_value`).
@@ -34,9 +35,37 @@ fn unescape(s: &str) -> Vec<u8> {
     out
 }
 
+/// Prints the ranges of code points that `{:?}` of a string writes as
+/// `\u{..}`: the table behind `rustString` in src/gleam_in_nim/rust_debug.nim.
+fn escaped_ranges() {
+    let escaped = |c: char| {
+        let alone = format!("{:?}", c.to_string());
+        let after = format!("{:?}", format!("a{c}"));
+        let is_escaped = alone.starts_with("\"\\u{");
+        assert_eq!(is_escaped, after.starts_with("\"a\\u{"), "context matters for {c:?}");
+        is_escaped
+    };
+    let mut start: Option<u32> = None;
+    for code in 0..=0x110000u32 {
+        let now = char::from_u32(code).is_some_and(escaped);
+        match (start, now) {
+            (None, true) => start = Some(code),
+            (Some(first), false) => {
+                println!("{:X} {:X}", first, code - 1);
+                start = None;
+            }
+            _ => {}
+        }
+    }
+}
+
 fn main() {
     let args: Vec<String> = std::env::args().skip(1).collect();
     let mode = args[0].as_str();
+    if mode == "escaped-ranges" {
+        escaped_ranges();
+        return;
+    }
     let text = std::fs::read_to_string(&args[1]).expect("read sources file");
     let stdout = std::io::stdout();
     let mut out = std::io::BufWriter::new(stdout.lock());
