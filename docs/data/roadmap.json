@@ -267,14 +267,27 @@
           "owner": "Explain compiler stages from scratch"
         },
         {
-          "id": "diagnostics",
+          "id": "diagnostic-renderer",
+          "kind": "port",
+          "status": "done",
+          "title": "The error renderer",
+          "what": "diagnostic.rs and, under it, the renderer of codespan-reporting, termcolor and unicode-width: the box, the gutter and the carets of every error and warning.",
+          "done_when": "Random diagnostics print byte for byte like upstream's Diagnostic::write, with and without colours.",
+          "components": [
+            "diagnostic"
+          ],
+          "post": "the-error-renderer",
+          "pr": "",
+          "owner": "Plan the compiler port"
+        },
+        {
+          "id": "parse-errors",
           "kind": "port",
           "status": "planned",
-          "title": "Diagnostics and parse errors",
-          "what": "A faithful port of the codespan-style renderer, then every parse error message.",
+          "title": "Parse errors",
+          "what": "Every parse error message, in upstream wording, through the renderer.",
           "done_when": "The parse error snapshots reproduce byte for byte.",
           "components": [
-            "diagnostic",
             "errors",
             "parser"
           ],
