@@ -1,0 +1,643 @@
+{
+  "about": "Feature coverage map of the port: one row per component of the Gleam compiler at the pin. Owned by the plan thread; a PR that ports something updates its row. The rust_* and snapshots numbers are measured by tools/coverage_measure.nim, do not edit them by hand.",
+  "pin": {
+    "tag": "v1.19.2",
+    "commit": "ed41eace2dd89054eb2d744c33925261d1eff32e"
+  },
+  "statuses": [
+    "todo",
+    "in progress",
+    "ported",
+    "verified"
+  ],
+  "status_meaning": {
+    "todo": "not started",
+    "in progress": "a branch or thread is working on it",
+    "ported": "code is in main and its own upstream tests pass",
+    "verified": "ported, and the differential tests on the corpus are byte identical to the reference"
+  },
+  "components": [
+    {
+      "id": "span",
+      "area": "foundations",
+      "title": "Source spans and line numbers",
+      "upstream": [
+        "src-span"
+      ],
+      "rust_loc": 233,
+      "rust_test_loc": 123,
+      "snapshots": 0,
+      "depends_on": [],
+      "phase": "P1",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": ""
+    },
+    {
+      "id": "lexer",
+      "area": "frontend",
+      "title": "Lexer and tokens",
+      "upstream": [
+        "compiler-core/src/parse/lexer.rs",
+        "compiler-core/src/parse/token.rs"
+      ],
+      "rust_loc": 1895,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [],
+      "phase": "P1",
+      "status": "in progress",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Tests live in parse/tests.rs, shared with the parser."
+    },
+    {
+      "id": "ast",
+      "area": "frontend",
+      "title": "AST (untyped and typed), visitors, folder",
+      "upstream": [
+        "compiler-core/src/ast.rs",
+        "compiler-core/src/ast",
+        "compiler-core/src/ast_folder.rs"
+      ],
+      "rust_loc": 11946,
+      "rust_test_loc": 1213,
+      "snapshots": 0,
+      "depends_on": [
+        "span"
+      ],
+      "phase": "P1",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Port the untyped half first; typed half lands with the type checker."
+    },
+    {
+      "id": "parser",
+      "area": "frontend",
+      "title": "Parser",
+      "upstream": [
+        "compiler-core/src/parse.rs",
+        "compiler-core/src/parse/extra.rs",
+        "compiler-core/src/parse/error.rs",
+        "compiler-core/src/parse/tests.rs",
+        "compiler-core/src/parse/snapshots"
+      ],
+      "rust_loc": 6756,
+      "rust_test_loc": 2961,
+      "snapshots": 264,
+      "depends_on": [
+        "lexer",
+        "ast"
+      ],
+      "phase": "P1",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Hand written recursive descent plus a precedence stack for operators."
+    },
+    {
+      "id": "pretty",
+      "area": "foundations",
+      "title": "Pretty printer (document algebra)",
+      "upstream": [
+        "pretty-arena"
+      ],
+      "rust_loc": 1541,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [],
+      "phase": "P1",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Lindig's Strictly Pretty with Elixir and Prettier extensions."
+    },
+    {
+      "id": "format",
+      "area": "frontend",
+      "title": "Formatter (gleam format)",
+      "upstream": [
+        "format"
+      ],
+      "rust_loc": 4560,
+      "rust_test_loc": 11132,
+      "snapshots": 0,
+      "depends_on": [
+        "parser",
+        "pretty"
+      ],
+      "phase": "P1",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "918 format assertions; our parser oracle."
+    },
+    {
+      "id": "diagnostic",
+      "area": "foundations",
+      "title": "Diagnostic rendering",
+      "upstream": [
+        "compiler-core/src/diagnostic.rs"
+      ],
+      "rust_loc": 156,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [
+        "span"
+      ],
+      "phase": "P2",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Upstream uses the codespan-reporting crate; we need a faithful mini port of its renderer."
+    },
+    {
+      "id": "errors",
+      "area": "foundations",
+      "title": "Error and warning messages",
+      "upstream": [
+        "compiler-core/src/error.rs",
+        "compiler-core/src/error",
+        "compiler-core/src/warning.rs",
+        "compiler-core/src/type_/error.rs"
+      ],
+      "rust_loc": 9384,
+      "rust_test_loc": 290,
+      "snapshots": 42,
+      "depends_on": [
+        "diagnostic"
+      ],
+      "phase": "P2",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Grows with each component: every phase ports the messages it can raise."
+    },
+    {
+      "id": "types",
+      "area": "analysis",
+      "title": "Type representation, environment, unification, prelude",
+      "upstream": [
+        "compiler-core/src/type_.rs",
+        "compiler-core/src/type_/environment.rs",
+        "compiler-core/src/type_/hydrator.rs",
+        "compiler-core/src/type_/fields.rs",
+        "compiler-core/src/type_/prelude.rs",
+        "compiler-core/src/type_/pretty.rs",
+        "compiler-core/src/type_/printer.rs",
+        "compiler-core/src/uid.rs"
+      ],
+      "rust_loc": 5847,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [
+        "ast"
+      ],
+      "phase": "P2",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": ""
+    },
+    {
+      "id": "bitarray",
+      "area": "analysis",
+      "title": "Bit array option checking",
+      "upstream": [
+        "compiler-core/src/bit_array.rs"
+      ],
+      "rust_loc": 433,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [
+        "ast"
+      ],
+      "phase": "P2",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": ""
+    },
+    {
+      "id": "exhaustiveness",
+      "area": "analysis",
+      "title": "Exhaustiveness checking and decision trees",
+      "upstream": [
+        "compiler-core/src/exhaustiveness.rs",
+        "compiler-core/src/exhaustiveness"
+      ],
+      "rust_loc": 5182,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [
+        "types"
+      ],
+      "phase": "P2",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Jacobs and Maranget style decision trees; reused by the JavaScript backend."
+    },
+    {
+      "id": "typer",
+      "area": "analysis",
+      "title": "Expression, pattern, pipe, guard and constant inference",
+      "upstream": [
+        "compiler-core/src/type_/expression.rs",
+        "compiler-core/src/type_/pattern.rs",
+        "compiler-core/src/type_/pipe.rs",
+        "compiler-core/src/type_/guard.rs",
+        "compiler-core/src/type_/constant.rs",
+        "compiler-core/src/type_/tests.rs",
+        "compiler-core/src/type_/tests",
+        "compiler-core/src/type_/snapshots"
+      ],
+      "rust_loc": 8849,
+      "rust_test_loc": 20068,
+      "snapshots": 1016,
+      "depends_on": [
+        "types",
+        "bitarray",
+        "exhaustiveness"
+      ],
+      "phase": "P2",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "The biggest single piece of logic."
+    },
+    {
+      "id": "analyse",
+      "area": "analysis",
+      "title": "Module analysis, imports, call graph, references",
+      "upstream": [
+        "compiler-core/src/analyse.rs",
+        "compiler-core/src/analyse",
+        "compiler-core/src/call_graph.rs",
+        "compiler-core/src/call_graph",
+        "compiler-core/src/dep_tree.rs",
+        "compiler-core/src/reference.rs"
+      ],
+      "rust_loc": 4397,
+      "rust_test_loc": 774,
+      "snapshots": 0,
+      "depends_on": [
+        "typer"
+      ],
+      "phase": "P2",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": ""
+    },
+    {
+      "id": "erlang",
+      "area": "backend",
+      "title": "Erlang backend (textual .erl)",
+      "upstream": [
+        "compiler-core/src/erlang.rs",
+        "compiler-core/src/erlang"
+      ],
+      "rust_loc": 6747,
+      "rust_test_loc": 6782,
+      "snapshots": 483,
+      "depends_on": [
+        "analyse",
+        "erlgen"
+      ],
+      "phase": "P3",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "First backend. No decision trees, no pretty printer."
+    },
+    {
+      "id": "erlgen",
+      "area": "backend",
+      "title": "Erlang source and binary builders, term format",
+      "upstream": [
+        "erlang-generation",
+        "erlang-term-format"
+      ],
+      "rust_loc": 5977,
+      "rust_test_loc": 378,
+      "snapshots": 0,
+      "depends_on": [],
+      "phase": "P3",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Source builder first (P3); binary abstract format builder later (P5)."
+    },
+    {
+      "id": "javascript",
+      "area": "backend",
+      "title": "JavaScript backend",
+      "upstream": [
+        "compiler-core/src/javascript.rs",
+        "compiler-core/src/javascript/expression.rs",
+        "compiler-core/src/javascript/decision.rs",
+        "compiler-core/src/javascript/import.rs",
+        "compiler-core/src/javascript/tests.rs",
+        "compiler-core/src/javascript/tests"
+      ],
+      "rust_loc": 8452,
+      "rust_test_loc": 12003,
+      "snapshots": 843,
+      "depends_on": [
+        "analyse",
+        "pretty",
+        "exhaustiveness"
+      ],
+      "phase": "P4",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Includes source maps. prelude.mjs is copied, not ported."
+    },
+    {
+      "id": "typescript",
+      "area": "backend",
+      "title": "TypeScript declarations",
+      "upstream": [
+        "compiler-core/src/javascript/typescript.rs"
+      ],
+      "rust_loc": 1314,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [
+        "javascript"
+      ],
+      "phase": "P4",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": ""
+    },
+    {
+      "id": "io",
+      "area": "build",
+      "title": "IO abstraction and in-memory file system",
+      "upstream": [
+        "compiler-core/src/io.rs",
+        "compiler-core/src/io",
+        "compiler-core/src/paths.rs",
+        "compiler-core/src/strings.rs",
+        "compiler-core/src/version.rs"
+      ],
+      "rust_loc": 1465,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [],
+      "phase": "P3",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": ""
+    },
+    {
+      "id": "config",
+      "area": "build",
+      "title": "gleam.toml, manifest, requirements",
+      "upstream": [
+        "compiler-core/src/config.rs",
+        "compiler-core/src/config",
+        "compiler-core/src/manifest.rs",
+        "compiler-core/src/requirement.rs"
+      ],
+      "rust_loc": 2954,
+      "rust_test_loc": 0,
+      "snapshots": 0,
+      "depends_on": [
+        "io"
+      ],
+      "phase": "P3",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Needs a TOML parser and Hex version ranges (hexpm/version)."
+    },
+    {
+      "id": "metadata",
+      "area": "build",
+      "title": "Module metadata cache",
+      "upstream": [
+        "compiler-core/src/metadata.rs",
+        "compiler-core/src/metadata"
+      ],
+      "rust_loc": 672,
+      "rust_test_loc": 2030,
+      "snapshots": 0,
+      "depends_on": [
+        "types"
+      ],
+      "phase": "P3",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Internal cache format: we may diverge from bitcode."
+    },
+    {
+      "id": "build",
+      "area": "build",
+      "title": "Package and project compilers, codegen driver",
+      "upstream": [
+        "compiler-core/src/build.rs",
+        "compiler-core/src/build",
+        "compiler-core/src/codegen.rs"
+      ],
+      "rust_loc": 5738,
+      "rust_test_loc": 2242,
+      "snapshots": 3,
+      "depends_on": [
+        "analyse",
+        "io",
+        "config",
+        "metadata",
+        "erlang"
+      ],
+      "phase": "P3",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": ""
+    },
+    {
+      "id": "pkginterface",
+      "area": "build",
+      "title": "Package interface export",
+      "upstream": [
+        "compiler-core/src/package_interface.rs",
+        "compiler-core/src/package_interface"
+      ],
+      "rust_loc": 693,
+      "rust_test_loc": 365,
+      "snapshots": 18,
+      "depends_on": [
+        "analyse"
+      ],
+      "phase": "P2",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "JSON of public types: our type checker oracle."
+    },
+    {
+      "id": "docs",
+      "area": "tooling",
+      "title": "HTML documentation generator",
+      "upstream": [
+        "compiler-core/src/docs.rs",
+        "compiler-core/src/docs"
+      ],
+      "rust_loc": 1846,
+      "rust_test_loc": 1447,
+      "snapshots": 47,
+      "depends_on": [
+        "build"
+      ],
+      "phase": "P5",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": ""
+    },
+    {
+      "id": "deps",
+      "area": "tooling",
+      "title": "Dependency resolution and Hex client",
+      "upstream": [
+        "compiler-core/src/dependency.rs",
+        "compiler-core/src/derivation_tree.rs",
+        "compiler-core/src/hex.rs",
+        "compiler-core/src/encryption.rs",
+        "hexpm"
+      ],
+      "rust_loc": 5564,
+      "rust_test_loc": 1709,
+      "snapshots": 0,
+      "depends_on": [
+        "config"
+      ],
+      "phase": "P5",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "PubGrub resolver, Hex API, tarballs."
+    },
+    {
+      "id": "cli",
+      "area": "tooling",
+      "title": "Command line interface",
+      "upstream": [
+        "compiler-cli",
+        "gleam-bin"
+      ],
+      "rust_loc": 9504,
+      "rust_test_loc": 2928,
+      "snapshots": 10,
+      "depends_on": [
+        "build"
+      ],
+      "phase": "P3",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "compile-package first (P3); the rest of the commands in P5."
+    },
+    {
+      "id": "lsp",
+      "area": "tooling",
+      "title": "Language server",
+      "upstream": [
+        "language-server"
+      ],
+      "rust_loc": 22632,
+      "rust_test_loc": 31956,
+      "snapshots": 1530,
+      "depends_on": [
+        "build"
+      ],
+      "phase": "P6",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Last. 1,530 snapshots of its own."
+    },
+    {
+      "id": "wasm",
+      "area": "tooling",
+      "title": "WebAssembly bindings",
+      "upstream": [
+        "compiler-wasm"
+      ],
+      "rust_loc": 367,
+      "rust_test_loc": 129,
+      "snapshots": 0,
+      "depends_on": [
+        "build"
+      ],
+      "phase": "P6",
+      "status": "todo",
+      "nim_modules": [],
+      "nim_loc": 0,
+      "tests_passing": 0,
+      "tests_total": 0,
+      "notes": "Likely replaced by Nim's JavaScript backend; decide when we get there."
+    }
+  ]
+}

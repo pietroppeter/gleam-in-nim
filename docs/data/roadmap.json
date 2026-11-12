@@ -1,0 +1,871 @@
+{
+  "about": "The roadmap of the port. Owned by the plan thread. Steps are small enough for one PR with its explainer. To pick the next step: take the first step with status todo whose phase is open and whose components' dependencies (see coverage.json) are ported. A PR that finishes a step sets its status, post and pr here.",
+  "pin": {
+    "tag": "v1.19.2",
+    "commit": "ed41eace2dd89054eb2d744c33925261d1eff32e",
+    "date": "2026-10-12"
+  },
+  "statuses": [
+    "todo",
+    "in progress",
+    "done"
+  ],
+  "kinds": [
+    "research",
+    "plan",
+    "tooling",
+    "port"
+  ],
+  "milestones": [
+    {
+      "id": "M1",
+      "title": "Format parity",
+      "after": "P1",
+      "proof": "gleam-in-nim format prints byte for byte what gleam format prints, on the 918 upstream formatter tests, on gleam_stdlib and on the corpus."
+    },
+    {
+      "id": "M2",
+      "title": "Check parity",
+      "after": "P2",
+      "proof": "Same errors and warnings as the reference on the upstream type checker tests; same package interface JSON as gleam export package-interface on gleam_stdlib and the corpus."
+    },
+    {
+      "id": "M3",
+      "title": "The standard library compiles to Erlang",
+      "after": "P3",
+      "proof": "compile-package --target erlang --no-beam gives byte identical .erl and .hrl files for gleam_stdlib and the corpus; the 483 upstream Erlang snapshots reproduce."
+    },
+    {
+      "id": "M4",
+      "title": "It runs on the BEAM",
+      "after": "P3",
+      "proof": "In CI, with Erlang/OTP installed, the output of the port passes upstream's test/language suite and gleam_stdlib's own tests."
+    },
+    {
+      "id": "M5",
+      "title": "JavaScript parity",
+      "after": "P4",
+      "proof": "Byte identical .mjs and .d.mts for gleam_stdlib and the corpus; the 843 upstream JavaScript snapshots reproduce; test/language passes on Node."
+    },
+    {
+      "id": "M6",
+      "title": "A real build tool",
+      "after": "P5",
+      "proof": "gleam-in-nim new, add, build, test and run work on a fresh project with Hex dependencies, with no reference binary involved."
+    },
+    {
+      "id": "M7",
+      "title": "Port complete",
+      "after": "P6",
+      "proof": "Every row of the coverage map is verified or listed as an intentional divergence; the language server answers an editor."
+    }
+  ],
+  "phases": [
+    {
+      "id": "P0",
+      "title": "Groundwork",
+      "goal": "Know the terrain, set up the workshop.",
+      "steps": [
+        {
+          "id": "0.1",
+          "title": "Explainer workflow and repository scaffold",
+          "what": "nimib site, theme, review mode, devlog, roadmap and coverage pages, CI.",
+          "kind": "tooling",
+          "status": "in progress",
+          "components": [],
+          "done_when": "The site builds in CI and is published.",
+          "owner": "Set up explainer workflow and repo",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "0.2",
+          "title": "Gleam, its community and a corpus of programs",
+          "what": "What Gleam is, who makes it, and a list of real Gleam packages to compile.",
+          "kind": "research",
+          "status": "in progress",
+          "components": [],
+          "done_when": "A corpus manifest (name, git URL, commit) is in the repo.",
+          "owner": "Research Gleam, its community and corpus",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "0.3",
+          "title": "The BEAM and Elm roots",
+          "what": "What Gleam compiles to and where its design comes from.",
+          "kind": "research",
+          "status": "in progress",
+          "components": [],
+          "done_when": "Explainers published.",
+          "owner": "Explain the BEAM and Elm roots",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "0.4",
+          "title": "How Gleam's compiler is made",
+          "what": "Architecture, sizes, history, comparison with other compilers.",
+          "kind": "research",
+          "status": "in progress",
+          "components": [],
+          "done_when": "Explainer published.",
+          "owner": "Plan the compiler port",
+          "post": "how-gleam-compiles",
+          "pr": ""
+        },
+        {
+          "id": "0.5",
+          "title": "The port plan",
+          "what": "Scope, order, backend choice, verification plan, this roadmap and the coverage map.",
+          "kind": "plan",
+          "status": "in progress",
+          "components": [],
+          "done_when": "Roadmap and coverage data are in main.",
+          "owner": "Plan the compiler port",
+          "post": "the-port-plan",
+          "pr": ""
+        },
+        {
+          "id": "0.6",
+          "title": "Lessons from other rewrites, decision records and test tooling",
+          "what": "How large ports are run; snapshot corpus index, differential test harness, port map.",
+          "kind": "tooling",
+          "status": "in progress",
+          "components": [],
+          "done_when": "tools/snapcorpus, tools/difftest and tools/portmap run in CI.",
+          "owner": "Learn from other compiler rewrites",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "0.7",
+          "title": "Harvest the upstream Rust tests",
+          "what": "Many upstream tests keep inputs and expected values in Rust macros, not in snapshot files: 918 formatter assertions, 374 inference assertions, lexer and parser assertions, dependency modules of backend tests. Extract them to JSON test vectors.",
+          "kind": "tooling",
+          "status": "todo",
+          "components": [],
+          "done_when": "Every upstream assertion macro call is available as data, with counts per component in the coverage map.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "0.8",
+          "title": "Erlang in CI",
+          "what": "Add Erlang/OTP, Node and the reference binary to CI so compiled output can be executed.",
+          "kind": "tooling",
+          "status": "todo",
+          "components": [],
+          "done_when": "CI can run erlc and escript; a smoke test compiles and runs reference output.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "P1",
+      "title": "Front end",
+      "goal": "Source text to syntax tree and back to text. Ends with milestone M1.",
+      "steps": [
+        {
+          "id": "1.1",
+          "title": "Source spans and line numbers",
+          "what": "SrcSpan and LineNumbers, the coordinates every later phase uses.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "span"
+          ],
+          "done_when": "Upstream src-span tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "1.2",
+          "title": "Lexer",
+          "what": "Text to tokens, with comments and lexical errors.",
+          "kind": "port",
+          "status": "in progress",
+          "components": [
+            "lexer"
+          ],
+          "done_when": "Lexer assertions from parse/tests.rs pass; tokens of every corpus file match in kind and position.",
+          "owner": "Port the Gleam lexer to Nim",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "1.3",
+          "title": "Untyped syntax tree",
+          "what": "The data types of the untyped AST: modules, definitions, expressions, patterns, constants, type annotations.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "ast"
+          ],
+          "done_when": "Types compile and can represent every construct the parser produces.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "1.4",
+          "title": "Parser: expressions and statements",
+          "what": "Expression units, operator precedence, blocks, let, use, assert, case, patterns, bit arrays.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "parser"
+          ],
+          "done_when": "parse_statement_sequence accepts every expression test input.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "1.5",
+          "title": "Parser: modules",
+          "what": "Definitions, attributes, imports, custom types, type annotations, constants, doc comments and the extra comment table.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "parser"
+          ],
+          "done_when": "Every file of gleam_stdlib and the corpus parses.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "1.6",
+          "title": "Diagnostics and parse errors",
+          "what": "A faithful port of the codespan-style renderer, then every parse error message.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "diagnostic",
+            "errors",
+            "parser"
+          ],
+          "done_when": "The parse error snapshots reproduce byte for byte.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "1.7",
+          "title": "Pretty printer",
+          "what": "The document algebra: groups, breaks, nesting, and the fitting algorithm.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "pretty"
+          ],
+          "done_when": "Upstream pretty printer tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "1.8",
+          "title": "Formatter",
+          "what": "gleam format: syntax tree and comments back to canonical text.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "format"
+          ],
+          "done_when": "The 918 upstream formatter assertions pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "1.9",
+          "title": "Milestone M1: format parity on the corpus",
+          "what": "Differential run of format over gleam_stdlib and the corpus against the reference binary.",
+          "kind": "tooling",
+          "status": "todo",
+          "components": [
+            "format",
+            "parser",
+            "lexer"
+          ],
+          "done_when": "Zero differences, or each difference filed and fixed.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "title": "Analysis",
+      "goal": "Give every expression a type, find every mistake. Ends with milestone M2.",
+      "steps": [
+        {
+          "id": "2.1",
+          "title": "Types, prelude and unification",
+          "what": "Type and TypeVar, the prelude types, environment, instantiate, unify, generalise, the type printer.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "types"
+          ],
+          "done_when": "Unification and printing unit tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.2",
+          "title": "Typed syntax tree",
+          "what": "TypedExpr, typed patterns, constants and definitions.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "ast"
+          ],
+          "done_when": "Types compile; visitors walk them.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.3",
+          "title": "Inference: the expression core",
+          "what": "Literals, variables, functions, calls, let, blocks, operators, tuples, lists.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "typer"
+          ],
+          "done_when": "The matching assert_infer tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.4",
+          "title": "Inference: custom types and records",
+          "what": "Type and value constructors, labelled arguments, field access, record update, variant inference.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "typer",
+            "analyse"
+          ],
+          "done_when": "Custom type and accessor tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.5",
+          "title": "Inference: patterns and case",
+          "what": "Pattern typing, case clauses, alternative patterns, string prefix and bit array patterns, guards.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "typer",
+            "bitarray"
+          ],
+          "done_when": "Pattern and guard tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.6",
+          "title": "Inference: pipes, use, constants, todo, panic, echo",
+          "what": "The remaining expression forms and module constants.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "typer"
+          ],
+          "done_when": "Pipe, use and constant tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.7",
+          "title": "Module analysis",
+          "what": "Imports, definition registration, the call graph and dependency ordering, generalisation, multi module projects, target support.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "analyse"
+          ],
+          "done_when": "assert_module_infer tests and multi module tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.8",
+          "title": "Exhaustiveness and decision trees",
+          "what": "Compile case expressions to decision trees; report missing and unreachable patterns.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "exhaustiveness"
+          ],
+          "done_when": "The exhaustiveness tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.9",
+          "title": "Type errors",
+          "what": "Every type error message, in upstream wording.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "errors",
+            "typer"
+          ],
+          "done_when": "The type error snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.10",
+          "title": "Warnings and reference tracking",
+          "what": "Unused code, deprecations, dead code detection, version inference, and their messages.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "errors",
+            "analyse"
+          ],
+          "done_when": "The warning snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "2.11",
+          "title": "Package interface and milestone M2",
+          "what": "Export public types as JSON and compare with the reference on gleam_stdlib and the corpus.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "pkginterface"
+          ],
+          "done_when": "Zero differences in package interface JSON and in diagnostics.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "title": "Erlang backend and a first build",
+      "goal": "Typed tree to Erlang, package by package. Ends with milestones M3 and M4.",
+      "steps": [
+        {
+          "id": "3.1",
+          "title": "Erlang source builder",
+          "what": "The structured builder that writes Erlang text (the textual half of erlang-generation).",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "erlgen"
+          ],
+          "done_when": "Builder unit tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "3.2",
+          "title": "Erlang backend: modules, functions, expressions",
+          "what": "Module header, exports, functions, calls, operators, strings, lists, tuples, blocks.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "erlang"
+          ],
+          "done_when": "The matching assert_erl snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "3.3",
+          "title": "Erlang backend: patterns, case, guards, bit arrays",
+          "what": "Everything that pattern matches.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "erlang"
+          ],
+          "done_when": "Case, guard, pattern and bit array snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "3.4",
+          "title": "Erlang backend: records, type specs, docs, assert, echo",
+          "what": "Record headers (.hrl), -spec and -type, documentation attributes, runtime errors, echo.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "erlang"
+          ],
+          "done_when": "All 483 Erlang snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "3.5",
+          "title": "Files, configuration and metadata",
+          "what": "The IO abstraction with an in-memory file system, gleam.toml and manifest parsing, the module metadata cache.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "io",
+            "config",
+            "metadata"
+          ],
+          "done_when": "Config tests pass; metadata round trips.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "3.6",
+          "title": "Package compiler and compile-package",
+          "what": "Load a package, order its modules, analyse, generate, write; the compile-package command.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "build",
+            "cli"
+          ],
+          "done_when": "test-package-compiler cases reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "3.7",
+          "title": "Milestone M3: the standard library compiles",
+          "what": "Differential run of compile-package --target erlang --no-beam over gleam_stdlib and the corpus.",
+          "kind": "tooling",
+          "status": "todo",
+          "components": [
+            "erlang",
+            "build"
+          ],
+          "done_when": "Byte identical .erl and .hrl output.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "3.8",
+          "title": "Milestone M4: run it on the BEAM",
+          "what": "In CI, compile test/language and gleam_stdlib with the port and run their tests on Erlang/OTP.",
+          "kind": "tooling",
+          "status": "todo",
+          "components": [
+            "erlang",
+            "build"
+          ],
+          "done_when": "Both test suites pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "title": "JavaScript backend",
+      "goal": "The second target. Ends with milestone M5.",
+      "steps": [
+        {
+          "id": "4.1",
+          "title": "JavaScript: modules, imports, functions, expressions",
+          "what": "The generator skeleton and the expression printer, on top of the pretty printer.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "javascript"
+          ],
+          "done_when": "The matching assert_js snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "4.2",
+          "title": "JavaScript: custom types, equality, records, constants",
+          "what": "Classes for custom types, the prelude contract, constants.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "javascript"
+          ],
+          "done_when": "Custom type and constant snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "4.3",
+          "title": "JavaScript: case and let assert from decision trees",
+          "what": "Turn the decision trees of step 2.8 into if/else chains and bindings.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "javascript",
+            "exhaustiveness"
+          ],
+          "done_when": "Case and assignment snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "4.4",
+          "title": "JavaScript: bit arrays, echo, runtime errors",
+          "what": "The remaining expression forms.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "javascript"
+          ],
+          "done_when": "All 789 JavaScript snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "4.5",
+          "title": "TypeScript declarations",
+          "what": "The .d.mts printer.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "typescript"
+          ],
+          "done_when": "The 46 TypeScript snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "4.6",
+          "title": "Source maps",
+          "what": "Cursor observation in the pretty printer and source map v3 output.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "javascript",
+            "pretty"
+          ],
+          "done_when": "The 20 source map snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "4.7",
+          "title": "Milestone M5: JavaScript parity",
+          "what": "Differential run over gleam_stdlib and the corpus; run test/language on Node.",
+          "kind": "tooling",
+          "status": "todo",
+          "components": [
+            "javascript"
+          ],
+          "done_when": "Byte identical output; tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "P5",
+      "title": "The rest of the toolchain",
+      "goal": "From a compiler to a build tool. Ends with milestone M6.",
+      "steps": [
+        {
+          "id": "5.1",
+          "title": "Project compiler",
+          "what": "Many packages, incremental builds, caches, native files, Erlang and Elixir dependencies.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "build"
+          ],
+          "done_when": "test-project-compiler cases reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "5.2",
+          "title": "build, check, run, test, clean, export",
+          "what": "The everyday commands.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "cli"
+          ],
+          "done_when": "test-commands and test-output cases reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "5.3",
+          "title": "Erlang abstract format",
+          "what": "The binary builder and the Erlang term format encoder: .abstr files, what gleam build writes at the pin.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "erlgen"
+          ],
+          "done_when": "Byte identical .abstr files for gleam_stdlib.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "5.4",
+          "title": "Hex versions and dependency resolution",
+          "what": "Version and requirement parsing, the PubGrub solver, the manifest.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "deps",
+            "config"
+          ],
+          "done_when": "Resolver tests pass.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "5.5",
+          "title": "Hex client and the dependency commands",
+          "what": "Download and unpack packages; deps, add, remove, update.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "deps",
+            "cli"
+          ],
+          "done_when": "A project with Hex dependencies builds from scratch.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "5.6",
+          "title": "new, fix, shell, docs, publish",
+          "what": "Project templates, the HTML documentation generator, publishing and the rest.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "docs",
+            "cli",
+            "deps"
+          ],
+          "done_when": "Docs snapshots reproduce; new project matches the reference template.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "P6",
+      "title": "Language server and wrap up",
+      "goal": "The editor experience, then the audit. Ends with milestone M7.",
+      "steps": [
+        {
+          "id": "6.1",
+          "title": "Language server: engine, hover, go to definition, references",
+          "what": "The server loop, the compiler in the loop, and the read only features.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "lsp"
+          ],
+          "done_when": "The matching language server snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "6.2",
+          "title": "Language server: completion, rename, signature help",
+          "what": "Features that need a fault tolerant tree.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "lsp"
+          ],
+          "done_when": "The matching snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "6.3",
+          "title": "Language server: code actions",
+          "what": "The long tail of code actions.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "lsp"
+          ],
+          "done_when": "All 1,530 language server snapshots reproduce.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "6.4",
+          "title": "The compiler in the browser",
+          "what": "Upstream ships a WebAssembly build; ours can come from Nim's JavaScript backend.",
+          "kind": "port",
+          "status": "todo",
+          "components": [
+            "wasm"
+          ],
+          "done_when": "The compiler runs in a web page.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "6.5",
+          "title": "Final audit",
+          "what": "Run every upstream test, list every divergence, compare speed and binary size with the reference, decide whether to follow a newer Gleam release.",
+          "kind": "research",
+          "status": "todo",
+          "components": [],
+          "done_when": "Milestone M7 report published.",
+          "owner": "",
+          "post": "",
+          "pr": ""
+        }
+      ]
+    }
+  ]
+}
