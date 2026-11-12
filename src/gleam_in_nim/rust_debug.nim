@@ -20,7 +20,7 @@
 ## - `seq` is `[...]`, `Option` is `Some(...)` or `None`, a tuple is `(...)`,
 ##   a `ref` prints as what it points to (a `Box`), `Unit` is `()`.
 
-import std/[macros, options, strutils, unicode, tables, typetraits]
+import std/[macros, options, sets, strutils, unicode, tables, typetraits]
 import pkg/bigints
 import ./[rust_debug_tables, rust_enum]
 export rust_enum
@@ -98,6 +98,118 @@ func rustString*(s: string): string =
         result.add "\\u{" & toHex(c).strip(leading = true, trailing = false, chars = {'0'}).toLowerAscii & "}"
   result.add '"'
 
+func rustChar*(c: Rune): string =
+  ## A character as Rust's Debug prints it.
+  let code = int32(c)
+  result = "'"
+  case code
+  of ord('\''): result.add "\\'"
+  of ord('\\'): result.add "\\\\"
+  of ord('\n'): result.add "\\n"
+  of ord('\r'): result.add "\\r"
+  of ord('\t'): result.add "\\t"
+  of 0: result.add "\\0"
+  else:
+    if not isEscaped(code):
+      result.add $c
+    else:
+      result.add "\\u{" & toHex(code).strip(leading = true, trailing = false, chars = {'0'}).toLowerAscii & "}"
+  result.add '\''
+
+func shortestDigits(x: float): tuple[digits: string, pointPosition: int] =
+  ## The shortest decimal digits that read back as `x` (positive, finite), and
+  ## where the decimal point goes: the value is `0.DIGITS * 10^pointPosition`.
+  ##
+  ## This follows Rust's `core::num::flt2dec::strategy::dragon::format_shortest`
+  ## step by step, with big integers: Nim's `$` also gives shortest digits, but
+  ## it breaks a tie between two candidates the other way (2^-25 is
+  ## `2.9802322387695313e-8` for Rust and `...312e-8` for Nim).
+  let bits = cast[uint64](x)
+  let fraction = bits and ((1'u64 shl 52) - 1)
+  let biased = int((bits shr 52) and 0x7FF)
+  # x = mant * 2^exp, between (mant - minus) * 2^exp and (mant + plus) * 2^exp
+  var mantissa: uint64
+  var exp: int
+  var plusValue = 1
+  if biased == 0:
+    # subnormal: Rust's `integer_decode` gives the fraction shifted by one
+    mantissa = fraction shl 1
+    exp = -1075
+  elif fraction == 0:
+    # the smallest mantissa of its exponent: the float below is closer
+    mantissa = (1'u64 shl 52) shl 2
+    exp = biased - 1075 - 2
+    plusValue = 2
+  else:
+    mantissa = (fraction or (1'u64 shl 52)) shl 1
+    exp = biased - 1075 - 1
+  let inclusive = (fraction and 1) == 0
+
+  let ten = initBigInt(10)
+  var
+    mant = initBigInt(mantissa)
+    minus = initBigInt(1)
+    plus = initBigInt(plusValue)
+    scale = initBigInt(1)
+  if exp < 0:
+    scale = scale shl (-exp)
+  else:
+    mant = mant shl exp
+    minus = minus shl exp
+    plus = plus shl exp
+
+  # k: the smallest power of ten above the upper bound (or on it, when the
+  # bound is not part of the interval). Rust estimates it, then fixes it up.
+  func outside(scale, high: BigInt, inclusive: bool): bool =
+    if inclusive: scale <= high else: scale < high
+  var k = 0
+  let high = mant + plus
+  # value = mant / scale; divide by 10^k: scale *= 10^k (k > 0) or mant *= 10^-k
+  var scaled = scale
+  while outside(scaled, high, inclusive):
+    scaled = scaled * ten
+    inc k
+  if k == 0:
+    # go down while one power of ten less is still above the bound
+    var factor = ten
+    while not outside(scale, high * factor, inclusive):
+      factor = factor * ten
+      dec k
+    # the loop stops at the first power that is too small: `factor` is 10^(-k + 1)
+    let shift = factor div ten
+    mant = mant * shift
+    minus = minus * shift
+    plus = plus * shift
+  else:
+    scale = scaled
+  # now 0.1 <= (mant + plus) / scale < 1 (roughly): produce the digits of mant / scale
+  var digits = ""
+  var down, up: bool
+  while true:
+    mant = mant * ten
+    minus = minus * ten
+    plus = plus * ten
+    let digit = mant div scale
+    mant = mant mod scale
+    digits.add $digit
+    down = if inclusive: mant <= minus else: mant < minus
+    up = if inclusive: scale <= mant + plus else: scale < mant + plus
+    if down or up:
+      break
+  # rounding up happens when only the rounding-up condition was triggered, or
+  # both were and the tie breaking prefers rounding up.
+  if up and (not down or mant * initBigInt(2) >= scale):
+    var i = digits.high
+    while i >= 0 and digits[i] == '9':
+      digits[i] = '0'
+      dec i
+    if i >= 0:
+      digits[i] = chr(ord(digits[i]) + 1)
+    else:
+      digits = "1" & digits[0 ..< digits.high]
+      inc k
+  (digits, k)
+
 func rustFloat*(x: float): string =
   ## A float as Rust's Debug prints it: the shortest digits that round trip,
   ## always with a fraction, in exponent form below 1e-4 and from 1e16.
@@ -109,28 +221,9 @@ func rustFloat*(x: float): string =
     return "-inf"
   if x == 0.0:
     return (if 1.0 / x < 0: "-0.0" else: "0.0")
-  # Nim's `$` gives the shortest digits too; take them apart.
-  var text = $abs(x)
-  var exponent = 0
-  let e = text.find('e')
-  if e >= 0:
-    exponent = parseInt(text[e + 1 .. ^1])
-    text = text[0 ..< e]
-  let dot = text.find('.')
-  var digits = text.replace(".", "")
-  if dot >= 0:
-    exponent += dot - 1
-  else:
-    exponent += text.len - 1
-  # `digits` is d.ddd * 10^exponent once leading zeros are gone
-  var leading = 0
-  while leading < digits.len - 1 and digits[leading] == '0':
-    inc leading
-  digits = digits[leading .. ^1]
-  exponent -= leading
-  digits = digits.strip(leading = false, trailing = true, chars = {'0'})
-  if digits.len == 0:
-    digits = "0"
+  # `digits` is d.ddd * 10^exponent
+  let (digits, pointPosition) = shortestDigits(abs(x))
+  let exponent = pointPosition - 1
   let magnitude = abs(x)
   var body: string
   if magnitude < 1e-4 or magnitude >= 1e16:
@@ -180,8 +273,17 @@ proc fmtStruct[T](x: T, name: string, indent: string, into: var string) =
     into.add name
 
 proc debugFmt*[T](x: T, indent: string, into: var string) =
-  when T is Unit:
+  mixin rustDebugHook
+  when compiles(rustDebugHook(x, indent, into)):
+    # A type that does not follow the conventions prints itself: a module
+    # defines `rustDebugHook(x: ItsType, indent: string, into: var string)`.
+    rustDebugHook(x, indent, into)
+  elif T is Unit:
     into.add "()"
+  elif T is Table or T is HashSet:
+    # Only the empty ones are needed so far: the parser leaves them empty.
+    doAssert x.len == 0, "debugFmt: a map or set with items is not supported yet"
+    into.add "{}"
   elif T is string:
     into.add rustString(x)
   elif T is bool:
