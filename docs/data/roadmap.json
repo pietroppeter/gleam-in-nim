@@ -1,47 +1,840 @@
 {
+  "about": "The roadmap of the port. The plan thread owns the phases and their order. To pick the next step: the first planned step whose earlier steps in the same phase it needs are done. `done_when` is the test a step must pass; `components` names rows of docs/devlog/data/the_port_plan/components.json. The pull request that starts, ships or replans a step edits this file. `owner` is the thread that has claimed a step: claim a step by writing your thread's title there, in a pull request, before you start.",
+  "pin": {
+    "tag": "v1.19.2",
+    "commit": "ed41eace2dd89054eb2d744c33925261d1eff32e",
+    "date": "2026-10-12"
+  },
+  "milestones": [
+    {
+      "id": "M1",
+      "title": "Format parity",
+      "after": "1",
+      "proof": "gleam-in-nim format prints byte for byte what gleam format prints, on the 918 upstream formatter tests, on gleam_stdlib and on the corpus."
+    },
+    {
+      "id": "M2",
+      "title": "Check parity",
+      "after": "2",
+      "proof": "Same errors and warnings as the reference on the upstream type checker tests; same package interface JSON as gleam export package-interface on gleam_stdlib and the corpus."
+    },
+    {
+      "id": "M3",
+      "title": "The standard library compiles to Erlang",
+      "after": "3",
+      "proof": "compile-package --target erlang --no-beam gives byte identical .erl and .hrl files for gleam_stdlib and the corpus; the 483 upstream Erlang snapshots reproduce."
+    },
+    {
+      "id": "M4",
+      "title": "It runs on the BEAM",
+      "after": "3",
+      "proof": "In CI, with Erlang/OTP installed, the output of the port passes upstream's test/language suite and gleam_stdlib's own tests."
+    },
+    {
+      "id": "M5",
+      "title": "JavaScript parity",
+      "after": "4",
+      "proof": "Byte identical .mjs and .d.mts for gleam_stdlib and the corpus; the 843 upstream JavaScript snapshots reproduce; test/language passes on Node."
+    },
+    {
+      "id": "M6",
+      "title": "A real build tool",
+      "after": "5",
+      "proof": "gleam-in-nim new, add, build, test and run work on a fresh project with Hex dependencies, with no reference binary involved."
+    },
+    {
+      "id": "M7",
+      "title": "Port complete",
+      "after": "6",
+      "proof": "Every row of the coverage map is verified or listed as an intentional divergence; the language server answers an editor."
+    }
+  ],
   "phases": [
     {
       "id": "0",
       "title": "Before the first line",
       "goal": "Know what is being ported, where it comes from, how others did such a thing, and how this project will work. Every step is an explainer.",
       "steps": [
-        {"id": "workflow", "kind": "tooling", "status": "done", "title": "The workflow and the repo",
-         "what": "How Pietro has been working with nimib and AI, and this site made accordingly: devlog, review mode, the look, roadmap, coverage map, CI.",
-         "post": "workflow", "pr": "1"},
-        {"id": "gleam", "kind": "research", "status": "done", "title": "Gleam, its people and its programs",
-         "what": "The language, how it is used, the projects big and small, the people, and the house rules a port should respect.",
-         "post": "gleam-and-its-people", "pr": "4"},
-        {"id": "decisions", "kind": "research", "status": "done", "title": "Where Gleam's decisions live",
-         "what": "No specification and no RFCs: a ranked map of where design decisions are written down, and a recipe to look one up.",
-         "post": "where-gleam-decisions-live", "pr": "4"},
-        {"id": "corpus", "kind": "tooling", "status": "done", "title": "A corpus of real Gleam",
-         "what": "Seventy five projects pinned at exact commits with their licences (corpus/corpus.json), and the tool that pins, fetches and measures them.",
-         "post": "a-corpus-of-real-gleam", "pr": "4"},
-        {"id": "beam", "kind": "research", "status": "done", "title": "The BEAM and Erlang",
-         "what": "A short history, what it solves, how a language is built on it, how Gleam lives on it.",
-         "post": "the-beam", "pr": "3"},
-        {"id": "elm", "kind": "research", "status": "done", "title": "Elm, the other root",
-         "what": "Its history and principles, the type system, developer experience, and what Gleam took from it.",
-         "post": "elm-roots", "pr": "5"},
-        {"id": "architecture", "kind": "plan", "status": "started", "title": "The compiler, taken apart, and the plan",
-         "what": "How compilers are made and how Gleam's is; its history; the components, the order to port them, which backend first, how each step is verified.",
-         "post": "", "pr": ""},
-        {"id": "rewrites", "kind": "research", "status": "done", "title": "Other rewrites",
-         "what": "How a big project is rewritten in another language, by people and by AI: what worked, what did not, what to copy.",
-         "post": "learning-from-rewrites", "pr": "6"},
-        {"id": "practices", "kind": "tooling", "status": "done", "title": "How to develop",
-         "what": "Specs, decision records, tooling to verify the port and tooling for Pietro to review it.",
-         "post": "how-we-work", "pr": "6"}
+        {
+          "id": "workflow",
+          "kind": "tooling",
+          "status": "done",
+          "title": "The workflow and the repo",
+          "what": "How Pietro has been working with nimib and AI, and this site made accordingly: devlog, review mode, the look, roadmap, coverage map, CI.",
+          "post": "workflow",
+          "pr": "1"
+        },
+        {
+          "id": "gleam",
+          "kind": "research",
+          "status": "done",
+          "title": "Gleam, its people and its programs",
+          "what": "The language, how it is used, the projects big and small, the people, and the house rules a port should respect.",
+          "post": "gleam-and-its-people",
+          "pr": "4"
+        },
+        {
+          "id": "decisions",
+          "kind": "research",
+          "status": "done",
+          "title": "Where Gleam's decisions live",
+          "what": "No specification and no RFCs: a ranked map of where design decisions are written down, and a recipe to look one up.",
+          "post": "where-gleam-decisions-live",
+          "pr": "4"
+        },
+        {
+          "id": "corpus",
+          "kind": "tooling",
+          "status": "done",
+          "title": "A corpus of real Gleam",
+          "what": "Seventy five projects pinned at exact commits with their licences (corpus/corpus.json), and the tool that pins, fetches and measures them.",
+          "post": "a-corpus-of-real-gleam",
+          "pr": "4"
+        },
+        {
+          "id": "beam",
+          "kind": "research",
+          "status": "done",
+          "title": "The BEAM and Erlang",
+          "what": "A short history, what it solves, how a language is built on it, how Gleam lives on it.",
+          "post": "the-beam",
+          "pr": "3"
+        },
+        {
+          "id": "elm",
+          "kind": "research",
+          "status": "done",
+          "title": "Elm, the other root",
+          "what": "Its history and principles, the type system, developer experience, and what Gleam took from it.",
+          "post": "elm-roots",
+          "pr": "5"
+        },
+        {
+          "id": "architecture",
+          "kind": "plan",
+          "status": "done",
+          "title": "The compiler, taken apart",
+          "what": "How compilers are made and how Gleam's is: the pipeline, the components and their sizes, its history, and how it compares with other compilers.",
+          "post": "how-gleam-compiles",
+          "pr": "2"
+        },
+        {
+          "id": "plan",
+          "kind": "plan",
+          "status": "done",
+          "title": "The port plan",
+          "what": "Scope, the order of work, which backend first, the milestones, how each step is verified, and this roadmap.",
+          "post": "the-port-plan",
+          "pr": "2"
+        },
+        {
+          "id": "rewrites",
+          "kind": "research",
+          "status": "done",
+          "title": "Other rewrites",
+          "what": "How a big project is rewritten in another language, by people and by AI: what worked, what did not, what to copy.",
+          "post": "learning-from-rewrites",
+          "pr": "6"
+        },
+        {
+          "id": "practices",
+          "kind": "tooling",
+          "status": "done",
+          "title": "How to develop",
+          "what": "Specs, decision records, tooling to verify the port and tooling for Pietro to review it.",
+          "post": "how-we-work",
+          "pr": "6"
+        },
+        {
+          "id": "harvest-tests",
+          "kind": "tooling",
+          "status": "done",
+          "title": "Harvest the upstream Rust tests",
+          "what": "Many upstream tests keep inputs and expected values in Rust macros, not in snapshot files: 918 formatter assertions, 374 inference assertions, lexer and parser assertions, dependency modules of backend tests. Extract them to JSON test vectors.",
+          "done_when": "Every upstream assertion macro call is available as data, with counts per component in the coverage map.",
+          "post": "how-we-work",
+          "pr": "6",
+          "owner": "Learn from other compiler rewrites"
+        },
+        {
+          "id": "erlang-in-ci",
+          "kind": "tooling",
+          "status": "planned",
+          "title": "Erlang in CI",
+          "what": "Add Erlang/OTP, Node and the reference binary to CI so compiled output can be executed.",
+          "done_when": "CI can run erlc and escript; a smoke test compiles and runs reference output.",
+          "post": "",
+          "pr": "",
+          "owner": "Research Gleam, its community and corpus"
+        }
       ]
     },
     {
       "id": "1",
-      "title": "The front end",
-      "goal": "Gleam source in, a tree out, the same tree the Rust compiler builds. The plan thread fills in this phase and the next ones.",
+      "title": "Front end",
+      "goal": "Source text to syntax tree and back to text. Ends with milestone M1.",
       "steps": [
-        {"id": "lexer", "kind": "port", "status": "started", "title": "The lexer",
-         "what": "Source text to tokens: the first piece of the compiler in Nim, checked token by token against the Rust lexer.",
-         "post": "", "pr": ""}
+        {
+          "id": "spans",
+          "kind": "port",
+          "status": "started",
+          "title": "Source spans and line numbers",
+          "what": "SrcSpan and LineNumbers, the coordinates every later phase uses.",
+          "done_when": "Upstream src-span tests pass.",
+          "components": [
+            "span"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Learn from other compiler rewrites"
+        },
+        {
+          "id": "lexer",
+          "kind": "port",
+          "status": "started",
+          "title": "Lexer",
+          "what": "Text to tokens, with comments and lexical errors.",
+          "done_when": "Lexer assertions from parse/tests.rs pass; tokens of every corpus file match in kind and position.",
+          "components": [
+            "lexer"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Port the Gleam lexer to Nim"
+        },
+        {
+          "id": "untyped-ast",
+          "kind": "port",
+          "status": "planned",
+          "title": "Untyped syntax tree",
+          "what": "The data types of the untyped AST: modules, definitions, expressions, patterns, constants, type annotations.",
+          "done_when": "Types compile and can represent every construct the parser produces.",
+          "components": [
+            "ast"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Learn from other compiler rewrites"
+        },
+        {
+          "id": "parser-expressions",
+          "kind": "port",
+          "status": "planned",
+          "title": "Parser: expressions and statements",
+          "what": "Expression units, operator precedence, blocks, let, use, assert, case, patterns, bit arrays.",
+          "done_when": "parse_statement_sequence accepts every expression test input.",
+          "components": [
+            "parser"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Port the Gleam lexer to Nim"
+        },
+        {
+          "id": "parser-modules",
+          "kind": "port",
+          "status": "planned",
+          "title": "Parser: modules",
+          "what": "Definitions, attributes, imports, custom types, type annotations, constants, doc comments and the extra comment table.",
+          "done_when": "Every file of gleam_stdlib and the corpus parses.",
+          "components": [
+            "parser"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Port the Gleam lexer to Nim"
+        },
+        {
+          "id": "diagnostics",
+          "kind": "port",
+          "status": "planned",
+          "title": "Diagnostics and parse errors",
+          "what": "A faithful port of the codespan-style renderer, then every parse error message.",
+          "done_when": "The parse error snapshots reproduce byte for byte.",
+          "components": [
+            "diagnostic",
+            "errors",
+            "parser"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Learn from other compiler rewrites"
+        },
+        {
+          "id": "pretty-printer",
+          "kind": "port",
+          "status": "started",
+          "title": "Pretty printer",
+          "what": "The document algebra: groups, breaks, nesting, and the fitting algorithm.",
+          "done_when": "Upstream pretty printer tests pass.",
+          "components": [
+            "pretty"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Plan the compiler port"
+        },
+        {
+          "id": "formatter",
+          "kind": "port",
+          "status": "planned",
+          "title": "Formatter",
+          "what": "gleam format: syntax tree and comments back to canonical text.",
+          "done_when": "The 918 upstream formatter assertions pass.",
+          "components": [
+            "format"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Plan the compiler port"
+        },
+        {
+          "id": "m1-format-parity",
+          "kind": "tooling",
+          "status": "planned",
+          "title": "Milestone M1: format parity on the corpus",
+          "what": "Differential run of format over gleam_stdlib and the corpus against the reference binary.",
+          "done_when": "Zero differences, or each difference filed and fixed.",
+          "components": [
+            "format",
+            "parser",
+            "lexer"
+          ],
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Analysis",
+      "goal": "Give every expression a type, find every mistake. Ends with milestone M2.",
+      "steps": [
+        {
+          "id": "types",
+          "kind": "port",
+          "status": "planned",
+          "title": "Types, prelude and unification",
+          "what": "Type and TypeVar, the prelude types, environment, instantiate, unify, generalise, the type printer.",
+          "done_when": "Unification and printing unit tests pass.",
+          "components": [
+            "types"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Explain the BEAM and Elm roots"
+        },
+        {
+          "id": "typed-ast",
+          "kind": "port",
+          "status": "planned",
+          "title": "Typed syntax tree",
+          "what": "TypedExpr, typed patterns, constants and definitions.",
+          "done_when": "Types compile; visitors walk them.",
+          "components": [
+            "ast"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "infer-core",
+          "kind": "port",
+          "status": "planned",
+          "title": "Inference: the expression core",
+          "what": "Literals, variables, functions, calls, let, blocks, operators, tuples, lists.",
+          "done_when": "The matching assert_infer tests pass.",
+          "components": [
+            "typer"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "infer-custom-types",
+          "kind": "port",
+          "status": "planned",
+          "title": "Inference: custom types and records",
+          "what": "Type and value constructors, labelled arguments, field access, record update, variant inference.",
+          "done_when": "Custom type and accessor tests pass.",
+          "components": [
+            "typer",
+            "analyse"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "infer-patterns",
+          "kind": "port",
+          "status": "planned",
+          "title": "Inference: patterns and case",
+          "what": "Pattern typing, case clauses, alternative patterns, string prefix and bit array patterns, guards.",
+          "done_when": "Pattern and guard tests pass.",
+          "components": [
+            "typer",
+            "bitarray"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "infer-rest",
+          "kind": "port",
+          "status": "planned",
+          "title": "Inference: pipes, use, constants, todo, panic, echo",
+          "what": "The remaining expression forms and module constants.",
+          "done_when": "Pipe, use and constant tests pass.",
+          "components": [
+            "typer"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "module-analysis",
+          "kind": "port",
+          "status": "planned",
+          "title": "Module analysis",
+          "what": "Imports, definition registration, the call graph and dependency ordering, generalisation, multi module projects, target support.",
+          "done_when": "assert_module_infer tests and multi module tests pass.",
+          "components": [
+            "analyse"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "exhaustiveness",
+          "kind": "port",
+          "status": "planned",
+          "title": "Exhaustiveness and decision trees",
+          "what": "Compile case expressions to decision trees; report missing and unreachable patterns.",
+          "done_when": "The exhaustiveness tests pass.",
+          "components": [
+            "exhaustiveness"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "type-errors",
+          "kind": "port",
+          "status": "planned",
+          "title": "Type errors",
+          "what": "Every type error message, in upstream wording.",
+          "done_when": "The type error snapshots reproduce.",
+          "components": [
+            "errors",
+            "typer"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "warnings",
+          "kind": "port",
+          "status": "planned",
+          "title": "Warnings and reference tracking",
+          "what": "Unused code, deprecations, dead code detection, version inference, and their messages.",
+          "done_when": "The warning snapshots reproduce.",
+          "components": [
+            "errors",
+            "analyse"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "m2-check-parity",
+          "kind": "port",
+          "status": "planned",
+          "title": "Package interface and milestone M2",
+          "what": "Export public types as JSON and compare with the reference on gleam_stdlib and the corpus.",
+          "done_when": "Zero differences in package interface JSON and in diagnostics.",
+          "components": [
+            "pkginterface"
+          ],
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Erlang backend and a first build",
+      "goal": "Typed tree to Erlang, package by package. Ends with milestones M3 and M4.",
+      "steps": [
+        {
+          "id": "erlang-builder",
+          "kind": "port",
+          "status": "started",
+          "title": "Erlang source builder",
+          "what": "The structured builder that writes Erlang text (the textual half of erlang-generation).",
+          "done_when": "Builder unit tests pass.",
+          "components": [
+            "erlgen"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Explain the BEAM and Elm roots"
+        },
+        {
+          "id": "erlang-expressions",
+          "kind": "port",
+          "status": "planned",
+          "title": "Erlang backend: modules, functions, expressions",
+          "what": "Module header, exports, functions, calls, operators, strings, lists, tuples, blocks.",
+          "done_when": "The matching assert_erl snapshots reproduce.",
+          "components": [
+            "erlang"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "erlang-patterns",
+          "kind": "port",
+          "status": "planned",
+          "title": "Erlang backend: patterns, case, guards, bit arrays",
+          "what": "Everything that pattern matches.",
+          "done_when": "Case, guard, pattern and bit array snapshots reproduce.",
+          "components": [
+            "erlang"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "erlang-rest",
+          "kind": "port",
+          "status": "planned",
+          "title": "Erlang backend: records, type specs, docs, assert, echo",
+          "what": "Record headers (.hrl), -spec and -type, documentation attributes, runtime errors, echo.",
+          "done_when": "All 483 Erlang snapshots reproduce.",
+          "components": [
+            "erlang"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "io-config-metadata",
+          "kind": "port",
+          "status": "planned",
+          "title": "Files, configuration and metadata",
+          "what": "The IO abstraction with an in-memory file system, gleam.toml and manifest parsing, the module metadata cache.",
+          "done_when": "Config tests pass; metadata round trips.",
+          "components": [
+            "io",
+            "config",
+            "metadata"
+          ],
+          "post": "",
+          "pr": "",
+          "owner": "Research Gleam, its community and corpus"
+        },
+        {
+          "id": "package-compiler",
+          "kind": "port",
+          "status": "planned",
+          "title": "Package compiler and compile-package",
+          "what": "Load a package, order its modules, analyse, generate, write; the compile-package command.",
+          "done_when": "test-package-compiler cases reproduce.",
+          "components": [
+            "build",
+            "cli"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "m3-stdlib-erlang",
+          "kind": "tooling",
+          "status": "planned",
+          "title": "Milestone M3: the standard library compiles",
+          "what": "Differential run of compile-package --target erlang --no-beam over gleam_stdlib and the corpus.",
+          "done_when": "Byte identical .erl and .hrl output.",
+          "components": [
+            "erlang",
+            "build"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "m4-run-on-beam",
+          "kind": "tooling",
+          "status": "planned",
+          "title": "Milestone M4: run it on the BEAM",
+          "what": "In CI, compile test/language and gleam_stdlib with the port and run their tests on Erlang/OTP.",
+          "done_when": "Both test suites pass.",
+          "components": [
+            "erlang",
+            "build"
+          ],
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "JavaScript backend",
+      "goal": "The second target. Ends with milestone M5.",
+      "steps": [
+        {
+          "id": "js-expressions",
+          "kind": "port",
+          "status": "planned",
+          "title": "JavaScript: modules, imports, functions, expressions",
+          "what": "The generator skeleton and the expression printer, on top of the pretty printer.",
+          "done_when": "The matching assert_js snapshots reproduce.",
+          "components": [
+            "javascript"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "js-custom-types",
+          "kind": "port",
+          "status": "planned",
+          "title": "JavaScript: custom types, equality, records, constants",
+          "what": "Classes for custom types, the prelude contract, constants.",
+          "done_when": "Custom type and constant snapshots reproduce.",
+          "components": [
+            "javascript"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "js-decision-trees",
+          "kind": "port",
+          "status": "planned",
+          "title": "JavaScript: case and let assert from decision trees",
+          "what": "Turn the decision trees of step 2.8 into if/else chains and bindings.",
+          "done_when": "Case and assignment snapshots reproduce.",
+          "components": [
+            "javascript",
+            "exhaustiveness"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "js-rest",
+          "kind": "port",
+          "status": "planned",
+          "title": "JavaScript: bit arrays, echo, runtime errors",
+          "what": "The remaining expression forms.",
+          "done_when": "All 789 JavaScript snapshots reproduce.",
+          "components": [
+            "javascript"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "typescript",
+          "kind": "port",
+          "status": "planned",
+          "title": "TypeScript declarations",
+          "what": "The .d.mts printer.",
+          "done_when": "The 46 TypeScript snapshots reproduce.",
+          "components": [
+            "typescript"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "source-maps",
+          "kind": "port",
+          "status": "planned",
+          "title": "Source maps",
+          "what": "Cursor observation in the pretty printer and source map v3 output.",
+          "done_when": "The 20 source map snapshots reproduce.",
+          "components": [
+            "javascript",
+            "pretty"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "m5-js-parity",
+          "kind": "tooling",
+          "status": "planned",
+          "title": "Milestone M5: JavaScript parity",
+          "what": "Differential run over gleam_stdlib and the corpus; run test/language on Node.",
+          "done_when": "Byte identical output; tests pass.",
+          "components": [
+            "javascript"
+          ],
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "The rest of the toolchain",
+      "goal": "From a compiler to a build tool. Ends with milestone M6.",
+      "steps": [
+        {
+          "id": "project-compiler",
+          "kind": "port",
+          "status": "planned",
+          "title": "Project compiler",
+          "what": "Many packages, incremental builds, caches, native files, Erlang and Elixir dependencies.",
+          "done_when": "test-project-compiler cases reproduce.",
+          "components": [
+            "build"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "everyday-commands",
+          "kind": "port",
+          "status": "planned",
+          "title": "build, check, run, test, clean, export",
+          "what": "The everyday commands.",
+          "done_when": "test-commands and test-output cases reproduce.",
+          "components": [
+            "cli"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "erlang-abstract-format",
+          "kind": "port",
+          "status": "planned",
+          "title": "Erlang abstract format",
+          "what": "The binary builder and the Erlang term format encoder: .abstr files, what gleam build writes at the pin.",
+          "done_when": "Byte identical .abstr files for gleam_stdlib.",
+          "components": [
+            "erlgen"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "dependency-resolution",
+          "kind": "port",
+          "status": "planned",
+          "title": "Hex versions and dependency resolution",
+          "what": "Version and requirement parsing, the PubGrub solver, the manifest.",
+          "done_when": "Resolver tests pass.",
+          "components": [
+            "deps",
+            "config"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "hex-client",
+          "kind": "port",
+          "status": "planned",
+          "title": "Hex client and the dependency commands",
+          "what": "Download and unpack packages; deps, add, remove, update.",
+          "done_when": "A project with Hex dependencies builds from scratch.",
+          "components": [
+            "deps",
+            "cli"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "remaining-commands",
+          "kind": "port",
+          "status": "planned",
+          "title": "new, fix, shell, docs, publish",
+          "what": "Project templates, the HTML documentation generator, publishing and the rest.",
+          "done_when": "Docs snapshots reproduce; new project matches the reference template.",
+          "components": [
+            "docs",
+            "cli",
+            "deps"
+          ],
+          "post": "",
+          "pr": ""
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Language server and wrap up",
+      "goal": "The editor experience, then the audit. Ends with milestone M7.",
+      "steps": [
+        {
+          "id": "lsp-engine",
+          "kind": "port",
+          "status": "planned",
+          "title": "Language server: engine, hover, go to definition, references",
+          "what": "The server loop, the compiler in the loop, and the read only features.",
+          "done_when": "The matching language server snapshots reproduce.",
+          "components": [
+            "lsp"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "lsp-completion",
+          "kind": "port",
+          "status": "planned",
+          "title": "Language server: completion, rename, signature help",
+          "what": "Features that need a fault tolerant tree.",
+          "done_when": "The matching snapshots reproduce.",
+          "components": [
+            "lsp"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "lsp-code-actions",
+          "kind": "port",
+          "status": "planned",
+          "title": "Language server: code actions",
+          "what": "The long tail of code actions.",
+          "done_when": "All 1,530 language server snapshots reproduce.",
+          "components": [
+            "lsp"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "browser",
+          "kind": "port",
+          "status": "planned",
+          "title": "The compiler in the browser",
+          "what": "Upstream ships a WebAssembly build; ours can come from Nim's JavaScript backend.",
+          "done_when": "The compiler runs in a web page.",
+          "components": [
+            "wasm"
+          ],
+          "post": "",
+          "pr": ""
+        },
+        {
+          "id": "final-audit",
+          "kind": "research",
+          "status": "planned",
+          "title": "Final audit",
+          "what": "Run every upstream test, list every divergence, compare speed and binary size with the reference, decide whether to follow a newer Gleam release.",
+          "done_when": "Milestone M7 report published.",
+          "components": [],
+          "post": "",
+          "pr": ""
+        }
       ]
     }
   ]
