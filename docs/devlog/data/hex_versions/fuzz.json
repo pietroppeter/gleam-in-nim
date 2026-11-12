@@ -1,0 +1,18 @@
+{
+  "about": "Long random runs of tests/differential/hexpm_version/run.sh fuzz SEED COUNT on 2026-11-12, Nim against the Rust hexpm crate at v1.19.2. COUNT is the number of random requirement expressions; the run adds versions, token soup, comparisons and membership cases, and the upstream and corpus cases.",
+  "first_run": {
+    "seed": 7,
+    "count": 300000,
+    "cases": 800148,
+    "different": 8,
+    "example": "==10.3.2 and >=  10.3.2+1",
+    "rust": ">=10.3.2+1, <=10.3.2",
+    "nim": "10.3.2"
+  },
+  "seeds": [
+    {"seed": 7, "count": 300000, "cases": 800148, "different": 0},
+    {"seed": 11, "count": 600000, "cases": 1600148, "different": 0}
+  ],
+  "cases": 2400296,
+  "different": 0
+}

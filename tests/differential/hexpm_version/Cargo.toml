@@ -1,0 +1,12 @@
+# The Rust half of the differential test of Hex versions and ranges: a driver over upstream's
+# hexpm crate, read from the pinned checkout in reference/gleam. See run.sh.
+[package]
+name = "hexpm-version-driver"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+hexpm = { path = "../../../reference/gleam/hexpm" }
+
+[workspace]

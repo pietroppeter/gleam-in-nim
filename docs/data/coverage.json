@@ -472,10 +472,10 @@
       "stage": "build",
       "rust_code": 3046,
       "rust_tests": 1711,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "started",
+      "nim": "src/gleam_in_nim/hexpm/version.nim, hexpm/version/lexer.nim, hexpm/version/parser.nim, version_ranges.nim",
+      "post": "hex-versions",
+      "notes": "So far: versions and requirements, identical to the Rust crate on 2.4 million random cases. The Hex API client is not ported."
     },
     {
       "module": "language-server",

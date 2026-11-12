@@ -24,5 +24,6 @@ import devlog/what_the_reference_says
 import devlog/what_a_lexer_is
 import devlog/what_a_parser_is
 import devlog/erlang_in_ci
+import devlog/hex_versions
 import devlog/names_and_scopes
 import devlog/what_a_type_checker_is

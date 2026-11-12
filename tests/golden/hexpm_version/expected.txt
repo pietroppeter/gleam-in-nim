@@ -1,0 +1,4148 @@
+ok	1	2	3		-	1.2.3
+ok	1	4	5		+ignore	1.4.5+ignore
+ok	0	0	1		+sha.0702245	0.0.1+sha.0702245
+ok	1	4	5	A:6-g3318bd5	-	1.4.5-6-g3318bd5
+ok	1	4	5	N:6,N:7,A:eight	-	1.4.5-6.7.eight
+ok	1	4	5	A:6-g3318bd5	+ignore	1.4.5-6-g3318bd5+ignore
+err	encountered unexpected token: "wibble"
+err	missing minor and patch versions: 2
+err	missing minor and patch versions: 2
+err	missing patch version: 2.3
+err	missing patch version: 2.3
+err	expected more input
+err	expected more input
+err	expected end of input, but got: "."
+err	expected end of input, but got: ".4"
+err	missing patch version: 2.3
+err	missing patch version: 2.3
+err	encountered unexpected token: "01"
+err	missing patch version: 2.3
+err	missing patch version: 2.3
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "02"
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "and"
+ok	1	100	1000		-	1.100.1000
+ok	1	100	4	A:dev	-	1.100.4-dev
+ok	1	100	4	A:dev,N:1,A:r,A:t	-	1.100.4-dev.1.r.t
+ok	1	100	4		+dev.1.r.t	1.100.4+dev.1.r.t
+ok	1	100	4	A:ewfjhwefj,A:wefw,A:w,N:1,A:ff	+dev.1.r.t	1.100.4-ewfjhwefj.wefw.w.1.ff+dev.1.r.t
+ok	1.2.3
+ok	1.2.3
+ok	1.2.3
+ok	1.2.3
+ok	<1.2.3 | >=1.2.4
+ok	2.2.3
+ok	1.2.3-thing+oop
+ok	>=1.0.2, <1.2.3
+ok	*
+ok	>=1.0.1
+ok	>=1.0.0
+ok	<1.0.0
+ok	<1.0.1
+ok	>=2.2.0, <3.0.0
+ok	>=4.6.5, <4.7.0
+ok	>=4.6.5-eee, <4.7.0
+ok	>=4.6.5+eee, <4.7.0
+ok	>=3.0.0, <3.1.0 | >=10.0.1
+ok	>=1.0.0, <1.1.0 | >=3.0.0, <3.1.0
+ok	>=0.6.16, <1.0.0
+ok	>=1.0.0-pre.5, <2.0.0
+err	expected end of input, but got: ".1"
+err	missing minor and patch versions: 1
+err	missing patch version: 1.1
+err	missing patch version: 1.1
+err	encountered unexpected token: "wibble"
+err	missing minor and patch versions: 2
+err	missing patch version: 2.3
+err	expected more input
+err	expected more input
+err	expected end of input, but got: "."
+err	missing patch version: 2.3
+err	missing patch version: 2.3
+err	encountered unexpected token: "01"
+err	missing patch version: 2.3
+err	missing patch version: 2.3
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "02"
+err	missing minor and patch versions: 0
+err	lexer error: UnexpectedCharacter('&')
+err	missing patch version: 1.2
+err	encountered unexpected token: "=="
+err	missing patch version: 1.2
+err	encountered unexpected token: "=="
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "=="
+err	expected more input
+err	expected more input
+err	expected more input
+Equal	true
+Equal	false
+Equal	false
+Equal	false
+Equal	false
+Greater	false
+Less	false
+Greater	false
+Less	false
+Greater	false
+Less	false
+Greater	false
+Less	false
+Less	false
+err	expected more input
+ok	0	0	0		-	0.0.0
+ok	0	1	0		-	0.1.0
+err	missing patch version: 0.1
+ok	0	11	0		-	0.11.0
+ok	0	2	0		-	0.2.0
+ok	0	4	1		-	0.4.1
+ok	0	4	4		-	0.4.4
+ok	0	6	0		-	0.6.0
+ok	1	0	0		-	1.0.0
+ok	1	0	1		-	1.0.1
+ok	1	0	2		-	1.0.2
+ok	1	0	5		-	1.0.5
+ok	1	0	6		-	1.0.6
+ok	1	1	0		-	1.1.0
+ok	1	1	2		-	1.1.2
+ok	1	1	4		-	1.1.4
+ok	1	11	0		-	1.11.0
+ok	1	13	0		-	1.13.0
+ok	1	2	0		-	1.2.0
+ok	1	2	1		-	1.2.1
+ok	1	3	0		-	1.3.0
+ok	1	4	1		-	1.4.1
+ok	1	5	0		-	1.5.0
+ok	1	6	0		-	1.6.0
+ok	12	1	2		-	12.1.2
+ok	2	0	0		-	2.0.0
+ok	2	0	2		-	2.0.2
+ok	2	0	4		-	2.0.4
+ok	2	1	0		-	2.1.0
+ok	2	1	1		-	2.1.1
+ok	2	1	2		-	2.1.2
+ok	2	2	1		-	2.2.1
+ok	2	5	0		-	2.5.0
+ok	2	8	0		-	2.8.0
+ok	3	0	1		-	3.0.1
+ok	3	1	0		-	3.1.0
+ok	3	1	2		-	3.1.2
+ok	3	2	0		-	3.2.0
+ok	3	3	2		-	3.3.2
+ok	4	1	0		-	4.1.0
+ok	4	2	1		-	4.2.1
+ok	4	5	0		-	4.5.0
+ok	4	7	0		-	4.7.0
+ok	5	0	0		-	5.0.0
+ok	5	7	1		-	5.7.1
+ok	6	0	0		-	6.0.0
+ok	6	0	3		-	6.0.3
+ok	7	0	0		-	7.0.0
+ok	9	0	0		-	9.0.0
+ok	9	0	1		-	9.0.1
+ok	<3.3.3 | >=3.3.4, <3.3.10+rc1.4294967296 | >=3.3.11
+ok	<0.0.10-alpha.1 | >=0.0.11
+ok	>=0.1.11
+err	missing patch version: 3.2
+ok	>=0.0.0
+ok	2.3.1-alpha.rc1 | >=2.3.3, <10.1.2-1
+err	encountered unexpected token: "~>"
+ok	>=0.2.10, <3.10.1 | >=3.10.2
+ok	<0.3.2 | >=10.3.1
+ok	<10.3.1-alpha
+ok	>=10.2.10-2.0, <10.3.0
+ok	2.10.2
+ok	2.3.3 | 2.10.2-rc1
+err	expected end of input, but got: "== 10.10.1-rc1.1 or < 0.3.3or 0.3.2-0.beta-2"
+ok	∅
+err	encountered unexpected token: "~>"
+err	missing minor and patch versions: 10
+ok	>=3.1.2, <3.2.0
+ok	<0.10.2 | >=0.10.3
+ok	<10.2.3 | >=10.2.4
+ok	1.3.2
+ok	∅
+ok	<1.3.11
+ok	>=1.1.1, <3.1.1
+err	encountered unexpected token: "or"
+ok	>=1.1.0-alpha
+ok	>=0.3.0, <1.0.0 | 2.2.1-beta-2.rc1.1 | >=10.0.2, <10.1.0
+ok	>=2.2.0, <3.0.0
+err	expected end of input, but got: "== 1.1.2"
+err	missing patch version: 0.0
+err	encountered unexpected token: "2or"
+err	missing minor and patch versions: 10
+ok	<10.10.10 | >=10.10.11
+err	expected end of input, but got: ".0 and<= 10.10.2or ~> 3.2.1 or > 1.2.0"
+ok	<0.3.3 | >=1.10.2
+ok	3.0.0-1
+ok	<0.10.1 | >=0.10.2
+ok	>=2.1.3, <2.2.0
+ok	<3.0.3-3.3.0
+ok	<10.1.1 | >=10.1.2
+err	encountered unexpected token: ">"
+err	missing patch version: 10.1
+ok	>=0.0.2
+ok	*
+ok	>=10.2.3-0.alpha.2, <10.10.1
+ok	∅
+err	encountered unexpected token: "<="
+err	encountered unexpected token: ">"
+err	missing patch version: 1.3
+ok	>=1.3.1, <1.4.0
+ok	<10.10.0-0.rc1
+err	expected end of input, but got: "3.10.1 and <2.2.1-beta-2.1"
+err	expected end of input, but got: ".1-rc1.rc1.1or ~> 1.10.3 and != 0.0.3 and > 0.1.3-alpha"
+ok	*
+ok	∅
+err	expected end of input, but got: ".2 and > 3.0.3-rc1.beta-2.2 or != 0.3.3-rc1 and< 10.2.1-rc1.beta-2.beta-2 and <= 0.10.1"
+ok	10.0.10 | 10.2.1
+ok	<2.3.3 | >=2.3.4, <2.10.1
+ok	*
+ok	<2.2.10-beta-2.2 | >=2.2.11
+ok	<2.2.3+4294967295
+ok	>=2.0.3-beta-2.3.beta-2, <2.1.0 | 2.1.10 | >=10.3.2-0
+ok	<0.0.1 | >=3.0.1
+ok	<1.10.11 | >=2.3.3-0, <10.1.1-3.1 | >=10.3.0
+ok	*
+err	encountered unexpected token: "or"
+ok	>=0.1.11
+ok	>=0.1.2
+ok	>=3.1.0, <3.10.4
+ok	<2.2.3
+ok	>=3.2.1
+ok	<2.0.1 | >=2.0.2
+ok	<10.0.1-1
+err	missing patch version: 0.2
+ok	>=1.0.3
+ok	<1.10.2-beta-2.beta-2.alpha | >=1.10.3, <3.10.0
+ok	<2.2.4 | >=10.0.3
+ok	<10.1.2 | >=10.1.3
+err	missing minor and patch versions: 1
+ok	<3.1.10-3.0
+err	missing patch version: 1.10
+ok	>=3.1.0, <4.0.0 | 10.0.10-3.3.3
+ok	∅
+err	missing patch version: 0.3
+ok	<2.3.10 | >=2.3.11
+err	missing patch version: 3.2
+ok	<3.2.11
+err	missing minor and patch versions: 0
+ok	2.10.1-beta-2 | >=3.10.0, <4.0.0
+ok	>=2.2.3
+ok	*
+err	encountered unexpected token: "!="
+err	missing minor and patch versions: 0
+ok	∅
+ok	>=1.1.1, <10.0.0-2.beta-2.beta-2
+ok	<0.0.3 | >=0.0.4
+ok	>=1.1.1, <2.1.11 | 2.2.1
+ok	<0.1.3 | >=0.3.1+pre.3, <0.4.0 | >=2.0.0, <3.0.0 | 10.0.1-alpha.0
+ok	*
+ok	<0.2.2
+ok	0.0.0 | 0.3.10-0.3.0 | >=0.10.3
+ok	∅
+err	missing minor and patch versions: 1
+ok	>=2.10.3+3
+err	missing patch version: 0.10
+ok	<2.1.3-2.2 | >=2.1.4
+err	encountered unexpected token: "=="
+err	missing minor and patch versions: 3
+ok	<10.3.0 | >=10.3.1
+ok	<1.3.3
+err	missing patch version: 2.0
+ok	<3.10.2
+ok	>=10.10.11
+err	expected end of input, but got: ".10 or <= 10.1.2-0.2.alpha and > 10.2.3-0.1"
+ok	∅
+ok	<10.1.1-1.alpha.3
+err	missing patch version: 10.0
+err	missing patch version: 10.3
+err	encountered unexpected token: "and"
+ok	∅
+ok	*
+ok	1.1.0-beta-2
+ok	<3.1.2-beta-2.rc1 | >=3.1.3
+ok	>=3.1.3
+ok	1.2.1
+err	encountered unexpected token: ">"
+ok	>=2.2.3
+err	expected end of input, but got: ".10"
+ok	<2.2.0-0.1.rc1 | 3.10.0-alpha | >=10.2.2
+err	expected end of input, but got: ".2 and >=3.2.10 and == 10.2.3-2"
+ok	0.10.2-2
+err	missing patch version: 1.0
+err	missing patch version: 3.0
+ok	2.10.1-3.rc1.0 | >=3.0.0, <3.1.0 | >=3.2.0-alpha.1.0
+ok	∅
+ok	∅
+ok	2.3.2 | >=10.1.10
+err	encountered unexpected token: "or"
+ok	<3.2.0-1.alpha.2
+ok	3.10.1-alpha
+ok	∅
+err	missing patch version: 3.2
+ok	<0.3.1+4294967295.pre | >=2.0.1
+ok	1.0.1
+ok	∅
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "-"
+ok	3.3.0 | 10.2.2
+err	expected end of input, but got: ".3 or >= 2.0.1"
+ok	>=3.0.0, <3.1.1 | >=3.1.2, <4.0.0
+err	encountered unexpected token: "1or"
+ok	>=2.2.3
+ok	3.2.1
+ok	<3.1.3
+ok	10.2.1-2
+err	expected end of input, but got: "1.3.3-beta-2.2 and>=0.10.3-rc1.1.3 or != 2.10.10-1.1.0 or < 10.10.3"
+err	missing patch version: 10.10
+err	missing patch version: 3.2
+err	encountered unexpected token: "<"
+err	missing minor and patch versions: 3
+ok	<2.1.3 | 3.1.0
+ok	<0.1.3 | >=3.10.0
+ok	>=2.2.4
+ok	3.0.10
+ok	<0.3.0 | >=0.3.1
+err	missing patch version: 3.10
+ok	1.0.1
+ok	>=10.3.3
+ok	<2.10.0 | >=2.10.1
+ok	<1.10.2 | >=1.10.3, <2.0.1-1.1.rc1 | >=2.1.3
+ok	<0.1.4 | >=3.3.0, <3.4.0
+err	encountered unexpected token: "!="
+ok	<10.3.4
+ok	<0.0.1-1.alpha
+ok	<10.3.11
+err	encountered unexpected token: "=="
+err	encountered unexpected token: ">"
+ok	>=1.3.0, <2.0.0
+err	missing minor and patch versions: 10
+ok	2.10.3-alpha | >=3.1.2, <3.3.3 | >=10.3.10-beta-2.3.2
+ok	>=3.3.0
+ok	∅
+ok	1.0.10 | >=2.3.0, <3.0.0
+ok	*
+err	missing minor and patch versions: 3
+ok	>=1.2.0, <2.0.0 | 2.3.3
+ok	10.0.10+2.10
+ok	*
+ok	3.10.0
+ok	>=1.1.0, <2.0.0
+err	missing patch version: 2.1
+err	encountered unexpected token: "and"
+ok	>=3.2.2
+err	missing patch version: 2.1
+ok	2.1.0-0.beta-2.3
+err	encountered unexpected token: ">"
+err	encountered unexpected token: "or"
+ok	>=10.3.3-2.3.3
+ok	∅
+err	encountered unexpected token: "!="
+err	missing minor and patch versions: 0
+ok	<10.2.10
+ok	∅
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "or"
+ok	<3.0.1 | >=3.0.2
+ok	0.1.3-3.3
+err	missing patch version: 0.10
+ok	<3.10.3 | >=3.10.4
+ok	>=10.2.2
+err	missing patch version: 10.10
+ok	∅
+ok	10.3.10
+err	expected end of input, but got: ".3-2.2 and < 0.1.1"
+err	expected end of input, but got: "!=3.10.3+1"
+ok	<3.1.3
+ok	<2.10.11
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "~>"
+ok	>=3.1.0, <4.0.0
+err	encountered unexpected token: "<"
+ok	>=3.1.11
+ok	3.3.3-0
+ok	<1.2.4
+err	missing patch version: 3.3
+ok	10.1.1-beta-2.2.3
+err	encountered unexpected token: "<="
+ok	<3.1.1
+ok	*
+ok	1.0.0 | >=2.10.0, <3.0.0
+err	missing patch version: 0.10
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "or"
+ok	1.10.1 | 3.0.2-beta-2 | 10.10.0
+ok	>=10.3.10+2.alpha
+ok	>=2.2.0, <2.3.0
+ok	<2.3.1
+ok	1.3.10
+ok	>=3.0.1
+err	encountered unexpected token: "!="
+ok	∅
+ok	<3.1.3 | >=3.1.4
+ok	<10.10.4
+ok	<1.0.10-1.2
+err	expected end of input, but got: "< 1.1.0 and < 0.3.3 or > 3.2.2-alpha.beta-2 and<= 3.1.2-1.alpha+1.0a"
+ok	0.0.0 | 0.10.1-3.alpha.1
+ok	∅
+err	expected end of input, but got: ">10.1.2or < 1.0.10-rc1.1 and ~> 2.10"
+ok	<3.0.1
+ok	∅
+err	missing patch version: 3.3
+ok	<3.2.1 | >=3.2.2
+ok	>=0.1.1
+err	encountered unexpected token: ">="
+err	missing patch version: 2.3
+ok	*
+err	encountered unexpected token: "=="
+ok	<0.10.11
+err	missing patch version: 1.3
+ok	*
+ok	10.2.10
+ok	<3.0.10 | >=3.0.11
+ok	<2.0.10 | >=2.0.11
+ok	*
+err	expected end of input, but got: ".10 and > 1.1.3-beta-2"
+ok	∅
+err	missing patch version: 1.10
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "!="
+ok	>=1.1.10
+ok	<1.10.3
+err	encountered unexpected token: "<="
+ok	>=10.1.2
+ok	>=1.2.4
+ok	>=1.0.0, <2.0.0
+ok	>=10.0.3-beta-2.0
+ok	<1.1.3
+ok	<1.2.1-rc1.alpha.0 | >=1.2.2
+ok	*
+ok	<1.1.1 | 1.3.0
+ok	10.0.1-0.1
+err	missing patch version: 10.3
+ok	<2.10.3
+ok	>=0.3.2
+ok	1.0.3-3.0
+err	expected end of input, but got: ".3 and <= 1.2.2"
+ok	<1.0.1
+ok	<10.3.10-3.0.beta-2
+ok	2.3.0 | >=10.2.0+0, <11.0.0
+ok	>=0.10.1
+ok	<1.1.0 | 1.1.1-1 | >=1.1.1, <1.10.2 | >=10.0.3
+err	encountered unexpected token: ">="
+err	missing patch version: 3.0
+ok	<3.1.3+0 | >=3.1.4
+err	encountered unexpected token: ">"
+ok	*
+ok	>=2.2.3
+err	encountered unexpected token: "-"
+ok	∅
+ok	<3.10.10-0.beta-2+rc1.0a
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "and"
+ok	∅
+err	encountered unexpected token: "!="
+ok	>=2.2.1, <2.3.0
+ok	0.10.10 | 1.1.2 | 1.2.10-3 | >=10.10.10
+err	missing patch version: 0.0
+ok	<2.1.1 | 3.1.2
+ok	2.2.10-0.1.1+4294967296
+err	expected end of input, but got: ".10-1.0.1 or <= 2.1.2"
+ok	0.3.1
+ok	*
+ok	1.10.2
+ok	>=3.0.10
+ok	2.1.0
+ok	0.10.2-rc1.0 | >=1.0.1
+ok	<0.1.1
+ok	>=10.0.4
+ok	<0.10.2
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "and"
+err	missing patch version: 0.1
+err	expected end of input, but got: ".10"
+ok	∅
+ok	>=1.1.10
+ok	>=1.3.0, <2.0.0
+ok	<1.3.3 | >=1.3.4
+ok	<10.1.2 | >=10.2.11
+ok	<1.3.3-3 | >=1.3.4
+ok	2.3.1
+ok	∅
+ok	∅
+ok	<2.3.1
+ok	<10.1.3
+ok	*
+err	missing patch version: 0.3
+err	missing minor and patch versions: 0
+err	missing patch version: 2.0
+ok	<3.10.2
+ok	1.1.3
+ok	<3.1.1 | 3.3.3
+err	missing minor and patch versions: 10
+err	missing patch version: 2.1
+err	missing patch version: 0.2
+ok	<1.0.0 | >=1.0.1
+ok	*
+err	expected end of input, but got: "> 1.10.1-rc1 or <2.0.2 and <3.1.10-0.0.rc1"
+ok	<0.3.2-3.alpha.beta-2 | >=0.3.3
+ok	>=0.1.2
+ok	∅
+err	expected end of input, but got: ".0"
+ok	*
+ok	<10.10.3-rc1.1.3
+err	missing patch version: 3.1
+ok	>=10.0.0-1, <10.1.0
+ok	1.10.1-rc1.0
+err	missing patch version: 10.0
+ok	>=1.3.0
+err	missing patch version: 0.10
+ok	0.1.1-3 | >=1.2.0+pre.1, <2.0.0
+err	encountered unexpected token: "~>"
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "-"
+err	missing patch version: 3.10
+ok	<2.1.2-beta-2.3 | >=2.2.0, <3.0.0
+err	encountered unexpected token: ">="
+err	missing patch version: 0.1
+ok	*
+ok	∅
+ok	>=10.10.4
+err	expected end of input, but got: ".1 or 2.3.3 and >=3.0.1 or ~> 1.0.3 and <1.10.0+beta-2.3"
+err	missing minor and patch versions: 3
+ok	<2.0.3
+err	encountered unexpected token: ">="
+ok	<0.1.4 | >=3.1.1-0.beta-2
+ok	>=10.10.0, <11.0.0
+ok	<3.3.2
+ok	∅
+ok	*
+ok	0.0.3
+ok	2.1.2
+ok	*
+ok	∅
+err	encountered unexpected token: "and"
+ok	*
+ok	<2.1.3 | 2.1.10+pre
+ok	>=3.10.0, <4.0.0
+ok	<0.1.3
+ok	<0.0.3 | >=0.0.4
+ok	>=0.3.11
+err	expected end of input, but got: "~> 0.3 or 0.10.10 and ~>1.10.10-alpha.0"
+ok	∅
+ok	>=1.2.3, <2.2.1
+ok	*
+ok	∅
+ok	2.10.0-3.rc1.3
+ok	>=3.1.0, <4.0.0
+ok	2.2.10 | 3.2.10
+ok	>=10.2.3+alpha.4294967296, <10.3.0
+ok	1.2.1
+ok	<0.3.1-0.2.0 | >=2.10.1
+ok	<3.3.1
+ok	>=0.2.3
+ok	>=1.0.0, <1.1.0
+ok	∅
+ok	>=1.0.0
+ok	<1.2.10 | >=1.2.11
+ok	1.1.10 | 2.1.0
+ok	*
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "~>"
+ok	<0.0.0-rc1.beta-2.beta-2 | >=0.0.1
+ok	∅
+err	encountered unexpected token: "and"
+err	expected end of input, but got: ".10"
+ok	>=2.10.11
+err	expected end of input, but got: ".10-rc1.0.2 or != 2.2.2 or < 0.10.10"
+ok	1.1.0-1.beta-2 | 1.2.1-1 | >=2.0.4
+err	expected end of input, but got: "3.10.2-2+alpha.0a"
+ok	0.10.1
+ok	<1.2.1
+err	missing minor and patch versions: 2
+ok	1.3.10-2
+err	missing minor and patch versions: 10
+ok	>=10.0.4
+ok	3.2.10
+ok	10.0.0-beta-2
+ok	>=10.1.0
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "!="
+ok	3.2.2-2
+ok	>=10.2.1
+err	missing patch version: 3.1
+ok	<10.0.1
+err	missing patch version: 2.10
+ok	>=1.0.1
+ok	>=10.3.0+3, <11.0.0
+ok	<3.2.1 | >=3.10.0-alpha.2.alpha
+err	missing patch version: 2.2
+ok	10.3.2-2
+ok	<3.1.1
+ok	>=10.2.0, <11.0.0
+ok	>=0.1.0, <1.0.0
+err	encountered unexpected token: "or"
+err	missing patch version: 2.10
+ok	*
+ok	∅
+ok	1.3.2
+ok	3.3.1
+ok	>=10.3.0, <11.0.0
+ok	*
+ok	>=2.1.3
+ok	*
+err	encountered unexpected token: "<="
+err	encountered unexpected token: "and"
+ok	>=10.3.2
+ok	*
+err	missing patch version: 2.10
+ok	1.10.3-alpha.alpha.beta-2 | >=2.2.3
+ok	<10.1.10+4294967296 | >=10.1.11
+ok	<1.3.1
+ok	∅
+ok	<0.10.3+pre.pre
+ok	<10.1.4
+ok	3.1.10
+ok	*
+ok	∅
+err	encountered unexpected token: "~>"
+err	missing patch version: 1.0
+ok	>=1.0.3
+err	encountered unexpected token: "~>"
+ok	<0.1.3 | >=0.1.4
+ok	∅
+err	encountered unexpected token: ">"
+ok	<10.0.2-rc1
+ok	∅
+ok	*
+ok	>=3.0.10
+ok	*
+ok	>=0.1.3, <0.2.0 | 2.0.3
+err	encountered unexpected token: "~>"
+err	missing patch version: 2.0
+err	missing minor and patch versions: 10
+err	expected end of input, but got: "~> 3.10"
+err	encountered unexpected token: "<="
+ok	∅
+ok	∅
+ok	1.1.3-beta-2.1.rc1
+err	missing minor and patch versions: 0
+err	missing patch version: 3.3
+ok	<2.2.2-beta-2 | >=2.2.3
+err	missing patch version: 1.0
+ok	<3.0.4
+ok	>=1.1.0, <1.2.0 | 1.3.10 | >=3.2.2
+ok	*
+ok	>=3.0.2
+err	encountered unexpected token: "!="
+err	missing patch version: 10.3
+ok	∅
+err	expected end of input, but got: ".0-rc1"
+ok	<3.2.1-1 | >=3.2.2
+err	missing patch version: 3.0
+ok	∅
+ok	*
+err	encountered unexpected token: ">"
+err	encountered unexpected token: "and"
+ok	>=0.2.0-rc1.3
+err	encountered unexpected token: "<="
+ok	2.3.10 | 3.3.2
+ok	∅
+err	encountered unexpected token: "!="
+ok	0.0.0-0.2
+ok	∅
+ok	<0.3.10+alpha | >=0.3.11
+err	missing patch version: 10.3
+ok	<0.0.4 | >=3.3.0, <4.0.0
+err	expected end of input, but got: "!=3.0.2"
+ok	<1.10.3 | 2.1.1-beta-2.3.3
+ok	2.1.0 | >=2.2.2
+ok	<2.2.3 | >=2.2.4
+ok	>=0.10.3, <0.11.0 | >=1.3.2, <1.4.0 | >=2.1.2
+ok	>=1.10.0, <2.0.0 | >=10.10.3
+ok	2.10.1
+ok	2.10.3 | >=3.1.4
+ok	>=1.3.1
+err	missing patch version: 3.10
+err	encountered unexpected token: "~>"
+err	missing patch version: 2.2
+err	missing minor and patch versions: 10
+ok	>=0.2.1, <3.2.2 | >=3.2.3
+err	encountered unexpected token: "~>"
+ok	>=0.2.3
+ok	10.3.1
+ok	<1.2.3-rc1.alpha | >=2.1.3
+err	encountered unexpected token: "and"
+ok	<0.3.0 | >=1.2.3
+err	expected end of input, but got: ".3 or <= 0.10.0 or > 3.0.2"
+ok	<0.3.1 | >=10.10.4
+err	encountered unexpected token: ">="
+ok	*
+ok	2.0.3-alpha.alpha.alpha
+ok	1.2.0 | >=3.0.3
+ok	>=3.10.11, <10.3.1
+ok	0.0.10
+err	encountered unexpected token: ">="
+err	expected end of input, but got: "3.10.3 or < 3.2.10-beta-2"
+ok	<0.3.3-1 | >=0.3.4, <3.10.3
+err	expected end of input, but got: ".1 or <= 3.10.2-0 or ~> 3.0 and ~> 1.0"
+err	missing patch version: 1.10
+ok	>=1.0.0+10, <2.0.0
+ok	<3.10.2-2.0.1
+ok	∅
+err	missing patch version: 10.1
+ok	1.0.10-beta-2.2.beta-2+4294967295
+ok	<3.10.1-0.rc1.3 | >=3.10.2, <10.1.0-1 | >=10.1.1
+ok	<2.3.3-1.alpha | >=2.3.4
+err	missing minor and patch versions: 2
+ok	1.10.3-rc1.alpha.1
+ok	∅
+ok	1.10.0
+err	encountered unexpected token: ">="
+err	missing patch version: 2.2
+err	missing patch version: 3.3
+ok	∅
+ok	1.3.0
+ok	<3.3.3 | 10.10.0
+err	encountered unexpected token: ">"
+err	expected end of input, but got: ".2 or > 2.3.2"
+ok	∅
+ok	<10.2.2 | >=10.2.3
+ok	>=0.3.1, <3.10.0 | >=3.10.1
+err	expected end of input, but got: "<= 1+andy.x"
+ok	0.1.0
+err	encountered unexpected token: ">="
+ok	>=2.10.11
+ok	0.1.1
+ok	<3.1.10 | >=10.3.3
+ok	<1.10.0 | 2.3.2 | 10.1.10
+ok	2.2.3-3.beta-2
+err	missing patch version: 2.0
+ok	<10.3.1
+ok	1.1.2-alpha.rc1.1
+err	encountered unexpected token: "<"
+err	missing minor and patch versions: 2
+ok	0.0.3-2
+ok	<=1.2.10
+ok	2.3.1
+ok	2.1.2
+err	expected end of input, but got: ">10.2.1+0a.1"
+ok	0.1.3
+ok	∅
+ok	<10.2.0 | >=10.2.1
+ok	1.10.1-beta-2.rc1.2 | 10.3.2-0
+err	missing minor and patch versions: 1
+err	missing patch version: 2.2
+err	expected end of input, but got: ".3"
+err	encountered unexpected token: "<"
+err	missing minor and patch versions: 0
+ok	>=2.1.0, <2.10.1 | >=2.10.2
+ok	<0.3.2 | >=0.3.3
+ok	>=10.0.0, <11.0.0
+ok	<10.0.1
+ok	∅
+ok	3.3.10-2
+ok	<3.1.10
+ok	2.3.1-0 | >=3.10.3-alpha.rc1
+ok	<0.10.4
+ok	<3.3.3 | >=3.10.0, <3.11.0
+ok	>=0.3.0, <1.0.0
+err	encountered unexpected token: "-"
+ok	<0.2.3-1
+ok	∅
+err	missing minor and patch versions: 0
+ok	<1.10.4 | 3.3.10+2.3
+err	expected end of input, but got: ".3 or < 3.0.1"
+err	missing patch version: 1.3
+ok	<2.10.2
+ok	2.1.2 | >=3.3.3-alpha.alpha
+ok	>=10.0.2
+ok	<3.2.11
+ok	∅
+ok	<10.10.0-0.2 | >=10.10.1
+err	missing minor and patch versions: 10
+ok	>=3.10.2-3.rc1.rc1
+ok	<3.2.0 | >=3.2.1
+ok	>=3.2.2
+ok	>=0.1.4, <1.10.3 | 10.1.1
+err	missing patch version: 0.2
+ok	0.0.3 | >=0.10.3
+ok	∅
+ok	<10.0.11
+err	missing patch version: 0.3
+err	missing patch version: 1.0
+err	missing patch version: 3.0
+ok	>=3.10.1
+ok	1.2.3-0.0 | 10.3.10
+ok	<0.3.2 | >=2.10.0, <2.11.0
+ok	<10.0.0-3.beta-2
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "<="
+err	missing patch version: 1.2
+ok	∅
+ok	>=0.3.2
+ok	<10.3.2-alpha.rc1 | >=10.3.3
+ok	<3.1.1
+err	missing patch version: 10.2
+ok	0.0.3-0.2.beta-2+3 | 0.0.10-rc1.1 | >=1.3.4
+ok	<2.0.1
+err	expected end of input, but got: ".0"
+ok	<1.10.1
+err	expected end of input, but got: ".2-3 or ~>10.10.10 or == 3.1.2 or <= 0.0.10"
+ok	>=2.1.11
+ok	<1.2.2-2 | 10.3.0-3
+ok	>=0.3.11
+ok	<0.3.2
+ok	0.1.0
+ok	<2.1.1-0.0.1
+ok	0.3.2
+ok	<10.0.2-beta-2 | >=10.0.3
+ok	<2.3.3 | >=2.3.4
+ok	<0.0.11 | >=2.0.1, <10.3.3 | >=10.3.4
+err	missing patch version: 1.2
+err	encountered unexpected token: "2or"
+err	expected end of input, but got: ".0-0.alpha.rc1 and 2.0.0-3.rc1 and < 0.3.3"
+err	expected end of input, but got: ".3-3.alpha.2 or == 3.1.10or > 1.3.0-3.3"
+ok	>=2.10.0, <3.0.0
+ok	∅
+ok	*
+ok	>=1.10.0, <2.0.0
+ok	<3.10.3 | >=3.10.4
+err	missing minor and patch versions: 2
+err	missing patch version: 1.3
+ok	>=0.0.11
+ok	2.1.0
+ok	<3.10.3
+ok	3.1.1 | >=3.3.3-3.1, <3.4.0
+ok	<2.2.3+2
+ok	>=10.3.2, <10.10.2
+ok	>=0.1.11
+err	missing patch version: 1.3
+err	missing patch version: 0.1
+ok	<1.3.3
+ok	<10.10.3
+err	encountered unexpected token: "!="
+ok	*
+ok	>=3.0.1-1.1.1+0a, <3.1.0
+ok	<2.10.10
+ok	<10.2.3
+ok	>=10.3.0-3.3.2
+ok	0.2.10 | >=1.1.10, <1.2.0
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "or"
+ok	<2.10.3 | >=2.10.4
+ok	>=1.1.0, <2.0.0 | >=3.3.10
+ok	*
+ok	1.2.3 | >=1.3.2-2.1.3
+ok	>=2.10.3
+ok	10.0.1
+ok	<2.0.1
+ok	>=10.0.2-rc1.rc1.0, <10.1.0
+err	encountered unexpected token: "~>"
+ok	>=1.10.0, <2.0.0
+ok	2.0.1-alpha.rc1.alpha
+ok	*
+ok	>=2.0.4
+err	missing minor and patch versions: 2
+ok	0.0.0 | >=0.2.0-2.2.rc1
+ok	*
+err	expected end of input, but got: "< 3.2.10 and <= 1.2.1"
+ok	<10.0.1
+err	encountered unexpected token: "and"
+ok	*
+ok	>=1.0.10, <1.1.0 | 2.3.10
+err	missing patch version: 1.2
+err	encountered unexpected token: "<="
+ok	<0.10.1 | >=0.10.2, <10.0.10 | >=10.0.11
+err	missing patch version: 0.3
+err	missing minor and patch versions: 3
+ok	<3.2.10 | >=3.2.11
+ok	∅
+ok	>=10.1.3
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "<="
+ok	<3.2.11
+ok	>=0.0.0, <1.0.0 | 10.1.10
+err	encountered unexpected token: "0or"
+ok	>=2.1.0, <3.0.0
+ok	*
+ok	>=1.0.1
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "-"
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "0or"
+ok	∅
+err	missing patch version: 2.0
+err	missing minor and patch versions: 2
+ok	>=10.10.11
+ok	>=10.2.1-0.0, <10.3.0
+err	missing patch version: 10.0
+err	encountered unexpected token: "-"
+ok	>=2.2.0, <3.0.0
+ok	>=0.0.1, <10.10.3 | >=10.10.4
+ok	>=0.3.0+1.10, <1.0.0
+ok	<1.2.2-rc1 | >=1.2.3
+ok	2.2.2
+err	missing patch version: 10.1
+err	missing minor and patch versions: 2
+ok	<1.3.3
+ok	<0.1.2-0 | 1.3.1
+err	expected end of input, but got: ".10"
+ok	<0.0.2
+err	encountered unexpected token: "-"
+ok	<10.1.10 | >=10.1.11
+ok	<0.0.0 | >=0.0.1
+ok	<3.0.3+3.1
+ok	>=2.10.11
+ok	>=1.0.2+10.007, <1.10.10 | >=1.10.11
+ok	0.2.1-rc1.rc1.beta-2
+ok	<0.0.3
+ok	<3.2.1
+err	missing minor and patch versions: 3
+ok	<10.1.1
+ok	10.1.3
+ok	∅
+ok	>=0.2.0, <1.0.0
+err	expected end of input, but got: ".2 and ~> 10.0.3"
+ok	*
+err	missing patch version: 2.0
+ok	<2.10.1-alpha.0.3 | >=2.10.2
+err	encountered unexpected token: "<="
+ok	∅
+ok	<2.10.3 | >=10.2.3, <10.3.0
+ok	0.1.0-beta-2.alpha | 1.3.0 | 1.10.3 | 2.3.3-alpha
+ok	>=3.2.2, <3.3.0
+ok	>=2.10.10
+ok	<2.2.2
+ok	>=2.3.11
+ok	∅
+err	expected end of input, but got: ".3-beta-2.2 and == 10.1.10 and >= 0.3.10"
+ok	<3.1.3 | >=3.1.4
+ok	<0.1.1
+ok	*
+err	encountered unexpected token: "and"
+ok	<2.0.2 | >=3.1.0, <4.0.0
+ok	<1.1.11
+ok	0.10.3
+err	missing patch version: 10.1
+ok	>=2.10.3, <2.11.0
+ok	<3.1.3
+ok	<3.1.0 | >=3.1.1
+ok	>=2.2.3+10, <2.3.0
+ok	>=3.0.1
+ok	>=2.10.1-3.3.0, <2.11.0
+ok	<10.1.2
+ok	>=1.0.10
+ok	<10.2.0
+err	missing patch version: 2.3
+ok	>=0.10.0
+ok	<3.3.3
+err	encountered unexpected token: "<="
+ok	<3.1.2 | >=3.1.3, <3.1.10
+ok	*
+ok	<2.0.1
+ok	>=0.2.0, <1.0.0 | 1.0.3
+ok	2.2.3
+err	missing patch version: 2.2
+err	encountered unexpected token: "!="
+ok	*
+ok	0.1.0
+ok	<2.1.10 | >=2.1.11
+ok	0.1.0 | >=1.3.0-1.alpha+4294967296, <1.4.0
+ok	<0.3.2 | >=0.3.3
+err	encountered unexpected token: "or"
+ok	*
+ok	10.10.2-0.0.rc1
+err	missing patch version: 2.10
+ok	0.2.3 | >=1.10.0
+ok	>=10.3.3+alpha.4294967296, <10.4.0
+ok	∅
+ok	>=2.3.2
+err	missing patch version: 0.0
+ok	0.2.1
+ok	<3.3.3
+ok	2.3.0
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "or"
+ok	1.3.0
+err	missing minor and patch versions: 10
+err	missing patch version: 3.0
+err	expected end of input, but got: ".2+andy.pre"
+ok	>=0.0.0
+ok	1.1.2
+err	expected end of input, but got: ".10-2.2 or != 1.10.10-3 and>= 10.2.10+beta-2"
+ok	<10.2.4
+ok	>=1.10.1, <2.3.2 | >=2.3.3
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "!="
+ok	<3.3.2 | >=10.2.0, <11.0.0
+err	missing patch version: 1.10
+err	missing patch version: 1.2
+err	encountered unexpected token: "2or"
+ok	<2.10.1 | >=2.10.2
+ok	∅
+err	missing patch version: 10.10
+ok	<0.1.2-rc1.3 | 10.2.10
+ok	<1.1.2 | >=1.2.1
+err	encountered unexpected token: "10or"
+ok	0.2.10 | >=1.2.3, <1.3.0 | 3.3.0
+ok	<2.1.2-2.rc1 | >=2.1.3
+ok	>=0.2.0
+ok	<2.1.3 | 10.10.1
+err	encountered unexpected token: "and"
+ok	<3.10.1 | >=3.10.2
+ok	∅
+ok	<2.1.3 | >=10.1.1
+ok	>=0.2.10-2, <2.2.10 | >=2.2.11
+ok	<0.0.4
+err	missing minor and patch versions: 1
+err	missing patch version: 10.2
+ok	∅
+ok	<1.0.10 | >=1.1.0
+ok	>=1.10.1-2.alpha
+ok	<0.0.2 | >=0.0.3
+ok	*
+ok	<10.10.2-0.2.3 | >=10.10.3
+ok	<1.0.10 | >=1.0.11
+ok	1.10.0
+ok	3.2.1-1 | >=3.2.2-0.alpha.rc1
+err	encountered unexpected token: "3or"
+ok	2.10.10
+ok	>=2.3.10-3
+ok	*
+ok	>=3.0.3
+ok	∅
+ok	∅
+ok	∅
+ok	<2.0.11 | >=10.3.2-beta-2.0
+err	missing patch version: 0.3
+ok	>=3.3.3
+ok	<10.10.1-1.rc1 | >=10.10.2
+ok	3.10.0-alpha.0.alpha
+ok	<3.3.2 | >=3.3.3, <10.10.3
+ok	<1.2.3 | >=1.2.4
+ok	>=3.10.0, <4.0.0 | 10.10.1
+ok	>=1.0.0
+err	missing patch version: 0.2
+err	encountered unexpected token: "and"
+ok	<2.2.11 | >=3.3.1
+ok	>=1.10.0
+err	missing minor and patch versions: 3
+ok	*
+ok	*
+ok	<10.0.11 | >=10.2.1
+ok	>=1.0.0-1
+ok	>=3.3.1, <3.4.0
+ok	2.10.2-2.2.2
+ok	3.10.3-rc1+pre
+err	encountered unexpected token: "-"
+ok	3.0.2-2.alpha | >=3.1.2-beta-2.0
+ok	<3.0.10 | >=3.0.11
+ok	0.0.1 | 2.2.3 | >=10.1.3
+err	missing patch version: 1.0
+err	encountered unexpected token: "and"
+ok	<1.3.10
+ok	∅
+ok	10.2.1
+ok	<10.3.2 | >=10.3.3
+ok	<1.1.10-rc1.rc1.0 | 3.0.3
+ok	∅
+err	missing minor and patch versions: 10
+ok	∅
+ok	<2.10.1
+ok	1.10.0-0.2.alpha+2.4294967295
+err	expected end of input, but got: ".1"
+err	expected end of input, but got: ".2 and != 2.3.2 and <=3.1.2 or <= 2.1.0"
+err	missing patch version: 3.10
+ok	1.1.0
+err	missing patch version: 10.3
+ok	>=1.1.3
+ok	<3.0.10 | >=3.0.11, <10.10.1
+err	encountered unexpected token: "or"
+ok	>=0.0.2
+ok	3.10.1
+ok	>=1.3.2, <1.4.0 | >=10.3.3
+ok	>=0.2.2
+ok	*
+err	expected end of input, but got: ".1-2.1.0"
+ok	*
+ok	>=2.1.1
+err	expected end of input, but got: ".1 and 3.0.2"
+err	encountered unexpected token: "2or"
+ok	<2.3.3 | >=3.2.3
+err	encountered unexpected token: "or"
+ok	1.3.1
+ok	2.1.1 | >=3.0.4
+err	missing minor and patch versions: 1
+ok	3.10.1+2
+err	expected end of input, but got: ".1 and !=2.1.10-rc1"
+ok	<1.3.1 | >=1.3.2
+err	encountered unexpected token: "<"
+ok	<10.2.2
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "-"
+ok	>=0.0.4
+ok	*
+ok	<0.10.0 | >=3.3.0, <4.0.0
+ok	<2.2.0
+ok	>=3.1.3
+ok	*
+ok	*
+ok	*
+err	missing patch version: 0.10
+ok	<1.0.3
+err	encountered unexpected token: "and"
+ok	<10.3.0
+err	expected end of input, but got: ".0or 10.2.2or == 2.2.3"
+err	expected end of input, but got: "~> 2.2.10"
+ok	3.0.10-alpha.0
+ok	<0.0.0 | >=3.10.0, <4.0.0
+ok	∅
+ok	∅
+err	expected end of input, but got: "== 3.0.10+4294967295"
+ok	<1.3.1 | 10.3.2 | >=10.10.3
+ok	<2.0.2-1 | 2.3.0 | >=2.10.10, <3.0.0
+ok	>=3.10.10
+err	encountered unexpected token: "<"
+ok	>=1.3.0, <2.0.0
+ok	*
+err	encountered unexpected token: ">"
+ok	3.0.0 | 10.1.10
+ok	3.2.3 | >=10.3.1
+ok	0.1.10
+err	encountered unexpected token: "<"
+ok	>=3.1.0, <4.0.0
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "and"
+ok	>=2.10.3, <2.11.0
+ok	<0.2.10-1.rc1.0+rc1 | >=0.2.11, <1.1.3 | >=1.1.4
+ok	>=2.10.2
+err	expected end of input, but got: "!= 2.3.1"
+err	missing minor and patch versions: 3
+ok	<0.2.10-0 | >=0.2.11
+err	expected end of input, but got: ".2-beta-2.rc1 and <= 0.2.3 or != 10.3.10-2.beta-2.beta-2 and < 2.3.3 or 1.3.2-rc1.alpha.3"
+ok	<2.0.4
+err	expected end of input, but got: ".3 or >=10.2.0 or 10.10.2"
+ok	>=0.10.2
+ok	<1.0.1 | 2.1.1
+ok	>=0.0.0, <1.0.0 | >=2.3.0, <3.0.0 | >=3.10.1, <10.1.10 | >=10.1.11
+ok	2.10.2 | >=2.10.10
+err	missing minor and patch versions: 3
+ok	0.10.3
+ok	>=10.0.3
+err	expected end of input, but got: ".1-beta-2.0 or ~> 3.0"
+ok	<2.0.3
+ok	0.0.2 | >=1.3.0+4294967296.rc1
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "or"
+ok	1.1.0-1.2.2
+err	missing patch version: 1.2
+ok	3.10.0
+ok	>=0.3.2-2, <0.4.0 | >=1.2.2
+ok	*
+ok	>=1.3.4
+ok	*
+ok	∅
+ok	<0.2.0 | >=10.1.10, <10.2.0
+ok	>=0.10.2
+ok	<3.1.0-beta-2 | >=3.1.1
+ok	*
+ok	>=10.0.0
+ok	>=0.0.10, <10.2.1+4294967296
+ok	10.0.0+4294967296
+err	encountered unexpected token: "or"
+ok	>=1.0.10, <3.3.11
+ok	>=0.3.10-3, <0.4.0 | >=1.10.4
+err	expected end of input, but got: "1.1.10-alpha.2.1 or ~> 3.1.1 and <=3.0.2"
+ok	>=3.10.10
+ok	*
+ok	*
+ok	<3.0.3
+ok	*
+err	expected end of input, but got: ".10-1.2 or 2.1 and<= 3.2.3"
+ok	3.0.3
+ok	>=10.3.0
+ok	>=0.10.1, <0.11.0 | 1.0.10 | >=1.2.4
+err	missing patch version: 1.1
+ok	>=2.10.4
+err	missing minor and patch versions: 2
+ok	<1.0.0
+err	encountered unexpected token: "~>"
+ok	<3.3.3
+ok	2.10.0+1
+ok	<2.10.2-3
+ok	>=10.10.0, <11.0.0
+err	missing minor and patch versions: 10
+err	encountered unexpected token: ">"
+ok	>=3.0.10-3.0.3
+err	encountered unexpected token: "~>"
+err	missing patch version: 2.2
+err	missing patch version: 2.2
+ok	>=10.1.3-alpha.alpha.0+alpha
+ok	<10.2.4
+err	encountered unexpected token: "1or"
+ok	∅
+err	expected end of input, but got: ".0-0.rc1 or >= 1.3.1 or ==0.1.0"
+err	encountered unexpected token: "~>"
+ok	<10.10.10 | >=10.10.11
+ok	<3.2.2-0.alpha.3+3 | >=3.2.3
+err	encountered unexpected token: "and"
+ok	<3.0.0-2.1 | >=3.0.1
+ok	<2.0.0 | >=2.0.1, <2.0.2-2.2.alpha | >=2.0.3, <10.10.3
+err	encountered unexpected token: "or"
+err	expected end of input, but got: ".1"
+ok	1.2.1
+ok	<1.2.10
+err	encountered unexpected token: "<="
+ok	<3.2.4 | 10.3.3
+ok	<0.10.2 | >=0.10.3, <10.2.11
+ok	>=3.0.2
+ok	>=0.1.3
+ok	*
+err	missing patch version: 3.3
+err	encountered unexpected token: "and"
+ok	<0.2.1
+err	encountered unexpected token: "=="
+ok	<2.1.10-alpha.beta-2
+err	encountered unexpected token: "3or"
+ok	∅
+err	missing patch version: 10.0
+ok	∅
+ok	3.1.0
+ok	∅
+ok	>=1.2.0
+ok	>=0.1.0, <1.0.0
+err	expected end of input, but got: "<= 2.2.1 and >= 10.2.0"
+ok	<0.1.1 | >=0.1.2, <3.0.3
+ok	*
+ok	3.3.1
+ok	*
+ok	<1.1.2
+ok	>=2.10.10-2.2.alpha, <2.11.0
+ok	<3.1.3-0.rc1.0 | >=3.1.4
+ok	>=1.3.1
+ok	>=0.0.0, <1.0.0 | >=1.3.2, <1.4.0 | >=10.1.0
+ok	∅
+err	missing minor and patch versions: 3
+err	expected end of input, but got: ".0-rc1.3"
+ok	<10.1.1
+ok	∅
+ok	>=0.2.0, <1.0.0
+ok	<10.3.10-0.alpha | >=10.3.11
+err	missing patch version: 1.2
+err	expected end of input, but got: ".2-1.1.beta-2 or 10.0.10"
+ok	>=0.1.10-0.3
+ok	>=3.3.2
+err	missing patch version: 10.0
+ok	<2.0.10 | >=2.0.11
+ok	∅
+err	missing patch version: 10.10
+ok	2.1.0 | 3.2.10-2
+ok	>=3.0.2-1.beta-2.1, <3.1.0
+ok	<2.10.10
+err	missing patch version: 2.1
+ok	>=10.2.0-alpha.1, <10.3.0
+ok	2.1.2+1.10
+ok	>=0.10.1, <0.11.0
+err	missing patch version: 0.2
+ok	<1.3.10-3.alpha.3 | >=1.3.11
+err	missing patch version: 0.1
+err	encountered unexpected token: "-"
+ok	<0.3.1 | >=0.3.2
+ok	0.1.1
+err	missing patch version: 0.1
+err	encountered unexpected token: "<"
+ok	>=10.3.4
+ok	∅
+ok	<1.3.10 | >=1.3.11, <10.3.10 | >=10.3.11
+ok	1.3.3
+ok	<3.1.1-0.1.rc1
+err	encountered unexpected token: "and"
+ok	0.1.2-3.rc1
+err	expected end of input, but got: "!= 2.10.10"
+ok	∅
+err	missing patch version: 2.3
+ok	>=2.1.2
+ok	<2.0.3-0+x.007
+err	missing minor and patch versions: 0
+err	expected end of input, but got: ".3"
+err	encountered unexpected token: ">="
+ok	<0.3.1 | >=0.3.2, <3.1.0 | >=3.1.1
+ok	∅
+ok	>=3.3.0, <4.0.0
+ok	<2.2.11 | 2.10.1
+ok	2.10.1 | >=10.1.0, <11.0.0
+ok	∅
+ok	>=1.10.2-1.0.0
+ok	>=0.1.1-rc1.rc1.beta-2
+ok	<0.3.4 | >=2.3.0-0.1.rc1, <2.4.0
+ok	<1.10.1
+err	missing minor and patch versions: 10
+err	missing patch version: 10.3
+err	missing patch version: 10.10
+ok	<10.3.10
+ok	<0.3.2-rc1
+ok	>=0.2.2
+err	encountered unexpected token: "!="
+err	expected end of input, but got: ".0 and == 0.2.0-0"
+ok	0.3.1
+ok	<2.3.4 | 2.10.0-3.rc1.0 | >=3.3.11
+err	encountered unexpected token: "-"
+ok	∅
+ok	<10.3.3 | >=10.3.4
+err	encountered unexpected token: "1or"
+err	encountered unexpected token: "~>"
+ok	1.2.2
+err	encountered unexpected token: "!="
+ok	>=10.2.1+alpha.2
+ok	<2.1.1 | >=2.1.2
+ok	1.10.0
+ok	*
+ok	<2.2.10 | >=10.2.2-3.2.3, <10.3.0
+ok	<3.0.0
+err	expected end of input, but got: ".1"
+err	missing patch version: 3.2
+ok	>=0.0.10
+ok	<3.1.11
+ok	2.1.2 | 2.2.3
+err	missing patch version: 1.10
+ok	>=10.1.0, <11.0.0
+err	encountered unexpected token: "or"
+ok	<3.10.1
+ok	<1.10.10 | >=1.10.11, <3.10.2
+err	missing minor and patch versions: 0
+ok	>=2.3.0, <3.0.0
+ok	>=0.1.3, <3.10.2
+ok	*
+ok	>=3.3.1
+ok	10.3.3
+ok	<3.2.0
+err	encountered unexpected token: "<="
+ok	<1.3.11 | 1.10.10
+ok	>=1.0.0-1.1.0
+err	encountered unexpected token: ">="
+err	missing patch version: 2.0
+ok	2.3.2
+ok	>=1.3.10, <1.4.0 | >=2.0.10
+err	expected end of input, but got: ".0 or 1.1.3 or 10.2.0 or == 10.2.10"
+ok	∅
+err	expected end of input, but got: ".2 or > 0 and != 0.2.10"
+ok	2.1.3-beta-2
+ok	<10.2.2-alpha | >=10.2.3
+ok	>=1.10.1, <10.1.1
+ok	<1.0.2 | >=3.10.3-0.rc1.rc1
+ok	>=2.1.3-1.1
+ok	<2.1.10 | 3.3.10-1.3
+err	missing patch version: 10.2
+ok	10.2.2-2.1
+ok	<0.10.2
+ok	3.0.2
+ok	*
+ok	<2.10.2
+err	missing patch version: 10.2
+err	missing patch version: 3.1
+err	encountered unexpected token: "or"
+ok	<2.3.10-beta-2.0.alpha | >=2.3.11
+ok	<3.2.10 | >=3.2.11
+ok	>=3.2.3-0.alpha, <3.3.0
+ok	<2.3.0-alpha.beta-2
+ok	<2.10.1 | 10.10.3-beta-2.1
+ok	>=3.0.1
+ok	>=2.2.1
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "-"
+ok	∅
+ok	>=10.3.3
+ok	>=10.2.0, <11.0.0
+ok	>=10.10.3
+ok	1.1.0 | >=2.1.3
+ok	<10.2.11 | >=10.10.10-3.rc1, <10.11.0
+ok	>=3.10.0-1.1.2
+ok	<0.0.11
+ok	*
+ok	>=3.0.0, <4.0.0
+err	expected end of input, but got: ".10 and 10.1.0"
+ok	<0.10.1 | >=1.1.3
+ok	10.2.10-rc1.3
+err	missing patch version: 1.2
+err	missing patch version: 1.3
+err	missing minor and patch versions: 3
+ok	<0.2.3 | >=2.0.11
+ok	<2.1.0
+ok	>=3.3.3
+ok	*
+err	missing patch version: 3.1
+ok	∅
+ok	<1.3.4 | >=10.10.4
+err	missing patch version: 1.2
+err	missing patch version: 0.1
+ok	<10.0.10 | >=10.0.11
+ok	>=10.0.0, <11.0.0
+ok	>=2.3.3
+ok	<2.0.3
+ok	3.10.10
+ok	*
+err	missing minor and patch versions: 3
+ok	∅
+err	expected end of input, but got: ">= 3.10"
+ok	*
+err	missing patch version: 2.3
+ok	<0.0.0 | >=0.0.1
+ok	<1.2.3 | >=3.0.1, <3.1.0
+err	missing patch version: 10.1
+ok	>=1.2.4, <10.1.2 | >=10.3.2
+ok	∅
+ok	3.3.10
+err	missing minor and patch versions: 0
+ok	<0.10.3 | 1.2.2-rc1.3.beta-2
+err	missing minor and patch versions: 2
+ok	∅
+ok	<10.0.1
+ok	>=2.10.2
+ok	>=3.2.10
+ok	1.0.10
+err	missing patch version: 2.1
+ok	<0.3.0
+err	missing minor and patch versions: 1
+ok	10.10.2
+ok	<3.1.4
+err	encountered unexpected token: "~>"
+ok	>=2.2.2-2.3
+ok	1.10.0
+ok	<3.3.1-2.3 | >=3.3.2
+err	encountered unexpected token: "or"
+ok	3.0.2 | >=3.2.2
+err	expected end of input, but got: "!=1.0.2 and > 0.10.1"
+ok	>=3.10.1
+ok	>=3.0.3
+err	missing patch version: 10.3
+ok	>=0.2.2-2.1.3, <0.3.2 | 2.10.3-alpha
+ok	>=3.10.3
+ok	*
+err	encountered unexpected token: ">="
+ok	<3.10.10-rc1.alpha.1
+ok	<3.0.0 | >=3.0.1
+err	expected end of input, but got: ".1"
+ok	>=3.0.1
+ok	10.10.10-beta-2
+ok	<1.10.1
+ok	*
+ok	<2.10.1-alpha | >=2.10.2
+ok	10.0.0-alpha.alpha | 10.3.10
+ok	0.2.2-2
+err	missing patch version: 2.10
+err	expected end of input, but got: ".3 or != 10.0.2"
+err	missing patch version: 0.10
+ok	*
+ok	∅
+err	expected end of input, but got: ".1 and >= 2.3.0 and != 2.0.1-2.3 or <= 3.1.3 and ~> 0.10.10"
+err	expected end of input, but got: ".1 or <= 2.1.0"
+ok	∅
+ok	10.1.1
+err	encountered unexpected token: ">"
+ok	<1.10.0
+ok	>=2.10.1, <2.11.0
+ok	>=1.3.0
+ok	0.0.3
+ok	>=1.2.0, <2.0.0
+ok	0.10.10
+err	missing patch version: 3.10
+ok	>=10.10.4
+ok	2.2.0 | 2.3.2-alpha | 3.10.10
+err	encountered unexpected token: "~>"
+err	missing patch version: 0.0
+err	expected end of input, but got: ".0-1.beta-2.alpha"
+ok	<1.3.10-beta-2.alpha
+ok	<2.10.0 | >=2.10.1
+ok	>=1.3.1
+err	encountered unexpected token: "and"
+ok	0.1.3-alpha.alpha.3
+ok	1.1.10 | >=3.2.11
+ok	3.0.1
+ok	>=2.0.1-alpha.alpha, <2.1.0
+err	encountered unexpected token: "or"
+ok	<0.10.3+3
+ok	<0.1.10 | >=3.1.1
+ok	1.3.0
+err	missing patch version: 2.1
+ok	∅
+err	expected end of input, but got: "10.10.1 or == 0.1.3"
+ok	*
+ok	*
+err	missing patch version: 10.0
+err	expected end of input, but got: ".0-1 or != 3.1.3+x.andy"
+err	encountered unexpected token: "-"
+ok	<0.1.4
+ok	<0.2.2 | >=2.10.1
+ok	<3.1.0 | >=3.1.1, <3.2.1
+err	missing patch version: 0.0
+ok	<10.1.3 | >=10.1.4
+ok	∅
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "<"
+ok	<0.2.3 | >=0.2.4
+ok	∅
+ok	∅
+err	missing patch version: 2.3
+err	missing patch version: 0.1
+ok	∅
+ok	>=3.3.2
+err	missing minor and patch versions: 0
+ok	<1.10.10-beta-2.3
+ok	∅
+ok	>=0.2.0, <1.0.0 | >=3.3.2, <3.4.0
+err	missing patch version: 1.0
+err	expected end of input, but got: ".0"
+ok	<1.10.3-alpha
+ok	<3.0.2 | 3.2.1-alpha.2
+err	encountered unexpected token: "and"
+err	expected end of input, but got: ".3 or == 2.0.2 and <= 0.1.0 and 10.3.3"
+ok	>=2.2.10-beta-2.0+x
+err	encountered unexpected token: ">"
+err	encountered unexpected token: "!="
+ok	<3.1.1 | 3.10.2 | >=10.10.10, <10.11.0
+ok	>=3.10.3, <3.11.0
+err	expected end of input, but got: "== 2.0.0 or != 10.3.0 and != 3.10.2-0"
+ok	<1.1.1
+ok	10.0.1-0
+ok	>=10.3.3
+ok	>=0.3.0-beta-2.alpha.2, <0.4.0
+ok	2.1.2 | 2.2.0
+ok	∅
+ok	<2.3.0-beta-2.alpha
+ok	*
+ok	<10.3.3
+err	expected end of input, but got: ".10+andy.0a"
+ok	>=3.2.1
+err	missing patch version: 1.1
+ok	∅
+ok	<1.10.4
+ok	>=1.10.3
+ok	>=10.10.3+4294967295, <10.11.0
+err	missing patch version: 10.10
+err	expected end of input, but got: ".3 or 10.3.3 and == 0.2.10 and <2.0.1-2.rc1"
+ok	<3.0.1
+ok	>=2.2.2
+ok	<2.1.10 | >=2.1.11, <2.2.1
+ok	10.3.0
+err	encountered unexpected token: "!="
+ok	>=1.0.0, <2.0.0 | >=2.0.10-0
+err	missing patch version: 3.3
+ok	3.2.2
+err	encountered unexpected token: "<="
+ok	3.2.3
+err	missing minor and patch versions: 3
+err	missing patch version: 1.3
+ok	<1.0.3-2.2
+ok	<10.2.1-rc1 | >=10.2.2
+err	encountered unexpected token: "<"
+err	missing minor and patch versions: 10
+ok	<2.2.10-alpha.rc1
+ok	∅
+ok	<3.0.3 | >=3.0.4
+err	expected end of input, but got: ".1 or > 10.3.10-2.beta-2.2"
+ok	>=2.1.2
+err	expected end of input, but got: ".3-1.0.alpha and <=3.3.2+4294967295"
+ok	>=3.0.2
+ok	<3.1.2
+ok	<1.10.3 | >=2.10.2-1, <10.2.2-1.2 | >=10.2.3
+ok	<3.3.4
+ok	<1.3.3 | >=10.3.2
+ok	<3.1.0 | >=3.1.1
+err	expected end of input, but got: "!= 2.1.0-0.0.alpha"
+err	expected end of input, but got: "~> 0.2"
+ok	<1.1.1-0 | >=1.1.2
+ok	*
+err	missing patch version: 2.1
+ok	0.0.10-rc1 | >=10.2.2
+ok	<2.0.3 | >=3.10.2
+err	missing patch version: 0.0
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "1or"
+err	encountered unexpected token: ">"
+ok	0.1.0-0.alpha | >=1.3.2, <1.4.0
+err	encountered unexpected token: "~>"
+ok	0.3.3-3 | 2.1.1 | >=3.1.2
+ok	∅
+ok	<2.1.10 | >=2.1.11, <3.2.3
+ok	<10.2.0-alpha.3
+ok	<2.0.11
+ok	<3.3.10 | >=10.0.0, <11.0.0
+ok	*
+ok	0.3.1
+ok	<10.1.10-rc1.beta-2.2
+err	missing patch version: 10.0
+ok	10.1.10
+err	encountered unexpected token: "!="
+err	missing patch version: 3.3
+ok	1.3.10 | >=3.2.10+10.4294967296
+err	expected end of input, but got: ".3 or <=10.3.2-alpha and < 2.3.2"
+err	missing patch version: 3.0
+ok	<0.3.1
+ok	>=0.2.2
+ok	>=2.0.3
+ok	<3.0.3 | >=3.0.4
+ok	3.3.10
+err	missing patch version: 2.1
+err	missing patch version: 1.1
+err	missing minor and patch versions: 3
+ok	1.0.3+4294967296
+ok	<0.10.1
+ok	<0.1.2 | >=0.1.3
+ok	>=3.1.2, <3.2.0 | >=10.2.0, <11.0.0
+err	encountered unexpected token: "or"
+err	expected end of input, but got: ">10.1.1"
+err	missing patch version: 1.1
+ok	10.0.1
+ok	>=3.1.3, <3.2.0 | >=3.2.3
+ok	1.0.3-rc1
+err	missing patch version: 0.0
+err	encountered unexpected token: "or"
+ok	*
+err	encountered unexpected token: "-"
+ok	3.1.1-0.alpha
+err	expected end of input, but got: ".10"
+ok	<2.0.10 | 10.2.10-rc1.0
+err	missing patch version: 0.3
+err	encountered unexpected token: "and"
+ok	0.3.2 | 2.10.2
+ok	<2.1.1
+ok	0.3.2
+err	missing patch version: 0.2
+ok	<0.2.3 | >=10.0.0, <11.0.0
+ok	<2.1.1 | >=2.1.2, <10.3.3
+ok	<2.10.1 | >=2.10.2
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "=="
+ok	*
+ok	0.10.10 | >=10.3.1, <10.4.0
+err	expected end of input, but got: ">= 10.3.1-1.0.0"
+err	encountered unexpected token: "and"
+ok	<1.0.0
+ok	>=10.2.2
+err	missing patch version: 3.2
+ok	>=2.10.0, <3.0.0
+ok	∅
+ok	<1.0.10 | >=1.0.11
+ok	3.0.1
+ok	<3.10.1 | >=3.10.2
+ok	>=0.0.2
+ok	*
+ok	<10.3.3-alpha | >=10.3.4
+ok	∅
+ok	>=3.10.3
+ok	2.10.2
+ok	∅
+ok	<1.3.3
+ok	>=1.3.0, <2.0.0
+ok	>=0.3.3, <0.4.0 | >=1.10.1, <3.0.3-3.beta-2 | >=3.0.4
+ok	3	10	1		-	3.10.1
+ok	1	0	0		-	1.0.0
+err	encountered unexpected token: "-"
+ok	2	0	1	A:alpha,A:beta-2	-	2.0.1-alpha.beta-2
+ok	1	10	0		-	1.10.0
+ok	0	0	3		-	0.0.3
+ok	3	3	3		-	3.3.3
+ok	10	10	3	A:rc1	-	10.10.3-rc1
+err	missing patch version: 1.10
+ok	0	2	2		+0	0.2.2+0
+err	expected end of input, but got: ".10"
+ok	1	0	2	A:rc1	-	1.0.2-rc1
+ok	1	0	0		-	1.0.0
+ok	2	2	3		-	2.2.3
+ok	10	1	0		-	10.1.0
+ok	2	10	10	A:alpha	-	2.10.10-alpha
+ok	10	0	1	A:beta-2,N:2,A:beta-2	-	10.0.1-beta-2.2.beta-2
+ok	1	3	3		-	1.3.3
+ok	3	2	3		-	3.2.3
+ok	0	0	0		-	0.0.0
+ok	1	3	2		-	1.3.2
+ok	0	0	2		-	0.0.2
+ok	0	10	1		-	0.10.1
+ok	0	3	2	A:alpha	-	0.3.2-alpha
+err	expected end of input, but got: "x"
+ok	10	2	10		-	10.2.10
+err	encountered unexpected token: " "
+err	encountered unexpected token: " "
+ok	0	10	1		-	0.10.1
+ok	0	0	1		-	0.0.1
+err	encountered unexpected token: "or"
+err	expected end of input, but got: "x"
+err	expected end of input, but got: "x"
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "-"
+ok	2	10	2		-	2.10.2
+ok	1	3	0		-	1.3.0
+err	encountered unexpected token: "and"
+ok	1	3	3		-	1.3.3
+ok	0	2	10	N:3,A:beta-2,A:beta-2	+4294967295	0.2.10-3.beta-2.beta-2+4294967295
+ok	2	3	3		-	2.3.3
+ok	3	3	2	N:2	-	3.3.2-2
+err	missing minor and patch versions: 1
+ok	3	3	2	N:0,A:beta-2,N:1	-	3.3.2-0.beta-2.1
+ok	1	3	3		-	1.3.3
+ok	1	0	1		-	1.0.1
+ok	10	2	1	A:rc1,N:0	-	10.2.1-rc1.0
+err	encountered unexpected token: "or"
+ok	1	3	2		-	1.3.2
+ok	10	0	0		-	10.0.0
+ok	3	3	1		-	3.3.1
+ok	3	0	0	A:alpha,A:alpha,A:rc1	-	3.0.0-alpha.alpha.rc1
+ok	1	1	10		-	1.1.10
+ok	10	1	0		-	10.1.0
+ok	1	3	0		-	1.3.0
+ok	0	1	0		-	0.1.0
+ok	10	0	1		-	10.0.1
+ok	1	0	2		-	1.0.2
+ok	10	1	3		-	10.1.3
+ok	10	2	1	N:3,A:alpha	-	10.2.1-3.alpha
+ok	3	1	1		-	3.1.1
+err	encountered unexpected token: "or"
+ok	0	1	3		-	0.1.3
+err	encountered unexpected token: "-"
+ok	0	0	10		+0a	0.0.10+0a
+ok	10	2	0		-	10.2.0
+ok	2	1	1		-	2.1.1
+ok	2	0	0	A:beta-2,A:beta-2,N:0	-	2.0.0-beta-2.beta-2.0
+ok	2	1	1		-	2.1.1
+ok	0	0	10	A:alpha	-	0.0.10-alpha
+ok	0	1	0	N:1,A:rc1,N:1	-	0.1.0-1.rc1.1
+ok	3	2	10		-	3.2.10
+ok	10	10	2		-	10.10.2
+ok	3	2	10		-	3.2.10
+ok	2	10	0		-	2.10.0
+ok	0	1	3		-	0.1.3
+err	expected end of input, but got: "x"
+err	missing minor and patch versions: 3
+ok	0	3	3	A:rc1,A:alpha	+1.0	0.3.3-rc1.alpha+1.0
+err	expected end of input, but got: ".1"
+ok	10	0	2		-	10.0.2
+ok	0	3	0		-	0.3.0
+ok	3	1	3		-	3.1.3
+ok	3	2	1		-	3.2.1
+ok	2	3	0		-	2.3.0
+ok	0	10	1	A:rc1,A:rc1,A:rc1	+007	0.10.1-rc1.rc1.rc1+007
+ok	1	2	2		-	1.2.2
+ok	2	10	1		-	2.10.1
+err	expected end of input, but got: "x"
+ok	3	1	0		-	3.1.0
+ok	3	1	3		-	3.1.3
+ok	0	10	0		-	0.10.0
+ok	0	3	0		-	0.3.0
+ok	0	0	2		-	0.0.2
+err	encountered unexpected token: "and"
+ok	3	3	3	N:2,A:alpha,A:beta-2	-	3.3.3-2.alpha.beta-2
+ok	3	10	1		-	3.10.1
+ok	2	3	2	A:beta-2	-	2.3.2-beta-2
+err	expected end of input, but got: "x"
+ok	3	1	1		-	3.1.1
+ok	3	0	1		-	3.0.1
+ok	1	0	2		-	1.0.2
+ok	1	10	3		-	1.10.3
+ok	1	10	0		-	1.10.0
+ok	3	3	10	N:0	-	3.3.10-0
+ok	2	10	10		-	2.10.10
+ok	10	3	2		-	10.3.2
+ok	1	0	10		+x	1.0.10+x
+ok	1	3	10		+alpha	1.3.10+alpha
+err	encountered unexpected token: " "
+err	expected end of input, but got: "x"
+ok	3	3	2		+rc1.3	3.3.2+rc1.3
+ok	1	3	2		+pre	1.3.2+pre
+err	missing minor and patch versions: 0
+ok	3	0	0		+3.4294967296	3.0.0+3.4294967296
+ok	2	3	2		-	2.3.2
+ok	1	1	10	N:1	-	1.1.10-1
+ok	1	2	0		-	1.2.0
+ok	1	0	2		-	1.0.2
+ok	1	0	0	A:alpha	-	1.0.0-alpha
+ok	1	2	2		-	1.2.2
+err	expected end of input, but got: "x"
+ok	1	1	1		-	1.1.1
+ok	0	0	1	N:3,N:2,A:rc1	-	0.0.1-3.2.rc1
+err	encountered unexpected token: "or"
+ok	2	3	0		-	2.3.0
+ok	3	0	10	A:beta-2	-	3.0.10-beta-2
+ok	10	0	3	N:3,A:alpha	-	10.0.3-3.alpha
+ok	0	1	2	A:beta-2	-	0.1.2-beta-2
+ok	10	10	0	N:0	-	10.10.0-0
+ok	3	2	2		-	3.2.2
+ok	1	0	10	N:2,A:rc1,A:alpha	-	1.0.10-2.rc1.alpha
+ok	0	10	0		-	0.10.0
+err	expected end of input, but got: "x"
+ok	1	2	0	N:0,N:0,N:1	-	1.2.0-0.0.1
+ok	2	0	10	N:1,A:alpha	-	2.0.10-1.alpha
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "or"
+ok	3	10	2	N:0,A:beta-2,N:0	-	3.10.2-0.beta-2.0
+ok	2	10	2	N:1,A:beta-2,A:rc1	-	2.10.2-1.beta-2.rc1
+ok	10	0	1		-	10.0.1
+err	expected end of input, but got: "x"
+ok	2	3	3		-	2.3.3
+ok	2	10	2		-	2.10.2
+ok	0	2	0		-	0.2.0
+ok	2	2	2		-	2.2.2
+err	expected end of input, but got: ".3-0"
+ok	2	3	0	A:alpha,A:rc1,N:2	-	2.3.0-alpha.rc1.2
+ok	1	10	1		-	1.10.1
+err	expected end of input, but got: "x"
+err	expected end of input, but got: "x"
+ok	2	10	0		-	2.10.0
+ok	2	0	2		+rc1	2.0.2+rc1
+ok	1	10	0	N:3,N:1,N:2	-	1.10.0-3.1.2
+err	encountered unexpected token: "or"
+ok	0	3	0		-	0.3.0
+ok	3	2	3	N:2,A:beta-2	-	3.2.3-2.beta-2
+ok	0	10	3	A:rc1,A:alpha,N:1	-	0.10.3-rc1.alpha.1
+ok	1	0	0		-	1.0.0
+ok	0	2	1	N:1	-	0.2.1-1
+ok	2	2	1	N:3,N:1,N:0	-	2.2.1-3.1.0
+err	encountered unexpected token: " "
+ok	10	1	3		-	10.1.3
+err	expected end of input, but got: "x"
+ok	3	1	2		-	3.1.2
+err	encountered unexpected token: "and"
+ok	0	3	3		-	0.3.3
+ok	1	0	2		-	1.0.2
+ok	2	3	10	N:0,N:3	-	2.3.10-0.3
+err	missing minor and patch versions: 1
+ok	3	0	1		-	3.0.1
+ok	10	3	10		+0	10.3.10+0
+ok	1	0	1	A:alpha	-	1.0.1-alpha
+err	expected end of input, but got: "x"
+err	expected end of input, but got: ".3"
+ok	0	2	10		-	0.2.10
+ok	10	1	0		-	10.1.0
+ok	2	10	3		-	2.10.3
+ok	1	1	0		-	1.1.0
+ok	3	2	1	N:1,A:alpha,N:2	-	3.2.1-1.alpha.2
+ok	2	0	3		-	2.0.3
+ok	1	3	10		-	1.3.10
+ok	0	2	10		-	0.2.10
+ok	2	2	2		-	2.2.2
+err	expected end of input, but got: "x"
+err	encountered unexpected token: " "
+ok	10	10	2		-	10.10.2
+ok	0	2	0		-	0.2.0
+ok	3	10	1		-	3.10.1
+ok	0	10	1		-	0.10.1
+err	expected end of input, but got: "x"
+ok	1	0	3		-	1.0.3
+ok	0	0	1		-	0.0.1
+err	expected end of input, but got: "x"
+err	missing patch version: 1.10
+ok	10	0	10		-	10.0.10
+ok	3	10	2	N:2	-	3.10.2-2
+ok	0	1	0		-	0.1.0
+ok	0	1	1	N:0,N:2,N:0	-	0.1.1-0.2.0
+ok	1	2	10		-	1.2.10
+ok	1	3	1		-	1.3.1
+err	expected end of input, but got: "x"
+ok	0	1	3		-	0.1.3
+ok	3	1	2	N:3,A:alpha	-	3.1.2-3.alpha
+err	encountered unexpected token: "-"
+ok	1	1	10		-	1.1.10
+err	missing patch version: 2.0
+ok	1	0	3		-	1.0.3
+ok	1	0	2		-	1.0.2
+err	expected end of input, but got: "x"
+ok	10	0	3	N:3,A:beta-2,N:2	-	10.0.3-3.beta-2.2
+err	expected end of input, but got: "x"
+ok	0	0	3		-	0.0.3
+ok	2	0	3	N:0,A:rc1,N:1	-	2.0.3-0.rc1.1
+ok	2	10	1		-	2.10.1
+ok	10	10	2		-	10.10.2
+ok	0	10	1		-	0.10.1
+ok	10	2	0		+rc1	10.2.0+rc1
+err	expected end of input, but got: "x"
+ok	2	1	0		+0a	2.1.0+0a
+ok	0	3	10		-	0.3.10
+err	expected end of input, but got: "x"
+ok	1	3	2	A:alpha,N:3,A:beta-2	-	1.3.2-alpha.3.beta-2
+ok	2	1	2		-	2.1.2
+ok	10	0	3		-	10.0.3
+err	expected end of input, but got: "x"
+ok	3	3	1	A:alpha	-	3.3.1-alpha
+err	encountered unexpected token: "-"
+ok	10	10	2	A:rc1	-	10.10.2-rc1
+err	expected end of input, but got: "x"
+err	encountered unexpected token: " "
+ok	1	1	1	A:rc1,N:0,N:0	-	1.1.1-rc1.0.0
+ok	0	0	10		-	0.0.10
+err	missing minor and patch versions: 10
+ok	10	10	2	A:alpha,N:1,A:rc1	-	10.10.2-alpha.1.rc1
+err	expected end of input, but got: "x"
+err	missing patch version: 0.0
+ok	10	1	10		-	10.1.10
+ok	2	2	10		-	2.2.10
+ok	0	10	3		-	0.10.3
+ok	2	10	3		-	2.10.3
+err	expected end of input, but got: "x"
+ok	10	10	2	A:alpha	-	10.10.2-alpha
+err	encountered unexpected token: "and"
+ok	10	3	3		-	10.3.3
+ok	2	3	2		-	2.3.2
+ok	0	3	0		-	0.3.0
+ok	0	0	10		-	0.0.10
+err	encountered unexpected token: "or"
+ok	2	0	10		+4294967296.1	2.0.10+4294967296.1
+ok	3	2	3		-	3.2.3
+ok	1	0	0	N:3,N:2,A:beta-2	-	1.0.0-3.2.beta-2
+ok	10	10	3		-	10.10.3
+err	expected end of input, but got: ".2"
+err	expected end of input, but got: "x"
+ok	1	3	2		-	1.3.2
+ok	0	10	3		-	0.10.3
+ok	10	10	10		-	10.10.10
+ok	10	2	2	N:2	-	10.2.2-2
+ok	3	10	3	N:1	-	3.10.3-1
+ok	10	3	10	N:1	-	10.3.10-1
+err	expected end of input, but got: ".10-rc1+4294967295.10"
+ok	0	10	2		+4294967296	0.10.2+4294967296
+err	expected end of input, but got: "x"
+ok	10	1	10		+x	10.1.10+x
+ok	3	0	2		-	3.0.2
+ok	3	1	10		-	3.1.10
+ok	0	10	3	A:rc1	-	0.10.3-rc1
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "or"
+ok	1	2	2		-	1.2.2
+ok	1	3	2		-	1.3.2
+ok	2	2	2		-	2.2.2
+ok	0	10	3		-	0.10.3
+ok	3	3	3	A:alpha	-	3.3.3-alpha
+ok	10	3	0	N:2,A:rc1	-	10.3.0-2.rc1
+ok	2	2	1		-	2.2.1
+ok	10	0	0		-	10.0.0
+ok	10	3	3		-	10.3.3
+err	expected end of input, but got: "x"
+err	encountered unexpected token: "-"
+ok	2	1	10		+4294967295.rc1	2.1.10+4294967295.rc1
+err	expected end of input, but got: "x"
+ok	3	0	0		-	3.0.0
+ok	0	10	2		-	0.10.2
+err	encountered unexpected token: "and"
+ok	0	1	3		-	0.1.3
+ok	10	1	1		-	10.1.1
+ok	3	10	0		-	3.10.0
+ok	2	1	3		-	2.1.3
+ok	0	2	0		-	0.2.0
+ok	3	10	0		-	3.10.0
+ok	2	10	2		-	2.10.2
+ok	3	3	1		-	3.3.1
+ok	2	3	3	A:alpha,N:2,N:2	-	2.3.3-alpha.2.2
+ok	1	10	10		-	1.10.10
+ok	3	2	0		+rc1	3.2.0+rc1
+ok	10	10	10	N:1	-	10.10.10-1
+ok	0	1	0	A:rc1	-	0.1.0-rc1
+ok	0	2	10	A:alpha	-	0.2.10-alpha
+ok	10	1	2		-	10.1.2
+ok	10	3	0		-	10.3.0
+ok	3	1	1	N:2,A:rc1,A:rc1	-	3.1.1-2.rc1.rc1
+err	missing patch version: 0.1
+ok	1	2	0	N:3	-	1.2.0-3
+ok	10	0	0		-	10.0.0
+ok	2	10	2	A:rc1,N:3,N:0	+007.alpha	2.10.2-rc1.3.0+007.alpha
+ok	1	3	10		-	1.3.10
+ok	0	1	3	N:2,A:beta-2,N:3	-	0.1.3-2.beta-2.3
+err	expected end of input, but got: "x"
+ok	1	2	2		-	1.2.2
+ok	10	3	10		-	10.3.10
+ok	1	2	1		-	1.2.1
+ok	2	10	0	N:1,N:0,A:beta-2	-	2.10.0-1.0.beta-2
+err	expected end of input, but got: "x"
+err	expected end of input, but got: "x"
+ok	0	1	3		-	0.1.3
+ok	1	2	3		-	1.2.3
+ok	1	2	3		-	1.2.3
+ok	10	10	0		-	10.10.0
+ok	10	10	0	N:1,A:beta-2,A:alpha	-	10.10.0-1.beta-2.alpha
+ok	3	0	2	A:rc1,A:rc1,N:1	-	3.0.2-rc1.rc1.1
+err	encountered unexpected token: "or"
+ok	10	10	0		+4294967295	10.10.0+4294967295
+err	expected end of input, but got: "x"
+ok	10	3	1		-	10.3.1
+ok	10	2	2		-	10.2.2
+ok	0	2	2		-	0.2.2
+ok	0	1	2		-	0.1.2
+ok	2	2	0		-	2.2.0
+ok	1	0	0		-	1.0.0
+ok	2	0	3		+0.4294967295	2.0.3+0.4294967295
+err	expected end of input, but got: "x"
+ok	10	3	3	N:2,A:rc1,N:1	-	10.3.3-2.rc1.1
+ok	2	0	1		-	2.0.1
+err	expected end of input, but got: "x"
+err	missing patch version: 10.3
+ok	1	3	10		-	1.3.10
+err	expected end of input, but got: "x"
+ok	0	3	1		-	0.3.1
+ok	1	2	10		+x	1.2.10+x
+ok	3	1	3		-	3.1.3
+ok	10	10	0		-	10.10.0
+err	expected end of input, but got: "x"
+err	expected end of input, but got: "x"
+ok	10	2	10	N:0,N:0,A:beta-2	+rc1.alpha	10.2.10-0.0.beta-2+rc1.alpha
+ok	3	1	2		-	3.1.2
+ok	2	1	10	N:3,N:1,N:1	-	2.1.10-3.1.1
+ok	2	3	1		-	2.3.1
+ok	1	10	1		+10.10	1.10.1+10.10
+ok	2	1	2		-	2.1.2
+ok	2	1	10		-	2.1.10
+ok	0	0	2	N:1,N:1	-	0.0.2-1.1
+ok	1	3	1		-	1.3.1
+err	missing patch version: 1.2
+ok	10	10	3		-	10.10.3
+ok	10	3	10		-	10.3.10
+ok	1	2	1		-	1.2.1
+err	encountered unexpected token: " "
+err	expected end of input, but got: "x"
+ok	2	2	10		-	2.2.10
+ok	3	0	1	A:alpha,A:rc1	-	3.0.1-alpha.rc1
+ok	2	10	3	N:0	-	2.10.3-0
+err	encountered unexpected token: "or"
+ok	3	10	3	A:beta-2,A:alpha,A:beta-2	-	3.10.3-beta-2.alpha.beta-2
+ok	1	3	10		-	1.3.10
+ok	2	0	1		-	2.0.1
+ok	3	10	1	N:3,A:alpha,N:3	-	3.10.1-3.alpha.3
+err	encountered unexpected token: "or"
+err	expected end of input, but got: "x"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "or"
+err	expected end of input, but got: "x"
+ok	2	0	2		-	2.0.2
+ok	1	0	2		-	1.0.2
+ok	10	10	3		-	10.10.3
+ok	2	1	10		-	2.1.10
+err	expected end of input, but got: "x"
+ok	3	2	10		+rc1	3.2.10+rc1
+ok	1	10	2		-	1.10.2
+ok	0	0	3		-	0.0.3
+ok	3	0	0		-	3.0.0
+err	expected end of input, but got: "x"
+err	expected end of input, but got: "x"
+ok	3	2	2		-	3.2.2
+ok	10	0	3		-	10.0.3
+ok	3	3	1		-	3.3.1
+ok	0	3	1		+alpha	0.3.1+alpha
+ok	2	1	3		-	2.1.3
+ok	2	10	1		-	2.10.1
+err	encountered unexpected token: "-"
+ok	0	2	2		-	0.2.2
+ok	10	10	2	N:1	-	10.10.2-1
+ok	3	10	1		-	3.10.1
+ok	10	1	1		-	10.1.1
+err	expected end of input, but got: "x"
+err	missing minor and patch versions: 3
+ok	3	3	0		-	3.3.0
+ok	0	0	3		-	0.0.3
+ok	2	10	0		-	2.10.0
+ok	2	3	10		-	2.3.10
+ok	1	10	10	N:2,A:rc1,A:rc1	-	1.10.10-2.rc1.rc1
+ok	1	1	3		-	1.1.3
+ok	0	0	0		-	0.0.0
+ok	1	3	3		-	1.3.3
+ok	10	1	0	A:alpha,A:rc1,A:alpha	-	10.1.0-alpha.rc1.alpha
+ok	3	10	3		-	3.10.3
+err	expected end of input, but got: "x"
+ok	3	3	2		-	3.3.2
+ok	1	1	3	N:1,N:0	-	1.1.3-1.0
+ok	3	2	3		-	3.2.3
+ok	1	2	3	A:alpha,A:alpha	+pre	1.2.3-alpha.alpha+pre
+ok	1	1	3		+10.0a	1.1.3+10.0a
+ok	0	3	0		-	0.3.0
+err	expected end of input, but got: "x"
+err	expected end of input, but got: "x"
+ok	2	1	1	A:rc1	-	2.1.1-rc1
+err	missing minor and patch versions: 2
+ok	0	0	2		-	0.0.2
+ok	1	2	2		-	1.2.2
+ok	0	0	0		-	0.0.0
+ok	10	10	0		-	10.10.0
+ok	2	3	10		-	2.3.10
+ok	0	2	1		-	0.2.1
+ok	2	10	1		-	2.10.1
+ok	0	2	3		-	0.2.3
+ok	10	10	1		-	10.10.1
+ok	3	0	0		+x	3.0.0+x
+err	encountered unexpected token: "and"
+ok	1	3	0		-	1.3.0
+ok	0	1	1		-	0.1.1
+ok	0	0	0	A:beta-2,A:alpha	-	0.0.0-beta-2.alpha
+ok	3	3	2		+4294967296	3.3.2+4294967296
+ok	1	0	3		-	1.0.3
+ok	0	0	3	N:0,N:3	-	0.0.3-0.3
+ok	3	0	10	A:alpha,A:beta-2	-	3.0.10-alpha.beta-2
+ok	2	10	1		-	2.10.1
+err	encountered unexpected token: "or"
+err	expected end of input, but got: "x"
+ok	10	2	2		-	10.2.2
+ok	3	2	3	N:0	-	3.2.3-0
+ok	0	0	0		-	0.0.0
+err	expected end of input, but got: "x"
+err	expected end of input, but got: "x"
+ok	3	1	3		+1.rc1	3.1.3+1.rc1
+ok	3	2	2		-	3.2.2
+ok	10	2	10	N:0,N:3,A:alpha	-	10.2.10-0.3.alpha
+err	encountered unexpected token: " "
+ok	0	2	3	N:0	-	0.2.3-0
+ok	2	1	10		-	2.1.10
+ok	0	0	0	A:rc1,A:alpha,A:rc1	-	0.0.0-rc1.alpha.rc1
+err	expected end of input, but got: "x"
+err	expected end of input, but got: "x"
+err	missing minor and patch versions: 10
+ok	1	10	0		-	1.10.0
+ok	3	1	1	A:rc1	-	3.1.1-rc1
+ok	1	0	10		-	1.0.10
+ok	10	2	1		-	10.2.1
+ok	10	0	0		-	10.0.0
+err	missing patch version: 0.0
+ok	0	3	3		-	0.3.3
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "or"
+ok	1	3	10		-	1.3.10
+ok	1	2	2		-	1.2.2
+err	expected end of input, but got: "x"
+ok	0	0	10		-	0.0.10
+err	encountered unexpected token: " "
+ok	10	3	10		-	10.3.10
+ok	1	0	1		-	1.0.1
+err	expected end of input, but got: "x"
+ok	1	0	0	A:rc1,N:3,N:3	-	1.0.0-rc1.3.3
+ok	2	1	2		-	2.1.2
+ok	3	2	2		-	3.2.2
+ok	0	10	2		-	0.10.2
+ok	3	10	0		-	3.10.0
+ok	1	10	2		-	1.10.2
+ok	2	1	2		-	2.1.2
+ok	0	3	10		-	0.3.10
+ok	1	3	10		-	1.3.10
+ok	3	2	10		-	3.2.10
+ok	10	2	3	N:0,N:0	+rc1.007	10.2.3-0.0+rc1.007
+ok	1	3	0		-	1.3.0
+err	encountered unexpected token: "or"
+ok	2	1	10		-	2.1.10
+err	encountered unexpected token: "or"
+ok	0	10	3	N:3	-	0.10.3-3
+err	encountered unexpected token: " "
+err	expected end of input, but got: "x"
+ok	0	1	1		-	0.1.1
+err	expected end of input, but got: "x"
+err	encountered unexpected token: "or"
+ok	2	2	1	A:rc1,A:alpha	-	2.2.1-rc1.alpha
+ok	10	1	3		-	10.1.3
+ok	10	0	1		+2	10.0.1+2
+ok	2	3	3		-	2.3.3
+ok	10	0	2		-	10.0.2
+ok	2	10	10		-	2.10.10
+err	expected end of input, but got: "x"
+err	encountered unexpected token: " "
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "beta"
+err	missing minor and patch versions: 2
+err	lexer error: UnexpectedCharacter('!')
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "x4294967295"
+err	encountered unexpected token: "+"
+err	lexer error: UnexpectedCharacter('=')
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "007"
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	encountered unexpected token: "rc1"
+err	expected more input
+err	encountered unexpected token: "+"
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "and"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "xandy"
+err	missing minor and patch versions: 33
+err	expected more input
+err	encountered unexpected token: "."
+err	expected more input
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "."
+err	expected more input
+err	expected more input
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "0071"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "A9"
+err	expected more input
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "04294967296alpha3"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "beta"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('!')
+err	missing minor and patch versions: 0
+err	expected more input
+err	missing minor and patch versions: 10
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('é')
+err	missing minor and patch versions: 4294967295
+err	encountered unexpected token: "+"
+err	expected more input
+err	encountered unexpected token: "=="
+err	missing minor and patch versions: 1
+err	expected more input
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('$')
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "4294967296"
+err	encountered unexpected token: "alphaandA9"
+err	encountered unexpected token: "A9A9"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "4294967296rc1"
+err	encountered unexpected token: "42949672950andy"
+err	encountered unexpected token: "<="
+err	encountered unexpected token: "007x"
+err	encountered unexpected token: "beta"
+err	lexer error: UnexpectedCharacter('!')
+err	expected more input
+err	encountered unexpected token: "x"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: ">="
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "-"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "xor"
+err	lexer error: UnexpectedCharacter('é')
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "!="
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "beta"
+err	lexer error: UnexpectedCharacter('=')
+err	expected more input
+err	encountered unexpected token: "-"
+err	lexer error: UnexpectedCharacter('$')
+err	expected more input
+err	expected more input
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "3andy2or"
+err	encountered unexpected token: "x1"
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "42949672962"
+err	expected more input
+err	encountered unexpected token: "x"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "beta"
+err	missing minor and patch versions: 2
+err	lexer error: UnexpectedCharacter('é')
+err	missing minor and patch versions: 4294967295
+err	encountered unexpected token: "."
+err	expected more input
+err	encountered unexpected token: "0axand"
+err	encountered unexpected token: "rc1and0a"
+err	encountered unexpected token: "+"
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "beta"
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "A9pre4294967295"
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "0a"
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "alpha"
+err	expected more input
+err	encountered unexpected token: "~>"
+err	expected more input
+err	encountered unexpected token: "rc1"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "03"
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('!')
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "and"
+err	expected more input
+err	encountered unexpected token: "!="
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "007"
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: ">"
+err	expected more input
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "and"
+err	expected more input
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "0pre"
+err	encountered unexpected token: "<="
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "beta"
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "rc1"
+err	encountered unexpected token: "beta"
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "0a"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "."
+err	encountered unexpected token: "<"
+err	encountered unexpected token: "alpha4294967296beta"
+err	encountered unexpected token: "<="
+err	encountered unexpected token: "0apre"
+err	expected more input
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "4294967296"
+err	expected more input
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "alpha"
+err	expected more input
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: ">"
+err	expected more input
+err	encountered unexpected token: "4294967296"
+err	expected more input
+err	encountered unexpected token: "00742949672954294967296alpha"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('é')
+err	lexer error: UnexpectedCharacter('é')
+err	missing minor and patch versions: 1
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "0A9"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "A9"
+err	encountered unexpected token: "4294967296"
+err	expected more input
+err	lexer error: UnexpectedCharacter('$')
+err	expected more input
+err	expected more input
+err	missing minor and patch versions: 2
+err	expected more input
+err	encountered unexpected token: "rc1"
+err	expected more input
+err	encountered unexpected token: "0a"
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "007rc134294967296"
+err	expected more input
+err	missing minor and patch versions: 4294967295
+err	expected more input
+err	encountered unexpected token: "+"
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "pre"
+err	expected more input
+err	encountered unexpected token: "=="
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('é')
+err	expected more input
+err	encountered unexpected token: "=="
+err	expected more input
+err	encountered unexpected token: "rc1"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "=="
+err	expected more input
+err	encountered unexpected token: "+"
+err	expected more input
+err	missing minor and patch versions: 102
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "rc1beta"
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "1beta"
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "4294967295beta"
+err	encountered unexpected token: "prerc1"
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 1
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "3beta"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "."
+err	encountered unexpected token: "+"
+err	missing minor and patch versions: 3
+err	encountered unexpected token: "rc1"
+err	expected more input
+err	encountered unexpected token: "0a"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "3A9"
+err	expected more input
+err	encountered unexpected token: "A9"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "pre"
+err	missing minor and patch versions: 2
+err	missing minor and patch versions: 4294967295
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "2beta"
+err	encountered unexpected token: "."
+err	missing minor and patch versions: 33007
+err	encountered unexpected token: "<="
+err	encountered unexpected token: "007"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "."
+err	encountered unexpected token: "x"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "preorc"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "02alpha"
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "."
+err	encountered unexpected token: "42949672950070a"
+err	expected more input
+err	expected more input
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "1rc1"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "4294967296"
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "beta"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "pre10"
+err	encountered unexpected token: "<="
+err	encountered unexpected token: "."
+err	encountered unexpected token: "007"
+err	lexer error: UnexpectedCharacter('$')
+err	expected more input
+err	lexer error: UnexpectedCharacter('é')
+err	lexer error: UnexpectedCharacter('=')
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "-"
+err	expected more input
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('=')
+err	expected more input
+err	lexer error: UnexpectedCharacter('$')
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "."
+err	expected more input
+err	expected more input
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "x"
+err	encountered unexpected token: "rc1"
+err	encountered unexpected token: "preand"
+err	encountered unexpected token: "<"
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "beta"
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "rc1"
+err	encountered unexpected token: "<"
+err	missing minor and patch versions: 10
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "pre"
+err	expected more input
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "rc1"
+err	lexer error: UnexpectedCharacter('é')
+err	expected more input
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "or"
+err	expected more input
+err	encountered unexpected token: "007"
+err	missing minor and patch versions: 3
+err	lexer error: UnexpectedCharacter('é')
+err	expected more input
+err	encountered unexpected token: "alpha"
+err	expected more input
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "007andy"
+err	missing minor and patch versions: 10
+err	expected more input
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "rc14294967295beta"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "pre"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "10alphaorc"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "~>"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "42949672953"
+err	expected more input
+err	encountered unexpected token: "0alpha"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "pre"
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	encountered unexpected token: "0a0a"
+err	expected more input
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "10rc1"
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "."
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "0a0beta"
+err	expected more input
+err	encountered unexpected token: "4294967296"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "xorcbeta"
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "xandyrc1"
+err	expected more input
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('=')
+err	expected more input
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('!')
+err	expected more input
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "4294967296"
+err	lexer error: UnexpectedCharacter('!')
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	expected more input
+err	lexer error: UnexpectedCharacter('$')
+err	expected more input
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "x"
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "1orc"
+err	encountered unexpected token: "x"
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "alpharc1"
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "or"
+err	missing minor and patch versions: 0
+err	lexer error: UnexpectedCharacter('é')
+err	expected more input
+err	expected more input
+err	missing minor and patch versions: 20
+err	missing minor and patch versions: 2
+err	lexer error: UnexpectedCharacter('é')
+err	expected more input
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "A9A9"
+err	lexer error: UnexpectedCharacter('=')
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "!="
+err	expected more input
+err	encountered unexpected token: ">"
+err	expected more input
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "beta"
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "<"
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "4294967295rc1"
+err	encountered unexpected token: "+"
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "alpha"
+err	encountered unexpected token: "00"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "0a"
+err	expected more input
+err	missing minor and patch versions: 1
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "A9"
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "xandy"
+err	expected more input
+err	encountered unexpected token: "-"
+err	missing minor and patch versions: 3
+err	missing minor and patch versions: 3
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "0and"
+err	expected more input
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "!="
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "0a"
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('é')
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "11rc1"
+err	encountered unexpected token: "A93"
+err	lexer error: UnexpectedCharacter('é')
+err	expected more input
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "010"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "A90a"
+err	encountered unexpected token: "A9"
+err	encountered unexpected token: "-"
+err	missing minor and patch versions: 4294967295
+err	lexer error: UnexpectedCharacter('!')
+err	missing minor and patch versions: 10
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "alpha"
+err	missing minor and patch versions: 2
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "A9"
+err	encountered unexpected token: "~>"
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "<"
+err	encountered unexpected token: "and"
+err	expected more input
+err	encountered unexpected token: "0pre"
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "x"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "alpha"
+err	encountered unexpected token: "rc1andorc1"
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "0pre"
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 30
+err	encountered unexpected token: ">="
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "."
+err	encountered unexpected token: "."
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "alpha"
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "rc1"
+err	encountered unexpected token: "x"
+err	missing minor and patch versions: 1
+err	expected more input
+err	missing minor and patch versions: 0
+err	encountered unexpected token: ">"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "rc1"
+err	encountered unexpected token: "3orcalphaandy"
+err	expected more input
+err	encountered unexpected token: "2beta"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "."
+err	expected more input
+err	encountered unexpected token: "<"
+err	encountered unexpected token: "pre00"
+err	encountered unexpected token: "A9beta"
+err	encountered unexpected token: "pre"
+err	expected more input
+err	encountered unexpected token: "0aor24294967295"
+err	expected more input
+err	encountered unexpected token: "-"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "alphabeta"
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "3beta"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "."
+err	encountered unexpected token: "A9"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "1alpha"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "0a0a"
+err	encountered unexpected token: "04294967296"
+err	lexer error: UnexpectedCharacter('$')
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "!="
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "."
+err	missing minor and patch versions: 10007
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "beta"
+err	encountered unexpected token: "<"
+err	expected more input
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "~>"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "-"
+err	missing minor and patch versions: 3
+err	encountered unexpected token: "4294967296"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "=="
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "007beta"
+err	encountered unexpected token: "007or"
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "prepre"
+err	encountered unexpected token: "x"
+err	lexer error: UnexpectedCharacter('$')
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "."
+err	expected more input
+err	encountered unexpected token: "x"
+err	missing minor and patch versions: 10
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "A9"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "x"
+err	expected more input
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "0orc0a"
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "+"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "beta"
+err	missing minor and patch versions: 1
+err	expected more input
+err	encountered unexpected token: "007"
+err	expected more input
+err	encountered unexpected token: "42949672960"
+err	encountered unexpected token: "2and0orcandy"
+err	encountered unexpected token: "."
+err	expected more input
+err	encountered unexpected token: "+"
+err	lexer error: UnexpectedCharacter('!')
+err	expected more input
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "+"
+err	expected more input
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "A9x"
+err	encountered unexpected token: "0rc1beta"
+err	encountered unexpected token: "4294967295rc10"
+err	encountered unexpected token: "A9"
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "0074294967295"
+err	encountered unexpected token: "and"
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "+"
+err	encountered unexpected token: ">"
+err	encountered unexpected token: "or"
+err	missing minor and patch versions: 33
+err	encountered unexpected token: "."
+err	encountered unexpected token: "~>"
+err	encountered unexpected token: "+"
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('~')
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "alpha0A9"
+err	expected more input
+err	encountered unexpected token: ">"
+err	encountered unexpected token: "007"
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "A9rc1beta"
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "rc1beta"
+err	encountered unexpected token: "42949672964294967296"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "4294967296"
+err	encountered unexpected token: "beta"
+err	encountered unexpected token: "2rc1rc1007andandy"
+err	encountered unexpected token: ">="
+err	lexer error: UnexpectedCharacter('~')
+err	missing minor and patch versions: 0
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "~>"
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "beta"
+err	encountered unexpected token: "!="
+err	expected more input
+err	encountered unexpected token: "00a0074294967296andy"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "alpha"
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('!')
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "and"
+err	expected more input
+err	encountered unexpected token: "rc14294967296"
+err	missing minor and patch versions: 3
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "~>"
+err	expected more input
+err	encountered unexpected token: "0aandy"
+err	expected more input
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "."
+err	encountered unexpected token: "10aand0"
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "A9"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "3andorA9"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "0aandy"
+err	encountered unexpected token: "x"
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "007rc10aA9"
+err	expected more input
+err	encountered unexpected token: "alpha0a"
+err	expected more input
+err	encountered unexpected token: "!="
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('!')
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "0a"
+err	lexer error: UnexpectedCharacter('é')
+err	lexer error: UnexpectedCharacter('é')
+err	lexer error: UnexpectedCharacter('é')
+err	expected more input
+err	missing minor and patch versions: 3
+err	encountered unexpected token: "007"
+err	missing minor and patch versions: 10
+err	lexer error: UnexpectedCharacter('$')
+err	missing minor and patch versions: 310
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "<"
+err	expected more input
+err	encountered unexpected token: "<"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "42949672961"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "<="
+err	encountered unexpected token: "."
+err	encountered unexpected token: "<"
+err	expected more input
+err	encountered unexpected token: "0a1"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "~>"
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "pre"
+err	expected more input
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "alpha007"
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "A9rc1"
+err	encountered unexpected token: ">"
+err	expected more input
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "."
+err	encountered unexpected token: "10104294967296"
+err	encountered unexpected token: "<="
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "+"
+err	missing minor and patch versions: 4294967295
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('$')
+err	missing minor and patch versions: 10007
+err	expected more input
+err	encountered unexpected token: "rc1"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "x"
+err	missing minor and patch versions: 1
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "<"
+err	expected more input
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "."
+err	expected more input
+err	encountered unexpected token: "beta"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "<"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "-"
+err	encountered unexpected token: "rc1andy"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "0a"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "pre"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "or"
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "x"
+err	lexer error: UnexpectedCharacter('=')
+err	expected more input
+err	expected more input
+err	missing minor and patch versions: 2
+err	encountered unexpected token: "0a"
+err	expected more input
+err	encountered unexpected token: "0aandandyandy"
+err	expected more input
+err	encountered unexpected token: "0pre"
+err	encountered unexpected token: "0a3"
+err	encountered unexpected token: "or"
+err	expected more input
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "0070or"
+err	encountered unexpected token: "A9"
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "preandy"
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 10
+err	encountered unexpected token: "3andandpre310"
+err	expected more input
+err	lexer error: UnexpectedCharacter('é')
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "007"
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "."
+err	encountered unexpected token: "007orc"
+err	encountered unexpected token: "A9or"
+err	encountered unexpected token: "beta"
+err	lexer error: UnexpectedCharacter('~')
+err	missing minor and patch versions: 2
+err	expected more input
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "A9orc"
+err	encountered unexpected token: "rc1"
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "and"
+err	expected more input
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('=')
+err	missing minor and patch versions: 4294967295
+err	encountered unexpected token: "20a"
+err	encountered unexpected token: "0073"
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "pre"
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "x"
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('~')
+err	encountered unexpected token: "rc142949672960"
+err	encountered unexpected token: "0aA9"
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "0abeta"
+err	encountered unexpected token: ">"
+err	encountered unexpected token: "429496729610"
+err	missing minor and patch versions: 2
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "0a"
+err	encountered unexpected token: "A9"
+err	encountered unexpected token: "and"
+err	expected more input
+err	encountered unexpected token: "x"
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('!')
+err	missing minor and patch versions: 30
+err	expected more input
+err	expected more input
+err	expected more input
+err	lexer error: UnexpectedCharacter('=')
+err	encountered unexpected token: "007"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "A9"
+err	expected more input
+err	encountered unexpected token: "."
+err	lexer error: UnexpectedCharacter('é')
+err	missing minor and patch versions: 0
+err	lexer error: UnexpectedCharacter('~')
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "~>"
+err	encountered unexpected token: "1orc"
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "A9"
+err	lexer error: UnexpectedCharacter('é')
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "+"
+err	missing minor and patch versions: 4294967295
+err	lexer error: UnexpectedCharacter('!')
+err	encountered unexpected token: "and"
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	encountered unexpected token: "10beta"
+err	missing minor and patch versions: 10
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "and"
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "A9rc10alpha"
+err	encountered unexpected token: "-"
+err	expected more input
+err	encountered unexpected token: "rc1"
+err	encountered unexpected token: "beta"
+err	expected more input
+err	encountered unexpected token: ">="
+err	encountered unexpected token: "0abeta"
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: ">="
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "0and"
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 210
+err	expected more input
+err	expected more input
+err	missing minor and patch versions: 110
+err	lexer error: UnexpectedCharacter('é')
+err	expected more input
+err	expected more input
+err	encountered unexpected token: "<"
+err	encountered unexpected token: "3pre"
+err	encountered unexpected token: "or"
+err	encountered unexpected token: "007"
+err	expected more input
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "rc1"
+err	encountered unexpected token: "!="
+err	encountered unexpected token: "x0a10"
+err	expected more input
+err	encountered unexpected token: "."
+err	encountered unexpected token: "pre"
+err	encountered unexpected token: "A9"
+err	missing minor and patch versions: 10
+err	lexer error: UnexpectedCharacter('=')
+err	missing minor and patch versions: 0
+err	encountered unexpected token: "007"
+err	expected more input
+err	encountered unexpected token: "0aorc"
+err	missing minor and patch versions: 10
+err	missing minor and patch versions: 1
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	encountered unexpected token: "=="
+err	encountered unexpected token: "xA9"
+err	lexer error: UnexpectedCharacter('!')
+err	expected more input
+err	encountered unexpected token: "xbeta"
+err	lexer error: UnexpectedCharacter('$')
+err	lexer error: UnexpectedCharacter('~')
+err	expected more input
+err	lexer error: UnexpectedCharacter('=')
+err	lexer error: UnexpectedCharacter('$')
+err	encountered unexpected token: "and"
+err	missing minor and patch versions: 4294967295
+err	expected more input
+err	encountered unexpected token: "007"
+err	missing minor and patch versions: 1
+Greater	false
+false
+Less	false
+false
+Greater	false
+true
+Less	false
+true
+Equal	true
+invalid
+Less	false
+invalid
+Greater	false
+false
+Greater	false
+true
+Less	false
+invalid
+Greater	false
+true
+Greater	false
+true
+invalid
+invalid
+Greater	false
+true
+Less	false
+true
+invalid
+true
+invalid
+true
+Greater	false
+invalid
+invalid
+false
+Greater	false
+true
+Equal	true
+true
+Equal	true
+invalid
+Greater	false
+true
+Greater	false
+false
+Greater	false
+false
+invalid
+true
+Less	false
+false
+Less	false
+invalid
+Greater	false
+invalid
+Greater	false
+invalid
+Less	false
+false
+Greater	false
+true
+Equal	true
+false
+Equal	true
+true
+invalid
+true
+Less	false
+false
+Greater	false
+invalid
+Greater	false
+false
+Less	false
+invalid
+invalid
+false
+Greater	false
+false
+Greater	false
+false
+invalid
+false
+Less	false
+false
+Less	false
+false
+Greater	false
+true
+Greater	false
+false
+Less	false
+invalid
+Less	false
+true
+Less	false
+false
+Less	false
+invalid
+Less	false
+true
+invalid
+true
+Greater	false
+true
+Less	false
+false
+Less	false
+false
+Less	false
+invalid
+Greater	false
+false
+invalid
+true
+Greater	false
+invalid
+Equal	true
+true
+Less	false
+invalid
+Less	false
+invalid
+Greater	false
+true
+Greater	false
+true
+Less	false
+invalid
+Less	false
+false
+Equal	true
+true
+Greater	false
+false
+Less	false
+true
+Less	false
+invalid
+invalid
+false
+Less	false
+false
+Equal	true
+true
+Less	false
+invalid
+Equal	true
+false
+Equal	true
+true
+Equal	false
+false
+Greater	false
+false
+Equal	true
+true
+Less	false
+false
+Greater	false
+false
+Equal	true
+invalid
+Less	false
+true
+Equal	true
+true
+Less	false
+false
+Less	false
+false
+Less	false
+true
+Greater	false
+invalid
+Greater	false
+false
+Greater	false
+true
+Greater	false
+false
+Greater	false
+invalid
+Greater	false
+true
+Less	false
+true
+Greater	false
+invalid
+invalid
+invalid
+invalid
+true
+Equal	true
+invalid
+Less	false
+false
+Less	false
+true
+Greater	false
+invalid
+invalid
+false
+Less	false
+false
+Less	false
+invalid
+Less	false
+invalid
+Greater	false
+true
+Greater	false
+invalid
+invalid
+false
+Equal	true
+true
+Less	false
+false
+Greater	false
+true
+Greater	false
+invalid
+Equal	true
+invalid
+Greater	false
+invalid
+Greater	false
+invalid
+invalid
+invalid
+Less	false
+false
+Less	false
+false
+Less	false
+true
+Equal	true
+true
+Less	false
+false
+Less	false
+true
+Greater	false
+true
+Less	false
+true
+Greater	false
+true
+Equal	true
+invalid
+Greater	false
+false
+Greater	false
+invalid
+Less	false
+invalid
+Less	false
+false
+Greater	false
+true
+Less	false
+invalid
+invalid
+true
+Less	false
+false
+invalid
+false
+Less	false
+true
+invalid
+false
+Less	false
+true
+invalid
+invalid
+invalid
+false
+Less	false
+invalid
+Equal	true
+true
+Greater	false
+invalid
+invalid
+false
+invalid
+invalid
+Greater	false
+invalid
+invalid
+false
+Greater	false
+invalid
+invalid
+true
+Equal	true
+false
+Less	false
+false
+Equal	true
+invalid
+invalid
+true
+Greater	false
+true
+Less	false
+true
+Less	false
+false
+invalid
+false
+Less	false
+true
+Less	false
+invalid
+Less	false
+invalid
+Less	false
+invalid
+Less	false
+true
+invalid
+invalid
+Greater	false
+invalid
+Greater	false
+invalid
+Greater	false
+invalid
+Less	false
+true
+Greater	false
+invalid
+invalid
+false
+invalid
+true
+Less	false
+invalid
+Greater	false
+invalid
+Less	false
+invalid
+invalid
+false
+Greater	false
+false
+Less	false
+false
+Greater	false
+true
+invalid
+invalid
+Greater	false
+false
+Less	false
+false
+Less	false
+invalid
+invalid
+true
+Less	false
+true
+Less	false
+true
+Less	false
+false
+Equal	true
+invalid
+Greater	false
+true
+invalid
+true
+Greater	false
+false
+Equal	true
+true
+Greater	false
+false
+Equal	false
+true
+Equal	true
+invalid
+Equal	true
+false
+Less	false
+false
+Equal	true
+invalid
+Less	false
+false
+Less	false
+true
+Less	false
+true
+Less	false
+invalid
+Greater	false
+false
+Less	false
+invalid
+Equal	true
+false
+invalid
+invalid
+Less	false
+true
+Less	false
+invalid
+Greater	false
+invalid
+invalid
+false
+Greater	false
+false
+invalid
+invalid
+Less	false
+invalid
+Less	false
+true
+Greater	false
+true
+invalid
+false
+invalid
+false
+Less	false
+invalid
+Less	false
+true
+Equal	true
+invalid
+invalid
+invalid
+Greater	false
+invalid
+invalid
+false
+invalid
+invalid
+Greater	false
+true
+Less	false
+invalid
+invalid
+false
+Greater	false
+invalid
+invalid
+true
+Less	false
+true
+Greater	false
+false
+Greater	false
+invalid
+Less	false
+false
+Greater	false
+false
+Greater	false
+true
+Greater	false
+invalid
+Less	false
+true
+invalid
+invalid
+Greater	false
+true
+Less	false
+true
+Less	false
+false
+Less	false
+true
+Greater	false
+invalid
+Equal	false
+false
+Equal	true
+invalid
+Equal	true
+invalid
+Equal	true
+false
+Less	false
+invalid
+Less	false
+false
+Equal	true
+false
+Greater	false
+true
+invalid
+true
+invalid
+false
+Less	false
+false
+invalid
+false
+Greater	false
+invalid
+Equal	true
+false
+Less	false
+invalid
+Greater	false
+false
+Equal	true
+invalid
+Greater	false
+invalid
+Equal	false
+invalid
+Less	false
+invalid
+invalid
+invalid
+Less	false
+invalid
+invalid
+false
+invalid
+false
+Greater	false
+invalid
+Greater	false
+false
+Equal	true
+true
+Less	false
+true
+invalid
+false
+Greater	false
+true
+Greater	false
+invalid
+Greater	false
+invalid
+Equal	true
+false
+Greater	false
+false
+Greater	false
+false
+Less	false
+invalid
+invalid
+invalid
+invalid
+true
+Greater	false
+false
+Less	false
+false
+Less	false
+false
+invalid
+invalid
+Less	false
+false
+Greater	false
+false
+Equal	true
+true
+Greater	false
+false
+Greater	false
+false
+Less	false
+invalid
+invalid
+false
+Less	false
+false
+Less	false
+false
+Greater	false
+invalid
+Equal	true
+invalid
+invalid
+false
+invalid
+false
+invalid
+invalid
+Less	false
+invalid
+Less	false
+true
+Greater	false
+false
+invalid
+false
+Less	false
+invalid
+Greater	false
+invalid
+Greater	false
+false
+Greater	false
+false
+invalid
+false
+Greater	false
+false
+Greater	false
+false
+invalid
+false
+Equal	true
+false
+Less	false
+invalid
+Equal	true
+invalid
+Less	false
+true
+Less	false
+false
+Less	false
+invalid
+invalid
+false
+Greater	false
+true
+Equal	true
+invalid
+Greater	false
+false
+Less	false
+false
+Less	false
+invalid
+Less	false
+false
+invalid
+false
+Greater	false
+invalid
+Less	false
+false
+invalid
+true
+Equal	true
+invalid
+Equal	true
+false
+Less	false
+true
+invalid
+true
+Equal	true
+false
+Greater	false
+true
+Greater	false
+invalid
+invalid
+invalid
+Greater	false
+false
+Less	false
+invalid
+Greater	false
+false
+Equal	true
+true
+Greater	false
+true
+Greater	false
+invalid
+Greater	false
+invalid
+invalid
+true
+Greater	false
+true
+Equal	false
+false
+Greater	false
+invalid
+Equal	true
+true
+Less	false
+false
+Greater	false
+invalid
+Greater	false
+true
+invalid
+invalid
+Greater	false
+false
+Equal	false
+true
+Equal	true
+false
+Less	false
+invalid
+Equal	false
+false
+Less	false
+invalid
+Greater	false
+false
+Equal	false
+true
+Less	false
+invalid
+Greater	false
+true
+Less	false
+false
+Less	false
+false
+Less	false
+true
+Equal	true
+invalid
+Less	false
+true
+Less	false
+invalid
+Greater	false
+true
+invalid
+false
+invalid
+false
+Greater	false
+true
+Less	false
+true
+Equal	true
+false
+Equal	true
+false
+Less	false
+true
+Greater	false
+true
+Less	false
+true
+Greater	false
+false
+Less	false
+true
+Less	false
+false
+Less	false
+false
+Less	false
+true
+Greater	false
+false
+Less	false
+invalid
+Greater	false
+false
+invalid
+true
+invalid
+false
+Equal	true
+false
+Equal	false
+false
+Greater	false
+invalid
+Greater	false
+invalid
+Less	false
+invalid
+invalid
+false
+Less	false
+invalid
+invalid
+invalid
+Less	false
+invalid
+Equal	false
+invalid
+Less	false
+invalid
+Equal	true
+false
+Greater	false
+true
+Greater	false
+invalid
+Greater	false
+false
+Less	false
+false
+invalid
+invalid
+Less	false
+invalid
+Greater	false
+invalid
+Less	false
+true
+Less	false
+false
+Less	false
+invalid
+Greater	false
+false
+invalid
+true
+Greater	false
+invalid
+Greater	false
+invalid
+Greater	false
+true
+Greater	false
+invalid
+Less	false
+true
+Less	false
+true
+Equal	true
+invalid
+Less	false
+invalid
+invalid
+invalid
+Greater	false
+true
+Less	false
+false
+invalid
+true
+Less	false
+true
+Less	false
+invalid
+invalid
+false
+Equal	true
+invalid
+Equal	true
+false
+Greater	false
+true
+Greater	false
+true
+invalid
+true
+Equal	true
+invalid
+Less	false
+false
+Greater	false
+invalid
+invalid
+true
+Equal	true
+false
+Less	false
+true
+Greater	false
+invalid
+Greater	false
+invalid
+Less	false
+true
+Greater	false
+true
+Greater	false
+true
+Greater	false
+false
+Less	false
+false
+Greater	false
+invalid
+Greater	false
+false
+Greater	false
+true
+invalid
+false
+Greater	false
+false
+Less	false
+invalid
+invalid
+invalid
+Equal	true
+false
+Equal	true
+invalid
+Greater	false
+false
+Greater	false
+false
+Less	false
+false
+Equal	true
+false
+invalid
+false
+Less	false
+false
+Less	false
+true
+Less	false
+false
+Greater	false
+false
+Less	false
+invalid
+Greater	false
+true
+Less	false
+false
+invalid
+true
+Less	false
+invalid
+Less	false
+invalid
+Equal	true
+false
+Greater	false
+false
+Less	false
+false
+Equal	false
+false
+Equal	true
+true
+invalid
+invalid
+Greater	false
+true
+Less	false
+false
+Greater	false
+invalid
+Less	false
+true
+Less	false
+invalid
+Less	false
+invalid
+Equal	true
+false
+Equal	true
+invalid
+Less	false
+invalid
+Less	false
+false
+Equal	false
+invalid
+Greater	false
+false
+Less	false
+true
+Greater	false
+false
+Equal	false
+invalid
+Greater	false
+false
+Equal	true
+invalid
+Greater	false
+false
+invalid
+true
+Greater	false
+false
+invalid
+invalid
+Equal	true
+false
+Equal	true
+false
+invalid
+true
+invalid
+invalid
+Less	false
+false
+Greater	false
+true
