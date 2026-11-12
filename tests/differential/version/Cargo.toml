@@ -1,0 +1,14 @@
+# The Rust half of the differential test of versions and ranges: a driver over
+# upstream's hexpm crate (read from the pinned checkout in reference/gleam) and
+# the pubgrub crate it uses, at the versions of Gleam's Cargo.lock. See run.sh.
+[package]
+name = "version-driver"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+hexpm = { path = "../../../reference/gleam/hexpm" }
+pubgrub = "=0.3.0"
+
+[workspace]

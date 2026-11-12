@@ -26,3 +26,4 @@ import devlog/what_a_parser_is
 import devlog/erlang_in_ci
 import devlog/names_and_scopes
 import devlog/what_a_type_checker_is
+import devlog/versions_and_ranges

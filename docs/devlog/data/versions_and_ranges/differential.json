@@ -1,0 +1,86 @@
+{
+ "about": "What tests/differential/version/run.sh and mutants.sh printed on 12 Nov 2026 (seeds 1 to 5, a million cases each; 60000 cases per mutant).",
+ "rust": "rustc 1.97.0, hexpm of Gleam v1.19.2, pubgrub 0.3.0, version-ranges 0.1.3",
+ "runs": [
+  {
+   "seed": 1,
+   "cases": 1000000,
+   "rejected": 157207,
+   "kinds": {
+    "B": 166711,
+    "C": 83485,
+    "I": 82984,
+    "O": 167242,
+    "R": 249691,
+    "S": 83327,
+    "V": 166560
+   },
+   "identical": true
+  },
+  {
+   "seed": 2,
+   "cases": 1000000,
+   "rejected": 157450,
+   "kinds": {
+    "B": 166989,
+    "C": 82944,
+    "I": 83229,
+    "O": 167365,
+    "R": 249590,
+    "S": 83154,
+    "V": 166729
+   },
+   "identical": true
+  },
+  {
+   "seed": 3,
+   "cases": 1000000,
+   "rejected": 158245,
+   "kinds": {
+    "B": 166732,
+    "C": 83275,
+    "I": 83369,
+    "O": 166519,
+    "R": 250659,
+    "S": 83362,
+    "V": 166084
+   },
+   "identical": true
+  },
+  {
+   "seed": 4,
+   "cases": 1000000,
+   "rejected": 158060,
+   "kinds": {
+    "B": 167348,
+    "C": 83428,
+    "I": 83140,
+    "O": 166445,
+    "R": 249794,
+    "S": 83503,
+    "V": 166342
+   },
+   "identical": true
+  },
+  {
+   "seed": 5,
+   "cases": 1000000,
+   "rejected": 158478,
+   "kinds": {
+    "B": 166788,
+    "C": 83323,
+    "I": 82971,
+    "O": 166304,
+    "R": 250396,
+    "S": 83759,
+    "V": 166459
+   },
+   "identical": true
+  }
+ ],
+ "mutants": {
+  "caught": 24,
+  "survived": 0,
+  "cases_each": 60000
+ }
+}

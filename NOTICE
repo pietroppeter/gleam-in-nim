@@ -13,3 +13,10 @@ rewritten in another language. Tests and test data replayed from the Gleam
 repository come from the same version.
 
 This project is independent and is not affiliated with the Gleam project.
+
+One file has another licence. src/gleam_in_nim/version_ranges.nim is a
+translation of the Rust crate version-ranges 0.1.3, part of pubgrub-rs
+(https://github.com/pubgrub-rs/pubgrub), Copyright the pubgrub-rs
+contributors, which the Gleam compiler depends on. It is licensed under the
+Mozilla Public License, Version 2.0: a copy is in LICENSES/MPL-2.0.txt, and
+the file says so in its first lines.

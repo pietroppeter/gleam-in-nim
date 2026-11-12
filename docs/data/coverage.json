@@ -472,10 +472,10 @@
       "stage": "build",
       "rust_code": 3046,
       "rust_tests": 1711,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "started",
+      "nim": "src/gleam_in_nim/hexpm/version.nim, hexpm/version/lexer.nim, hexpm/version/parser.nim",
+      "post": "versions-and-ranges",
+      "notes": "So far: the version module (versions, requirements, ranges), conformant, with a port of the version-ranges crate under it (version_ranges.nim, MPL-2.0, decision 0011). Not yet: serde, the Hex API client."
     },
     {
       "module": "language-server",
