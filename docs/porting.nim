@@ -82,6 +82,7 @@ nbText: """
 | `'a` lifetimes | nothing |
 | `#[derive(Debug, Clone, PartialEq, Eq, Hash)]` | nothing for values; `==` and `hash` by hand for refs. *See the traps* |
 | `impl Display` | `proc `$`` |
+| `format!("{x}")` and `{x:.1}` of an `f64` | `formatFloat` of `erlang_generation` (to be moved when a second module needs it). *Never `$`: see the traps* |
 | `panic!`, `unreachable!`, `.expect("...")` | `raiseAssert "..."`, `doAssert`. *Keep the message* |
 | `tracing::...` | leave out |
 | `#[test] fn name()` | `test "name":` in the test file of the module. *Same name, so a failure can be found upstream* |
@@ -112,6 +113,10 @@ nbText: """
 | `tokenize`, `escape` and other names of `std/strutils` | another name (`lex`, `escapeBytes`) | Nim resolves a call across every imported module and can pick the standard library's without a word |
 | `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
 | `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
+| `ErlangBuilder` (the trait of `erlang-generation`) | no type: each builder has procs with the names of the trait's functions | two implementations, so plain procs; code for both builders is generic |
+| `()` as the associated types of `ErlangBuilder` | `Unit`, the empty tuple | a `start` proc must return a value for its `end` proc to take |
+| `string` (the function of `ErlangBuilder`) | `stringExpression` | `string` is the type |
+| `ErlangSourceBuilderPosition` and other enums whose variants have fields with the same name | one flat object: a `kind` and every field | an object variant cannot repeat a field name in two branches |
 
 Add a row when a name cannot be kept. Search this table before inventing one.
 

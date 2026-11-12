@@ -432,10 +432,10 @@
       "stage": "erlang",
       "rust_code": 5723,
       "rust_tests": 0,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "started",
+      "nim": "src/gleam_in_nim/erlang_generation.nim",
+      "post": "the-erlang-builder",
+      "notes": "The shared types and ErlangSourceBuilder (text) are ported and identical to the reference on random scripts of calls (tools/erlcheck.sh). ErlangBinaryBuilder (abstract format) is the next step."
     },
     {
       "module": "erlang-term-format",
