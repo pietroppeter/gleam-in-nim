@@ -188,15 +188,15 @@
         {
           "id": "spans",
           "kind": "port",
-          "status": "started",
+          "status": "done",
           "title": "Source spans and line numbers",
           "what": "SrcSpan and LineNumbers, the coordinates every later phase uses.",
           "done_when": "Upstream src-span tests pass.",
           "components": [
             "span"
           ],
-          "post": "",
-          "pr": "",
+          "post": "the-syntax-tree",
+          "pr": "PRNUM",
           "owner": "Learn from other compiler rewrites"
         },
         {
@@ -227,15 +227,15 @@
         {
           "id": "untyped-ast",
           "kind": "port",
-          "status": "planned",
+          "status": "done",
           "title": "Untyped syntax tree",
           "what": "The data types of the untyped AST: modules, definitions, expressions, patterns, constants, type annotations.",
           "done_when": "Types compile and can represent every construct the parser produces.",
           "components": [
             "ast"
           ],
-          "post": "",
-          "pr": "",
+          "post": "the-syntax-tree",
+          "pr": "PRNUM",
           "owner": "Learn from other compiler rewrites"
         },
         {

@@ -41,6 +41,10 @@ the site as *For coding agents*, so a change here is reviewed like any page.
   the Gleam repository>` and `## port-status: draft` (then `verified`, then `conformant`).
   `nim r tools/portmap.nim` builds the port map from these headers (`docs/data/portmap.json`);
   run it in the pull request that ports or advances a file.
+- A Rust enum with data is written in one shape (`src/gleam_in_nim/rust_enum.nim`, decision
+  0010): `kind`, then one field `v<Variant>` per variant; a struct variant's fields are an
+  object that inherits `StructVariant`. `Box<T>` is `ref T`, `()` is `Unit`. A file that ports
+  only a part of a Rust file starts with `## port-part-of:` instead of `port-of`.
 - Upstream tests are replayed, not retyped: `tools/snapshots.nim` reads the `.snap` files,
   `tools/harvest.nim` the `assert_*!` calls of the Rust tests. A stage is done when
   `tools/difftest.nim` finds its output identical to the reference `gleam`, byte for byte. A
