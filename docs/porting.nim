@@ -47,7 +47,10 @@ nbText: """
 5. **Comments come along.** Doc comments (`///`) become `##`, ordinary ones stay where they were.
    They are part of the program we are porting.
 6. **Only the standard library** in `src/`, and `bigints`
-   ([decision 0009](../decisions/#0009-the-compiler-depends-on-one-package-bigints)). A Rust
+   ([decision 0009](../decisions/#0009-the-compiler-depends-on-one-package-bigints)). Check the
+   licence of a crate before reading its source to port it: `pubgrub` and `version-ranges` are
+   MPL-2.0 and are not ported
+   ([decision 0011](../decisions/#0011-version-ranges-are-written-here-not-ported-from-version-ranges)). A Rust
    crate is replaced by the standard library or by a small module of ours that is itself a port,
    never by a new dependency without a decision record.
 7. **Three states.** `draft` when translated, `verified` when a second pass with fresh eyes has
@@ -85,6 +88,8 @@ nbText: """
 | `panic!`, `unreachable!`, `.expect("...")` | `raiseAssert "..."`, `doAssert`. *Keep the message* |
 | `tracing::...` | leave out |
 | `#[test] fn name()` | `test "name":` in the test file of the module. *Same name, so a failure can be found upstream* |
+| `mod x;` private, and `x` uses the parent's types | `include x` in the parent, after the types. *An import would be a cycle. The test reaches private names with `{.all.}` and `privateAccess`* |
+| `a.max(b)`, `a.min(b)`, `Iterator::max` | written out. *When the two are equal in order Rust's `max` gives the second and `min` the first; it shows when `Ord` and `Eq` disagree, as for Hex versions with build metadata* |
 | `insta::assert_snapshot!` | compare with the upstream `.snap` through `tools/snapshots.nim`. *Do not create new snapshot files* |
 """
 
@@ -112,6 +117,9 @@ nbText: """
 | `tokenize`, `escape` and other names of `std/strutils` | another name (`lex`, `escapeBytes`) | Nim resolves a call across every imported module and can pick the standard library's without a word |
 | `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
 | `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
+| `lexer::Error`, `parser::Error` (Hex versions) | `LexerError`, `ParserError` | the two submodules are included in one Nim module |
+| `and` (Hex version lexer) | `andToken` | `and` is a keyword |
+| `Result<T, parser::Error>` (Hex versions) | `ParseResult[T]` | a private exception inside the module, a value outside, as in the lexer |
 
 Add a row when a name cannot be kept. Search this table before inventing one.
 

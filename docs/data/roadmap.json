@@ -596,6 +596,20 @@
           "pr": ""
         },
         {
+          "id": "hex-versions",
+          "kind": "port",
+          "status": "done",
+          "title": "Hex versions and requirements",
+          "what": "The version and requirement syntax of Hex (1.2.3-rc1+build, ~> 1.2 and < 1.5.0): a small lexer and parser, the order of versions, and sets of versions as intervals. The first piece of reading gleam.toml.",
+          "done_when": "Upstream's tests pass, and the port answers like the Rust crate on the corpus and on random inputs.",
+          "components": [
+            "config"
+          ],
+          "post": "hex-versions",
+          "pr": "PRNUM",
+          "owner": "Research Gleam, its community and corpus"
+        },
+        {
           "id": "io-config-metadata",
           "kind": "port",
           "status": "planned",

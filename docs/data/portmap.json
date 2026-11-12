@@ -3,8 +3,8 @@
   "code": 105534,
   "totals": {
     "todo": {
-      "files": 135,
-      "code": 102598
+      "files": 132,
+      "code": 101727
     },
     "draft": {
       "files": 0,
@@ -15,8 +15,8 @@
       "code": 0
     },
     "conformant": {
-      "files": 4,
-      "code": 2936
+      "files": 7,
+      "code": 3807
     },
     "skip": {
       "files": 0,
@@ -94,10 +94,10 @@
     },
     {
       "crate": "hexpm",
-      "todo": 2349,
+      "todo": 1478,
       "draft": 0,
       "verified": 0,
-      "conformant": 0,
+      "conformant": 871,
       "skip": 0
     },
     {
@@ -3238,8 +3238,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "src/gleam_in_nim/hexpm/version.nim"
+      ]
     },
     {
       "path": "hexpm/src/version/lexer.rs",
@@ -3251,8 +3253,10 @@
       "test": false,
       "snaps": 0,
       "cases": 25,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "src/gleam_in_nim/hexpm/version/lexer.nim"
+      ]
     },
     {
       "path": "hexpm/src/version/parser.rs",
@@ -3264,8 +3268,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "src/gleam_in_nim/hexpm/version/parser.nim"
+      ]
     },
     {
       "path": "hexpm/src/version/tests.rs",
