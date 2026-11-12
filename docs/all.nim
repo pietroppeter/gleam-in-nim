@@ -7,6 +7,7 @@ import index, roadmap, coverage, agents, decisions, porting
 import devlog/index as devlogIndex
 import devlog/elm_roots
 import devlog/the_beam
+import devlog/the_erlang_term_format
 import devlog/how_we_work
 import devlog/learning_from_rewrites
 import devlog/lexer
@@ -18,4 +19,5 @@ import devlog/how_gleam_compiles
 import devlog/the_error_renderer
 import devlog/the_port_plan
 import devlog/the_pretty_printer
+import devlog/what_the_reference_says
 import devlog/what_a_lexer_is

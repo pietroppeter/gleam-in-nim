@@ -1,0 +1,16 @@
+{
+ "about": "A second run of tools/golden.nim on a sample of sources, compared row by row with the first run (all statuses, counts and sha256 hashes).",
+ "words": [
+  "stdlib",
+  "snag",
+  "glance",
+  "wisp",
+  "json",
+  "lustre",
+  "mist",
+  "squirrel"
+ ],
+ "packages": 46,
+ "identical": 46,
+ "different": []
+}

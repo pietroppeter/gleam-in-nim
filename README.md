@@ -40,5 +40,5 @@ The rules are in [AGENTS.md](AGENTS.md).
 
 ## Licence
 
-MIT (see [LICENSE](LICENSE)). Files ported from the Gleam compiler, which is Apache-2.0, say so
-in their header and keep its notice.
+Apache-2.0, the licence of Gleam (see [LICENSE](LICENSE) and [NOTICE](NOTICE)). Files ported from
+the Gleam compiler start with a `port-of:` line naming the Rust file they translate.

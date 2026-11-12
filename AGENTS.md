@@ -11,8 +11,8 @@ the site as *For coding agents*, so a change here is reviewed like any page.
   (`docs/data/coverage.json` holds the pin the pages show; `reference/` holds how to fetch it).
 - The Rust compiler is the specification. When the Nim and the Rust disagree, the Nim is wrong,
   unless a decision record says the difference is wanted.
-- Gleam is Apache-2.0. A file ported from it starts with a header naming the Rust file it comes
-  from and the pinned commit, and keeps the Apache-2.0 notice. Never copy from a source whose
+- Gleam is Apache-2.0, and so is this repository (`LICENSE`, `NOTICE`). A file ported from it
+  starts with a header naming the Rust file it comes from (`## port-of:`). Never copy from a source whose
   licence does not allow it.
 - Everything outside this repository is read only: no issues, comments or pull requests on other
   projects, Gleam's included.

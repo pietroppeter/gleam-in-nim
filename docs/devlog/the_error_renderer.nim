@@ -1,4 +1,4 @@
-## devlog: 12 Nov 2026 O | The error renderer | The part of Gleam that draws the box around your mistake, ported with the Rust library under it, and checked on 80,000 random errors.
+## devlog: 12 Nov 2026 P | The error renderer | The part of Gleam that draws the box around your mistake, ported with the Rust library under it, and checked on 80,000 random errors.
 ## kind: port
 import std/[json, options, os, strformat, strutils]
 import nimib

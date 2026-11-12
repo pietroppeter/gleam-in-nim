@@ -1,0 +1,4 @@
+600 digits: decoded, 7 forms
+615 digits: decoded, 7 forms
+620 digits: binary_to_term fails with badarg
+700 digits: binary_to_term fails with badarg

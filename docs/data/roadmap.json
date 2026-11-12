@@ -157,6 +157,17 @@
           "owner": "Learn from other compiler rewrites"
         },
         {
+          "id": "corpus-goldens",
+          "kind": "tooling",
+          "status": "done",
+          "title": "What the real compiler says",
+          "what": "The reference compiler run over every package of the corpus, for Erlang and for JavaScript: abstract forms, Erlang source, JavaScript, package interface and diagnostics kept as expected results (corpus/golden.json, tools/golden.nim).",
+          "done_when": "Every corpus package has a recorded reference result for both targets, with hashes; a second run of a sample gives the same hashes; tools/golden.nim list feeds tools/difftest.nim.",
+          "post": "what-the-reference-says",
+          "pr": "15",
+          "owner": "Research Gleam, its community and corpus"
+        },
+        {
           "id": "erlang-in-ci",
           "kind": "tooling",
           "status": "planned",
@@ -357,7 +368,7 @@
           ],
           "post": "",
           "pr": "",
-          "owner": "Explain the BEAM and Elm roots"
+          "owner": "Port the Erlang backend foundations"
         },
         {
           "id": "explain-names",
@@ -545,7 +556,7 @@
           ],
           "post": "",
           "pr": "",
-          "owner": "Explain the BEAM and Elm roots"
+          "owner": "Port the Erlang backend foundations"
         },
         {
           "id": "erlang-expressions",
@@ -789,6 +800,20 @@
           "pr": ""
         },
         {
+          "id": "erlang-term-format",
+          "kind": "port",
+          "status": "done",
+          "title": "Erlang term format encoder",
+          "what": "The encoder of Erlang's External Term Format that the binary builder writes through, and a small BigInt module for the integers of the source.",
+          "done_when": "Upstream tests pass; Erlang decodes what we encode to the same terms.",
+          "components": [
+            "erlgen"
+          ],
+          "post": "the-erlang-term-format",
+          "pr": "12",
+          "owner": "Port the Erlang backend foundations"
+        },
+        {
           "id": "erlang-abstract-format",
           "kind": "port",
           "status": "planned",
@@ -799,7 +824,8 @@
             "erlgen"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Port the Erlang backend foundations"
         },
         {
           "id": "dependency-resolution",
