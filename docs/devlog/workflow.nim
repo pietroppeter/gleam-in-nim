@@ -286,8 +286,9 @@ nbText: """
 - The pages were looked at 390px wide, in giorno and in notte.
 - The line counts come from the pinned checkout and are recomputed by a tool; the assignment
   of modules to stages is a guess by name.
-- The review mode was copied, not rewritten; its export was not yet exercised end to end in
-  this repository. The first review Pietro sends will be the test.
+- The review mode was copied, not rewritten. On the deployed page it opens, takes a comment on
+  a selection and shows the version from git; applying an export to a notebook was not yet
+  exercised in this repository. The first review Pietro sends will be the test.
 - Not done yet, on purpose: a link checker and a drift counter (tabelline has both in CI).
   They are worth adding once there are enough pages to drift.
 

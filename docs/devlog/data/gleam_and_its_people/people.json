@@ -1,0 +1,23 @@
+{
+  "about": "People named in the post. Roles as stated on gleam.run/sponsor, in release posts, or on the linked project pages, on 2026-11-12.",
+  "core_team": [
+    {"name": "Louis Pilfold", "github": "lpil", "role": "Creator of Gleam, works on it full time",
+     "known_for": "the compiler and build tool, every release post, wisp, pog, glance, tom, jot, gleeunit"},
+    {"name": "Giacomo Cavalieri", "github": "giacomocavalieri", "role": "Core team since January 2024",
+     "known_for": "the new Erlang code generator in v1.19, formatter and language server work, squirrel, birdie, glam, prng"},
+    {"name": "Hayleigh Thompson", "github": "hayleigh-dot-dev", "role": "Core team, Lustre maintainer",
+     "known_for": "lustre, nibble, modem, rsvp, and a long history in the Elm community"},
+    {"name": "Surya Rose", "github": "GearsDatapacks", "role": "Core team, compiler",
+     "known_for": "rename and find references in the language server, faster and smaller JavaScript output, exhaustiveness checks"}
+  ],
+  "community": [
+    {"name": "Peter Saxton", "github": "CrowdHailer", "known_for": "EYG, midas, plinth, organiser of Gleam Gathering"},
+    {"name": "Alex Manning", "github": "rawhat", "known_for": "mist, glisten, stratus: the HTTP and TCP stack under most Gleam servers"},
+    {"name": "Danielle Maywood", "github": "DanielleMaywood", "known_for": "glexer, compiler contributions, the talk \"Optimising the hell out of Gleam\""},
+    {"name": "Benjamin Peinhardt", "github": "bcpeinhardt", "known_for": "simplifile, Learn OTP with Gleam"},
+    {"name": "Guillaume Hivert", "github": "ghivert", "known_for": "gloogle, sketch, redraw"},
+    {"name": "Dusty Phillips", "github": "dusty-phillips", "known_for": "glimpse, a type checker for Gleam written in Gleam"},
+    {"name": "Jonas Gruenwald", "github": "JonasGruenwald", "known_for": "spectator, chrobot"},
+    {"name": "Kamila Pokój", "github": "Kamila-P", "known_for": "Gleam Gathering announcements on gleam.run"}
+  ]
+}

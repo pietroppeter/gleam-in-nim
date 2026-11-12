@@ -1,0 +1,3 @@
+spawned 100000 processes in 270 ms
+about 2714 bytes each
+alive right now: 100038

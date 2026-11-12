@@ -1,0 +1,101 @@
+repo	stars	licence	pushed	archived	description
+lustre-labs/lustre	2505	MIT	2026-11-11	false	A Gleam web framework for building HTML templates, single page applications, and real-time
+gleam-lang/awesome-gleam	2056	NONE	2026-06-23	false	💯 A collection of Gleam libraries, projects, and resources
+gleam-wisp/wisp	1500	Apache-2.0	2026-11-03	false	🧚 A practical web framework for Gleam
+gleam-lang/otp	881	Apache-2.0	2026-10-15	false	📫 Fault tolerant multicore programs with actors
+gleam-lang/stdlib	714	Apache-2.0	2026-11-11	false	🎁  Gleam's standard library
+giacomocavalieri/squirrel	696	Apache-2.0	2026-09-10	false	🐿️ Type safe SQL in Gleam
+rawhat/mist	529	Apache-2.0	2026-04-18	false	gleam HTTP server. because it glistens on a web
+bcpeinhardt/learn_otp_with_gleam	426	NONE	2025-03-14	false	A resource for learning the OTP framework with the Gleam programming language
+CrowdHailer/eyg-lang	385	Apache-2.0	2026-11-11	false	Building better languages and tools; for some measure of better.
+gleam-lang/http	286	Apache-2.0	2026-10-09	false	🕸️ Types and functions for HTTP clients and servers!
+lpil/pog	268	Apache-2.0	2026-03-09	false	🐘 A PostgreSQL database client for Gleam, based on PGO
+gleam-lang/cookbook	240	NONE	2024-12-08	false	👩🏾‍🍳 How to do many things in Gleam
+alii/arc	234	MPL-2.0	2026-11-07	false	⌒ JavaScript on the BEAM
+glimr-org/glimr	227	NONE	2026-10-27	false	✨ A batteries-included web framework for Gleam.
+midas-framework/midas	217	NONE	2026-08-10	false	A framework for Gleam, Midas makes shiny things.
+daniellionel01/parrot	216	Apache-2.0	2026-11-09	false	🦜 type-safe SQL in gleam
+giacomocavalieri/birdie	208	Apache-2.0	2026-07-17	false	🐦‍⬛ Snapshot testing in Gleam
+lustre-labs/ui	176	MIT	2026-05-26	false	A collection of components and design tokens for building Lustre apps.
+gleam-lang/httpc	174	Apache-2.0	2026-09-07	false	📡 Make requests to HTTP servers with httpc
+lpil/sqlight	160	NONE	2026-07-10	false	💡 Use SQLite from Gleam!
+gleam-lang/example-todomvc	159	NONE	2024-07-15	false	📝 An example web application in Gleam
+gleam-lang/json	149	Apache-2.0	2026-05-04	false	🐑 Work with JSON in Gleam!
+bcpeinhardt/simplifile	146	Apache-2.0	2026-10-28	false	Simple file operations for Gleam that work on all targets (Erlang/Node/Deno)
+gleam-lang/website	141	Apache-2.0	2026-11-04	false	🏡 Gleam's website and guide
+aslilac/nakai	141	MIT	2025-08-04	false	An HTML generation library for building web apps with Gleam ✨
+gleam-lang/erlang	136	Apache-2.0	2026-11-05	false	🐙 Types and functions for programs running on Erlang!
+vleam/vleam	136	Apache-2.0	2026-02-02	true	
+vshakitskiy/ewe	136	Apache-2.0	2026-11-11	false	🐑 a fluffy Gleam web server
+inoas/gleam-cake	133	MPL-2.0	2026-06-06	false	A Gleam library to compose SQL queries targeting SQL dialects PostgreSQL, SQLite, MariaDB 
+schurhammer/gig	133	Apache-2.0	2026-03-22	false	A Gleam compiler written in Gleam
+lustre-labs/dev-tools	123	NONE	2026-11-02	false	Lustre's CLI and development tooling: zero-config dev server, bundling, and scaffolding.
+lpil/gleescript	122	NONE	2026-06-03	false	🌮 Bundle your Gleam-on-Erlang project into an escript, a single executable file!
+gleam-lang/language-tour	121	NONE	2026-08-07	false	👩🏽‍💻 Learn Gleam in your browser
+CrowdHailer/plinth	120	Apache-2.0	2026-09-24	false	node and browser bindings for gleam
+bitbldr/sprocket	119	MIT	2025-12-11	false	A library for building server components in Gleam ✨
+gleam-lang/packages	119	Apache-2.0	2026-11-10	false	📦 Search for Gleam packages
+exercism/gleam	118	MIT	2026-11-08	false	Exercism exercises in Gleam.
+renatillas/tiramisu	117	MIT	2026-07-29	true	A type-safe 3D game engine for Gleam
+ghivert/gloogle	117	Apache-2.0	2026-07-02	false	Search engine for the gleam ecosystem! Search across the entire gleam ecosystem!
+bgwdotdev/shore	115	MIT	2026-06-18	false	A Gleam TUI framework. TEA+Erlang
+mrdimosthenis/emel	115	NONE	2024-09-26	false	A simple and functional machine learning library for the Erlang ecosystem
+MystPi/glen	113	MIT	2025-06-30	false	🏕️ A peaceful web framework for Gleam that targets JS.
+veeso/blogatto	109	MIT	2026-10-31	false	A Gleam framework for building static blogs with Lustre and Markdown or Djot. Generates HT
+Pevensie/pevensie	108	MIT	2025-06-24	false	The backend application framework for Gleam!
+lustre-labs/ssg	107	NONE	2026-01-05	false	
+JonasGruenwald/spectator	99	NONE	2026-04-21	false	A BEAM observer tool written in and compatible with Gleam
+rawhat/glisten	99	Apache-2.0	2026-06-27	false	A pure gleam TCP library
+hayleigh-dot-dev/nibble	92	MIT	2025-07-29	false	A string parsing library heavily inspired by elm/parser.
+mbuhot/glyn	90	MIT	2025-08-16	false	Type-safe PubSub and Registry for Gleam actors with distributed clustering support, built 
+glimr-org/framework	89	MIT	2026-06-03	false	✨ The Glimr Framework
+ghivert/sketch	88	MIT	2026-11-08	false	A CSS-in-Gleam package, made to work with frontend, backend, with your favorite framework!
+massivefermion/birl	86	Apache-2.0	2026-02-23	false	datetime handling for gleam
+lpil/snag	85	Apache-2.0	2025-11-02	false	⛵ A boilerplate-free ad-hoc error type
+lpil/glance	84	Apache-2.0	2026-07-09	false	👁️‍🗨️ A Gleam source code parser, in Gleam!
+TanklesXL/glint	82	Apache-2.0	2026-09-25	false	Gleam command-line argument parsing with flags and automated help text generation.
+gleam-lang/javascript	81	NONE	2026-07-09	false	🌼 Extra code for when running on JavaScript
+gleam-lang/example-echo-server	81	Apache-2.0	2025-04-13	false	🔗 An example Gleam web application
+ghivert/redraw	77	NONE	2026-11-03	false	React bindings for Gleam! Supports everything modern React provides, with full Gleam Type-
+gleam-lang/cowboy	76	Apache-2.0	2025-11-01	false	🤠 A Gleam HTTP service adapter for the Cowboy web server 
+tynanbe/shellout	76	Apache-2.0	2026-02-19	false	🐢 A Gleam library for cross-platform shell operations
+bondiano/telega-gleam	74	Apache-2.0	2026-11-11	false	Gleam library to build Telegram bots
+gleam-lang/elli	74	Apache-2.0	2025-06-02	false	🍛 A Gleam HTTP service adapter for the Elli web server
+lpil/decode	74	NONE	2024-12-19	true	The result of this experiment has been merged into the Gleam stdlib
+tynanbe/rad	73	Apache-2.0	2024-06-14	false	✨ Run tasks in Gleam!
+giacomocavalieri/glam	73	Apache-2.0	2026-04-20	false	✨ A package to help you easily pretty print structured data
+pta2002/gleam-radiate	72	Apache-2.0	2025-09-18	false	Hot code reloading for Gleam
+gleam-lang/time	71	NONE	2026-10-25	false	🕰️ Work with time in Gleam!
+TanklesXL/gladvent	71	Apache-2.0	2025-10-27	false	A Gleam framework for running Advent of Code solutions
+adelhult/paint	71	MIT	2026-05-18	false	Make drawings, animations, and games with Gleam! ⭐🖌️
+brettkolodny/react-gleam	70	NONE	2025-09-24	false	React bindings for Gleam
+hayleigh-dot-dev/modem	66	NONE	2026-10-28	false	A friendly Lustre package to help you build a router, handle links, and manage URLs.
+lpil/jot	65	NONE	2026-09-29	false	A parser for Djot, a markdown-like language.
+DanielleMaywood/glexer	64	MIT	2026-08-03	false	Gleam lexer implemented in Gleam!
+MAHcodes/gleez	63	MIT	2025-06-04	false	Elegant, Modern, and Customizable TailwindCSS components for ✨ Lustre ✨
+gleam-lang/hackney	63	Apache-2.0	2026-05-26	false	🪝 Make requests to HTTP servers with Hackney
+Comamoca/hinoto	62	MIT	2026-11-11	false	A web framework written in Gleam, designed for multiple JavaScript runtimes and BEAM!
+gleam-lang/fetch	61	Apache-2.0	2026-09-06	false	📡  Make requests to HTTP servers with fetch
+Pevensie/barnacle	61	MIT	2025-06-14	false	Self-healing clusters for Gleam applications on the BEAM!
+rvcas/ids	60	Apache-2.0	2025-01-26	false	✨ Unique IDs for Gleam
+gleam-lang/crypto	60	Apache-2.0	2026-07-24	false	⛓️ Crypto functionality for Gleam applications
+bananaofhappiness/etch	58	MIT	2026-10-07	false	Gleam terminal backend library
+lpil/envoy	58	NONE	2026-04-18	false	📂 A zero dependency cross platform Gleam package for reading environment variables
+lpil/html-lustre-converter	57	NONE	2026-08-09	false	HTML -> Lustre
+richard-viney/file_streams	56	MIT	2026-05-01	false	Gleam library that provides access to file streams.
+lpil/formal	55	NONE	2026-07-25	false	
+sporto/gleam-valid	54	Apache-2.0	2026-09-01	false	Validation library for Gleam
+rawhat/stratus	53	Apache-2.0	2026-04-18	false	A gleam websocket client
+cyteon/discord_gleam	53	MIT	2026-10-24	false	A library to create discord bots in gleam
+vshakitskiy/armadillo	52	Apache-2.0	2026-11-02	false	A DNS server in Gleam
+jrstrunk/tempo	52	Apache-2.0	2026-07-29	false	A datetime-centric, mockable time library for Gleam!
+drewolson/clip	52	NOASSERTION	2026-10-05	false	A CLI option parser for Gleam
+facundoolano/news.olano.dev	52	AGPL-3.0	2025-10-11	false	A slow link aggregator built with Gleam
+gleam-lang/example-lisp-interpreter	52	Apache-2.0	2025-03-27	false	👾 A Lisp interpreter in Gleam!
+giacomocavalieri/orbital	51	Apache-2.0	2026-04-29	false	⚛️ Build and flash Gleam projects to devices running AtomVM
+lpil/gleeunit	50	Apache-2.0	2026-06-07	false	Gleam bindings for the Erlang EUnit test framework
+okkdev/glailglind	50	NONE	2026-11-10	false	🌬️ tailwindcss for gleam
+lpil/json-typedef	50	NONE	2026-04-19	false	Work with JSON using a schema! RFC8927
+gleam-community/maths	50	Apache-2.0	2026-04-20	false	A basic mathematics library containing fundamental functions and utilities.
+TrustBound/dream	50	MIT	2026-11-04	false	Clean, composable web development for Gleam. No magic.
+Billuc/cigogne	49	MIT	2026-04-23	false	Migrate easily your Postgres databases. Built entirely in Gleam
