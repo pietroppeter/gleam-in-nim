@@ -141,7 +141,13 @@ nbSave
 - A living page (home, roadmap, coverage map, this one) is kept up to date and reads its data
   from `docs/data/`. A new living page gets a card on the home page (`docs/index.nim`).
 - Every link leads somewhere. Pages are served as `<name>/index.html`, so a post links the
-  roadmap as `../../roadmap/` and another post as `../<slug>/`.
+  roadmap as `../../roadmap/` and another post as `../<slug>/`. After building the pages,
+  `nim r tools/links.nim` checks every link inside the site (files and `#anchors`) and to files
+  of this repository; `nim r -d:ssl tools/links.nim --external` asks other sites too (404 and
+  410 fail). CI runs the first on every run and the second once a week.
+- `nim r tools/drift.nim --fail --allow:docs/theme.nim --allow:docs/blocks.nim
+  --allow:docs/review.nim docs/` (in CI) fails when a page holds HTML, a style, a script or a
+  hex colour.
 
 ## Review mode
 

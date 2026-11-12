@@ -62,6 +62,9 @@ func headingsOf*(markdownText: string): seq[(int, string)] =
     if line.startsWith("## "): result.add (2, line[3 .. ^1].strip.stripInline)
     elif line.startsWith("### "): result.add (3, line[4 .. ^1].strip.stripInline)
 
+func unescapeHtml(s: string): string =
+  s.multiReplace(("&lt;", "<"), ("&gt;", ">"), ("&quot;", "\""), ("&#39;", "'"), ("&amp;", "&"))
+
 func addHeadingIds(html: string, up = false): string =
   ## `<h2>Text</h2>` becomes `<h2 id="text">Text</h2>`; on a page with contents (`up`), also a
   ## way back to them, drawn by CSS so the heading's text stays the same for anchors and quotes.
@@ -77,7 +80,7 @@ func addHeadingIds(html: string, up = false): string =
       let b = result.find(close, a)
       if b < 0: break
       let inner = result[a + open.len ..< b]
-      res.add result[i ..< a] & "<" & tag & " id=\"" & slugify(stripInline(inner).replace("&amp;", "&")) & "\">" & inner &
+      res.add result[i ..< a] & "<" & tag & " id=\"" & slugify(unescapeHtml(stripInline(inner))) & "\">" & inner &
         (if up: "<a class=\"up\" href=\"#contents\" aria-label=\"Back to the contents\"></a>" else: "") & close
       i = b + close.len
     res.add result[i .. ^1]
@@ -85,8 +88,6 @@ func addHeadingIds(html: string, up = false): string =
 
 # --------------------------------------------------------------------------------- highlighting
 
-func unescapeHtml(s: string): string =
-  s.multiReplace(("&lt;", "<"), ("&gt;", ">"), ("&quot;", "\""), ("&#39;", "'"), ("&amp;", "&"))
 
 type Lang = object
   names: seq[string]       ## the tags of a fence
