@@ -1,0 +1,5 @@
+# Upstream snapshot being ported. Decided by the plan (see docs/plan).
+repo=https://github.com/gleam-lang/gleam
+tag=v1.19.2
+commit=ed41eace2dd89054eb2d744c33925261d1eff32e
+date=2026-10-12

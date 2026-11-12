@@ -232,10 +232,10 @@
       "stage": "errors",
       "rust_code": 5568,
       "rust_tests": 291,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "started",
+      "nim": "src/gleam_in_nim/error.nim",
+      "post": "lexer",
+      "notes": "So far: text wrapping only."
     },
     {
       "module": "compiler-core/exhaustiveness",
@@ -312,30 +312,30 @@
       "stage": "parse",
       "rust_code": 6759,
       "rust_tests": 2962,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "started",
+      "nim": "src/gleam_in_nim/parse/literals.nim, parse/error.nim",
+      "post": "lexer",
+      "notes": "So far: the values of number literals and the errors of the lexer. The parser is next."
     },
     {
       "module": "compiler-core/parse/lexer",
       "stage": "lex",
       "rust_code": 1534,
       "rust_tests": 0,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "done",
+      "nim": "src/gleam_in_nim/parse/lexer.nim",
+      "post": "lexer",
+      "notes": "Same tokens as the Rust lexer on real and random sources (tools/lexcheck.sh)."
     },
     {
       "module": "compiler-core/parse/token",
       "stage": "lex",
       "rust_code": 363,
       "rust_tests": 0,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "done",
+      "nim": "src/gleam_in_nim/parse/token.nim",
+      "post": "lexer",
+      "notes": "Token::LeftParen is tkLeftParen."
     },
     {
       "module": "compiler-core/paths",
@@ -502,10 +502,10 @@
       "stage": "parse",
       "rust_code": 234,
       "rust_tests": 124,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "started",
+      "nim": "src/gleam_in_nim/src_span.nim",
+      "post": "lexer",
+      "notes": "So far: SrcSpan, with stop for end. LineNumbers is not ported."
     }
   ]
 }

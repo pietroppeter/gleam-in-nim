@@ -1,4 +1,5 @@
 deps/
+build/
 nimcache/
 # every page is generated (docs/all.nim) and built by CI (.github/workflows/pages.yml)
 *.html

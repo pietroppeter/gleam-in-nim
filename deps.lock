@@ -1,6 +1,7 @@
-# The dependencies of the docs, pinned: name, repository, commit, source dir.
+# The dependencies of the compiler and of the docs, pinned: name, repository, commit, source dir.
 # `sh tools/setup.sh` clones each into deps/<name> at that commit; nim.cfg puts them on the path.
-# The compiler itself (src/) needs only Nim's standard library.
+# The compiler itself (src/) needs Nim's standard library and bigints (integer literals of any size).
+bigints    https://github.com/nim-lang/bigints        64288c8ff9d91523e6ac9746900efb12ca87f6f7 src
 nimib      https://github.com/pietroppeter/nimib      7118b3a8fa112757b7d76ffcb5251a6478cbfcfd src
 tabelline  https://github.com/pietroppeter/tabelline  27071b5fa60b8b5a389a4914203f9ba3f2f6a31e src
 markdown   https://github.com/soasme/nim-markdown     5a7a7bafd1da23b25332316a7b888e6586f4177a src

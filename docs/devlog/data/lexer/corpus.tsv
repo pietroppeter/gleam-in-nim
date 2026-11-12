@@ -1,0 +1,15 @@
+repo	commit	gleam_files
+gleam-lang/gleam	ed41eace2dd89054eb2d744c33925261d1eff32e	239
+giacomocavalieri/birdie	4523e5760d227706af1639d3deb6c80fff4b8c3f	10
+giacomocavalieri/glam	d8dc03e6d0d15f0885c17f75bd18e7e4f3e495ef	8
+giacomocavalieri/squirrel	5b6407d14a7c83af102944f2c86f52a521a74d57	11
+gleam-lang/erlang	eacfe75067676edaa2518987b6a43a819285574b	12
+gleam-lang/httpc	0f5f2fdc88d58740e8790991e7b18529ead7d85a	3
+gleam-lang/json	9792d8a5ec14e03760f8ccbc8992dff4d45105fe	3
+gleam-lang/language-tour	234cb0284d91c458fa26e1b66e4b0276597d722f	66
+gleam-lang/otp	18b78224ceb285e3ee4f33fee239bd6500ff5bca	14
+gleam-lang/stdlib	9816c72d28ac1fad9433e1ae851d1a3d4a17c64d	42
+gleam-lang/tree-sitter-gleam	fa6d0d94804f1b342e175865a3dbeb316ee5115e	12
+gleam-wisp/wisp	446a7dd64bd2753958b56481a492bc94e491824c	57
+lpil/pog	1260e90168cba09acdab3a226ca026c9afb69285	2
+lustre-labs/lustre	c2f25c601dc7abfe35e8e58acfd4fb5bcdbb6e81	82
