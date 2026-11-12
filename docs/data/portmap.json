@@ -3,12 +3,12 @@
   "code": 105534,
   "totals": {
     "todo": {
-      "files": 135,
-      "code": 102598
+      "files": 132,
+      "code": 102012
     },
     "draft": {
-      "files": 0,
-      "code": 0
+      "files": 3,
+      "code": 586
     },
     "verified": {
       "files": 0,
@@ -46,8 +46,8 @@
     },
     {
       "crate": "compiler-core",
-      "todo": 68302,
-      "draft": 0,
+      "todo": 67873,
+      "draft": 429,
       "verified": 0,
       "conformant": 1726,
       "skip": 0
@@ -118,8 +118,8 @@
     },
     {
       "crate": "src-span",
-      "todo": 157,
-      "draft": 0,
+      "todo": 0,
+      "draft": 157,
       "verified": 0,
       "conformant": 0,
       "skip": 0
@@ -669,8 +669,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "draft",
+      "nim": [
+        "src/gleam_in_nim/ast/untyped.nim"
+      ]
     },
     {
       "path": "compiler-core/src/ast/visit.rs",
@@ -2125,8 +2127,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "draft",
+      "nim": [
+        "src/gleam_in_nim/parse/extra.nim"
+      ]
     },
     {
       "path": "compiler-core/src/parse/lexer.rs",
@@ -3669,8 +3673,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "draft",
+      "nim": [
+        "src/gleam_in_nim/src_span.nim"
+      ]
     },
     {
       "path": "src-span/src/tests.rs",
@@ -3682,8 +3688,10 @@
       "test": true,
       "snaps": 0,
       "cases": 12,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "tests/test_src_span.nim"
+      ]
     },
     {
       "path": "test-commands/src/lib.rs",
