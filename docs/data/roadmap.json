@@ -94,20 +94,20 @@
         {
           "id": "architecture",
           "kind": "plan",
-          "status": "started",
+          "status": "done",
           "title": "The compiler, taken apart",
           "what": "How compilers are made and how Gleam's is: the pipeline, the components and their sizes, its history, and how it compares with other compilers.",
           "post": "how-gleam-compiles",
-          "pr": ""
+          "pr": "2"
         },
         {
           "id": "plan",
           "kind": "plan",
-          "status": "started",
+          "status": "done",
           "title": "The port plan",
           "what": "Scope, the order of work, which backend first, the milestones, how each step is verified, and this roadmap.",
           "post": "the-port-plan",
-          "pr": ""
+          "pr": "2"
         },
         {
           "id": "rewrites",
