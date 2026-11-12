@@ -30,6 +30,25 @@ the site as *For coding agents*, so a change here is reviewed like any page.
 - The work must survive a session reset. What a later session needs is in the repository (this
   file, the roadmap, the coverage map, the devlog, decision records), not in a chat.
 
+## Porting
+
+- Read the porting guide (`docs/porting.nim`, the page *Porting guide*) before porting a file,
+  and the decision records (`docs/decisions/`, the page *Decisions*) before choosing anything a
+  later session could choose differently. A new choice of that kind is a new record
+  (`docs/decisions/NNNN-slug.md`: front matter with title, status, date; then Context, Decision,
+  Consequences); a record is not rewritten, a new one supersedes it.
+- A ported Nim file (in `src/` or `tests/`) starts with `## port-of: <path of the Rust file in
+  the Gleam repository>` and `## port-status: draft` (then `verified`, then `conformant`).
+  `nim r tools/portmap.nim` builds the port map from these headers (`docs/data/portmap.json`);
+  run it in the pull request that ports or advances a file.
+- Upstream tests are replayed, not retyped: `tools/snapshots.nim` reads the `.snap` files,
+  `tools/harvest.nim` the `assert_*!` calls of the Rust tests. A stage is done when
+  `tools/difftest.nim` finds its output identical to the reference `gleam`, byte for byte. A
+  wanted difference is an entry in `docs/divergences.md`.
+- The tools find the Gleam checkout in `reference/gleam` or `$GLEAM_REF`, and the reference
+  binary in `$GLEAM_BIN` or on the `PATH`. They print a few lines, one `ERROR ...` line per
+  problem, and a summary last; anything slow takes `--fast:N` (a sample of N percent).
+
 ## Setup
 
 - In a fresh checkout or sandbox, run `sh tools/setup.sh` first. It installs what is missing
@@ -56,6 +75,8 @@ docs/                  the site: every page is a nimib notebook
   site.nim             the data the living pages share
   review.nim           the review mode (tabelline's, copied unchanged), assets/review.js
   data/                roadmap.json, coverage.json and other data of the living pages
+  decisions/NNNN-*.md  the decision records; decisions.nim is their page
+  porting.nim          the porting guide: how Rust is written in Nim here
   devlog/<slug>.nim    a post; devlog/data/<slug>/ its data, images and reference code
 ```
 

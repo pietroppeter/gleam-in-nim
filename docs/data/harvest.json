@@ -1,0 +1,1395 @@
+{
+  "pin": "1.19.2",
+  "total": 7078,
+  "macros": [
+    {
+      "macro": "assert_eq",
+      "calls": 941,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_code_action",
+      "calls": 812,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_js",
+      "calls": 770,
+      "all_literal": 696
+    },
+    {
+      "macro": "assert_format",
+      "calls": 731,
+      "all_literal": 727
+    },
+    {
+      "macro": "assert_module_error",
+      "calls": 637,
+      "all_literal": 533
+    },
+    {
+      "macro": "assert_erl",
+      "calls": 469,
+      "all_literal": 436
+    },
+    {
+      "macro": "assert_warning",
+      "calls": 299,
+      "all_literal": 247
+    },
+    {
+      "macro": "assert_error",
+      "calls": 254,
+      "all_literal": 228
+    },
+    {
+      "macro": "assert_snapshot",
+      "calls": 213,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_infer",
+      "calls": 192,
+      "all_literal": 192
+    },
+    {
+      "macro": "assert_rename",
+      "calls": 191,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_module_infer",
+      "calls": 182,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_no_code_actions",
+      "calls": 168,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_format_rewrite",
+      "calls": 163,
+      "all_literal": 158
+    },
+    {
+      "macro": "assert_no_warnings",
+      "calls": 155,
+      "all_literal": 121
+    },
+    {
+      "macro": "assert_hover",
+      "calls": 142,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_completion",
+      "calls": 130,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_references",
+      "calls": 85,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_highlights",
+      "calls": 54,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_goto",
+      "calls": 48,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_ts_def",
+      "calls": 46,
+      "all_literal": 40
+    },
+    {
+      "macro": "assert_parse",
+      "calls": 46,
+      "all_literal": 46
+    },
+    {
+      "macro": "assert_warnings_with_gleam_version",
+      "calls": 34,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_output",
+      "calls": 31,
+      "all_literal": 12
+    },
+    {
+      "macro": "assert_documentation",
+      "calls": 31,
+      "all_literal": 6
+    },
+    {
+      "macro": "assert_signature_help",
+      "calls": 26,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_matches",
+      "calls": 20,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_source_map",
+      "calls": 20,
+      "all_literal": 20
+    },
+    {
+      "macro": "assert_js_warning",
+      "calls": 18,
+      "all_literal": 18
+    },
+    {
+      "macro": "assert_package_interface",
+      "calls": 17,
+      "all_literal": 15
+    },
+    {
+      "macro": "assert_parse_module",
+      "calls": 15,
+      "all_literal": 15
+    },
+    {
+      "macro": "assert_order",
+      "calls": 14,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_folding",
+      "calls": 13,
+      "all_literal": 9
+    },
+    {
+      "macro": "assert_debug_snapshot",
+      "calls": 13,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_js_module_error",
+      "calls": 11,
+      "all_literal": 7
+    },
+    {
+      "macro": "assert_rename_error",
+      "calls": 9,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_js_module_infer",
+      "calls": 9,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_no_rename",
+      "calls": 8,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_goto_type",
+      "calls": 7,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_apply_completion",
+      "calls": 7,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_string",
+      "calls": 7,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_targets",
+      "calls": 6,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_rename_files",
+      "calls": 6,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_no_folding",
+      "calls": 5,
+      "all_literal": 4
+    },
+    {
+      "macro": "assert_js_no_warnings_with_gleam_version",
+      "calls": 4,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_js_no_warnings",
+      "calls": 4,
+      "all_literal": 4
+    },
+    {
+      "macro": "assert_js_warnings_with_gleam_version",
+      "calls": 4,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_no_references",
+      "calls": 2,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_completion_with_prefix",
+      "calls": 2,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_no_highlights",
+      "calls": 2,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_no_signature_help",
+      "calls": 2,
+      "all_literal": 0
+    },
+    {
+      "macro": "assert_internal_module_error",
+      "calls": 1,
+      "all_literal": 1
+    },
+    {
+      "macro": "assert_package_interface_with_name",
+      "calls": 1,
+      "all_literal": 1
+    },
+    {
+      "macro": "assert_module_syntax_error",
+      "calls": 1,
+      "all_literal": 1
+    }
+  ],
+  "files": [
+    {
+      "file": "compiler-cli/src/add.rs",
+      "macros": {
+        "assert_eq": 2
+      }
+    },
+    {
+      "file": "compiler-cli/src/beam_compiler.rs",
+      "macros": {
+        "assert_eq": 3
+      }
+    },
+    {
+      "file": "compiler-cli/src/config.rs",
+      "macros": {
+        "assert_eq": 3
+      }
+    },
+    {
+      "file": "compiler-cli/src/dependencies.rs",
+      "macros": {
+        "assert_snapshot": 1,
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "compiler-cli/src/dependencies/tests.rs",
+      "macros": {
+        "assert_eq": 64,
+        "assert_snapshot": 4,
+        "assert_matches": 2
+      }
+    },
+    {
+      "file": "compiler-cli/src/fs/tests.rs",
+      "macros": {
+        "assert_eq": 21
+      }
+    },
+    {
+      "file": "compiler-cli/src/hex/auth.rs",
+      "macros": {
+        "assert_eq": 2
+      }
+    },
+    {
+      "file": "compiler-cli/src/lib.rs",
+      "macros": {
+        "assert_eq": 3,
+        "assert_snapshot": 1
+      }
+    },
+    {
+      "file": "compiler-cli/src/new/tests.rs",
+      "macros": {
+        "assert_eq": 13,
+        "assert_snapshot": 2
+      }
+    },
+    {
+      "file": "compiler-cli/src/publish.rs",
+      "macros": {
+        "assert_eq": 6
+      }
+    },
+    {
+      "file": "compiler-core/src/ast.rs",
+      "macros": {
+        "assert_eq": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/ast/tests.rs",
+      "macros": {
+        "assert_eq": 97
+      }
+    },
+    {
+      "file": "compiler-core/src/build/native_file_copier.rs",
+      "macros": {
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/build/native_file_copier/tests.rs",
+      "macros": {
+        "assert_eq": 51
+      }
+    },
+    {
+      "file": "compiler-core/src/build/package_compiler/tests.rs",
+      "macros": {
+        "assert_snapshot": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/build/package_loader/tests.rs",
+      "macros": {
+        "assert_eq": 18
+      }
+    },
+    {
+      "file": "compiler-core/src/build/tests.rs",
+      "macros": {
+        "assert_eq": 6
+      }
+    },
+    {
+      "file": "compiler-core/src/call_graph/into_dependency_order_tests.rs",
+      "macros": {
+        "assert_eq": 50
+      }
+    },
+    {
+      "file": "compiler-core/src/codegen.rs",
+      "macros": {
+        "assert_snapshot": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/config.rs",
+      "macros": {
+        "assert_eq": 23,
+        "assert_snapshot": 16
+      }
+    },
+    {
+      "file": "compiler-core/src/config/stale_package_remover.rs",
+      "macros": {
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/dep_tree.rs",
+      "macros": {
+        "assert_eq": 6
+      }
+    },
+    {
+      "file": "compiler-core/src/dependency.rs",
+      "macros": {
+        "assert_eq": 25,
+        "assert_snapshot": 6
+      }
+    },
+    {
+      "file": "compiler-core/src/docs.rs",
+      "macros": {
+        "assert_eq": 8,
+        "assert_snapshot": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/docs/tests.rs",
+      "macros": {
+        "assert_documentation": 31,
+        "assert_snapshot": 25,
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests.rs",
+      "macros": {
+        "assert_erl": 66,
+        "assert_snapshot": 3
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/assert.rs",
+      "macros": {
+        "assert_erl": 13
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/binops.rs",
+      "macros": {
+        "assert_erl": 28
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/bit_arrays.rs",
+      "macros": {
+        "assert_erl": 48
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/case.rs",
+      "macros": {
+        "assert_erl": 19
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/conditional_compilation.rs",
+      "macros": {
+        "assert_erl": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/consts.rs",
+      "macros": {
+        "assert_erl": 29
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/custom_types.rs",
+      "macros": {
+        "assert_erl": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/documentation.rs",
+      "macros": {
+        "assert_erl": 9
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/echo.rs",
+      "macros": {
+        "assert_erl": 14,
+        "assert_snapshot": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/external_fn.rs",
+      "macros": {
+        "assert_erl": 23,
+        "assert_module_error": 8,
+        "assert_js_module_error": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/functions.rs",
+      "macros": {
+        "assert_erl": 13
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/guards.rs",
+      "macros": {
+        "assert_erl": 39
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/let_assert.rs",
+      "macros": {
+        "assert_erl": 27
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/lists.rs",
+      "macros": {
+        "assert_erl": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/numbers.rs",
+      "macros": {
+        "assert_erl": 7
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/panic.rs",
+      "macros": {
+        "assert_erl": 5
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/patterns.rs",
+      "macros": {
+        "assert_erl": 10
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/pipes.rs",
+      "macros": {
+        "assert_erl": 11
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/prelude.rs",
+      "macros": {
+        "assert_erl": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/records.rs",
+      "macros": {
+        "assert_erl": 25,
+        "assert_snapshot": 5
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/reserved.rs",
+      "macros": {
+        "assert_erl": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/strings.rs",
+      "macros": {
+        "assert_erl": 36
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/todo.rs",
+      "macros": {
+        "assert_erl": 5
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/tuples.rs",
+      "macros": {
+        "assert_erl": 6
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/type_params.rs",
+      "macros": {
+        "assert_erl": 8
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/use_.rs",
+      "macros": {
+        "assert_erl": 5
+      }
+    },
+    {
+      "file": "compiler-core/src/erlang/tests/variables.rs",
+      "macros": {
+        "assert_erl": 9
+      }
+    },
+    {
+      "file": "compiler-core/src/error/tests.rs",
+      "macros": {
+        "assert_snapshot": 21,
+        "assert_eq": 2,
+        "assert_debug_snapshot": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/exhaustiveness.rs",
+      "macros": {
+        "assert_eq": 13
+      }
+    },
+    {
+      "file": "compiler-core/src/exhaustiveness/printer.rs",
+      "macros": {
+        "assert_eq": 8
+      }
+    },
+    {
+      "file": "compiler-core/src/hex.rs",
+      "macros": {
+        "assert_eq": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/io/memory.rs",
+      "macros": {
+        "assert_eq": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/import.rs",
+      "macros": {
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests.rs",
+      "macros": {
+        "assert_snapshot": 7,
+        "assert_eq": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/assert.rs",
+      "macros": {
+        "assert_js": 20
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/assignments.rs",
+      "macros": {
+        "assert_js": 26,
+        "assert_ts_def": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/bit_arrays.rs",
+      "macros": {
+        "assert_js": 218,
+        "assert_js_no_warnings_with_gleam_version": 4,
+        "assert_js_warnings_with_gleam_version": 4,
+        "assert_ts_def": 3
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/blocks.rs",
+      "macros": {
+        "assert_js": 22
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/bools.rs",
+      "macros": {
+        "assert_js": 16,
+        "assert_ts_def": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/case.rs",
+      "macros": {
+        "assert_js": 83
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/case_clause_guards.rs",
+      "macros": {
+        "assert_js": 36
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/consts.rs",
+      "macros": {
+        "assert_js": 18
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/custom_types.rs",
+      "macros": {
+        "assert_js": 72,
+        "assert_ts_def": 14
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/echo.rs",
+      "macros": {
+        "assert_js": 15
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/externals.rs",
+      "macros": {
+        "assert_js": 20,
+        "assert_ts_def": 3,
+        "assert_module_error": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/functions.rs",
+      "macros": {
+        "assert_js": 43,
+        "assert_ts_def": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/generics.rs",
+      "macros": {
+        "assert_ts_def": 5
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/lists.rs",
+      "macros": {
+        "assert_js": 13,
+        "assert_ts_def": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/modules.rs",
+      "macros": {
+        "assert_js": 18
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/numbers.rs",
+      "macros": {
+        "assert_js": 51,
+        "assert_js_module_error": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/panic.rs",
+      "macros": {
+        "assert_js": 7,
+        "assert_ts_def": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/prelude.rs",
+      "macros": {
+        "assert_js": 6,
+        "assert_ts_def": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/records.rs",
+      "macros": {
+        "assert_js": 12
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/recursion.rs",
+      "macros": {
+        "assert_js": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/results.rs",
+      "macros": {
+        "assert_js": 12
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/sourcemaps.rs",
+      "macros": {
+        "assert_source_map": 20
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/strings.rs",
+      "macros": {
+        "assert_js": 38
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/todo.rs",
+      "macros": {
+        "assert_js": 6,
+        "assert_ts_def": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/tuples.rs",
+      "macros": {
+        "assert_js": 9,
+        "assert_ts_def": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/type_alias.rs",
+      "macros": {
+        "assert_ts_def": 3
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/typescript.rs",
+      "macros": {
+        "assert_ts_def": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/javascript/tests/use_.rs",
+      "macros": {
+        "assert_js": 5
+      }
+    },
+    {
+      "file": "compiler-core/src/manifest.rs",
+      "macros": {
+        "assert_eq": 9,
+        "assert_snapshot": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/metadata/tests.rs",
+      "macros": {
+        "assert_eq": 56
+      }
+    },
+    {
+      "file": "compiler-core/src/package_interface/tests.rs",
+      "macros": {
+        "assert_package_interface": 17,
+        "assert_snapshot": 4,
+        "assert_package_interface_with_name": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/parse/tests.rs",
+      "macros": {
+        "assert_module_error": 161,
+        "assert_error": 68,
+        "assert_parse": 46,
+        "assert_eq": 15,
+        "assert_parse_module": 15,
+        "assert_snapshot": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/requirement.rs",
+      "macros": {
+        "assert_eq": 4,
+        "assert_snapshot": 3
+      }
+    },
+    {
+      "file": "compiler-core/src/strings.rs",
+      "macros": {
+        "assert_eq": 6
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/environment.rs",
+      "macros": {
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/error.rs",
+      "macros": {
+        "assert_eq": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/pretty.rs",
+      "macros": {
+        "assert_eq": 84,
+        "assert_string": 7
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/printer.rs",
+      "macros": {
+        "assert_eq": 21
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests.rs",
+      "macros": {
+        "assert_infer": 136,
+        "assert_module_infer": 120,
+        "assert_module_error": 28,
+        "assert_snapshot": 13,
+        "assert_eq": 11,
+        "assert_warning": 2,
+        "assert_error": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/accessors.rs",
+      "macros": {
+        "assert_module_infer": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/assert.rs",
+      "macros": {
+        "assert_infer": 5,
+        "assert_warning": 4,
+        "assert_error": 2,
+        "assert_module_infer": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/assignments.rs",
+      "macros": {
+        "assert_infer": 27
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/conditional_compilation.rs",
+      "macros": {
+        "assert_module_infer": 8
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/custom_types.rs",
+      "macros": {
+        "assert_module_error": 7,
+        "assert_module_infer": 4,
+        "assert_warning": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/dead_code_detection.rs",
+      "macros": {
+        "assert_warning": 21,
+        "assert_no_warnings": 13
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/echo.rs",
+      "macros": {
+        "assert_module_infer": 5
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/errors.rs",
+      "macros": {
+        "assert_module_error": 290,
+        "assert_error": 155,
+        "assert_js_module_error": 4,
+        "assert_internal_module_error": 1,
+        "assert_module_syntax_error": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/exhaustiveness.rs",
+      "macros": {
+        "assert_module_error": 67,
+        "assert_warning": 31,
+        "assert_no_warnings": 29,
+        "assert_error": 7
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/externals.rs",
+      "macros": {
+        "assert_js_module_infer": 9,
+        "assert_module_infer": 8,
+        "assert_module_error": 7,
+        "assert_js_module_error": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/functions.rs",
+      "macros": {
+        "assert_module_error": 29,
+        "assert_module_infer": 9
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/guards.rs",
+      "macros": {
+        "assert_module_infer": 3,
+        "assert_module_error": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/imports.rs",
+      "macros": {
+        "assert_module_error": 21,
+        "assert_module_infer": 6
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/let_assert.rs",
+      "macros": {
+        "assert_infer": 19,
+        "assert_error": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/pipes.rs",
+      "macros": {
+        "assert_module_infer": 7,
+        "assert_no_warnings": 2,
+        "assert_module_error": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/pretty.rs",
+      "macros": {
+        "assert_snapshot": 3
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/target_implementations.rs",
+      "macros": {
+        "assert_targets": 6,
+        "assert_eq": 1,
+        "assert_module_error": 1
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/type_alias.rs",
+      "macros": {
+        "assert_module_error": 10,
+        "assert_module_infer": 3
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/use_.rs",
+      "macros": {
+        "assert_error": 19,
+        "assert_module_infer": 7,
+        "assert_infer": 5,
+        "assert_module_error": 4,
+        "assert_warning": 2
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/version_inference.rs",
+      "macros": {
+        "assert_eq": 33
+      }
+    },
+    {
+      "file": "compiler-core/src/type_/tests/warnings.rs",
+      "macros": {
+        "assert_warning": 237,
+        "assert_no_warnings": 111,
+        "assert_warnings_with_gleam_version": 34,
+        "assert_js_warning": 18,
+        "assert_js_no_warnings": 4
+      }
+    },
+    {
+      "file": "compiler-core/src/uid.rs",
+      "macros": {
+        "assert_eq": 8
+      }
+    },
+    {
+      "file": "compiler-wasm/src/tests.rs",
+      "macros": {
+        "assert_eq": 11
+      }
+    },
+    {
+      "file": "erlang-term-format/src/tests.rs",
+      "macros": {
+        "assert_eq": 21
+      }
+    },
+    {
+      "file": "format/src/tests.rs",
+      "macros": {
+        "assert_format": 503,
+        "assert_format_rewrite": 110,
+        "assert_eq": 2
+      }
+    },
+    {
+      "file": "format/src/tests/asignments.rs",
+      "macros": {
+        "assert_format": 2
+      }
+    },
+    {
+      "file": "format/src/tests/binary_operators.rs",
+      "macros": {
+        "assert_format": 27
+      }
+    },
+    {
+      "file": "format/src/tests/bit_array.rs",
+      "macros": {
+        "assert_format": 22,
+        "assert_format_rewrite": 13
+      }
+    },
+    {
+      "file": "format/src/tests/blocks.rs",
+      "macros": {
+        "assert_format": 6
+      }
+    },
+    {
+      "file": "format/src/tests/cases.rs",
+      "macros": {
+        "assert_format": 15,
+        "assert_format_rewrite": 1
+      }
+    },
+    {
+      "file": "format/src/tests/conditional_compilation.rs",
+      "macros": {
+        "assert_format_rewrite": 2,
+        "assert_format": 1
+      }
+    },
+    {
+      "file": "format/src/tests/constant.rs",
+      "macros": {
+        "assert_format": 9,
+        "assert_format_rewrite": 1
+      }
+    },
+    {
+      "file": "format/src/tests/custom_type.rs",
+      "macros": {
+        "assert_format": 28
+      }
+    },
+    {
+      "file": "format/src/tests/echo.rs",
+      "macros": {
+        "assert_format": 17,
+        "assert_format_rewrite": 6
+      }
+    },
+    {
+      "file": "format/src/tests/external_fn.rs",
+      "macros": {
+        "assert_format": 8
+      }
+    },
+    {
+      "file": "format/src/tests/external_types.rs",
+      "macros": {
+        "assert_format": 6
+      }
+    },
+    {
+      "file": "format/src/tests/function.rs",
+      "macros": {
+        "assert_format": 25,
+        "assert_format_rewrite": 3
+      }
+    },
+    {
+      "file": "format/src/tests/guards.rs",
+      "macros": {
+        "assert_format": 8
+      }
+    },
+    {
+      "file": "format/src/tests/imports.rs",
+      "macros": {
+        "assert_format_rewrite": 8,
+        "assert_format": 8
+      }
+    },
+    {
+      "file": "format/src/tests/lists.rs",
+      "macros": {
+        "assert_format_rewrite": 15,
+        "assert_format": 4
+      }
+    },
+    {
+      "file": "format/src/tests/pipeline.rs",
+      "macros": {
+        "assert_format": 7,
+        "assert_format_rewrite": 2
+      }
+    },
+    {
+      "file": "format/src/tests/record_update.rs",
+      "macros": {
+        "assert_format": 7
+      }
+    },
+    {
+      "file": "format/src/tests/tuple.rs",
+      "macros": {
+        "assert_format": 8,
+        "assert_format_rewrite": 1
+      }
+    },
+    {
+      "file": "format/src/tests/use_.rs",
+      "macros": {
+        "assert_format": 20,
+        "assert_format_rewrite": 1
+      }
+    },
+    {
+      "file": "hexpm/src/tests.rs",
+      "macros": {
+        "assert_eq": 104,
+        "assert_matches": 18
+      }
+    },
+    {
+      "file": "hexpm/src/version/lexer.rs",
+      "macros": {
+        "assert_eq": 25
+      }
+    },
+    {
+      "file": "hexpm/src/version/tests.rs",
+      "macros": {
+        "assert_order": 14,
+        "assert_eq": 8
+      }
+    },
+    {
+      "file": "language-server/src/feedback.rs",
+      "macros": {
+        "assert_eq": 16
+      }
+    },
+    {
+      "file": "language-server/src/router.rs",
+      "macros": {
+        "assert_eq": 10
+      }
+    },
+    {
+      "file": "language-server/src/tests/action.rs",
+      "macros": {
+        "assert_code_action": 812,
+        "assert_no_code_actions": 168,
+        "assert_eq": 3,
+        "assert_snapshot": 1
+      }
+    },
+    {
+      "file": "language-server/src/tests/compilation.rs",
+      "macros": {
+        "assert_eq": 17
+      }
+    },
+    {
+      "file": "language-server/src/tests/completion.rs",
+      "macros": {
+        "assert_completion": 130,
+        "assert_snapshot": 8,
+        "assert_eq": 7,
+        "assert_apply_completion": 7,
+        "assert_debug_snapshot": 2,
+        "assert_completion_with_prefix": 2
+      }
+    },
+    {
+      "file": "language-server/src/tests/definition.rs",
+      "macros": {
+        "assert_goto": 48,
+        "assert_goto_type": 7,
+        "assert_eq": 4,
+        "assert_snapshot": 2
+      }
+    },
+    {
+      "file": "language-server/src/tests/document_highlight.rs",
+      "macros": {
+        "assert_highlights": 54,
+        "assert_no_highlights": 2,
+        "assert_snapshot": 1,
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "language-server/src/tests/document_symbols.rs",
+      "macros": {
+        "assert_debug_snapshot": 10
+      }
+    },
+    {
+      "file": "language-server/src/tests/folding_range.rs",
+      "macros": {
+        "assert_folding": 13,
+        "assert_no_folding": 5,
+        "assert_snapshot": 1
+      }
+    },
+    {
+      "file": "language-server/src/tests/hover.rs",
+      "macros": {
+        "assert_hover": 142,
+        "assert_snapshot": 1,
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "language-server/src/tests/reference.rs",
+      "macros": {
+        "assert_references": 85,
+        "assert_no_references": 2,
+        "assert_snapshot": 1,
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "language-server/src/tests/rename.rs",
+      "macros": {
+        "assert_rename": 191,
+        "assert_rename_error": 9,
+        "assert_no_rename": 8,
+        "assert_rename_files": 6,
+        "assert_snapshot": 3,
+        "assert_eq": 1
+      }
+    },
+    {
+      "file": "language-server/src/tests/router.rs",
+      "macros": {
+        "assert_eq": 4
+      }
+    },
+    {
+      "file": "language-server/src/tests/signature_help.rs",
+      "macros": {
+        "assert_signature_help": 26,
+        "assert_no_signature_help": 2,
+        "assert_snapshot": 1
+      }
+    },
+    {
+      "file": "src-span/src/tests.rs",
+      "macros": {
+        "assert_eq": 12
+      }
+    },
+    {
+      "file": "test-commands/src/tests.rs",
+      "macros": {
+        "assert_snapshot": 6,
+        "assert_eq": 3
+      }
+    },
+    {
+      "file": "test-output/src/tests/output.rs",
+      "macros": {
+        "assert_output": 31,
+        "assert_snapshot": 1
+      }
+    },
+    {
+      "file": "test-package-compiler/src/tests.rs",
+      "macros": {
+        "assert_snapshot": 41
+      }
+    },
+    {
+      "file": "test-project-compiler/src/generated_tests.rs",
+      "macros": {
+        "assert_snapshot": 18
+      }
+    }
+  ]
+}

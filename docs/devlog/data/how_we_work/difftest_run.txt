@@ -1,0 +1,12 @@
+difftest format: 3420 cases, 3420 same, 0 different, 8.7s
+difftest erlang: 476 cases, 476 same, 0 different, 3.2s
+difftest javascript: 843 cases, 843 same, 0 different, 5.9s
+difftest format: 179 cases (of 3420), 179 same, 0 different, 0.5s
+difftest erlang: 17 cases (of 476), 17 same, 0 different, 0.2s
+difftest javascript: 44 cases (of 843), 44 same, 0 different, 0.3s
+ERROR format format_tests_5438: stdout line 1: reference `pub fn main() {` candidate `pub  fn main() {`
+ERROR format format_tests_5452: stdout line 1: reference `pub fn main() {` candidate `pub  fn main() {`
+ERROR format format_tests_5496: stdout line 1: reference `pub fn main() {` candidate `pub  fn main() {`
+... and 131 more, all in build/difftest/format/errors.log
+difftest format: 179 cases (of 3420), 45 same, 134 different, 0.6s. Look at build/difftest/format/<case>/ and errors.log
+ok: difftest selftest (the reference agrees with itself; a wrong candidate is caught)

@@ -1,0 +1,4 @@
+portmap: gleam 1.19.2, 284 Rust files, 105534 lines of code to port and 87375 lines of tests
+  todo        139 files  105534 lines  100.0%
+  ported so far (draft or better): 0 lines
+wrote docs/data/portmap.json

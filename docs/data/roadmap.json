@@ -26,12 +26,12 @@
         {"id": "architecture", "kind": "plan", "status": "started", "title": "The compiler, taken apart, and the plan",
          "what": "How compilers are made and how Gleam's is; its history; the components, the order to port them, which backend first, how each step is verified.",
          "post": "", "pr": ""},
-        {"id": "rewrites", "kind": "research", "status": "started", "title": "Other rewrites",
+        {"id": "rewrites", "kind": "research", "status": "done", "title": "Other rewrites",
          "what": "How a big project is rewritten in another language, by people and by AI: what worked, what did not, what to copy.",
-         "post": "", "pr": ""},
-        {"id": "practices", "kind": "tooling", "status": "started", "title": "How to develop",
+         "post": "learning-from-rewrites", "pr": "6"},
+        {"id": "practices", "kind": "tooling", "status": "done", "title": "How to develop",
          "what": "Specs, decision records, tooling to verify the port and tooling for Pietro to review it.",
-         "post": "", "pr": ""}
+         "post": "how-we-work", "pr": "6"}
       ]
     },
     {
