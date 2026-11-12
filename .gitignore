@@ -11,3 +11,6 @@ tests/all
 tests/test_*
 !tests/test_*.nim
 !tests/test_*/
+# real Gleam code fetched by tools/corpus.nim at pinned commits
+.corpus-cache/
+tools/corpus
