@@ -119,6 +119,11 @@ nbSave
   from code or a data file, not typed by hand. Code in other languages is a fence with its
   language (`gleam`, `rust`, `erlang`, `elixir`, `js`, `python`, `sh`, `toml`, `json`), highlighted
   at build time.
+- The series on the stages of a compiler (*What a lexer is*, and the parts after it) explains
+  each stage from scratch with a toy language, Barlume, whose compiler grows by one file per
+  post in `docs/devlog/data/barlume/`. `series.json` there lists the parts: a new part sets its
+  `post`, and every post of the series prints the list with `seriesTable`. Barlume is ours,
+  not a port, and stays out of `src/`.
 - Say what was checked and what was not. A claim about Gleam, the BEAM or a person links its
   source. If a source could not be read, say so.
 
