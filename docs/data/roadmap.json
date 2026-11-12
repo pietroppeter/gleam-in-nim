@@ -170,12 +170,12 @@
         {
           "id": "erlang-in-ci",
           "kind": "tooling",
-          "status": "planned",
+          "status": "done",
           "title": "Erlang in CI",
           "what": "Add Erlang/OTP, Node and the reference binary to CI so compiled output can be executed.",
           "done_when": "CI can run erlc and escript; a smoke test compiles and runs reference output.",
-          "post": "",
-          "pr": "",
+          "post": "erlang-in-ci",
+          "pr": "17",
           "owner": "Research Gleam, its community and corpus"
         }
       ]
