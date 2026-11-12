@@ -11,8 +11,8 @@ the site as *For coding agents*, so a change here is reviewed like any page.
   (`docs/data/coverage.json` holds the pin the pages show; `reference/` holds how to fetch it).
 - The Rust compiler is the specification. When the Nim and the Rust disagree, the Nim is wrong,
   unless a decision record says the difference is wanted.
-- Gleam is Apache-2.0. A file ported from it starts with a header naming the Rust file it comes
-  from and the pinned commit, and keeps the Apache-2.0 notice. Never copy from a source whose
+- Gleam is Apache-2.0, and so is this repository (`LICENSE`, `NOTICE`). A file ported from it
+  starts with a header naming the Rust file it comes from (`## port-of:`). Never copy from a source whose
   licence does not allow it.
 - Everything outside this repository is read only: no issues, comments or pull requests on other
   projects, Gleam's included.
@@ -41,6 +41,10 @@ the site as *For coding agents*, so a change here is reviewed like any page.
   the Gleam repository>` and `## port-status: draft` (then `verified`, then `conformant`).
   `nim r tools/portmap.nim` builds the port map from these headers (`docs/data/portmap.json`);
   run it in the pull request that ports or advances a file.
+- A Rust enum with data is written in one shape (`src/gleam_in_nim/rust_enum.nim`, decision
+  0010): `kind`, then one field `v<Variant>` per variant; a struct variant's fields are an
+  object that inherits `StructVariant`. `Box<T>` is `ref T`, `()` is `Unit`. A file that ports
+  only a part of a Rust file starts with `## port-part-of:` instead of `port-of`.
 - Upstream tests are replayed, not retyped: `tools/snapshots.nim` reads the `.snap` files,
   `tools/harvest.nim` the `assert_*!` calls of the Rust tests. A stage is done when
   `tools/difftest.nim` finds its output identical to the reference `gleam`, byte for byte. A
@@ -57,6 +61,9 @@ the site as *For coding agents*, so a change here is reviewed like any page.
 - `nim r tests/all.nim` runs the tests. `nim r docs/all.nim` builds every page (add
   `-d:release` when the pages run heavy code). The HTML is not committed: CI builds it and
   deploys `docs/` to GitHub Pages from `main`.
+- `sh tools/smoke.sh` compiles a tiny package (`tests/smoke/hello`) and runs the output on the
+  BEAM and on Node; CI runs it with OTP 28 (workflow *Smoke*). `GLEAM_BIN` picks the compiler,
+  `SMOKE_SKIP_MISSING=1` skips the routes whose runtime is not installed.
 - The compiler (`src/`) needs Nim's standard library and one package, `bigints`, for integer
   literals of any size. nimib and tabelline are for the pages.
 - To change a dependency, change its commit in `deps.lock` (and `nim.cfg` for a new one), rerun

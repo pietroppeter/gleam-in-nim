@@ -1,6 +1,6 @@
 ---
 title: Ported files name their origin, and the port is Apache-2.0
-status: proposed
+status: accepted
 date: 2026-11-12
 ---
 
@@ -26,12 +26,11 @@ ourselves but cannot replace Apache-2.0 on what we translate.
   apart.
 - The repository carries the Apache-2.0 text and a `NOTICE` that credits the Gleam authors and
   says the Nim files are translations of Gleam at the pinned version.
-- Proposed, for Pietro to confirm: license the whole repository under Apache-2.0, like upstream,
-  instead of keeping two licences side by side.
+- The whole repository is licensed under Apache-2.0, like upstream, instead of keeping two
+  licences side by side. Pietro chose this on 12 November 2026.
 
 ## Consequences
 
 - One licence, the same as Gleam, keeps the question "may I copy this?" trivial in both
   directions.
-- If Pietro prefers to keep MIT for the original parts (tools, pages), the header already tells
-  the two kinds of files apart, and only the wording of `NOTICE` changes.
+- The header still tells ported files from original ones, should the question come back.

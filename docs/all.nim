@@ -16,7 +16,13 @@ import devlog/gleam_and_its_people
 import devlog/where_gleam_decisions_live
 import devlog/a_corpus_of_real_gleam
 import devlog/how_gleam_compiles
+import devlog/the_error_renderer
 import devlog/the_port_plan
 import devlog/the_pretty_printer
+import devlog/the_syntax_tree
 import devlog/what_the_reference_says
 import devlog/what_a_lexer_is
+import devlog/what_a_parser_is
+import devlog/erlang_in_ci
+import devlog/names_and_scopes
+import devlog/what_a_type_checker_is

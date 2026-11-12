@@ -59,9 +59,12 @@ nbText: """
 | Rust | Nim |
 | --- | --- |
 | `struct S { a: T }` | `type S = object` with `a: T`. *A value, copied on assignment, like a Rust struct that is `Clone`* |
-| `Arc<T>`, `Rc<T>`, `Box<T>` | `ref`. *A type that upstream always holds behind a pointer is a `ref object`* |
+| `Arc<T>`, `Rc<T>` | `ref`. *A type that upstream always holds behind a pointer is a `ref object`* |
+| `Box<T>` | `ref T`, built with `box(x)` from `rust_enum`. *The nodes of the syntax tree are values; only what upstream boxes is a ref* |
 | `enum E { A, B }` | `enum` |
-| `enum E { A { x: T }, B(U) }` | object variant with a `kind`. *The kind enum is named `EKind`; tuple fields get the names upstream uses when it destructures them* |
+| `enum E { A { x: T }, B(U) }` | an object with `kind: EKind` and one field per variant, `vA: EA` and `vB: U`. *The fields of a struct variant live in an object `EA` that inherits `StructVariant`: see `rust_enum.nim` and [decision 0010](../decisions/#0010-the-syntax-tree-is-generic-like-upstream-s-and-every-enum-with-data-has-one-shape)* |
+| `()` as a type parameter | `Unit` from `rust_enum` |
+| `Vec1<T>` in the tree | `seq[T]`. *The parser guarantees it is not empty* |
 | `match e { ... }` | `case e.kind`. *Never `else` on a kind: a new variant must fail to compile, as in Rust* |
 | `match` with guards or nested patterns | `case`, then `if` inside the branch. *Keep the order of the arms* |
 | `Option<T>` | `Option[T]` from `std/options`. *Also for refs: do not use `nil` for "none"* |
@@ -72,7 +75,7 @@ nbText: """
 | `Vec1<T>` | `seq[T]`. *With a `doAssert` where upstream builds it* |
 | `HashMap<K, V>`, `HashSet<K>` | `Table[K, V]`, `HashSet[K]`. *Never let their order reach the output: see the traps* |
 | `im::HashMap` (persistent) | `Table`. *A Nim table is a value: assigning it copies, which gives the same meaning; speed comes later* |
-| `u32`, `usize`, `i64` | `uint32`, `int`, `int64`. *Spans stay `uint32`* |
+| `u32`, `usize`, `i64` | `int`, `int`, `int64`. *Byte offsets and spans are `int`: the lexer and the tree settled it. `u8` and `u64` stay `uint8` and `uint64`* |
 | `BigInt` | `BigInt` from `pkg/bigints`. *The one dependency of `src/`* |
 | `"1.5".parse::<f64>()` | `parseLiteralFloat` from `parse/literals`. *Never `parseFloat`: see the traps* |
 | `x.clone()` | `x`. *For a ref, sharing is what `Arc::clone` did; for a value, Nim copies* |
@@ -111,6 +114,9 @@ nbText: """
 | `Token::LeftParen` and the other tokens | `tkLeftParen` | enum values share one namespace in Nim; the Rust name is the Nim name without `tk` |
 | `LexicalErrorType` (the enum) | `LexicalErrorKind` for the kinds, `LexicalErrorType` for the object | an enum with data is a kind plus an object |
 | `tokenize`, `escape` and other names of `std/strutils` | another name (`lex`, `escapeBytes`) | Nim resolves a call across every imported module and can pick the standard library's without a word |
+| `return_` (the field of `TypeAstFn`) | `returns` | `return` is a keyword |
+| `tuple` (a field of `TupleIndex`) | `tupl` | `tuple` is a keyword |
+| `Pattern::Constructor { .. }` (its fields) | `PatternConstructorFields` | `PatternConstructor` is a type of `type_.rs` |
 | `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
 | `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
 | `ErlangBuilder` (the trait of `erlang-generation`) | no type: each builder has procs with the names of the trait's functions | two implementations, so plain procs; code for both builders is generic |
@@ -155,8 +161,10 @@ nbCode:
   echo x
 
 nbText: """
-So: where upstream subtracts two `u32` (span arithmetic is the usual place), check which one is
-bigger the way upstream's logic guarantees, and do not "fix" it by switching to `int`.
+Byte offsets are `int` in the port, so a subtraction that upstream would never let go below
+zero gives a negative number here instead of a panic or a wrap. Where upstream subtracts two
+`u32` (span arithmetic is the usual place), check which one is bigger the way upstream's logic
+guarantees. Where a `u8` or a `u64` is kept unsigned, mind the wrap.
 
 - **Order of a hash table.** Rust's `HashMap` iterates in a random order, so upstream already
   sorts, or uses an ordered map, wherever the order can be seen in an output. Port the sort with
@@ -194,6 +202,7 @@ nim r tools/portmap.nim todo               # what nobody ported yet, smallest fi
 nim r tools/snapcorpus.nim list compiler-core/src/parse   # upstream snapshots of a folder
 nim r tools/harvest.nim cases format/src --macro:assert_format   # upstream test cases as JSON
 nim r -d:release tools/difftest.nim format --candidate:PATH --fast:10   # compare with gleam
+nim r tools/golden.nim list | nim r tools/difftest.nim erlang --candidate:PATH --cases:-   # compare with the corpus goldens
 nim r tests/all.nim                        # our tests
 ```
 
