@@ -196,7 +196,7 @@
             "span"
           ],
           "post": "the-syntax-tree",
-          "pr": "PRNUM",
+          "pr": "20",
           "owner": "Learn from other compiler rewrites"
         },
         {
@@ -235,7 +235,7 @@
             "ast"
           ],
           "post": "the-syntax-tree",
-          "pr": "PRNUM",
+          "pr": "20",
           "owner": "Learn from other compiler rewrites"
         },
         {
