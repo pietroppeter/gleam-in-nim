@@ -1,5 +1,5 @@
 {
-  "about": "The roadmap of the port. The plan thread owns the phases and their order. To pick the next step: the first planned step whose earlier steps in the same phase it needs are done. `done_when` is the test a step must pass; `components` names rows of docs/devlog/data/the_port_plan/components.json. The pull request that starts, ships or replans a step edits this file.",
+  "about": "The roadmap of the port. The plan thread owns the phases and their order. To pick the next step: the first planned step whose earlier steps in the same phase it needs are done. `done_when` is the test a step must pass; `components` names rows of docs/devlog/data/the_port_plan/components.json. The pull request that starts, ships or replans a step edits this file. `owner` is the thread that has claimed a step: claim a step by writing your thread's title there, in a pull request, before you start.",
   "pin": {
     "tag": "v1.19.2",
     "commit": "ed41eace2dd89054eb2d744c33925261d1eff32e",
@@ -163,7 +163,8 @@
           "what": "Add Erlang/OTP, Node and the reference binary to CI so compiled output can be executed.",
           "done_when": "CI can run erlc and escript; a smoke test compiles and runs reference output.",
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Research Gleam, its community and corpus"
         }
       ]
     },
@@ -175,7 +176,7 @@
         {
           "id": "spans",
           "kind": "port",
-          "status": "planned",
+          "status": "started",
           "title": "Source spans and line numbers",
           "what": "SrcSpan and LineNumbers, the coordinates every later phase uses.",
           "done_when": "Upstream src-span tests pass.",
@@ -183,7 +184,8 @@
             "span"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Learn from other compiler rewrites"
         },
         {
           "id": "lexer",
@@ -196,7 +198,8 @@
             "lexer"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Port the Gleam lexer to Nim"
         },
         {
           "id": "untyped-ast",
@@ -209,7 +212,8 @@
             "ast"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Learn from other compiler rewrites"
         },
         {
           "id": "parser-expressions",
@@ -222,7 +226,8 @@
             "parser"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Port the Gleam lexer to Nim"
         },
         {
           "id": "parser-modules",
@@ -235,7 +240,8 @@
             "parser"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Port the Gleam lexer to Nim"
         },
         {
           "id": "diagnostics",
@@ -250,12 +256,13 @@
             "parser"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Learn from other compiler rewrites"
         },
         {
           "id": "pretty-printer",
           "kind": "port",
-          "status": "planned",
+          "status": "started",
           "title": "Pretty printer",
           "what": "The document algebra: groups, breaks, nesting, and the fitting algorithm.",
           "done_when": "Upstream pretty printer tests pass.",
@@ -263,7 +270,8 @@
             "pretty"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Plan the compiler port"
         },
         {
           "id": "formatter",
@@ -276,7 +284,8 @@
             "format"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Plan the compiler port"
         },
         {
           "id": "m1-format-parity",
@@ -311,7 +320,8 @@
             "types"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Explain the BEAM and Elm roots"
         },
         {
           "id": "typed-ast",
@@ -457,7 +467,7 @@
         {
           "id": "erlang-builder",
           "kind": "port",
-          "status": "planned",
+          "status": "started",
           "title": "Erlang source builder",
           "what": "The structured builder that writes Erlang text (the textual half of erlang-generation).",
           "done_when": "Builder unit tests pass.",
@@ -465,7 +475,8 @@
             "erlgen"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Explain the BEAM and Elm roots"
         },
         {
           "id": "erlang-expressions",
@@ -519,7 +530,8 @@
             "metadata"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Research Gleam, its community and corpus"
         },
         {
           "id": "package-compiler",
