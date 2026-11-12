@@ -135,7 +135,7 @@ proc resolve(r: var Resolver, e: Expr): Expr =
 proc resolve*(module: Module): tuple[
     module: Module, errors: seq[NameError]] =
   var r = Resolver(scope: Scope())
-  r.types = ["Int", "String"].toHashSet
+  r.types = ["Int", "String", "Bool"].toHashSet
 
   proc global(r: var Resolver, name: string, at: int) =
     if name in r.scope.symbols:
