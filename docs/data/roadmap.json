@@ -555,7 +555,7 @@
             "erlgen"
           ],
           "post": "the-erlang-builder",
-          "pr": "PRNUMBER",
+          "pr": "27",
           "owner": "Port the Erlang backend foundations"
         },
         {
