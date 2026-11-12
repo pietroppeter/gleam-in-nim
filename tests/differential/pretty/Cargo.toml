@@ -1,0 +1,12 @@
+# The Rust half of the pretty printer's differential test: a driver over upstream's
+# pretty-arena crate, read from the pinned checkout in reference/gleam. See run.sh.
+[package]
+name = "pretty-driver"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+pretty-arena = { path = "../../../reference/gleam/pretty-arena" }
+
+[workspace]

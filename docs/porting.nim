@@ -93,6 +93,8 @@ nbText: """
 | Rust | Nim | Why |
 | --- | --- | --- |
 | `type_` (module and fields) | `typ` | Nim identifiers cannot end with an underscore |
+| `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
+| `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
 
 Add a row when a name cannot be kept. Search this table before inventing one.
 
