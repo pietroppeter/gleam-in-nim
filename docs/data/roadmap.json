@@ -263,14 +263,14 @@
         {
           "id": "pretty-printer",
           "kind": "port",
-          "status": "started",
+          "status": "done",
           "title": "Pretty printer",
           "what": "The document algebra: groups, breaks, nesting, and the fitting algorithm.",
           "done_when": "Upstream pretty printer tests pass.",
           "components": [
             "pretty"
           ],
-          "post": "",
+          "post": "the-pretty-printer",
           "pr": "",
           "owner": "Plan the compiler port"
         },
