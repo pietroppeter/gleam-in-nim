@@ -57,7 +57,8 @@ the site as *For coding agents*, so a change here is reviewed like any page.
 - `nim r tests/all.nim` runs the tests. `nim r docs/all.nim` builds every page (add
   `-d:release` when the pages run heavy code). The HTML is not committed: CI builds it and
   deploys `docs/` to GitHub Pages from `main`.
-- The compiler (`src/`) needs only Nim's standard library. nimib and tabelline are for the pages.
+- The compiler (`src/`) needs Nim's standard library and one package, `bigints`, for integer
+  literals of any size. nimib and tabelline are for the pages.
 - To change a dependency, change its commit in `deps.lock` (and `nim.cfg` for a new one), rerun
   the setup, build the pages.
 
@@ -85,8 +86,10 @@ docs/                  the site: every page is a nimib notebook
 - One notebook, `docs/devlog/<slug>.nim` (snake_case; `the_beam.nim` is served at
   `devlog/the-beam/`), and one line for it in `docs/all.nim`.
 - Its first line is `## devlog: 12 Nov 2026 A | Title | One-sentence lede.` The letter orders
-  the posts of one day (A, B, C, in the order they were written): take the next free one. The
-  devlog index and the home page find the post from this line.
+  the posts of one day (A, B, C, in the order they were written, which is the order to read
+  them in): take the next free one, also counting the posts of open pull requests. The devlog
+  index and the home page find the post from this line and show the letter; two posts of one
+  day with the same letter fail the build.
 - Its second line is `## kind: research` (or `plan`, `port`, `tooling`).
 - After `nbInit`, call `nb.usePost()`: it sets the output file, the look, the title, the
   contents and the review mode. Then Markdown and blocks, then `nbSave`.
@@ -136,6 +139,8 @@ nbSave
   six values per mode (paper, ink, primary, secondary, warning, success), the rest mixed from
   them. Pink (primary) is Gleam, yellow (secondary) is Nim. Check a new block in both modes and
   at 390px wide.
+- Every page shows its own notebook, folded in the footer (*Show the nimib source of this
+  page*): nothing to do in a page, `usePage` does it.
 - No remote assets: fonts, scripts and styles are in `docs/assets/`. `-d:singleFile` inlines
   them, for a page that must work alone.
 - A living page (home, roadmap, coverage map, this one) is kept up to date and reads its data

@@ -1,0 +1,2500 @@
+42case Wibble!Wibble,
+(*:const}<-=
+<
+if^test<\xEF\xBC\x9EWibbleauto0.30000000000000004_discard
+(<>!>x_y/Wibble
+\xEF\xBD\x9Cnse--Identifier\x5Cn: A
+from shipment test!"\xEF\xBC\x8C)\x0A\x5Cq}\x0A
+<><case==<case\x5C== <"0
+"_\xD1\x80-
+ule_main()\x0A  println(subdir_me0ossage())\x0A  printlnsubdir_elixir_message())\x0A}\x0A\x0A@external(erlang,
+g) -> Nil\x0A\x0A@external(erlang, "subm;odule_ffi", "main")\x0A@external(javascript, "./subm
+<<<<<<<case0o\xE2\x80\x9A<
+hello_wworl\x5Cd\x0A\x0Afn run(x, y) {\x0A x + y\x0A}\x0A
+ let|>..fn->//"42
+// SPDX-License-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightTe\xCE\xBBxt: 2021 The Gleam contributorss\x0A\x0Aimport
+ |>\x5Cu{}:_1.5|>b1case(
+42\x0D\x0AletWibble -}"
+se_test() {\x0A  asserrt !False == True\x0A}\x0A\x0A// This would crash if t=e right hand side evaluated
+f{\xEF\xBC\xBB<>+\xE2\x88\x95echo>=1.0e400%="
+True\x0A  }\x0A\x0A  assert result.is_ok(Ok(10))\x0A  assert result..is_error(Error("Hello"))\x0A\x0A  assert 
+opyrightText:2025 The Gleam contributors\x0A\x0Aimport gleam/
+usederive|as&\xEF\xBD\x9Cmacro\x5Cu{1234567}const-.
+ SPDX-ileCoppyrig
+}
+opyrightText: 2025 The Gleam contributors\x0A\x0Aimport gleam/io\x5Cu{\x0A\x0Apub fn ma
+fn=\x0Aa.//(Wibble_1|>"str"
+*//->//#>. echo"/<-0b
+ x_y=*\x0D1
+\x0D\x0Afn==b1<>\x0A
+Licnse-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2018 The G!leam contributors\x0A
+Wibble\x0D\x0A->\x0D\x0A=fn1.5-})]"
+eCopyrightText: 2025 The Gleam contributors\x0A\x0Apub n main() {\x0A  let x = Trueecho\x0A\x5Cq  assert !x\x0A
+Wibblecase"str"@\x5Cu}01.5+"\x0D\x0A:
+ Wibble_{ @<<>..
+1/.**.0OZ\xEF\xBC\x88
+-!<\xE6\x97\xA5\xE6\x9C\xAC0.1e-3\xC3\xA97\xD0\xB5\x5C"
+/
+tructorCC((project_d.\x5CnTypeD)\x0A}\x0A\x0Apub fn 
+, 72, 0, 11, 0,, 108, 
+1.5,fn\x0D\x0A>ab1<..Wibble\xE3\x80\x82/.
+x_y<
+1.-\x0D1"str"import1.50
+,"0 x_y 
+\x0A}\x0A\x0Apub fn size_32_big_ngative_variable_test() {\x0A  let i = -1\x0A  let left = <<i:32-bi\x5Cu{1F600}g>>\x0A  let right = 
+=======]\xEF\xBC\xBBF>._\xEF\xBC\x8Eif*e<<<\xE3\x80\x82
+\xE2\x80\x9C\x0D\xE2\x80\x98\x7F\xEF\xBC\x89
+ | use[x, y, 3] -> #(x, y)\x0A   _ -> #0, 0)\x0A  }
+2.0\x0A// SPDX-FileCCopyrightText: 2021 The Gleam contributors\x0A\x0Aimport one\x0A\x0Apub fn main() -> Stri
+|>case)|\x0A
+<=<=======
++|b1|>"str""str"==) 
+test\x5Cu{0oa=======
+ 255>>\x0A  asseert lleft == 
+\xD0\xB0\x5Cu
+0>b1}
+ffi", "main2")\x0A@exxternal(javacript, "./nested/submodule_ffi.mjs", "main2")\x0Afn subdir_message() -> String\x0A\x0A@e
+==@x_y"str"//}let
+\x0A// htt
+pb fn gleam_ee
+*#\xEF\xBD\x9Copaquedelegate]opaque\x5Cu{D800}[<=.const%
+| = ->
+\xF0\x9F\xA6\x801.7976931348623157e308x\xEF\xBC\xA0\x09\xE1\xB4\xB5*=
+,echo//1.5-.typea
+1.5x_y*42"|//:!
+t_zero()\x0A  assert 1import\x0A    == case Nil {\x0A      _ iif int_zero == 1 -> 
+ontributors\x0A\x0Apuub fn  remainder_1_test() {\x0A  assert 1 % 1 == 0
+1, 2, 3, 4]\x0A  assert left == right\x0A
+ifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 202 The Gleam contributor\xE2\x80\x98s\x0A\x0Apub fn prepend_1_test() {\x0A  let l
+entffier: Apa
+<+#
+\x5Cu{D800},<><>import\x0D\x0A\xE2\x80\x94 ==*
+-:]case:
+>>>>>>>fn\xEF\xBC\x9E//[=9<x_y[(
+1->42>(!===letcase##========
+r: Apache-2.0\x0A/
+println(erlang_function())\x0A  io.prinntlln(elixir_function())\x0A  gleeunit.ma
+|>:Wibble =
+!\x5Cu{110000} 1.5==let.}) 
+ext: 2021 The Gleam contributors\x0A\x0Apub
+""\x0A}\x0A
+ left = [1, 2, ..[3,1_ 4]]case\x0A  let right = [1, 2, 3, _4
+_}}delegateif\xEF\xBC\x88<<\x5C=======
+t() {\x0A  let left = [0]\x0A  let right = []\x0A  assert left !..= right\x0A}\x0A\x0Apub fn list_neq_4_t
+ SPDX-FileCopyrightText: 2025 The Gleam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn m123456789012345678901234567890ain() {\x0A  io.println("H
+"42
+#_{ \x0Ax_yx_y/a<>derive:
+x_y.>.=+a-
+1.-=}<.$
+|"str"#!letfn
+  assert left === right\x0A}\x0A
+"1.\xE3\x80\x81*.pub\xE2\x80\x8B_0.1e-3
+he-2.0\x0A// SPDX-FileCopyrigtTex
+enseeIdentifier: Apache-2.0\x0A// SPDX-Filee
+echo1.5>echo///1.5<
+Gleam contrib\x0D\x0Autors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main(() -> Nil {\x0A  io.println("Hello from default
+ Wibble==*x_y]\x0A-
+sub   modultypee")\x0A}\x0A
+1_000|#]1.0e-<<<
+letb1==\x0D\x0A-(+-]/
++<>1.7976931348623157e308b1
+0>>case.*\xEF\xBC\x8C<=const@+=!
+size__sub_add_chain_iis_left_associati$ve_test() {\x0A 
+g\xD0\xB5\xD0\xBEcaseg<<<<<<<\x5Cu{1
+pub fn maain) {#\x0A  Nil\x0A}\x0A
+let >  fn..
+++\xE3\x80\x81\x0D\x0A>
+\xE2\x80\x98\xE2\x80\x94
+ga42\x0A1.5//"Wibble
+\xC3\xA9else>.\xE2\x80\x93123456789012345678901234567890\x7F:assert4.9e-324else,echo
+ething) {\x0A  io.priintln(something)\x0A}\x0A
+========//\x5Cu{110000}|>-wobbletypetype0use\x5Cu{}
+ contributors\x0A\x0Apuub fn main() {\x0A  "Hello  from second!"\x0A}\x0A
+: Sring, value: a)\x0A}\x0A
+0"str"Wibble-!=//
+case \xEF\xBC\x8E'>>>>>>>@opaque\xEF\xBC\x9A2
+===/=\x5Cnfnimplement\xEF\xBC\xBE-.
+|>
+|>\x0D\x0A <<<<<<<[!"}>let@==
+"str"=0
+@  ._,
+ @*->+(
+"=auto<<<<<<<
+am contributors\x0A\x0Aimport gleam/io\x0A\x0Apub >.fn main() {\x0A  io.println("Hello from dev/nessted!")\x0A}\x0A
+(case+42:Wibble(\xE3\x80\x82"str"]<>|
+:|>
+utors\x0A\x0Apub fn main()E {\x0A  e x = True\x0A  asse
+DX-License-Identifier: Apache-2.0\x0A// SPDX-FileCoppyrightText: 2025 The0.1e-3 Gle
+ fn main() {{\x0A  "Hello from multi_namespace!"\x0A}\x0A
+ 1 == unction_shadow
+SPDX-FileCo\x5CupyrightText: 2019 The Gleam onttri
+<+<-><42>##
+tors\x0A\x0Apub \xCE\xBBfn something()) {\x0A  "Just a thing to export"\x0A
+fn b1
+1\x0A\x0A\x0A  llet
+-\x0D\x0A..1\x0A
+ntifier: Apache-2.0\x0A// SPDX-FileCpyrightTText: 2021 The Gleam contributors
+ Gleam contributors\x0A\x0Aimprt package_a\x0A\x0Apub fn main() {\x0A  package_a.hello()\x0A}\x0A
+\x0A\x0A@extternal(erlan, "ffi_erlang", "read_uint16_from_bit_array")\x0A@external(javascript, "./ffi_javascr<<<<<<<ipt.m
+mport hello_worrld\x0A\x0Afn run(x, y)) {\x0A  x + y\x0A}\x0A
+nse-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightTex-=t: 2021 Thhe Glea
+[@|>|
+const_!..todowobble>x_y
+pache-2.0\x0A// SPDX-FileCopyrightText: 2025 The leam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn maain() {\x0A  io.prin
+e--2.0\x0A// SPDX-\xD0\xB0ileCopyri
+>++
+1_#"str"afn1
+\x0A\x0Apubfn main() {\x0A  one.hello()\x0A  |> nested.id\x0A}\x0A
+..[\x0D\x0A:<>]0case
+_file_included_test() {\x0A  let  path = "./build/dev/javascript/language/ffi_typscript.ts"\x0A  assert f
+@\x0D1.5@)==
+\x5Cn\x0A\xE2\x80\x99]\x5C"
+am contributors\x0A\x0Apub type B>ox(a) fn{\x0A  Box(tag: String, value: a\xD1\x80)\x0A}\x0A
+!1.5.!"42_((
+\x5Cq\xEF\xBC\x89Z/-=0o\xC3\xA9>type
+\x0A
+     8,\x0A
+< +x_y"str"x_y\x0D\x0A]<x_y0.30000000000000004->
+roject_d\x0A\x0Apub type TypeB {\x0A  ConstructorB(contained: roject_d.ypeD, name: Stt
+_ =/..>==
+<>^1
+derivePDX-FileCopyyrightText:2021 The Gleam contributors\x0A\x0Aimport project\x0A\x0Apub fn main() {\x0A 
+pub fn man(something) {\x0A  io.prinln(something)\x0A}\x0A
+:bytes-2, c:bytes>> = ===<<\x0A    0b110:3, 00x
+ }\x0A  assert result == importable.NoFields\x0A}\x0A\x0Apub fn no_fields_let_assignment_test() {\x0A  let result = {\x0A   derive lt
+:\xEF\xBC\x88\x00todo
+ b  3\x0A  e c = 3\x0A
+@b1"str"fn421_>Wibble42#42
+t_() 
+2018\x0AThe Gleam contributors\x0A
+t_\x0Azero() +. 1.\xE2\x80\x9D0\x0A  asset 0\x0A    == case Nil {\x0A      _ if float_
+\x0A// SPDX-FileCopyrightText\xE2\x88\x95: 2024 Te Gleam contributors\x0A\x0Apub fn main() {\x0A  compilaation_error\x0A}\x0A
+!=echo{\xE2\x80\x9A1.0e10_\xEF\xBC\x9C1.0e400 0Og'
+PDX-Lice
+.//<letcase\xEF\xBD\x9C|\x0AWibbleb1
+ Gleam contribuimplementtors\x0A\x0Aimport gleam/io\x0A\x0Apub fn mai
+pyrightTet: 2021 The Gleam  contributors\x0A\x0Apub fn hello()  
+{|@b1\x0D\x0Ab1#a142,b1
+0
+b1Wibble
+;<0Xauto\xEF\xBD\x9C\xEF\xBC\x89\xE2\x88\x97'~-.+.
+../+ //1.5"str"|>0"str"\x0A
+ <>let
+.@->##1.51.0e-as {}}
+e\xEF\xBB\xBFst() {\x0A  assert 3 % 2 == 1\x0A}\x0A\x0Apub fn remainder_4_test() {\x0A  assert 3 % 0 == 0\x0A}\x0A\x0Apub fn  remainder_5
+..*
+-\xE6\x97\xA5\xE6\x9C\xAC
+*x_y
+javascriipt!")\x0A}\x0A\x0A@external(erlang, "erlang", "dis
+8ecca515f6cc\x0Apu
+\x0A  )\x0A}\x0A\x0Apub fn main() {\x0A  location()}\x0A\x0A@external(javascript, "./project_ffi.mjs", "loc
+->#->>>/"str"\xE3\x80\x81->)
+|>.(.|>let1.5>{ 
+\x0D\x0A-//_}
+->! ->-><>case
+\xEF\xBC\xA0-=@\xEF\xBC\xBE9\x5Cu{1F600}\x5C"
+_1"{b1<.
+1.0e\xEF\xBC\x9E'->if)else\xC3\xA9.<>!
+ subdir_ffi!"")\x0A\x0A  submodule.s
+-//
+ let bool = !{ Tue  || False }\x0A
+1 ->[@Wibble//_>-
+ighText: 2026 The Glam c
+0026  The Gle
+g_prefixes_ith_guard_test()\xE2\x88\x95 {\x0A  let classify = fn(in`p
+: 20\x5Cu{DD800}[23 The Gleam contributors\x0A\x0Aimport glea
+1.5|),/=case==[{
+<b1x_y}<
+8, 0, 0, 0, 99>>>\x0A\x0A}\x0A
+\x5Cu{110000}panic\x09>=_)_>.implement-=#<=.
+)"
+&&@
+ ..<><)b1://<
+@1.0e400>=>\x0D\x0A\xE2\x80\x98/*=\xEF\xBB\xBF
+|><>)>.b1b1\xE2\x88\x97|>case\xE2\x88\x97>
+<<<1
+\x0A/// Alias to atypedd function\x0Apub const  function_int_int_returns_int_alia
+2.0\x0A// SPDX-FileCopyrighcasetText: 2025 The Gleam contributors\x0A\x0Aimport gleam/int\x0A\x0A
+, name) {\x0A  ConstructorB(pr%oject__d.C
+1\x0A    == casewobble  
+ == b\x0A}\x0A\x0Apub fn negation_2_test() {\x0A  let a = 3\x0A  let ba = -{ -a }\x0A  assert 3 == b\x0A}\x0A\x0Apub fn negation
+\xEF\xBC\xA0\xC2\xA0%=\xEF\xBC\xBB\x5Cu{1.01_\xC2\xA0 \xE1\xB4\xB5&&
+|>->+..>_..\x0D\x0Ax_y)
+aWibble a42\x0D\x0A<>
+..<>\x0A,//|>@
+=fn\xD0\xBE 1.0e10*0.1e-3\xE6\x97\xA5\xE6\x9C\xAC+
+<,\x5Cn}|>\x0A,\xE6\x97\xA5\xE6\x9C\xAC@
+ $//->..
+>>\x0A  assert a == 5_995_456_240\x0A}\x0A\x0Apub fn unaig
+>>>\xEF\xBC\xBD\xD0\xB0*.\xE3\x80\x81|>
+0
+\xD1\x80assert>f/=_,\xEF\xBC\x8E0o0.1e-3_discard>=
+{\x0A  io.println("Hello fopaquerom testF/nested!")\x0A}\x0A4.9e-324
+n._hash\x0A}\x0A////
+ The GGlaam contributors\x0A\x0Aimport project_b\x0Aim
+\xC2\xA0&//>=.\xE2\x80\x94\x5Cu{D800}\x5Cu{0x\xE2\x80\x93///\x5Cq"
+\xEF\xBC\x89
+ad_panic_tst(() {\x0A  let bool = !True\x0A  bool && 
+ntibuto\xF0\x9F\xA6\x80r
+htText: 2024 Te Glecaseam contributors\x0A\x0Apub fn main() {\x0A  compilatio]n_error\x0A}\x0A
+60, 223, 1\xC3\xA93, 0,\x0A       33,\x0A    >>\x0A  }\x0A  assert result == <<"Hello, \xF0\x9F\x8C\x8D!":utf16>>\x0A}\x0A\x0Apub fn1_000 ut
+\xE1\xB4\xB5\x0Atype->-]\x0D\x0A<0x
+1\xE2\x80\x93
+80.300000-=00000000004 
+1.0eWibble>@*case
+!]
+\x0A// SP,DX-FleCopyrigh
+~\xE2\x80\x94&
+(size)\x0A>> = <<123:7>>\x0A}\x0A\x0Apub fn dynamic_siz
+ flag: Boo) -> String {\x0A 
+1.0e10+""[]1let
+ main()1.0e400 {\x0A
+io\x0A\x0Apuub fn main(something) {\x0A  io.println(
+ caseb1,=#1.50>
+ll from test/nesed!")\x0A}\x0A
+xir.ElixirFile","main")\x0A@exteernal(javascript, "./subodule_ffi.mj
+Wibble
+1.0e10++\x5Cu{D800}
+.<>(#+_
+g
+cee!"\x0A}\x0A
+else&&========\x5Cu{////\x09~\x5Cu{}!delegate
+emaindeer_4_teesst() 
+ shoulld.eual\xF0\x9F\xA6\x80(1)\x0A}\x0A
+<>\x0D\x0A<<\xE2\x80\x9D<<1__0=<>
+let right = <<0, 232, 118, 72>>\x0A  a>ssert left == rright
+!=
+n one() {\x0A  "hello from one!!"\x0A}\x0A
+m0O contributors\x0A\x0Apub fn something() {\x0A  "Just a thing to export"\x0A}\x0A
+of Int alias\x0Apub const const_intalias: In\xD0\xBEtAAlias = 0\x0A\x0A/// String list constant\x0Apub const const_string_list: List(String)
+b1<"
+\x5Cn*<<<<<<<1>=(\xEF\xBC\xA0=======if
+_x_y"str"
+@_->]
+case//0} pub,
+:#//1.0e10 42==>@
+type\x0C_\x5Cu_(->'\xE2\x80\x93+.]\xF0\x9F\xA6\x80
+|//:.else> @(
+\xEF\xBC\x9A
+fier: Apache-2.00/let/ SPDX-FileCopyrightText: 202
+&let
+9\xD1\x80
+
+entifier: Apahe-2.0\x0A// SPDX-FileCopyrightText: 2024 The Geam contributtors\x0A\x0Apu
+//@../x_y<> >\x0A.!
+}\xEF\xBC\x9Ab1\xF0\x9F\xA6\x80case>>_
+0+casefn421.5##
+8\xE3\x80\x81
+0\xCE\xBB^--<>:-."`.. 
+rt\xCE\xBB NoFi9elds = importable
+\x0Aim=por\xD0\xB5t
+ 1, ...[]]\x0A  let right = [1]\x0A  assert left == right\x0A}\x0A\x0Apub fn prepend_2_t
+se-Identtifier: Ap-ache-2.0\x0A// SPDX-FileCopyrigh
+->\x5C
+X-0XL
+\xC3\xA9== |-a\xE2\x80\x9C\xE2\x80\x9D."str":
+#let1.7976931348623157e308<"421__0<<<<<<<. 
+b1#].)--x_y*x_y42(
+lem/io\x0A\x0Apub fn main() {\x0A  io.println("Hello from shipment test!")\x0A\xEF\xBC\xA0}\x0A
+-
+ \xE2\x80\x9A
+ 1.5][_"}\xEF\xBC\xBE |/\xD0\xBE
+ribb
+0O>>\xE2\x88\x97\xEF\xBC\x9E1_000delegateimplement?Z\xEF\xBD\x9Cmacro.
+it\x0Aimport pprojectt\x0A\x0Apu
+_Zb1 //>
+\xEF\xBC\xBD:\xEF\xBC\x9C(:\x5Cu{110000}*.
+ileCopyrightText: 2019 The GGleam contributors\x0A\x0Apub fn add(a, b) {\x0A  a + b\x0A}\x0A\x0Apub fn main() {\x0A  1\x0A  |>
+he-2.0\x0A// PDX-FileCopyrightText: 2023 TThe Gleam contribtors\x0A\x0Apub type Ty
+\xE2\x88\x97 \xE3\x80\x81=======pub>=.|>\x5Cq\xE1\xB4\xB5
+\xE2\x88\x97nse-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightTeext: 2026 The Gleam con<<<<<<<tr
+-Licen@s
+|}7
+D(Strng)\x0A
+\x0A}\x0A\x0Afn second_line() {\x0A  io.println("fo a default main project, that wou:ld be rejec
+}.Wibble0@==\x0D\x0A
+in(s1_000omething {
+he9 Glem contributors\x0A\x0Apub type o
+he Gleam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn  main() {\x0A  io.println(("Hello from dev/")\x0A}
+ier: Apache-.0$\x0A// SPDX-FileCopyrightText: 2025 The Gleam contributors\x0A\x0Aiimport gleam/io\x0A\x0Apub fn main()
+fn main() {\x0A  lt _ = VariantB(project_b.new("thing", "name"))\x0A  let _ = VariantC(project_c.new("thing"))\x0A}\x0A
+$\xE2\x88\x95\xC3\xA9=\xE2\x80\x99&7;\xC2\xA01
+let///}!<
+ The Gleam contributors\x0A\x0Apub fn 1.0ehello() -> String {\x0A "Hello"\x0A}\x0A
+ors\x0A\x0Apub type Box(a, b, c) {\x0A\x0A  AlmostFull(a, c)\x0A  AlmostEmpty(b)\x0A  Empty\x0A}\x0A
+=<>
+fn=======
+}==\x0A
+\x0A  ."Hello from multi_namespace!"\x0A}\x0A
+42:_==#)!
+"str"*/*42+\x0A..=_ 
+\xEF\xBC\xA0fn\xE6\x97\xA5\xE6\x9C\xAC%=else_1_000"
++\x5Cq|>\xD0\xB5g
+*|/..
+est() {\x0A  let assert "ab" <> rest = "abcdef"\x0A  assert "cdef" == rest\x0A}\x0A\x0Apub fn concat_block_sinngle_test() {\x0A  let name
+sert result == 6\x0A}\x0A\x0A// htts://github
+ache>=-22.0\x0A
+  }\x0A asser\x5Cu{D800}t result== 0\x0A}\x0A\x0Apu
+ _->,&&0.300000000000000040O
+.0\x0A// SPDX-\x5Cu{1F600}FileCopyrightText: 2019 The  Gleam 
+a//\x5C-\xE2\x80\x9C.
+ = Ok(2)\x0A  let right= Ok(1)\x0A  assert left !=
+{\x0A\x0A  1\x0A\xEF\xBC\x8E 
+b1@:{#1.5=
+ ..) = Cat("luff, 10)\x0A  assert y 
+(\x0A1.5..\x0D\x0A
+a)@
+]\xEF\xBC\x9A\xE2\x80\x8B
+ #(3, 4, 5)\x0A  let x= tup.0\x0A  let y = tup.1\x0A \x5Cn let z = tup.2\x0A  
+else-<<<<<<<<=.
+<>
+1.7976931348623157e308
+ +.VariantB(project_b.new("thing", "name"))\x0A  let _ = Varia
+ //
+ject_javascript!")\x0A}\x0A\x0A@external(erlang, "erlang", "display")\x0A\x0A@external(javascrit, ".
+|delegatecase->#<|\xE2\x80\x9C>->
+est() {\x0A  let one = Box(1))\x0A  let other = Bx(1)\x0A  asser
+.case! .. \x0D\x0A
+ 0"str"g]=======| 
+==@<a\x0D\x0A-fn #
+0X@import\xF0\x9F\xA6\x80\x5Cu{}1_000
+b1=
+->:
+<>->)-==*)b1
+n gleam_ok_test() {\x0A  let left = Ok(1)\x0A  lt right = gleam.Ok(1)\x0A  assert left == rig
+a+.case=@->1.5@\x0D\x0A)..
+ors\x0A\x0Aimport project_d\x0A\x0Apub type TypeB {\x0A  ConsttructorB(conttained: project_d.
+tlnn(erlang_function())\x0A  io.println(elixir_function())\x0A  gleeunit.main()\x0A}\x0A\x0Apub
+r: Apache-2.0\x0A// SPDX-FileCopyrighText: 2025 The Gle
+1.0e
+ let x = ok_one()\x0A  let assert Ok(x) = x\x0A  assert 1 == x\x0A}\x0A\x0Afn ok_one() -> Result(In, a) {\x0A  Ok(1)\x0A}\x0A
+ce\x5Cu{110000}n\x5Cu{1F600}se-Iden
+f1.\xEF\xBC\x8C\x0C\x5Cu{1F600}+.
+    \xC2\xA0  _ -> {\x0A         let m = 99\x0A        m\x0A      }\x0A    }\x0A   
+..* #\xD1\x80-
+)\x0D\x0A<-\x0C4.9e-324,/]> 1.0e>
+rnal(erlang, "poject_ffi", "log")\x0A@external(javas\x5Cu{D800}cript, "./project_ffi.mjs", "log")\x0Afn println(a: String) -> N>.il\x0A\x0A
+b1242@)[<>42
+ hand side evaluate\x0Apub fn negation_true_and_pnic_test() {\x0A  let booll = !True\x0A  bool && panic\x0A}\x0A\x0A//
+
+*
+\x0Ab1fn[<=.."[\x0D\x0A//
+ 44, 0,32, 0,[ 60,, 216, 13, 223, 33, 0,\x0A  >>
+asseertxt:
+"+.
+Wibble|>Wibble)]\x0A]import+
+l(erlang, "erlang_test_file", "main")\x0Afn rlang_function() -> String\x0A\x0A@
+->1
+x_y:"str"=..\x0A1.5\xEF\xBC\x88
+SPDX\xEF\xBB\xBF-FiltesteCopyrightText: 2025 The Gleam contributors\x0A\x0Ap0Bub fn
+nneq_2\xD0\xB0__test(
+)\xC3\xA9-+|>_\x5C1.7976931348623157e308*
+\x0A}\xF0\x9F\xA6\x80\x0A!
+ileCopyrightText: 2021 The Gleam contributors\x0A\x0Apubb fn hello() -> Sting {\x0A  "Hello"\x0A}\x0A
+DX-Licens\xEF\xBC\x8Ce-Idenifier: Apache-
+\xE2\x80\x9C1.~&#//_&&,|>.
+& 4242`} fn->7
+useusefn\xEF\xBB\xBF\xE2\x80\x9C1.\xEF\xBC\x9A1.0e10\xE2\x80\x94
+\x0D
+t right = <<\x0A    72, 0, 0, 0, 101, 0, 0, 0, 108,0, 0, 0, 108, 0, 0
+\x0A\x0A
+r: Apache-2.0\x0A// SPDX-FileCopyrihtText: 2025 The Gle
+triing,\x0A    search: Sring,\x0A   
+*
+|]Wibble (
+ache-2.0\x0A// SPDX-F1.0e10ileCoppyrightText: 2021 The  Gleam contributors\x0A\x0A
+)a"str"== )
+a!+b1:
+ SPDX-FileCopyrig9htText: 2018 The Gleam contributors\x0A\x0A\x0Apub fn  main() {\x0A  Nil\x0A}\x0A
+ "#|><1,.\x0A..
+}}
+test() {\x0A  asssert 0.0 +. 0.0 == 0.0\x0A}\x0A\x0Apub fn addition_2_test() {\x0A  assert 1.0 +. 1.0 == 2.0\x0A}\x0A\x0A\x0Apub fn addition_3_tes
+ x = Tru\x0A  asssert !x\x0A}\x0A
+fnE*#.+========
+cation.protocol\x0A  let assert "localost:8080" = l
+81_000\x0D\x0A\xE2\x80\x9C
+g {\x0A  one.hello()\x0A}\x0A
+,==->b1 case\xE2\x80\x9Dfn
+ <<<<<<lo
+-*\x0D\x0A
+|%
+"'==\x0A^)>=.
+0b->#1
+-=\x5C
+=======\xEF\xBC\xBE
+mpty == []\x0A}\x0A\x0Apub fn list_1_test() {\x0A assert const_list_1 == [1]\x0A}\x0A\x0Apub fn list_2_test() {\x0A  assert const_lis
+ibutors\x0A\x0Aimport gl\xE3\x80\x81eam/bo
+10.1e-3]42
+..@}!1.5[_==-
+42ax_y|\xEF\xBC\x9C[
+Wibble#letletWibble
+=#\x0D\x0A|>
+|>\xE2\x88\x97//<-\x00wobble7\xCE\xBB
+/.0B=======\xE2\x88\x95\xE1\xB4\xB5|>\xEF\xBC\x89\xEF\xBC\x8E\x5Cu{110000}^.\xE2\x88\x97
+\xEF\xBC\xA0+"{\xEF\xBC\x88\x0C1[a<>let.
+.0\x0A// SPDX-FileCopyrightText: 2026 Th Gleam con\x5Cu{tributors\x0A\x0Afn ident
+ =
+  ccode so thfat this is not mistaken")
+o from defaut_main!")\x0A}\x0A
+ Apache-2.0\x0A\xEF\xBC\x9A//  SPDX-FileCopyrightText: 2023 The Gle
+-."11*Wibble{<)=:
+contributors\x0A\x0Apub fn something() {\x0A   "Just a hing to export"\x0A\x0A}\x0A
+pub fn concat_block_multip[le_test() 
+"$\x09'derive<=.1__0\xEF\xBC\x9C\x5Cu{1234567}g
+////,.%=>>>>>>>+.
+roject_b.new("thing", "name"))\x0A\x0A  let _ = VariantC(project__c.neww("thing")
+.g \xD0\xB0,\xE2\x80\x99
+,(+ !(,1.5|>@.
+u
+t {\x0A \x5Cq x + 1\x0A}\x0A\x0Afn add__two(x: Int) -> Int {\x0A  x + 2\x0A}\x0A\x0Afn wibble(_: Int) -> Float {\x0A 0.0\x0A}\x0A\x0A
+\x0A\x0Apub fn main(arg:  Int) -> 
+rt 5.0 -.1.00e3 == -995
+Multiplication is mathematically associatve so both\x0A  // left- and right-associative parsers produc
+ileCC\x0Dopr
++.42 -\x0A> ,implement
+"0.30000000000000004..\xE1\xB4\xB542\x0A>!=
+ }|>case/..
+//)\x0A}}\x0A
+-=<<"str"0}1///);F
+Wibble:auto==\x0D\x0A"str"..9\x5C
+}f1.\xE2\x80\x9Aimplement>>>>>>>1.0e\x5Cu{110000}0B\xE2\x80\x94
+ze-unit(2)>>  let ri
+e-2.0\x0A// SPDX-FileCopyrightText: 2019 he Gleam contrib
+let\xE2\x80\x98as\x5C"panic0.30000000000000004
+todo>=.\xD0\xBE\xE2\x80\x98.{\xE6\x97\xA5\xE6\x9C\xAC\x5Cu<as
+2_codepoint>\x0A  assert resultt == <<0, 1, 243, 13>>\x0A}\x0A\x0Apub fn utf32_codepoint_little_endian_
+]========*@
+ierr: Apache/2.0\x0A
+ule\xF0\x9F\xA6\x80")\x0A}\x0A
+rigghtText: 2026 The Gleam conributors\x0A\x0Apub type Box {\x0A 
+_+
+ 
+\x0Af==\xD1\x80?\xEF\xBC\xA0
+=\xE1\xB4\xB5"+\xE3\x80\x82
+Error(1)\x0A  let\xEF\xBC\xA0 rr
+ SPDX-License-Identifier: Apace-2.0\x0A,// SPDX-FileCopyri
+ors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() -0x> Nil {\x0A  io.println("Hell from default_main!")\x0A}\x0A
+stt war_games = Movie("Wa\xE6\x97\xA5\xE6\x9C\xACrGammes")\x0A
+^>>0.30000000000000004\xEF\xBC\x8C\x5Cq<<4.9e-324
+g, "Elixir.Countries", "all")\x0Afn mix_dep_function() -> Dynamic\x0A\x0A// Testing for this bug in \x0D\x0Ametaata enco
+|>
+inder_8_test() {\x0A  asse$rt 13 % -3 == 1\x0A}\x0A\x0Apub fn remaindeer_9_test() {\x0A  assert -13 % -3 == -1\x0A}\x0A
+letfn%|420.30000000000000004\x0D\x0A|\x5Cu{1F600}
+<1_\x0D0Oecho<====;>=\x00Wibble
+s\x0A\x0Amport gleam/bool\x0Aimport gleam/result\x0A\x0Apb fn main() {\x0A  assert b
+ntific_notation_mmultiplication_5_test() {\x0A  assert 2.0e1 *. 2.0e1 ==
+(
+\x0A{/+{a[|><>(1
+nt_overfl1.00\xEF\xBC\xBBe10ow_the_stack_test() {\x0A  assert Nil == count_down(from: 
+a"str"1:..:a [
+ir.ElixirFile", "main")\x0A@external(javascript, ".submodule_ffi.js"
+)-== =(
+ng"""))\x0A}\x0A
+1_000\xEF\xBC\x9A0.30000000000000004caseconst\x5C"+.;
+\xD0\xBE>1.0
+ that woul be rejected as0O well!")\x0A}\x0A
+aa:0->,//.
+amic_size_6_test() {\x0A let size = 4\x0A  let size = size + 2\x0A  let _discarda
+===#:let00\x0D\x0Aassert42|[!
+ 42[]b1
+  x\x0A  }\x0A  assetodort x \xEF\xBC\x9A== 1\x0A}\x0A
+->\x0D_b1\xE2\x80\x8B||{==
+{
+pyrightText:219 The Gleam conri
+ Right(b)\x0A}\x0A\x0Apub onst either_intt: Eit
+//@[(*\x0A
+tfiefr: AApache-2.0\x0A// SPDX-FileC
+let>|/{42
+ //@
+case>\xE2\x80\x9A1!_
+ SPDX-License-Identifier: Apache-2.\x0A// SPDX-Fi
+ name) {\x0A  ConstructorB(pro`ject_d.ConstructorD(contained), name)\x0A}\x0A
+caseWibblelet -)42>
+-=aselse\xC2\xA0{ ?"<-
+rlang_functiion())\x0A  io.println(elixir_0bfunction())\x0A  gleunit.main(
+opaque\x7Fif}\xE2\x80\x8B1__0\xEF\xBC\x88derive
+nng!*.""
+Iddentiifier: Apach
+ SPDX-FileCopyrightText: 22023 The Gleam contributors\x0A\x0Aimport proje\xEF\xBC\x9Act
+#}casea(\x0A
+\x0A    et x = ok_one()\x0A  
+ fn main() {\x0A  lt x =
+port gleam/io\x0A\x0Appub fn main() {\x0A io.println("sub module")\x0A}\x0A\x0A
+<.import\x09
+Zx|:[}>__
+ fn#Wibble
+/.>delegate\xEF\xBC\x9Afn..x_y!=+
+\x5Cu{}\xEF\xBC\x8E\xEF\xBC\x9C[
+>=/=\xF0\x9F\xA6\x80-=<>1__0
+1.0+.123456789012345678901234567890use===\xE2\x88\x95assert1.0e+.const
+ightText: 2019 The GGleam connttributors\x0A\x0A\x0A
+0.30000000000000004@\x5Cq+=-=\x0AE1.0e400\x5Cu{1234567}<=\x7F\xD1\x80
+contributors\x0A\x0Apu fn main+() {\x0A  "
+\x0A+42\xE2\x80\x9D
+\xD0\xB5==,<>>[4.9e-324,->derive
+main() {\x0A  io.println("Hello from dev&&/")\x0A}\x0A
+a"\xE3\x80\x82->auto\x0A========
+==[let+"42[
+"142..
+case#//a<>42:x_y
+5 -> 0\x0A      _ -> 1\x0A    }\x0A}\x0A\x0Apub fn arithmetic_4_test() {\x0A  asser 0\x0A    == cas
+\x0A-> >"str"//#
+->,1.5\xEF\xBC\x8E<>"str"delegate\xE3\x80\x82Z
+ {
+=0 ->*.caseb19  (
+/=&\xE6\x97\xA5\xE6\x9C\xACimport\xEF\xBC\xA0\x0D========\xD0\xB5const'\xE2\x80\x98
+  
+ The Gleam contributrs\x0A\x0Apub fn hello() -> Stri*=ng {\x0A  "Hello"\x0A}\x0A
+at_bloock_singl_testt
+@)"str":{b1[+
+|\x0D\x0A-&&+"..!"9x_y 
+fn1.5 case
+10e..1.5
+.."str"|
+ "else..|>)
+[\xD0\xB50echo
+}"\x0Aa<<<<<<<b1-421.50|>{
+nse-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2019 The Gleam contri"butors\x0A\x0Apub fn add(a, b) {\x0A
+ntifiier: AApache-2.0\x0A//\xE2\x80\x94 SPD
+ Apache-2.0\x0A// SPDX-FileCopyrightTe\xD0\xB0xt: 20
+ 
+[[_
+rt classfify("aaz", False, False) == "otherr"\x0A  assertt classify("acz", False, 
+\xEF\xBC\x88 a<
+n_t1.0e10rue_test) {\x0A  assert !T
+d_modul = shadow
+String {\x0A one.hello()\x0A}\x0A
+ 22 Th
+ fn something() {\x0A  "Just a thhing to export"\x0A}\x0A
+0\xE2\x88\x954.9e-3240x$eecho0B>>>
+a..->x_y
+\xC2\xA0-
+pply(person, fn(x) { x.name }) == "Quinn"\x0A}\x0A
+1_000\x5Cn#\xF0\x9F\xA6\x80_0x<<-.////.>=.2
+-b1
+|\x5Cu{1F600}case ///:
+=|>./\x5Cu{110000}<.1.0e10|>
+a[
+st const_list_empty = []\x0A\x0Aconst const_list_1 = [1]\x0A\x0Aconst const_list_2 =[1, 2]\x0A\x0Apub f
+ defaultt main project, that would be rejected as well!")\x0A}\x0A
+-> ==
+]
+unit.mmain)\x0A}\x0A
+b fn main() {\x0A  assert int.add(4, 5) > int.absolute_va+.lue(-11)\x0A}\x0A
+DX-FileCopy->rightText: 2024 The Gleam contriutors\x0A\x0Apub fn main() {\x0A  "Hello from second"\x0A}
+/int\x0A\x0Apub fn main() {\x0A_ assert int.is_
+cense-Identifi=======er: Apa1.0eche-2.0\x0A// SPDX-FileCopyrightText: 2026 The\xE2\x80\x9D Gle
+et(y: 2, x: 1)\x0A  assert #(1%,  2, 3) == result\x0A}\x0A
+ 3.14, 2,"Somethig")\x0A}\x0A
+x_yderive)!++1
+fconst\xEF\xBC\xBBetype>.
+\x0Aimport gleam/>=/int\x0A\x0Apu
+-_1.5{{let>(
+\xD0\xB0<=.
+ fn main() {\x0A  i&o.println("Hello from testt/")\x0A}\x0A
+pub1__0_\xE3\x80\x828+@"b1(.import
+erso
+tText: 2025 The Gleam contrFibutors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {
+\x0Afn elixir__messae(() -> String\x0A
+//(."
+.==
+ The Gleam contributors\x0A\x0Apub type Box {\x0A   Box(constructor: Int)\x0A}\x0A\x0A\x0Apub fn record_w1.0e-ith_construc
+<.~
+a//x_y>|>
+<> (42fn"{->@>1.5
+#..
+e-2.0\x0A/"/ SPDX-FileCopyrightText: 2025 The Gleam contributors\x0A\x0Aimport gl
+t\x0A\x0Au
+ &&|
+autof_.const>>>|//
+bit_ar\x5Cray == <<7, 98, 99>>\x0A}\x0A\x0Apub fn li
+letuse*{]|xa[%=
+-<>1==letfncase<->(
+\x0Apub ty\xEF\xBC\xBE\xEF\xBC\xBEpe Port\x0A
+0.1e-3)
+ 42,|> x_y.+~
+ould\x0A\x0Ap\xD0\xB0ub fn  main() {\x0A  gleeunit.main()\x0A}\x0A\x0A// gleeunnit test functions end in `_test`\x0A
+pyrightText: 2023 The Gleam contributors\x0Aimport project_d\x0A\x0Apub type Typ
+fn somethi1.7976931348623157e308ng() {\x0A  "Just a thing to export"\x0A}\x0A
+e\xC3\xA9xt: 2021 The Gleam ontributors\x0A\x0Aimpo
+Wibble
+: 2020 The Gleam contributors\x0A\x0Apub fn hello() {\x0A  "world"\x0A}
+ left = <""Hello, \xF0\x9F\x8C\x8D!":utf16>>\x0A  .let right = <<\x0A    0, 72, 0, 101, 0, 108, 0, 108, 0, 111,
+butors\xE2\x80\x9C\x0A\x0Aimpor
+let>}(\xF0\x9F\xA6\x801.0e-\xE2\x80\x99 
+ The Gleamcont\xE2\x80\x98ributors\x0A\x0Aaimp
+e-Identi\xEF\xBC\xA0fier: Apache-2.0\x0A// SPDX-ileCopyrightText: 2019 The Gleam contrib
+0\x0A// SPDX<=-FileCopyrightText: 2026 .he Gleam contributors\x0A\x0Afn identity(x: a) -> a {\x0A  x\x0A}\x0A\x0Afn pair(x: a
++{+===]!==!
+\x5Cu{234567}\x0A
+*\x5Cu{1234567}
+se-Identifier: Apa
+CopyrightText: 2023The Gleam contributors\x0A\x0Apub fn main() {\x0A  Nil\x0A}\x0A
+1.5\x7F"str"+a|>42{x_y*
+test<0=}//)<>->#+
+"str"42
+!.auto\x5Cu{D800}
+==
+gleam/io\x0A\x0Apub fn main() {\x0A  io.println("He1.7976931348623157e308llo  fromtest/")\x0A}\x0A
+:>\xEF\xBC\x9A\x5C"0O\xE2\x80\x98\xE2\x80\x98<=
+0842
+nction_test(() {\x0A\xCE\xBB  io.println("Testing calling a rebar3 library (that uses headers)")\x0A  rebarelse3_dep_
+;import2\x0A\xE2\x80\x8B)
+ain() -> Strring {\x0A  one.hello()\x0A}\x0A
+0x_yb1 
+<#<>->\xEF\xBC\x9A-=1fn
+b fn variable_ut32_big_string_segment0O_test() {\x0A  let string
+cript, "./e>=.xterrnal_only_javascript_ffi.mjs", "main")\x0Apub fn main() -> Nil\x0A
+ibutors\x0A\x0Apub fn two2() {\x0A  "hello from two!"\x0A}\x0A
+dentiffier: Apache-2.0\x0A// SPDX-Fileo
+g, "subbmodule_ffi", "m0oain")\x0A@external(javascript, 
+sert left == right\x0A}}\x0A\x0Apub fn record_error_eq_2_test() {\x0A  let left = Error(2)\x0A 
+ guard_test() {\x0A  let int_two = make_int_zero()) + 2\x0A  let ints = [1, 2]\x0A  let int = case 
++]1.5#x_y]let x_y
+25 The Glea \xEF\xBD\x9C
+r(a, b) {\x0A  Left(a)\x0A  Right(b)\x0A}\x0A\x0Ap\xEF\xBD\x9Cub const either_int: Either(Int, Int) = Left(2)
+\xF0\x9F\xA6\x80\xE2\x80\x9C\xEF\xBC\xBEeE<<<0.30000000000000004
+;<<<else
+{##fn ==let1.5{<>
+\xEF\xBD\x9C+=1.7976931348623157e308;
+ main() -> String {\x5C\x0A  one.hello()\x0A}\x0A
+Wibble->=.0.30000000000000004todo)9///.. 
+(x, y) == #("fluffy", 10)\x0A}\x0A\x0Apub fn mtching_ssecond_labell
+>>>
+case=+\x0A//!/fn\xE2\x80\x98)\x0A\x0D\x0A
+ result\x0A}\x0A\x0Apub fn pipe_middl_with_label_requi
+6_big_string_egment_tes() {\x0A  let string = "abc"\x0A  let bit_array 
+\x0Apub fn remainder_1_test() {\x0A  assert 1 % 1 = 0\x0A}\x0A\x0Apub fn remainder_2_test() {\x0A assert 1 % 0 == 0\x0A}\x0A\x0Apub 
+avascript, ./project_ffi.mjs", "location")\x0Afnlocation() -> Location\x0A
+_++
+let0.30000000000000004
+#\xF0\x9F\xA6\x80\x0Decho_0XF
+  "Hello ffrom mullti_namesp\xF0\x9F\xA6\x80ace!"\x0A}\x0A
+n__7_test() {\x0A  let abs = fnvalue) {\x0A   
+unit(2)-size(3)>> = x\x0A  ass\xE2\x80\x9Dert xx == <<1:6>>\x0A}\x0A\x0A/ h
+1_000let>>>\xEF\xBB\xBF||-<><-
+: 20x04 The G
+leCopyrigtText
+fn"\xE2\x80\x93<>@\xE2\x80\x99
+ier: pache-2.0\x0A// SPDX-FileCopyrightText: 2025 The Gleam contributo
+a1_000cee!"\x0A}\x0A
+-fA
+rs\x0Apub fn add(a, b) {\x0A  a + b<=\x0A}\x0A\x0Apub fn main()( {\x0A  1\x0A  |> ad
+ile",, "main")fwobblen erlang_fu
+\x0A\x0A// SPDDDX-FileC
+\x5C"//>delegateF\xEF\xBC\xBB890b\xEF\xBC\x9Aechof
+>+0" @ 1//\xD0\xBE
+port gleam/io\x0A\x0Apub fn main() {\x0A\x0A  io/=.pimplementrintln("top
+ The Gleam contributors\x0A\x0Appub fn negation_true_test() {\x0A  assert1.0 !Tru\x00e == F
+1_000type+=<<<\xD0\xB5
+1{
+on_3_\xC3\xA9test) {\x0A  a
+-> \x0D\x0A b1// 
+k_discar_test() {\x0A  let result = /.{\x0A    lett x = ok_one()\x0A    let assert Ok(_) = x\x0A  }\x0A  assert Ok(1) == result\x0A}\x0A\x0Apub f
+butorss\x0A\x0Aimport one\x0Aimport one/nested\x0A\x0Apub fn maain() {\x0A  one.hello()\x0A 
+[0x_y-let_ a42]_
+remainder_7_test() {\x0A  assert -13 % 3 == -1\x0A}\x0A\x0Apub fn remainder_8_test() {\x0A   assert 13 % -3 == 1\x0A}\x0A\x0Apub fn r
+sert True = atom.from_
+{\xC3\xA9b1test#)
+tiplication_1_test() {\x0A  assert 0 * 0 == 0\x0A}\x0A\x0Apub fn multiplication_2_teest()  {\x0A
+\x0D\x0As\xEF\xBD\x9C\x0A
+_panic_test() {\x0A  let bool = !True\x0A  bool && panic\x0A\x0A\x0A// This woul\xEF\xBC\xA0Wibbled crash if the right hand side 
+<>casex_ya\x0A=]
+negative = -0\x0A  let positive = 0\x0A  assert nega1_000tive == positive\x0A}\x0A
+pub fn ai+panicn() {\x0A 
+ main() {\x0A\x0A  let x = True\x0A  assert  !x\x0A}\x0A
+Text: 2026 The Gleam contributors\x0A\x0Aimport ffi\x0A\x0A@target(javascript)\x0Apu fn typescript_fi
+\x0Apub fn let_assert_ok_bind_test() {\x0A  let x = ok_one()\x0A  let ssert Ok(x) = x
+er: Apaache-2.0\x0A// SPDX-FileCopyrightext:
+ort gl\xEF\xBD\x9Ceam/io\x0A\x0Apub f m\x00ain(something) {\x0A  io.println(something)\x0A}\x0A
+che-2.0\x0A/// SPDX--FileCopyrightText: 221 The Gleam contributors\x0A\x0Apub type P
+\xEF\xBC\xBE===\x5Cu{{$_~\xEF\xBC\x88*.typeauto
+0.1e-3/x_y//-,0b1
+->fn"str"-.>1 <>\x5Cn
+ome addi_tion
+_11_tt=e
+cense-Identfier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2025 The Gleam contributors
+ _ -> 1\x0A    \x0A}\x0A\x0Apub fn int_gt_1_test() {\x0A
+ghtText: 2025 The@ Gleam contributors\x0A\x0Apubfn tw() {\x0A  "hello 
+(0\x0A}1|..<"
+entifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 20delegate21 The Gleam c
+"L\xD0\xBELucy/;Lucy"\x0A}\x0A
+= 4\x0Aconst  (assert -17 =
+contrib<\x5Cq=utors\x0A
+{\x0A  Nil\x0A\x0A
+\x0A  lett x = <<1:6>>\x0A \xEF\xBB\xBF let as
+<=.e
+" b1
+|>!===?
+a{case}b1fn"str")
+: 05 The Gleam conttributors\x0A\x0Aimport gleam/io\x0A\x0Apub 
+case\xD0\xB00O
+\xEF\xBB\xBFb1 !}
+ The leam contributors\x0A\x0Aimport glam/int\x0A\x0Apub) fn
+//
+ttibutors\x0A
+mport leam/io\x0A\x0Apub fn main() {\x0A  io.println("top level module")\x0A}\x0A
+ as a:ut.0f8,  
+\xE2\x80\x9A>.<>\x5Cu{D800}opaqueletelse\xEF\xBC\x9C0o////\xC3\xA9E
+![x_y_<.0case.1->
+{==1 ,"str"/1case#1__
+1#==:/"|>"str"-_(
+ fn(Int) ->\x0A  IntAas {\x0A  let func = function_int_int_returns_int_alias(1, _)\x0A
+_{( Wibble"#={
+ 
+ello from test)\x0A}\x0A
+ributors\x0A\x0Apub f w
+|>=
+CopyrightText: 2023 The0bGleam contributors\x0A\x0Appub type TypeD {\x0A  ConstructorD(Str
+t gleam/io\x0A\x0Apub fn mmain(() {\x0A  io.pr
+== Peron("Quinn", 28, "USA")\x0A}\x0A\x0Apub fn qualifiied_record_updte_test() {\x0A  let module_box = record_upda
+| ->=>
+0b1_000////||\xE2\x80\x9C@
+ileCopyrightText:  2021 The Gleam contri
+ence\xE1\xB4\xB5_10_test() {\x0A  let a = 5\x0A  let b = 3\x0A  let c = 3\x0A  let d = 2\x0A  let e = 
+ightText: 2018 The Gleam copanicntributors\x0A
+/:#1.5////
+is bug in metadata encoding.\x0A/// https://github.com/
+*01.5
+= {\x0A    let assert importable.NNoFieldss = importable.NoFields\x0A  }\x0A  asert result == importab
+<=.= ]8>1_,>->Wibble
+implement@assert////\x5C\xE3\x80\x82Z\xEF\xBB\xBF0O:\x5C" 
+*->\xEF\xBC\x9C@1_000!
+ort one\x0Aimport one/nested\x0A\x0Apub fn main() {<=\x0A  one.hello()\x0A  |> nested.id\x0A}\x0A
+ int_eq_3_test() {\x0A  let let = 1\x0A  let right = 1\x0A  assert left == right\x0A}\x0A\x0Aub fn int_neq_3_test() {\x0A  let left 
+endas_1_test() {\x0A  let left = [1, ..[]]\x0A  let right = [1]\x0A  assert left == ight\x0A}\x0A\x0Apub fn prepend_2_test() 
+)delegate\x0D\x0A\x5C;\xEF\xBC\x9C//
+==0
+macro.|
+\xEF\xBC\xA0<=.^\xEF\xBC\x88
+\x5Cq\xE2\x88\x951.0e-\x0D\x0Aasserttype\xE2\x80\x99\xE2\x80\x9D.$
+am contributors\x0A\x0Apub type Box(a) {\x0A  Box(tag: S(tring, valu
+[a1.5\xF0\x9F\xA6\x80<>{}//,>
+\x5Cu{110000}123456789012345678901234567890\xEF\xBC\xBE\x0D\x0A-=implement========9auto
+-<>
+contribut0Oors\x0A\x0Aimport project\x0A\x0Apub fn >>>main() {\x0A  project.main()}\x0A
+SPDX--L
+Text: 2025 The Gleam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {\x0A  io.println("This is th\xE2\x80\x9Ae default dev m
+/\xE2\x80\x93x_y\x5Cn x_y
+|..->x_y
+42 []{_.afn/#
+1.0e101\x09|>\x5Cq\x0C]|\xE2\x80\x94
+case\x0A(*_ x_y\x0D\x0A >@fn
+0-\x0D\x0A{0.1e-3/42<>->
+\xEF\xBC\x89\x5Cn!let\xEF\xBC\x9E/.
+xpression_test() {\x0A  l;et&& 
+.<>|>#
+ing() {\x0A  "Jut  ting to export"\x0A}\x0A
+|>|0!\x0A /42\x5Cu{1F600}1.5
+)pache-2.0\x0A// SPDX-FileCopyrightText: 2018 The Gleam contributors\x0A
+>.!1.5
+\xEF\xBB\xBFecho>>>>>>>\x09/.-.///-=%/.
+am contributors\x0A\x0Apub fn somethig() {\x0A  "J>ust a thing to expor\x0Ct"\x0A}\x0A
++\x09<=2%=1.0e10~/=1_000'a|>
+\xCE\xBB\xF0\x9F\xA6\x80\xC3\xA9.++<=.\xEF\xBC\x88\xEF\xBC\x8Ctest\x0A~\xE2\x80\x93
+assert !False == True\x0A}\x0A\x0A_discard// This would crash if the right hand side evaluated\x0Apub fn 
+~Wibble.==\x5Cu{\x00let\x0Dcase-
+ {\x0A  lcaaseet func = functio_i
+n(){\x0A  \x5Cu{Nil\x0A}\x0A
+  )fnx_y
+Int)\x0A}\x0A\x0Apub fn record_with_construcctor_as_field_can_be_built_on_js_with_Fno_crash_test() {\x0A 
++42==Wibble\xE2\x80\x99
+[\x7F{!)let<\xE2\x80\x8B
+rt "http:" = location.protocol\x0A  let assert "localhost:8080" = locatioon.host\x0A  let assert "localhost" = locatio
+a \x0A*//a
+021 The Gleam contributors\x0A\x0Aimport gleeunit\x0A\x0Apubfn main()
+Wibble-42x_y
+am contributors\x0A\x0Appub fn main() {\x0A\x0A  "Hell
+Wibble[fn=======///@[0\xEF\xBC\xBE<.>.\x5Cu{}
+..+0?|)Wibblex_y@(
+{ ">[#\x0A
+->\xEF\xBC\x9C\xEF\xBC\x88\x5C"<<<>=
+1, 2, ..[3, 4]]\x0A  llet riht = [1, 2, 3, 4]\x0A  a
+&0.30000000000000004
+ub fnhello() -> String {\x0A  "Hello"\x0A}\x0A
+|>42.. \xEF\xBC\xBD
+"_")\x0A}
+\x0A\x0A
+SPDX-License-Identiier: Apache-2.0\x0A// SPDX-FileCopyrightTopaque
+>>>\xEF\xBD\x9Cconst!
+// SPDX-FileCopyrightText: 2023 The Gleam contributors\x0A\x0Aimprt ggleam/bitwise\x0A\x0Apb fn main()
+DX-License-Identifier: pche-2.0\x0A// SPD
+\xE2\x80\x94\xE3\x80\x82\xD0\xB5
+println(erlang_function())\x0A  io.printn(elixir_function())\x0A  io.println(another_elixir_funct
+PDX-FileCopyrightText: 2023 The Gleam contribtors\x0A\x0Aimpo
+t result = {\x0A    let importable.NoFields = importable.NoFields\x0A  }\x0A  assert result == impoortable.NoFields\x0A}\x0A\x0Ap
+echo\x5Cu{110000}
+case"str"<|>//// \x0A#1@)"
+g {  onee.helloo()\x0A}\x0A
+ub fn ebar3_dep_function_test() {\x0A  iio.pr
+\xD0\xBE===\xEF\xBD\x9C123456789012345678901234567890123456789012345678901234567890\x5Cn'\xEF\xBC\x89@7\x09\xE6\x97\xA5\xE6\x9C\xAC
+PDX-"License-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2020 The Gleam
+\x0D\x0A(}#
+d\x0A\x0Apub type TypeB {\x0A  ConstructorB(contained: projectt_d.TypeD, name: String)\x0A}\x0A\x0Apub fn new(contained, name) {\x0A   Const
+} |420let0->/]
+m ontributors\x0A\x0Apub fn hello(() -> String {\x0A  "Hello"\x0A}
++ y\x0A0.1e-3===
+er: Apache-2.0\x0A//// SPDX
+-Identifiier: Apache-2.0\x0A// SP\xD1\x80
+ {\x0A      llet  x =
+ir_lixir_message() -> Sttring\x0A
+opaque<.
+-Fi>>>>>>>
+0b1.7976931348623157e308\xE3\x80\x821.0e-+.F\xD0\xB0\xEF\xBC\x9A
+.0\x0A///  ^SPDX-
+let,1.5.{
+\x00implement===\xD0\xB0 auto<<<\x0D\x0Atesttodoauto
+=(|.x}_1.5
+utors\x0A\x0Aimport gleam/bitwise\x0A\x0Apub fn min() {\x0A  bitwise.and(1, 2)\x0A}
+() =*.= two.main()\x0A}\x0A
+, -1.375e5:32-float-big>>\x0A  let right = <<91, 153, 1200, 255, 229, 205, 160, 232, 25, 0, 200, 24, 0:3
+est -> rest\x0A      _, _ -> "othr"\x0A    }\x0A  }\x0A\x0A  ssert go(Ok(Err
+!42<>0_Wibble<
+}, @b1.. <<<!\x0A<-
+ionnerror\x0A+}\x0A
+fier: Apache-2.0\x0A// SPDX-FileCopyrghtText: 2018 The Gleam contributors\x0A\x0Apub fn ma
+]\x0A-.>-=!
+:[let+=0B\x0A.0x-1_000>= 
+\xEF\xBC\x88<<<1234567890123456789012345678901.0\x5Cu<.<.\x5Cnas++-.\xF0\x9F\xA6\x80
+\x5Cu{1234567}-*@\x5Cn\xD1\x80%=
+)\x5Cn\x0D\x0A1"str"case@
+// SSPDX-FileCopyrightText: 2019 The Gleam contributors\x0A\x0A\x0A\x0A
+rson.\x5Cu{D800}agge 1.0e10+ 1)\x0A}\x0A
+h_args_on_position_test() {\x0A  let Cat(x, y) = Cat("fluffy", 10))\x0A   assert #(x
+fn}//\x0A->0\xE2\x80\x98
+19 The Gleam contributors\x0Apub fn add(a, b) {\x0A  a + b\x0A}\x0A\x0Apub fn main() {\x0A  1\x0A  |> add()\x0A}}\x0A
+SPDX-ice
+\xE3\x80\x81+=\x5Cu
+|>;;><=.\x09<=.1.0e-..F\x0C
+ifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2026 The Gleam contributors\x0A\x0Apub fn negation_tre_test() {\x0A  assert !True 
+mport gleam/io\x0A\x0Apub fn main() {\x0A  io.println("Hello f-rom shipment test!")\x0A}\x0A
+x>,00Ocasecase
+ada")\x0A  let apply = fn(a, f) { f(a) }\x0A  assert apply(person, f/n(x) 
+\x5Cu{fn 0x1.0e400="\xEF\xBC\x88>)
+a>71.5
+|1.x@0let.////
+-IIdentifier: Apache-2.0\x0A\xEF\xBC\x9A/ SPDX-FileCopyri
+se-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2026The Gleam conn\x5Cutributors\x0A\x0Aconst const_int = 
+fn-.0B_discard&\xEF\xBB\xBF0o>>
+uor\x0A\x0Aimport gleam/?
+t,0b that wwouldd be rejected as well!")\x0A}\x0A
++= let:e=*
+Apache-2.0\x0A// SPDX-File7CopyrighText: 2023 The Gleam contributors\x0A\x0Aimport prject_d\x0A\x0Apub type TypeC {\x0A
+S\x5Cu{1F600}tring)\x0A}
+|>}!,,
+fault readme doesn't get pulished.\x0A///\x0Apub fn main() -> Nil {\x0A  greeting()\x0A  first_line()\x0A  -=second_line()\x0A}\x0A\x0Afn g
+ "JJust a thing to exppot"\x0A}\x0A
+>>\x0A  assert left == right\x0A}\x0A\x0Apub fn bit_array_eeq_3_test() {
+ort projeccaset_d\x0A\x0Apub type TypeB {\x0A  ConstructorB(contained: project_d.TypeD, name: Strin
+b fn uZtf8_uicode_escape_test() {\x0A  let left = <<"\xF0\x9F\x98\x80":utf8>>\x0A  
+->>.echo.."[let
+//...=#\x0D\x0A{=="
+assertlet<<<let+./.
+"\x0A}\x0A
+ssert #(value, second, last) == #5, 8, 28)\x0A}\x0A\x0Apub fn dynamic_size_3_test() {\x0A  let size = 2\x0A  let assert <<fir
+e-2.0\x0A// SPDX-FileCoprightText: 2021 The leam contributors\x0A\x0Apub fn hello_world() {\x0A  let x: Int = "Eh"
+(/.0(let(fn]}}}
+ co11ntributors\x0A
+X-Lcense-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2020 The Glea?m contributors\x0A\x0Apub fn hello) 
+= <\x09<0x3c, 0x01>>\x0A}\x0A\x0A
++[[=="123456789012345678901234567890.
+]
+ te++st!")\x0A}}\x0A
+t() {\x0A  assert 1 - 1 == 0\x0A}\x0A\x0Apub fn lex_2_est() {\x0A  let a = 1\x0A  ass1.0e400ert a - 1 == 0\x0A}\x0A\x0Apub fn lex_3_tes
+itwi\xE3\x80\x82se.ad(1, 2)\x0A}\x0A
+\x0D\x0A\xC3\xA9# "str"1.5a1.5/
+ageopaque())\x0A}\x0A\x0A@external(erlang, "project_ffi", "log")\x0A@external(javascript,
+E!"str"//\x0C}
+:\x0A]a+
+-"str"#
+|>/(<#/.
+e i {\x0A    0 -> Nil\x0A    _ -> count_down(i - 1)\x0A  }\x0A}\x0A\x0Afn taiil_recursive_accumullate_down(x, y) {\x0A  case x {\x0A    0 -> y\x0A 
+he-2.0// SPDX-\x0D\x0AFileCopyrightText: 20019 The Gleam contributors\x0A
+8 Thee Gleam cotrfibutors\x0A
+Wibble_
+vasript, "./ffi_javascript.mmjs", "append")\x0Apub fn append(a: String, b: String) 
+roject\x0A\x0Apub fn ma<-in() {\x0A  pproject.main()\x0A}\x0A
++_,/// };#
+==test/}/======= \x7F+."
+@0X,
+const as
+/* //a.}
+at(x, cutee\xEF\xBC\x9Ane
+implement1.0e400,
+// SSPDX-i
+ibutors*.\x0A\x0Appub fn one() {\x0A  "hell
+alse_test() {\x0A  assert !False == True\x0A}\x0A\x0A\x0A// This w_
+(==case>
+<1.5\x0D\x0A++1.51
+b fn main(8) -> Nil\x0A
++**..+"a!
+Liccense-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightTex: 2023 The Gleam contributors\x0A\x0Apub type TypeD {\x0A 
+tText: 2025 The Gleam contributors\x0A\x0Aimpport gleam/
+b1==(|> #\xEF\xBC\x9Ab1<..
+||<<<{Z\xEF\xBC\x9E
+\xD0\xBEZ<<<type+=
+pub
+ileCopyrightText: 2021 The Gleam contributors\x0A\x0Aimport project\x0A\x0Apub fn mmain() {\x0A project.main()\x0A}\x0A
+\x0A// SPDX-FileCoppyri
+>*f_case->echoa..{ +
+/199*=1\x0Apub n block_scoping_test()) {\x0A  let x = 1\x0A  let _ = {\x0A    let x = 2
+  l1et assert "ab" <> rest = "abcdef"\x0A  assert "cdef" == rest\x0A}\x0A\x0Apub\x5Cu{D800} fn concat_block_single_test() {\x0A\x0A  let nam
+@\xC2\xA0\xE2\x80\x98
+0\x0A// SPDX-File\xE2\x80\x9CCopyrightText: 2026 
+=fn<>_\xE2\x80\x991.0elet
+=+_\xE3\x80\x8242=}#
+1 = | x\x0A}\x0A\x0Afn
+>=#\x5Cu{1F600}\xD0\xBE
+[<>=-@
+//
+?\x09type\x7F]*.-=Wibble\x5Cu{110000}implement\x00
+2fn\xEF\xBD\x9C{\xE2\x80\x93
+tn(elixir_ees
+ense-Ientifier: AApache-
+1x_y"/\x5Cu{"str"42=-test-
+1.5=>
+\xC3\xA9<<<<<<<1.0eecho\x5Cu{110000}-<.\x5Cu{\xEF\xBC\x89<<
+ int.is_even(4)\x0A\x0A  // This sho_uld short-circuit so 
+>.\x0A  project.main()\x0A}\x0A
+ction() -> Strng
+{&!
+t
+The Gleam contributors\x0A\x0Apub fn hello\x5C() -> String {\x0A  "Hello"\x0A}\x0A
+Empty((b)\x0A  Emptyy\x0A\xEF\xBC\xA0}\x0A
+)\x0D\x0A42}0,Wibble!Wibble<
+2\x5Cu$\xEF\xBD\x9C1.0e400<<\xEF\xBC\x9A===\xE2\x80\x8B
+() {\x0A  assert 1 - 3 == -2\x0A}}\x0A\x0Apub fn 
+#"\x0D\x0A <> 
+fn-=!\x5Cu{1F600}if0X==F<<
+->\x5Cu{D800}derive\xE2\x80\x9A,test\x5Cu{7
+todo\xEF\xBC\x9A\xE2\x88\x95
+ 
+= 3\x0A  let b = -{ -a }\x0A  assert  == b\x0A}
+<>/
+ ==..|>[:..a\x0D\x0A|>
+.//!fn1.5
+Nil\x0A  assert leeft == right\x0A}\x0A
+\x0D\x0A_(*@#!0"str"
+><>
+\xE2\x80\x941__0panic\xEF\xBC\xBB\xC3\xA9
+\xE2\x88\x95ted
+\x0D:>
+ypeD {  Constructo
+0b_[| 
+========
+License-Identifier: Apache-2.0\x0A\x0A// SPD
+[1, 2, 3]1\x0A  assert left == right\x0A}\x0A\x0Apub fn prepend_4_test() {\x0A  llet left = [1, 2 ..[3, 4]]\x0A  
+ )_-1fn1
+\xE2\x88\x97\x5C/.\xE2\x80\x9A/..*.*.if\xEF\xBD\x9C
+<>.
+ernal(erlang, "erlang_est_filee", "main")\x0A\x0Afn erlang_function() -> String\x0A\x0A@external(erlang, "
+., :_b1Wibbleb1
+cod========e so thaat 
+b fn typescript_file_included_teest() {\x0A  leet path = "./build/dev/erlang/language/_gleame_artefacts/ffi_types
+<
+\xEF\xBC\x89\xEF\xBC\x9Cfn\xEF\xBD\x9Cuse1.7976931348623157e308(
+: Apache-2.0\x0A// SPDX--FileCopyrightTe\x5Cu{110000}xt: 2019
+: A\xC2\xA0pache-2.0\x0A// SPDX-FileCopyrightText:1_000 2021 The Gleam contribut\x5Cors\x0A\x0Aimport proj
+xt: 2018 The 
+ 2018 The Gautoleam contributo\xE2\x80\x9Crs\x0A
+b11.5/x_y=let>>>>>>>@==x_y"|>
+t_array == <<97, 98, 99>>\x0A}>>>>>>>\x0A\x0Apub  fn literal
+-.*.\xF0\x9F\xA6\x80==\xEF\xBC\x88fnif==-=
+r.ElixirFiileAgain", "main")\x0Afn another_elixir_function() -> String\x0A
+ caseassert left. == ight\x0A
+t, country: "USA", age: past.age + 1)\x0A  assert pesent == Persn
+nse-dentii
+ext: 2021 The Gleam c\x5Cu->{ontributors\x0A\x0Aimport gleeunit\x0A\x0Apub fn main()  
+{(_{
+==|==>_
+butors\x0A\x0Aimport one\x0Aimport two\x0A\x0Apub fn test_() -> Bool {\x0A  one.helo() == tw||o.main()\x0A}
+..-
+<\xEF\xBC\xBE1.0
+b1{]/==
+//case](<//),a
+(1.5panic1test 
+\x0Apub fn main() {\x0A  asert int.add(4, 5) > int.absol
+Wibble0,\x0A1.5
+x_y-<>0\x0D\x0A
+ssues/1214\x0A// ttps://giithub.com/glleam-lang/gleam/issues/1
+"./project_ffi.mjs", "location")\x0Afn location() -> Location\x0A
+-.wobble`delegate0
+"
+delegate %=."str"0++#_E 
+1.5#0->|. 
+a \x0D\x0A1.5case#
+.<#_ ->@\xEF\xBC\x8E Wibble
+//<*let>1.5let0->42
+ fnn main() {{\x0A 
+n false(() -> Bool {\x0A  False\x0A}\x0A
+\x5Cu{tEmpty
+sse1__0rt 1\x0A    == case Nil {\x0A      _ if float_\xEF\xBC\x9Azero >=. \xE2\x80\x94float_one -> 0\x0A      _ -> 1\x0A 
+>=letlet/1.0e10\xE2\x80\x9Cpub\xEF\xBB\xBF\xEF\xBC\xBD=======
+0.30000000000000004
+(////{+fn"\x0A/=
+  Nil\x0A
+\xEF\xBC\xBD1.0e"">>*=1__0\xD0\xB51.0e-0x\xC2\xA0
+}
+ifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2024 The Gleam contributors\x0A\x0Aimport nes//ted/submodule\x5Cu\x0A\x0Apub fn
+iccense-Identii
+_discard#]:test\xD1\x80+.|!\xE2\x80\x99_discard++
+aavasccript, "./submodule_ffi.mjs", 
+ Apache-2.\x0A// SPDX-FileCopyrightText: 2021 .The Gleam contributors\x0A\x0Apub type ShadowP-er
+(Strig)\x0A}\x0A
+0X\x5C"1.>=\xEF\xBC\x9E\xD1\x80
++=/[=[}/let
+\x0A:])0+*"str""str"42==-
+\x00\xE2\x80\x8B.;
+////1.0e-
+type%=\xE2\x80\x98..\x09[
+world_est) {\x0A  1\x0A  |> should.\xEF\xBC\x9Aequal(1)\x0A}\x0A
+true()\x0A  let y =  echo
+he> Gleam contrib<.utors\x0A\x0A\x0A
+at, String, cuteneess: Int)\x0A}\x0A\x0Apub fn matching_sec8ond_labelled_arg_as_first_test() {\x0A  let Cat(
+FileCopyrightText: 2025 The Gleam contributors\x0A\x0Aimport gleamacrom/int\x0A\x0Apub fn main() {\x0A  assert int.is_even(47\x5Cu{1F600})\x0A}\x0A
+dentifier: A\xEF\xBC\xBEpac\xE2\x80\x9Dhe-2.0\x0A// SPDX-FileCopyrightText:2021 
+/project_*ffi.mjs", "log")\x0Afn pa>>>>>>>
+;\x5Cq
+#!|><
+ true()\x0A  let result  case x, y {\x0A    x, y if x == y -> 1\x0A    _, _ -> 0\x0A  }\x0A  assert reesult == 1\x0A}\x0A\x0Afn true() -> Boo
+!=)\xD0\xB5\xE2\x80\x9DWibbleuse<=.<<<<<<<<
+_-
+ .
+ileCopyrightT|>ext: 2021 The Gleam co\xE1\xB4\xB5ntributors\x0A\x0Apub fn id(a) {\x0A  a\x0A}\x0A\x0A
+!-.0O<>x_yF=
+##1__00{->
+e\x0A\x0Apub fn main()7 -> String {\x0A  one.hello()\x0A}\x0A
+\xEF\xBC\x88
+\xEF\xBC\xBEZ\xE2\x80\x8B<<=_if\xEF\xBC\x9Atest
+x_y\xD1\x80! <@}fn&&42
+[
+ahe-2.0\x0A// SPDX-FileCopyrgh
+}\x0A\x0Apub fn size_64_max__safe_int_variab
+)\x0A  assrgt sha
+ier: Apache-2.0\x0A// SPPDX-Fi
+e_xpot"\x0A\x0A}\x0A
+:\xE2\x80\x93\x09pub%=123456789012345678901234567890panic-.!=E;*.
+Aa>>>>>>>che2
+  
+&casea0#"str"*._ //
+X-FileCopyrightText: 2026 T1.00.30000000000000004he Gleeam contributors\x0A\x0Aimport package_a\x0A\x0Apub fn main() {\x0A  package_a.
+SPDX-License-Ideentifier: Apacxhe-2.0\x0A// SP\x09
+d_line() {\x0A  io.println("for a default main project, that would be rejected as well!&")\x0A}\x0A
+d call it\x0A// f\xE2\x80\x8Brom Erlang, or build this package for Erlang, then the compiler will\x0A//(should) emi an error.\x0A@exter
+= r\xEF\xBC\xA0ight\x0A}\x0A\x0Apu fn ecord_ok
+er: Apache-2.0\x0A// SPDX-FileCopyrghtText: 2025The Gleamcon
+\x5Cu{110000}\xC2\xA04.9e-324E\x0D\x0A<=\xE1\xB4\xB58\x5Cu{1F600}%<
+int.add(8, 12) >= 20\x0A  asset booEl.negat(False) && re
+o.println("Hell from tes/")\x0A}\x0A\x0A
+-<.|*
+))\x0A\x0A  assert in\xEF\xBC\x8Ct.add(5, 6) == 11\x0A  assert int.add(1, 4) < 9\x0A  assert int.add(8, 12
+=== *
+`"str"} : @42
+\xEF\xBC\x8C\xEF\xBC\x8C
+( Wibblex_ylet \xE2\x80\x9D)\x5C..7 
+_tuple_item_test() {\x0A  let tup = ##(5, #(6, 7>=, #(8))))\x0A  assert  tup.0.1.2.0 =
+fn||========\xE3\x80\x811.wobble]%=\xE2\x80\x9A1.7976931348623157e308>
+..|>\x0A
+icense-Idenntifier: Apache-2.0\x0A// SPDX-FileCopyrightTex\x09t: 2026 The Gleam contributors\x0A\x0Aimport glea\x5Cu{1234567}m/io\x0A\x0A/// This tests 
+e|>p_function() -> Dynamic\x0A\x0A// Testing for this bug in metadata ncoding.\x0A// https://gi\xD0\xB0t
+he-2..0// SPDX-FileCopyrightText: 0
+License-Ientifier: Apache-22.0\x0A// SPDX-FileCopyrightText:8 2023 The Gleam contri
+gleeemacrounit.main()\x0A}\x0A
+b fngleam_error_test()) {\x0A  let 
+...\x0A42<>|(x_y(=case"str"
+8 he Gleam contributors\x0A
+ "cdef" == rest\x0A}\x0A\x0Apub fn concat_block_single_test( {\x0A  let name = id("Lucy")\x0A  let result
+#,}\xD0\xB01.5b1| letimportb1
+Gleam contributors\x0A\x0Apub fn helloo() 
+let -" @!\x0D\x0A421
+ain")\x0Afn  elixxir_
+0
+DXX-FilleCopyrfni
+\xEF\xBB\xBFuse%=\xE2\x80\x8B)
+to exp_ort""\x0A}\x0A
+=_discard\xEF\xBC\x9A*={++1.0e101_:as
+<>.\x0A,b1 
+n erlaang_function() -> String\x0A\x0A@externa(erlang, "|>Elixir.Elixi
+:/Wibble}._\x5Cu{}x_y,>x_y 
+}\x0A\x0Apub fn hex_int_est() {\x0A
+<>1_000
+rt id("") == id("")\x0A}\x0A\x0Apub fn newlines_equal_test() {\xCE\xBB\x0A  assert id(\x0A      "\x0A"",\x0A    )\x0A    == id(".\x5Cn")\x0A
+panicWibble
+1.7976931348623157e3081.panic\xD0\xB0+=\x5Cq<.|*.
+ ))\x0A}
+DX-License-IIdentifier: Apache-2.0\x0A// SPDX-FileCop\xEF\xBC\xA0yrightText: 2025 The Geam contributor
+)<=<\x0A'\x5Cu{110000}1.5"else)
+pt_file_included_test() {\x0A  let path = "./buiild/dev/javascript/language/ffi_typescript.ts"\x0A  \xEF\xBC\xBEassert ffi.file
+ 2021 The Gleam contributors\x0A\x0Aiimport one\x0A\x0Apub fn main() -> String {\x0A  one.hel
+\x00case&&0O\xD1\x80else%=<><=======#<.
+    2\x0A    |> triplet(z: 3,  x:== 1)\x0A  assert #(1, 2, 3) == result\x0A
+\x0Apub fn record_with_co\xF0\x9F\xA6\x80nstructor_as_
+!-b1\xEF\xBD\x9C)
+\x0D\x0A==="42:
+al(j\xD0\xB0avascript, "./nested/submodule_ffi.mjs"
+-1.5*0Wibble
+am contrib=utors&\x0A\x0Apub fn main() {\x0A  NNil\x0A}\x0A
+[1[ ,<< Wibble\xE2\x80\x93fn"\xD0\xB0
+DX-Licene-Id
+0\x0D\x0A1.5..<#<"{|.+
+'as%=[\xD1\x80~@/=
+1_000 "4.9e-324'
+case :{*>>>>>>>"str",#"str"<
+:<<<<<<<<.\x5Cq>>>\xE2\x88\x95const\xEF\xBC\x89%=\xE2\x80\x8B
+ier: Aache-2.0\x0A// SPDX-FileCopyrightTextt: 202\xF0\x9F\xA6\x806 The Gleam contributors\x0A\x0Apub fn negation_true_test() {\x0A  assert !True ==
+o()\x0A  |> nested.id<-\x0A}\x0A
+\xE2\x80\x9C0.30000000000000004:\xE2\x88\x95\xEF\xBC\xBE%\xE2\x88\x97\xD1\x80
+?!4.9e-324\xE2\x80\x8Btodo!+>=.\xD1\x80*.
+[* {=={
+\x5Cu{1234567}=Z+7+,1<>\xF0\x9F\xA6\x80
+<.<1.5)<<<<<<<\xEF\xBC\xBE==-//=
+~1
+\xE2\x80\x94Wibble\xEF\xBC\x9E\xE1\xB4\xB5<=.-+.<<\x5Cu{\xEF\xBC\xA0||
+DXFileCop>>
+PDX-FilCopyrightText: 2021 The Gleam contributorss\x0A\x0Aimport gleam/dynamic.{typ
+\x0A  let result =\x0A     100\x0A    |> i
+ors\x0A\x0Aimpgort gleaaam\x0A\x0Apub fn gleam_ok_test() {\x0A  let left = Ok(1)\x0A  let 
+d(1, 2)\x0A}
+nt) {\x0A  fuunction_shadowed_by_own_argument()\x0A}\x0A\x0Apub f0on ten_million_recursions_doesnt_ovverflow_the_
+ let assert <<a:float-16-little>> = x\x0A  as=sert a = -65_504.0\x0A}\x0A\x0Apub fn match_16_test() {\x0A  let x = <<1>>\x0A  let as
+ 
+7, 25, 1:12, 1:2>>\x0A  assert left == right\x0A}\x0A\x0Apub fn uunaligned_8_te
+fn\xEF\xBB\xBF\x0A
+"Qui\xE2\x88\x95n", age: 2, co
+name <> { "/" } <> name\x0A  assert result == "Lucy/Lucy"\x0A}\x0A\x0Apub fn concat_block_multiple_test() {1__0\x0A  let name = id("Lucy")
+0.1e-32g\xE2\x80\x9C}\xE2\x80\x94\xE2\x80\x93\x5C"+=
+\x09^;->>///<=
+yrightText: 202/=4 The Glea>.m contributors\x0A\x0Apub fn main()
+() -> String {\x0A  ""Hello"\x0A}\x0A
+ext: 2018 The Gleam contributorswobble\x0A
+"==x_y[-" #/\x5Cqcase\xEF\xBC\x9A
+1 fn}/..["str"-.
+#]\x0A 1
+lo\xE6\x97\xA5\xE6\x9C\xACat-big>>\x0A  let right = <<91, 153, 1120, 255, 229, 205, 160, 232, 25, 0
+>=0.30000000000000004<>:]F\xEF\xBC\x89<>..\xE2\x88\x97let
+1_000panic\xD0\xBE\xF0\x9F\xA6\x80
+=
+utors\x0A\x0Aimport gleeam/io\x0A\x0Apub fn man(something) {\x0A  io.println(som
+|>":Z\xE2\x80\x98}f]\xE2\x80\x8B
+|case
+// SPDX-Licene-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 208 The Gleam c
+s\x0A1.7976931348623157e308\x0A\x0A
+== importable.NooFields\x0A}\x0A\x0Apub fn n
+////\xEF\xBC\x8C/=\xD1\x801.0*.1.01.\x5Cu{D800}-.
+X-License-Identtifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 20O025 The Gleam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main(
+tTText: 2020 The Gleam? contributors\x0A\x0Apub type Box(a) {\x0A  Box(tag: String, value: a)\x0A}\x0A
+ asser\xEF\xBC\xBEt #(z, y, x) == #(5,
+b fn main() {\x0A  io.println("Hello fom shipment t>>>est!")\x0A}\x0A
+ left \x00= Ok(1)\x0A  let right = gleam.Ok(1)\x0A  assert left
+DXLicense-Identi!=f
+ SP.DX-F_ileCopyrightText: 2023
+;todo////~\xEF\xBC\x8C\x0Cassert\xE2\x80\x93
+e-2.0\x0A// 0bSP<-DX-FileCopyri
+CopyrightTxt: 2018//// The Gleam contributors\x0A\x0Apub fn main() {\x0A  Nil\x0A}\x0A/.
+"str"*1.5=\x0A
+//
+) {\x0A  println("Hello, from project_javascript!")\x0A}\x0A\x0A@external(erlang, "erlang", 
+>>>>>>>\xE2\x80\x8B
+r:: Apache-2.0\x0A/opaque SPDX-FileCopyrightTe
+ (|>f-\x0D\x0A->
+)//1.5"str"+,")\x0A 1.5 
+e Glam contributors\x0A\x0Aimport ffi\x0Aimport gleam/bit_array\x0A\x0Apub fn 
+tors\x0A\x0Apub fn one(>>)  {\x0A  "hello from one!"\x0A}\x0A
+The Gleeam contribuutors\x0A
+.\xF0\x9F\xA6\x80/.-0 =//1_000\x00=======
+-\xEF\xBC\x89
+ontributors\x0A\x0Aimport roject\x0Apub fn main() {\x0A  project.main()\x0A}\x0A
+{>+
+=<><// )0=_\x0D\x0A1.5.
+m/issues/1991\x0Apub fn block_scoping_test() {\x0A\x0A  let x = 1\x0A  let _ =\xE2\x80\x98 {\x0A    l[et x = 
+4.9e-324////\x5Cu{110000}
+   m\x0A     }\x0A    }\x0A    m\x0A===  }\x0A\x0A  assert result == 1\x0A}\x0A\x0A// https://github.com/gleam-lang/gleam/issues/6212\x0Apub fn patte
+eaam contributors\x0A\x0A
+<>"str"Wibble
+ let _ = {\x0A    le
+\x0D\x0AWibble|1.5.
+) -> String {\x0A  one.hello()todo\x0A}
+ibutors\x0A\x0Aimport gleeam/io\x0A\x0Appub fn main() {\x0A  io.Wibbleprintln(
+lety =
+ense-Identifier: Apache-2.0\x0A// SPDX-FileC)opyrightText: 2021 The Gleamtype co
+'<<<<4.9e-324
+-> 1\x0A    }123456789012345678901234567890\x0A
+!aa"str"
+.0\x0A// SPDX-FileCoyrightText: 202\xE2\x80\x941 The Gleam contributors\x0A\x0Apub type Pot\x0A
+ *. -4.0 == -8.0\x0A}\x0A\x0Apub fn precedence_1_test() {\x0A  1assert 2.0 *. 2.0 +. 3.0 == 7.0
+\x0A\x0Ap\xE2\x80\x94ub fn oderivene() {\x0A  "hel/=lo
+!=\xE2\x80\x99\xD1\x80
+\x0A}\x5Cu{1234567}\x0A
+}\x0A\x0A\x0A
+ String,\x0A    pathname:\x5Cu String,\x0A    search: String,\x0A    hash: 
+addition_1_test() {\x0A  asset 0.0e0 
+on of nested modules\x0A\x0A// SPDX-License-IdeWibblentifier: Apache-2.0\x0A// SPDX-File
+>=.&&-.^1.7976931348623157e308/=^>\xE6\x97\xA5\xE6\x9C\xACpanic1.0e10\xEF\xBC\x9C
+:..\x0A[",:->
+\xE2\x80\x94import|>1.0e400\xE2\x80\x8B
+e) && result.is_ok(Error(.81))\x0A}\x0A
+macro<.!=\x0DZpanic\xEF\xBC\xBE0X
+b1"+* |:|=#|>
+)
+\xEF\xBC\x88*.0X1_000constE
+case_|>caselet)!
+x\xD0\xB0>\xE3\x80\x82->const1.0e101_000import=
+fn..//
+:|++else\x7F..!|>
+|.)(9\x5Cu{}<>42:a0O+
+r: Appache-2.0\x0A// SP
+  "Hello"\x0A}}\x0A
+ache-2.0\x0A// SPDX-FileCopyrightText<=.: 2021 The Gleam contributors\x0A\x0A\x0A
+Person(..past, country: "USA", age: past.0Xage + 1)\x0A  assert present == Person("Quin
+-> 0\x0A      _ -> 1\x0A    }\x0A}\x0A\x0Apu|>b fn int_lte_1_test() {\x0A  let int_zero = make_int_zero()\x0A  let int_one
+\x0A}\x0A\x0Apub  fn remainder_8_testtest() {\x0A  assert 13 % -3 == 1\x0A}}\x0A\x0Apub fn 
+m contributors\x0A\x0A\x0Apub fn something(() {\x0A  "Just  a thing to export"\x0A}\x0A
+nt_zero == 1 -> 0\x0A      _ -> 1\x0A    }\x0A}\x0A\x0Apub fn con>.st_ok_test( {\x0A  let 
+g}\x0Aimport gleam/io\x0Aimport gleeunit\x0A\x0Aimport project\x0A\x0Apub fn main() {\x0A  pr
+fi", "main")\x0Ap;ub 
+import42\xC3\xA90let>:b1(
+it_array(a: BitArray) ->.. Icasent\xF0\x9F\xA6\x80\x0A
+ =#("he
+[==0>
+->.-7\xEF\xBC\x8Ea4242@//1.0e10,
+bb, 0xb4>
+\x0A4.9e-324
+5 The Gleam contributors\x0A\x0Ap:ub fn two() {\x0A  "hello
+oject_d.TypeD)\x0A}\x0A\x0Apub fn >=new(str) {\x0A  ConstrucctorC(project_d.ConstructorD(str))\x0A}\x0A
+1.0..letcaselet}1.5=(#
+a\xD0\xB0&<=.\x00
++,\x0A ,#@}_a
+"str""#[
+y2 == #("fluffy", 10, 00)\x0A}\x0A
+__tuple = #(("hello", 0)\x0A\x0A///
+}//\x0A
+\xE2\x80\x991.0\xE2\x80\x931.0e-\xE2\x80\x94==\x5Cu{}..9
+SPDX-Fi\xE2\x80\x9AleCopyrightTextt: 2023 Th Gl
+const\xE3\x80\x82&&->\x5Cu{assertelseopaque\x5Cn
+let   n(x) {\x0A    
+//]#<]"str"*Wibble/<}
+eam contributors\x0A\x0Aimport gleeunit\x0A\x0Apub fn main() {\x0A  gleeeuni2t.main()\x0A}\x0A
+ AlmostFul(a, c)\x0A  AlmostEmpty(b)\x0A  Empty\x0A}\x0A
+ Gleam contributors\x0A\x0Apub fn ne() {\x0A  "#ello from one!"\x0A}\x0A
+ The Gleam conntribt========ors\x0A\x0Aim
+pyrightText:: 2021 The Glleam
+e-2.0\x0A// SPDX-FileCopyrightText: 2021 The Gleam contributors\x0A\x0Apb fn hello_world() {\x0A  
+ VariantC(project_cmacro.new("thing"))\x0A}\x0A\xEF\xBC\x88
+.id\xE3\x80\x81\x0A}
+.==>-# :{a"str"x_y
+lpub^o,
+..:letlet//\x0D\x0A>[
+>==-=*..->\xEF\xBC\xBD1
+ \x5Cu{D800} ShadoowPerson(age: Int)\x0A}\x0A\x0Apub fn celebratebirthday(pe
+<-/=|\x5Cqx_y
+ fn oe() {\x0A  "hello from one!"\x0A}\x0A
+\xEF\xBC\xBEf0Oderive\x5Cu{1234567}
+: Aache-2.0\x0A// SPDX\xEF\xBC\xBB-Fi
+#
+<>x_y!_[=@ <
+, y) {\x0A  x + yy<<<<<<<\x0A}\x0A
+a7\x0D\x0A\xEF\xBC\xBB
+t project\x0A\x0Apub fn main(}) {\x0A  project.mmain()\x0A}\x0A
+xternal(erlang, "erlang", "display")\x0A@ext\x5Cu{}ernal(javascri
+-{11.5
+on is only implemented for Erlang, so ifwe try and call it from\x0A// JavaScript, or
+     "a" <> _, _ if y >  3 -> 2\x0A      _, 0 -> 7\x0A      "ab" 
+b1fn~)case:}\xEF\xBC\xA0 *]\x5C
+"let\xEF\xBC\xA0
+_\xEF\xBC\x9Eimport <test
+1.5===>=|b1->b1 \x0D\x0A|>|>|
+?!='//"^\x09/_>1.0e
+llo(\x0A}\x0A->
+istaken")\x0A}\x0A\x0Afn second_line() {\x0A  io.println("for a d\xEF\xBD\x9Cefault main project, t
+\xEF\xBC\x9Aimplement>>+.
+t left = Erro/.r(1)\x0A  let rightass1.ert = gleam.E
+adme!")\x0A}\x0A\x0Afn first_\x5Cu{D800}line() {\x0A  io.println("Here 
+_update.Box(""a", 5)\x0A  let updated = record_update.Box(..module_box, value: 6)\x0A > assert upda
+casefn/)assert {42+
+\x0A  4///.2:floa*t,\x0A
+16_from_bit_arraay")\x0A@external(javascript, "./ffi_javaechoscrript.mjs", "readUint16FromBitAr
+>.:panic"str"==,[{
+port gleam/io\x0A\x0Apub fn main() {\x0A  io.println("top level modu*le")\x0A}\x0A
+\x7F==|>\xD0\xB0\x0Ax_y\x0D\x0A 
+\x0A  assert 11 == 1 + 2 * 3 + 4\x0A\x0A\x0Apub fn precedence_6_test() {\x0A  assert
+rom no_readme!")\x0A}\x0A\x0Afn first_line() {\x0A  io.println("Here we have some additional code o that topaquehis
+rt x: == 2\x0A}\x0A\x0Atype FnBox \x0A  FnBox(f: fn(Int) -> Int)\x0A}\x0A\x0Apub fn call_record_
+1_0Xmacro\xEF\xBC\xBD0B\x0D\x0A
+a- }!let\x0A
+, =+ <|*]}
+ing)\x0A}\x0A\x0A\x0Apub fn new(contained, name) {\x0A 
+\x0De\x5Cq1.0e10=!@\xE2\x80\x99<=.0.1e-3\x00
+<"str"<>[==x_y+Wibblecase>>>
+1.7976931348623157e308
+\xC3\xA9#\x5Cq..
+(1=b1 !{|\x0A"str"]
+am contributors\x0A\x0Aimport package_a\x0A\x0Apub fn main() {\x0A  package_a.hhell()\x0AF}\x0A
+ Apache-2.0\x0A//SPDX-FileCopyrightText: 2019 The GG
+ght\x0A}\x0A\x0Apub fn int_neq_3_test() {\x0A   let lleft = 1\x0A  let right = 1\x0A  assert left == right\x0A}\x0A\x0Apu
+0.30000000000000004.(=@\x5Cu{110000}*.(-|
+\xEF\xBD\x9Ctodo\x0D|>\xC3\xA9*=test~
+eeuni\x0At.ma
+->let(Wibble!Wibble\x0Ause1.0e-..,:
+ {\x0A  bitise.and(1,^ 2\x0A}\x0A
+projecu<.set_d.TypeD
+.========"1_
+/
++00 _<1_======== {
+#\x0A#+. let1.5=(
+=1__0\x0D\x0A{\x7Fdelegate.\xEF\xBC\xA0\x5Cu{1234567}>
+1fn@<> 
+#wobble%as
+-Idennt
+p\xEF\xBC\x9Aort gleeunit\x0A\x0Apub fn main() {\x0A  gleeunit.\xEF\xBC\xBEmain()\x0A}\x0A
+ 2023 The Gleam contrbutors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {\x0A  io.printl("top  level module")\x0A}\x0A
+bu.tors\x0A
+rightText: 2021 Thhe Gl\x00eam contributors\x0A\x0Apub fn hello() -> SStri
+_included_test() {\x0A  let path = "./build/dev/erlanng/langu
+ ],#
+ibutos\x0A\x0At\x5Cuyp
+zea  *  *
+"str"+_].#//-.|
+, 0>>\x0A  let right = <<0.0:flloat-16>>\x0A  assert left == right\x0A}}\x0A\x0Apub fn float_16_little_negative_test
+Wibble
+ SPDX-L+icense-Identifier: Apache-2.0\x0A// SPDX-FileCopyrrightText: 218 The Glea
+if<<<
+om_string as atom_from_string}\x0Aimport gleam/io\x0Aimport gleeuni\xE2\x80\x98t\x0Aimmport project\x0A\x0Apub fn main() {\x0A  project.m
+Gleam contributors\x0A\x0Aimpot glea
+1.7976931348623157e30Copyyrig
+\x0A/==!/
+tln("top leevel odule")\x0A}\x0A
+s-sert const_string == "Glem"\x0A}\x0A\x0Apub fn nil_test() {\x0A  ass
+\x0A[
+ase subject {\x0A    wibble if wibble == message_2 <> ""!" -> True\x0A    _ -> Fal
+/=0O\xEF\xBC\x89Z\xE6\x97\xA5\xE6\x9C\xAC_!=\xEF\xBC\xA0
+ call it\x0A// from Erlang, or build this package for Erlang, then the compiler will\x0A/// (should) emit an error.\x0A@exter
+thing to export"\x0A}llett\x0A
+t\x0Apub const cons&&t_tuple = #("hello", 0)\x0A\x0A/// Add two numbers\x0Apub fn function_int_int++_rreturns_int(fi
+ second_line()\x0A}\x0A\x0Afn greeting() {\x0A  io.println("Hello from no_readme!")\x0A}\x0A\x0Afn first_line() {\x0A  io.println(.."Here 
+ntifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2021 The\x0C Gleam contributors\x0A\x0Aim
+am/result\x0A\x0Apu\xE2\x80\x8Bb n main() {\x0A  assert bool.negate(Falimplementse) && result.is_ok(Error(81))\x0A}\x0A
+Wibbleb1{42])->:+\x5Cq([
+ 2026 The Gleam contr1ibutors\x0A\x0Apub  type Box {\x0A  Bx(constructor: Int)\x0A}\x0A\x0Apub fn record_with_constructor_as_f
+ 2\x0A  aass
+42)>\x0D\x0A!!\x0D\x0A+
+ense-'Identifier: Apache-2.0\x0A//echo SPDX-FileCopyrightTextt: 2021
+_\xC2\xA0 |Wibble//
+a[|>- <..x#->1!
+omo0xe!"\x0A}\x0A
+== <<1, 2, 3, 4>>\x0A}\x0A\x0Apub fn pattern_negative_size_test() {\x0A  leet result = case <<1,2, 3, 4>> {\x0A    <<a, b:size(a 
+fn//>>fn]..]\x0A\xE2\x80\x8B(
+ert result.is_error(Erro("Hello"))\x0A\x0A  assert int..addd(5, 6) == 11\x0A  assert int.add(1, 4) < 9\x0A  assert int.a
+<>
+) {\x0A   let person = Person(name: "Quinn", age: 27,\xEF\xBC\xA0 countrry: "Canada")\x0A  assert per
+b ffnso
+contri\xE2\x80\x9Cbutors\x0A\x0Apub fnhello() ->
+k(x) = \x0A  assert 1 == x\x0A}\x0A\x0Afn ok_one() -> Result(Int, a) {\x0A  Ok(1)\x0A}\x0A
+|>"  ,<>\xD1\x80[
+t0B_mai!"1.0e)\x0A}\x0A
+#\xE2\x80\x9Atype!<"str"<<=.0B..,\xE2\x88\x97
+0.1e-3)fn7>=.
+_->|>2\xEF\xBC\x89,=):0b
+te+stt!!")\x0A}\x0A
+2019 The Gleam contributors\x0A\x0Aimpor hlloo_world\x0A
+$
+fn-<>["str""\xEF\xBC\x9C42a0.1e-3}0
++=\xEF\xBC\x9E
+tes() {\x0A  let Nee
+: 202>>>1 The Gleam copubntributors\x0A\x0Aimport glea/dynamic.
+}+.
+)..0.30000000000000004\xE1\xB4\xB5\x0D\x0A<>
+vascript_ffi..mjs", "main")\x0Apub fn main() -> Nil\x0A
+lo(F) \xEF\xBC\x9A-> String {\x0A  "Hello"\x0A-}\x0A
+ ,7 \xE2\x80\x98b1%=case-\xE2\x80\x93
+fn[ !/
+"0o*<=.-=
+023 The Gleam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {\x0A-  io.prrintln
+ todo\xEF\xBC\xBE|>"}===-=\xE3\x80\x821.0e'=======
+x_y ]}-\x0Atest\x0A
+type@.
+|>_#\x5Cu{[
+"\x0A  }\x0A  assert result == "ok"\x0A}\x0A\x0Apub fn float_16_erlang_test() {\x0A  let left = <<60, 0>>\x0A  let  rig
+0x4.9e-324!===\x5Cu{1F600}\xE1\xB4\xB5test<<<<<<<0.1e-3`<<<\xE2\x80\x9A
+(use"Hello from shipment test!")\x0A\x0A
+ript)\x0Apub fn typescript_file_incluudedd_test() {\x0A  let path = "./build/dev/javascript/language/ffi_typescript
+ # 42"str"(\x0A(\x0A..
+case<-\xE2\x80\x99+=1.0e-pub\xE2\x80\x9A{
+X-License-Identifier: Apacche-2.0\x0A// SPDX-FileCopyrightText: 2023 he Gleam con
+rt gleam/io\x0A\x0Apub f /.main() {\x0A  io.print7ln("Hello from shipment test!")\x0A}\x0A
+case\x7F@========usecase1.0e400\xEF\xBB\xBF
+*========>*%a
+le=am cotributors\x0A
+ment_int_pattern_tes=======t() {\x0A  let assert <<10 as a, _>> = <<10, 20>>\x0A  assert a == 10\x0A///}\x0A\x0Apub fn aassignment_float_pat
+ -> value\x0A     _ -> -value\x0A    }\x0A  }\x0A  
+\x5Cn,derive#<\xE2\x80\x9A\xD1\x80derive=$
+/.const(?>=======\x0D0O..>.@
+ onst_list_
+ contributors\x0A\x0Apub fn main() {\x0A "Hello >.
+import gle\xE6\x97\xA5\xE6\x9C\xACea
+tifier: Apache-2.0\x0A// SPDX-F\xE2\x80\x99\xE2\x80\x9CileC
+>0.30000000000000004letx_y},<>>>>>>>>1.0<>*
+/ff_javasc-=
+ 1.5"str"x_y=#(/|(
+rr: Apache-2.0\x0A// SPDX-FileCopyrihtText: 2025 T
+ache-2.0\x0A// SPDX-FileCopyrightText: 2025 The Gleam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {\x0A  io.prin\x0D\x0Atln
+*1.5=fnfn\x5Cu{D800}
+3:7>>\x0A}\x0A\x0Apub fn dynamic_siz_6_test() {\x0A  let size = 4\x0A  let sie = size + 2\x0A  let assert <<value:size(size)>> = <<61:
+._1.5 [_]"str"
+.let\x0D\x0A.*<> _:
+assert0.30000000000000004\x5Cu{D800}\xC3\xA9
+e-2.0\x0A// SPDX-FileCopyrightText: 22019 The Gleam co
+\x0A((opaque\xE2\x80\x9D\xE2\x80\x940\x5C"\x5Cu{D800}
+=+8*)*,-.\x0D(
+]Wibble{========+}let}\x0D\x0A"str"<<//
+lt =\x0A    100\x0A   |> identity\x0A  assert 100 == result\x0A}\x0A\x0Apub fn pipe_into_anon_test() {\x0A  let result =\x0A    100\x0A  
+x_y!_discard0.30000000000000004->1'<>.a/
+{#<-> ..\x0D\x0A
+tioncase_error\x0A}\x0A
+<
+st() {\x0A  le left = 2.0\x0A  let righ = 2.0\x0A  assert left /. right = 1.0\x0A}\x0A\x0Apub fn
+age() -> String\x0A\x0A@external(erlang, "lixir.ElixirFileeAgain", "main")\x0A@external(javascri
+    io.p
+..let1.5/
+ cotributors\x0A\x0Aimport one\x0Aimport on\x5Cu{1F600}e/nested\x0A\x0Apub fn main() {\x0A  one.hello()\x0A  |>  nested
+ "./ffi_javascript.mjs", "halt")\x0Apub fn halt(a: Int) -> Nil\x0A\x0A@external(er\x5Cu{1F600}lang, "ffi_erlang", "to_dynamic")\x0A@externa
+e so that this is not mmistaken")\x0A}\x0A\x0Afn second_
+->0x<<<<<<<)_discard1.0e400\xEF\xBC\x8C123456789012345678901234567890\x5Cu{
+.%-=:\xC2\xA0\x5Cq9?
+}|>|x_y[../
+opaque
+_import0X|>
+*\x5Cn@)b142let=======++"
+1 =-a
+! Wibble#!..*//0a
+ gleam/io\x0A\x0A<=.pub fn m\xEF\xBC\x89a
+\xE2\x88\x95macro>\x5Cq1.0e10\x5Cu{*=1.0e%=
+|>Wibble)//+\x5Cq\xEF\xBB\xBF(
+!"_|> x_y *<>
+\xD0\xB0\xE1\xB4\xB5>=;elsexassert
+|#b1:
+..->>>
+)\x0Apub fn tto_dynamic(a: x) -> Dynamic\x0A\x0A@external(er
+tributors\x0A\x0Apub type ShadowPerson {\x0A  ShadowPerson(age Int)\x0A}\x0A\x0Apub fn celebrate_birthday((personn: ShadowPerson) -> Shad
+0\x0A// SPDX-FileCopyrightText: 202 The Gleam contributors\x0A\x0Ap
+<>
+{\x0A  "9Hello\x0A}\x0A\x0A
+-.)
+ 2025 The Gleam contribbutors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {\x0A  io.println("Default test modu
+ributors\x0A\x0Aimport project\x0A\x0Apub fn main()0.1e-3 {\x0A  project.main()\x0A}\x0A
+1.0e10\xD0\xB5
+_>0+==>fn==\x0D\x0A|>
+0\x0A\xEF\xBC\x88 <>
+ SPDX-Licensse-Identifier
+ant\x0Apub const const_int_list: List(Int) = [0, 1, 2type]\x0A\x0A/// Tuple constant\x0Apub const const_tu
+a<>
+righttText: 2024 The Gleam contributors\x0A\x0A// This functiion
+e-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightTe\xE2\x80\x94xt: 2024 The 
+-1(/0~[[..
+1_\x0D\x0A"str"-x_yderive}///->Efn
+(g\xEF\xBC\xBD--|>
+//,%=>+*
+-=\x0D\x0A<.derive>.\xE2\x88\x95wobbleWibble
+||wobble\xEF\xBC\x8C~
+ SPDX-License-Identifiier: Apache-2.0\x0A// SPDX-FileCop
+: 2021 The Glleam contributors\x0A\x0Aimport project\x0A\x0Apub  fn main() {\x0A  prject.main()\x0A}\x0A
+\x0A  ""Hello"\x0A}\x0A
+|\xEF\xBC\x9C
+//1.01_>=.\xEF\xBC\x9C\xE1\xB4\xB50pub+.\xEF\xBC\x9E1.0e+=
+ 9\x0A  asssert int.add(8, 12) >= 20\x0A  assert bool.negate(False) && re0osult.is_ok(Ok(42))\x0A  assert i
+<>*!),delegate..>\xEF\xBC\xBE}>
+&[<-)\x5Cu{1F600}
+\x5Cu{110000}\x5Cu{}
+========1..<==1/=
+\x5Cu{1234567}42!.//0O0O
+est() {\x0A  let i = 100_000\x0A  let :left = <<i
+\x0A  assert result == 1\x0A}\x0A\x0Afn true() -> Bool {\x0A   True\x0A}\x0A\x0Afn f
+0o|[[|>b1"b1echo
+case1>!`"str"opaque
+X-License-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2026 The Gleam contrib>utors\x0A\x0Apub ttype Box(a, bb, c) {\x0A  Al
+poin\xE6\x97\xA5\xE6\x9C\xACnt)\x0A@external(javascript,
+eCopyrightText: 2026 The Gleam contibutors\x0A\x0Apub fn remainder_
+tion_4_tet()\xEF\xBC\x88
+ha
+with_nno_crash_test() {\x0A\x0A let one = 
+ pa\xCE\xBBche
+{\x0A  io.println("top level modle")\x0A}\x0A
+==a<>==let1.542=)__*
+Person)))\x0A}\x0A\x0Atype Persson {\x0A  Person(name: String, age: Int, country: String)\x0A}\x0A\x0A/// https://
+ a"str": +
+*\xE2\x80\x93
+"Hell from shipment tst!")\x0A}\x0A
+ ypeB {\x0A \xC3\xA9 Constructor
+u\x0Cb fn argum
+-3 % -3 == -1\x0A}\x0A
++=.|>,|])==/]
+ @use
+:{0|fnx_y1.51.5.  /
+\xE2\x80\x98>=./.
+t: 2\x5Cu02
+,-\x5Cu{}1_000g/=+\x0D<._1.0e- 
+{(//@] ==
+//x_y//*
+se-Identifier: Apache-2.0\x0A//  SPDX\xEF\xBC\xA0-FieCopyrightTe
+aapyrightText: 2023 The Gleam cntributors\x0A\x0Apub type TypeD {\x0A  ConstructorD(St
+< 
+(1)\x0A  let other == Bo(1)\x0A  assert one == other\x0A}\x0A
+):]x_y{")>
+1.5\xEF\xBC\x9C *"@
+\x5Cn-<-\x5Cu\xEF\xBC\x9E-.<<<
+x_y_?{let ,"|
+>=108, 0, 0, 0,7\x5C" 108,
+, "main")\x0Apu
+/=E
+\xEF\xBC\xBD=1__0{|
+ = <<<<0xEC>>:bits-4, 7:4>>\x0A +.assert left == right\x0A}\x0A\x0Apub fn una
+<>todo*@todo.
+Th Gleam c
+inng {\x0A  ""Hello"\x0A\xC3\xA9}\x0A
+b1@1
+========%+.<<<<<<<-todo=======>0o\xEF\xBC\xBB\xE2\x88\x97<
+1.51.5//]1let.{
+ main() {\x0A  assert int.add(4, 5) > int.absolute__value(-11)\x0A}\x0A
+-b1///
+!{0O,! .. #.. a
+{1fn0*..b1_..-*
+===as\x5Cu{1234567}`1.7976931348623157e308` + +\x0D
+x_y>>>42-_ -> <=
+42[=>1.5,case}
+butors\x0A\x0Apub fn so
+ 
+===  let assert O(_) = x\x0A  }\x0A  assert
+Copy\xE2\x80\x99righ
+=|>\xE2\x80\x8B
+rlang_function()-> Sttring\x0A\x0A@external(erlang, "Elixir.ElixirFile", "main")\x0Afn elixiir_function() -> Stri
+ln("Hello, orlld!")\x0A}\x0A
+<\xCE\xBB|>b1b1,
+<<<<<<<](_discardpanic0.30000000000000004>>Wibble
+: Apacheee-2.
+a |-.//|>
+,:][
+st() {\x0A  let left = Error()\x0A  let right\x09 = gleam.Error(1)\x0A  
+fier: Apache-2.0\x0A// SPDX-FiileCopyrightText: 2025 The Gleeam coontributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main(
+|->
+b1 |->~== "str"*-//let
+x, cuteness: y), cuteness: y2, ..) =\x0A    NesteddCat(Cat("flu
+ol, r Result(BiitA
+1_1\xEF\xBD\x9C1.7976931348623157e308\xEF\xBC\x9E\xE3\x80\x81\xE2\x80\x99\xEF\xBC\x9A?
+"str"[a/1.511.0.1.5:.
+pub\x0D\x0A\xE2\x80\x8B import_discard
+DX-Licen\x5Cse-Identifier: pache-2.0\x0A// SPDX
+PDX-FileCopyrightText: 2023 The Gleam contributrs\x0A\x0Aimport gleam/io\x0Apubb fn main() {\x0A  io.println
+}
+&\xCE\xBB>=-
+a\x5Cu{D800}\xC2\xA0@1.0e->>>
+n("Hello from empty_readme!")\x0A}\x0A\x0Afn first_line() {{\x0A  io.println("Here we have som
+.========\x5Cu{D800}<\x5Cu{
+he-2.0\x0A// SPDX-FileCopyrightTet: \xEF\xBB\xBF20
+>\x0A*>  >
+ _disscard
+\x0Apubb ffn main() {\x0A  bitwise.and(1, 2)\x0A}\x0A<<
+case\x7F"1.7976931348623157e308\xEF\xBC\x8E/=\xE2\x80\x8B
+0O-.|><
+fn*
+\xEF\xBC\x9C: Cana
+ffn erlang_function() -> Stringg\x0A\x0A@external(erlang, "Elixir.Elix
+  assertgo(False, Ok("zz")) == "other"\x0A  assert go(False, Error(Ni)) === 
+1b1)-\x5Cu{D800}
+CopyrightText: 2026 The Gleam contributors\x0A\x0Aimportt f
+todo////\x0D\x0A0gZ0o]
+//) ]
+License-Identifier: Apache-2.0\x0A// SPDX-ileCpyriightText: 2021 The Gleam contribut
+letWibble+ )1-/+==
+\xEF\xBC\xBB\xC2\xA0e!=
+e = -1\x0A  let o/.ther = 1\x0A  as=ser
+echoas@echo#<_{_"71.5
+[="str"|>_11==
+t<<_, b:bytes-3, _>> = <<1, 2, 3, 4, 5>>>>\x0A  let assert <
+/ SPDDX-FileCopyrightText: 2025 The Gleam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main(sommething) {\x0A  io
+}\x0A\x0Apub fn precedence_6_test() {\x0A  assert 26 == 2 *\xE2\x80\x8B 3 + 44.\xEF\xBC\xBD9e-324 * 5\x0A}\x0A\x0Apub fn precedence_
+ense-Identifier: Apache-2.0\x0A// SPDX-FifnleCopyrightText: 2024 The Gleamtodo contributors\x0A\x0Apub fn main() {\x0A  "Hello f
+ssert result == 1\x0A}\x0A\x0Apub fn guard_test() {\x0A  let x = true()\x0A  let y = true()\x0A  le result = case x,  y {\x0A  
+1.5let(+<>(*1
+ense-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2023 he Gleam contributors\x0A\x0Aimport  project_b\x0Aimport proj
+ix_dp_function()\x0A}\x0A\x0A@external(erlang, "erlang_test_file", "min")\x0Afn e
+++}Wibble`<Zlet+0b let\xE6\x97\xA5\xE6\x9C\xAC
+_
+pub fn main()  {{\x0A  project.main()\x0A}\x0A
+ }\x0A  assert " wibble wobble" === \xE2\x88\x97strin_2\x0A}\x0A\x0Apub fn match_flag_emoji_test() {\x0A  let string = "\xF0\x9F\x87\xBA\xF0\x9F\x87\xB8 i
+ub fn hellllo() {\x0A  "world"\x0A}\x0A
+b1/.., //
+.println(erlang_function())\x0A  o.println(elixir_func
+t!")}\x0A\x0A
+123456789012345678901234567890F>=!
+====implement <
+0, 108, 0, 111, 0, 44, 0, 32, 216, 0, 23, 13, 0, 33,\x0A  >>\x0A  assert left == right\x0A}\x0A\x0Apubfn utf32_bytes_test() {\x0A  l
+"str"<
+*]_<@} 
+<>:>_==>|>|>"
+<typeZ@<>>=.-.//[assert
+1.0e10123456789012345678901234567890fn0b
+ub fn main() {\x0A  let location = project.main(assert)\x0A  let assert "htt
+a@(\x0D
+ fn helo() 
+{\x0A  "eello"\x0A}\x0A
+let result = case x, yy {\x0A  \xEF\xBC\xBD  Fals
+42//|>*-1fn+.\x5Cu{1F600}Wibble 0B
+*<!\x0A@>x_y==
+_test() {\x0A  let booll = !rue\x0A  bool
+ntifier: Apache-2.0\x0A// SP>.DX-FileCopyrightText: 2024 The Gleam contributors\x0A\x0Apub fn main() {\x0A   "Hello from second
+leam contributors\x0Apub fn one() {\x0A  "hello from one!"\x0A}\x0A
+second_lie() {\x0A  io.println("for a default main project, "that wou
+1__0panic
+ckage_a\x0A\x0Apu fn main() {\x0A  package_a.hello()\x0A}\x0A
+|>`_
+autoconst`1.0e400\xE2\x80\x93\xEF\xBC\x8C\xEF\xBC\x8CF\xE2\x80\x99
+1__04.9e-3241.\xEF\xBC\x9C0B\x5Cq<-(===/.>>>
+\x5Cu{}\xE2\x80\x98\xE1\xB4\xB5\x5Cu{}||..
+Fimport0X\x00%panic
+.#42Wibble}//1.5|->->
+\x0A\x0Apub fn main() {{  Nil\x0A}\x0Acase
+h_1_test() {\x0A  let x = <63, 176, 0, 0>>\x0A  let assert <<a:float-32>> 
+//
+_ok_bind_test(() {\x0A
+_5_test() {\x0A  let x = <<255, 255, 255, 255, 20, 216, 255>>\x0A  let assert <<macroa:16-unsigned, b:40-signed-little>> 
+r: Aache-.0\x0A// SPDX-FileCopyrightText: 2023The Gleam contributors\x0A\x0Aimport gleam/io\x0A\x0Apub
+]let]<"let..+\x0A \x0D\x0AWibble
+main(something) {\x0A  io.pritln(something)\x0A}\x0A
+from secoond!"\x0A}\x0A
+-</.>=.[<..========7<<
+..
+"Wibble\x0D\x0A+\xC2\xA042\xE2\x80\x9Dx_yfn
+ fn main() {\x0A  println("Hello from subdirr_ffi!"")\x0A  submodu
+<<auto\xE1\xB4\xB5+.
+let(]=*=).
+ let left = <<100_000_000_000:32-little>>\x0A  let right = <<00, 232, 118, 72>>\x0A  assert left == 
+llo from deasfault_main!")\x0A}\x0A
+__ f<\xE3\x80\x82@.
+++
+X-License-Ideentifier: Apache-20\x0A// 
+ as]/1.0\xEF\xBC\xBE>.
+// SPDX-Licene-Identifier: Apache-2.0\x0A// <=.SPDX-FileCopyrightText: 2019 The Gleam ccontributors\x0A\x0A\x0A
+.mjs", "main<<")\x0Afn message() -> String\x0A\x0A@external(erlang, "
+)_\xD1\x80x_y_==#+( 
+SPDX-L
+<>0!\x7F"str"|x_y
+,4,  5
+*.\x5Cu{1234567}\x5Cq4.9e-324<=\xE2\x80\x8Bx\xE6\x97\xA5\xE6\x9C\xAC1.0.&
+Gleam contributors\x0A\x0A//macro https://github.com/gleam-lang/gleam/issues/199
+->< #<+->
+b1_
+) -> \x00N
+ so that this is not mistaken")\x0A}\x0A\x0Afn second_line() {\x0A  io.println("fwobbleor a default main project, thatwuld be rejecte
+t x = True\x0A  asssert !x\x0A}\x0A
+-0O\x7F1__0\x5Cu{1F600}@-=\xD1\x80..?->
+*<>}=\x0C(,<)--
+rintln(something)g\x0A\xEF\xBB\xBF}\x0Alet
+_
+a|1.5\xEF\xBB\xBF->{(//>=."|>
+1.0e400->^let\x5Cu{1F600}8'use
+//
+ .-"<>
+\xC2\xA0<<<<<<<\xEF\xBC\x8E/%*.%=
+[(!==@0Wibble@->{\xE2\x80\x99
+[8//) ,1]\xEF\xBD\x9C@,0X
+fn panicontextual\xF0\x9F\xA6\x80_info_for_
+ left == righht\x0A}\x0A\x0Apub fn record_error_neq_1_test() {\x0A  let left = Error(1)\x0A\x0A  let righ
+)\x0A}\x0A\x0Apub fn new((contained, name) {\x0A  ConstructorB(project_d.ConstructorD(contained), name)\x0A}\x0A
+llo from defaault_main!")\x0A}\x0A
+ors\x0A\x0Appub type Box(a, b, c) {\x0A  AlmostFull(a, c)\x0A  AlmostEm
+2`
+\xE2\x80\x9Ab1><>
+,-01.5*=)b1|>,_
+SPDX-License-Identifier: Apache-2.0\x0A// SPD-Fil\xEF\xBB\xBFeCopyrightText: 2025 The Gleam contributors\x0A\x0Aimpo
+.+<-
+import\x5Cu0.30000000000000004$\x0D>type\xEF\xBC\xA0
+ == -65_504.0\x0A}\x0A\x0A\x0Apub fn matcch_16_test(.)
+Wibble\x7F>.test\xEF\xBC\x9E\x5Cq\xEF\xBD\x9Ca==g\x5Cu{1F600}
+-License-Identifier: Apaach-2.0\x0A/
+==\xD0\xBE\xD0\xB0\xEF\xBC\xBE/.\x5Cu{1234567}\xE6\x97\xA5\xE6\x9C\xAC
+.\xE2\x80\x98 })1\x5Cu{D800}
+\xF0\x9F\xA6\x80>=.123456789012345678901234567890\xE2\x80\x9A >===\xD0\xB0%
+PDX-License-Identifier: Aache-2.0\x0A/ SPDX-FileCopyrightText: 2026 The Gleam contrbutors\x0A\x0Apub type Box(a, 
+,,
+amespace!"\x0A}-\x0A
+ one/n\xC3\xA9eestedd\x0A\x0Apu
+0let/>..>>>>>>>\x0D==1.0e-//\x0D\x0A_
+0x_y/[[{
+ill
+ier: Appache\xD0\xBE-2.0\x0A/ SPDX-F
+205 
+1.0e-
+){9
+0x>=.)
+,=)>-.>//b1}todo
+hat woul0xd be re===je\xE3\x80\x81cte
+<. :\xC3\xA9////4.9e-324\xD1\x80\xE2\x80\x9A\x0D\x0A\xEF\xBC\xBBg/
+n_var_test() {\x0A  let x = True\x0A  let int = case x {\x0A    a if #() == #(True) -> 0\x0A 
+tTex\x5Ct: 2021 The Gleam con.tributors\x0A
+(import\xC3\xA9
+ecedence_5__test() {\x0A  assert 11 == 1 + 2 * 3 + 4\x0A}\x0A\x0Apub fn precedence_6_test() {\x0A  assert 26 == 2 * 
+: ,
+//// This module is ussed to test resoluti>>>on of nested modules\x0A\x0A// SPDX-License-Identifier: Apa
+nseIdentifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 223 The Gleam cot
+rs\x0A\x0Aimport gleam/io\x0A\x0Apub fn main(something) {\x0A  io..printl
+.">.|\x0D\x0A)=Wibble\x0D\x0A
+//<> @:,\x0A@!case==
+}\x0A\x0A/// This cuustom type ha
+leCopyrightText: 2023 The Gleam contributors\x0A>.\x0Aimport 
+_0#
+!]==}_[+x_y//<
+\x0Apub type Box(a) {\x0A  Bo(tag: String, value: a)\x0A}\x0A
+<="str""str"letx_y!0<==
+nt__overflow_the_stack_test()) {
+.hello() == "worlld"\x0A}\x0A\x0A\x0Apub fn sha
+)| 
+*=\x7F\x0A
+ (42>!==\xEF\xBC\x9C#>>>>>>>*case
+ 2021 The Gleam contrib
+: 2026 The Gleaam contributors\x0A\x0Atype Person {\x0A  Person(name: String, age: Int, counry: String)\x0A}\x0A
+  |let.\x0D\x0A
+\x0A// SPDX-FileCopyrightText: 2021 The Gleam contribtors\x0A\x0Aimport one\x0Aimport two\x0A\x0Apub fn est
+b1(\xEF\xBC\x8C*1
+9 The 0Gleeam contributors\x0A
+$\x00\xE2\x80\x98Ftodo_discard!=
+."str""str"{Wibble- "str" \x0A!
+==\x0D\x0A>|let%\x0D\x0A\x0D\x0A)1.5#
+ile_included_test() {\x0A  le<<<t path = "./build/dev/erlan
+ng or JavaScript\x0Apub typ\x0Ce BadLabelNames {\x0A  adLabe1__0lNames
+ize = 3\x0A  l\xE3\x80\x81et other_size = 5\x0A  let third_size = 8\x0A  let assert <<\x0A    value:sie(size),\x0A   
+xt: 20\x5Cu{D800}21 The Gleam contributos\x0A\x0Aimport o
+/
+e Gleam contri~butor\xE3\x80\x82s\x0A
+0.30000000000000004\xEF\xBB\xBF<=.
+PDX-Liense-dentifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2021 The Gleam contributors\x0A\x0Apub fn id(a) {\x0A  a\x0A
+&===macroE_/=\xEF\xBC\x9E1.0e-<<\x0D\x0A
+x75:auto9-big>>\x0A  let right = <<255, 255, 255, 255, 255, 255, 254, 88, 14, 5:3>>\x0A  assert left 
+y"\x0A ^ assert classify("\xF0\x9F\xAB\xA5z") == "
+m_ok_test()) {\x0A  let left = Ok(1)\x0A 
+mainn() {\x0A<  package_a.
+=\xEF\xBB\xBF,%=*>fn
+ghtText: 2025 The Gleam coontributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn mmain() -> Nil {\x0A  io.prin
+///(\xE2\x88\x97\x5Cu{110000}\xE2\x80\x94e\xEF\xBC\x88\xE3\x80\x81^wobble"
+ >+@->let
+nt) -> Nil {\x0A Nil\x0A}\x0A
+\x5Cn= 1.0e#
+1]@fn0X/,+!
+)-. {\x0A  l
+.: )case@//1 :let
+opyrigghtText: 2021 The Geam contributors\x0A
++letWibble]//<//=*<+
+.."panictest\xE1\xB4\xB5 (fn]->
+auto_x_y:0Xa
+||\xCE\xBB\xD0\xB5<<{<<<
+fn=======\xEF\xBC\x8E=\xC2\xA0\xEF\xBC\xBDe\xD0\xBE>\x00\x09\x09
+,1.5 
+, 27, "anada"), Person("Nikita", 99, "Internet"))\x0A  assertestt { tup.0 }.name == "Quinn"\x0A}\x0A\x0A
+"str"+*->.. .0x Wibble.
+ f precedence_2_test() {\x0A  assert 2.0 +. 2.0 *. 3.0 == 8.0\x0A}\x0A\x0Apub fn precedence_3_test() {\x0A \x00 assert 2.0 *. {
+casederive-.case======= 
+6),\xEF\xBC\x9A\x0A\xEF\xBC\xBB    0x4:size(32),\x0A    "Gleam"
+2023 The Gleam contrributors\x0A\x0Amport gleam/io\x0A\x0Apub fn main() {\x0A  io.println("sub module")
+#1.0f\x0D\x5Cu{110000}\xEF\xBC\x9Cfn1.0e<<<<<<<1.0e-\x5Cu{D800}
+)b1:|>opaqueWibble
+)<let@|>\x0D\x0Afn
+*
+->|>- case->
+1! 
+.0\x0A// SPDX-FileCopyrightText: 2025 The Gleam contributos\x0A\x0Aimport 
+}"str"#->\x0Alet
+\x0A// SPDX-FileCopyrrightText: 2025 The Gleam contributors\x0A\x0Aimport gleam/o\x0A\x0Apub fn main() -> Nil {\x0A  io.println("H
+Text: 2\x5Cu{1pub234567}021 Th\x5Cu{}e Gl
+e!"\x0A}\xEF\xBC\xA0}\x0A
+x_y->420)#=a
+|let#<a|> ((
+contibutors\x0A\x0Aimport gleam/dynamic.{type Dynamic}\x0Aimport gleam/erlang/atom.{from_str
+2\xF0\x9F\xA6\x80
+*..Wibble->\x0D\x0Alet\x0D\x0Ae1
+-><<,%=\x5C"\x0D
+leam contributors\x0A\x0Apub fn add(;a, b) {\x0A  a + b\x0A}\x0A\x0Apub fn main() {\x0A  1\x0A  |> add()\x0A}\x0A
+unct\xE2\x80\x9Aion_in_directly_matching__case
+\xE2\x80\x98#\xE2\x80\x9A1.0e\xE3\x80\x81
+delegate!casex_y==-->1]"b1
+\xEF\xBC\x9Aassert+fn\x5Cu{delegate0B(\xE2\x80\x93fn// 
+0]->-(x_y//\xEF\xBC\xBB<
+scape_test() {\x0A  let lft = <<"\xF0\x9F\x98\x80":utf8>>\x0A  letr
+ fn letnil_test() {\x0A  assertt const_nil == Nil\x0A}\x0A\x0Apub fn ok_te
+case"str"x_y:1
+\x0A// JavaScrript or builconstd 
+1fn1+
+==(_\x0D\x0A<"\x0A#
+fn+x_y}//->.|>(let:b1
+0=\x5C"= ! \xEF\xBC\x9E1->
+}==[ [ )//===
+1Wibblefnx_y 1.5<<<<<<<[\x0D\x0A{<>=
+ly_parenthesised_test() {\x0A   let bool = !{ True || False }\x0A  asser-t !bool\x0A}\x0A
+aavasript, "../proje'ct_ffi.mjs", "log")\x0Af
+icense-Identifier:: Apache-2.0\x0A// SPD
+\x0Aimport gleam/int\x0Aimport gleam/resut\x0A\x0A/// All these assertions should succeed\x0Apub fn main() {\x0A  let x = Tr
+ 42"{
+,|\x5Cu{110000}<-deriveif\xE2\x80\x94"
+-x_y!..-(|0!casecase
+;\xEF\xBC\xA0_discard=1_\x5Cq\xD1\x80\xEF\xBC\xBD<?\xEF\xBB\xBF<<<
+>!a
+ let assert "http://localhost:8080/" = lcation.href\x0A  le
+=+.++"\x09\xEF\xBC\x89\x5Cnauto|>
++=\x0C\xEF\xBC\xBB..\xD1\x80\x5Cu{}[*.0.30000000000000004\xE3\x80\x81]
+\x0A// SPDX-FilCo
+ ==case->!=>
+ce!"\x0A\x0A========
+in()\x0A!delegate=}\x0A
+ixir_message())\x0A}\x0A\x0A@external(r
+ let left = [0]]\x0A  let right = [0
+let:\x5Cn==1.5
+<>*\xE2\x80\x990B\xD0\xBE~*.
+[1fn*>(|}\xE2\x80\x9D\x0A
+fn\xEF\xBC\xA0<=.+.\xD0\xBEimplement\xE2\x80\x9C{\xD0\xBE+1.0e1__0
+|.\x5Cu{110000}..|>)" 
+#}
+)1.0e400 .-==42*
+========elseelse#-=><=
+ hash: String,\x0A  )\x0A}\x0A\x0Apub fn main() {\x0A  location()\x0A}\x0A@eexternal(javas\xE2\x88\x97cript, "./projec
+echo\x0C\xEF\xBC\x9C123456789012345678901234567890++0O1.0>>>>>>>a@
+ibutors\x0A\x0Aimport gleam/dynamic.{type Dynamic}import gleam/erlang/atom.{frompub_string as atom_from_string}\x0Aimport glea
+ ints {\x0A    [x] | [_, x] if x == int_two -> x\x0A    __ -> 0
+he Gleam cntribuo-=rs\x0A
+^\x5Cu{}!\xEF\xBC\x8C=======*.lettodo1.0===\xEF\xBC\xBE
+{\x0A  let one = -1\x0A  let other = 1\x0A  assrt one != other\x0A  assert  one * -1 == other\x0A}\x0A\x0Apub fn negatve_zero_same
+let|{ ,@}\xEF\xBC\x8E00!
+-\x0A
+case# .>1
+)\x0A}\x0A
+42,(..x_y
+rs\x0A\x0Aimport ffi\x0A\x0A@target(javascript)\x0Apub fntypescript_file_included_
+even\xEF\xBC\x88(47)\x0A}\x0A
+_discard.aWibble*"str"Wibble>=.<a@!
+64\x0A\x0A\x0Aub fn unaligned_24_test) {\x0A  let assert <<_:8
+-")
+htText: 2021 The Gleam contributors\x0A\x0Aimportt one\x0Aimpot one/nnested\x0A
+case}[1 _0let"str"\x0AWibble<<
+rt project_d\x0A\x0Apu type Type\xD1\x80C
+!1|>0+{
+ring,\x0A\x0A    pathname: String,\x0A    search: Str$ing,\x0A    hash: Strin,\x0A  )\x0A}\x0A\x0A
+ssert value == <<1, 2, 3, 4, 5>>\x0A}\x0Apub fn size_mul_in_pattern_test() {\x0A  let a = 1
+dd(a, b) {\x0A  a +b\x0A\x0A}\x0A\x0Apub fn mainn() {\x0A  1\x0A  |> add()\x0A}\x0A
+ubb fn no___f
+_discard+=\xF0\x9F\xA6\x80fnlet/.else
+if{:42-(a)\x0D\x0A1.5
+yrightText: 2023 The :Gleam contri-butors\x0A\x0Aimport gleeunit\x0Aimport gleeunit/should\x0A\x0Apub fn main()
+->"str"
+ io.println("Hello from testt/ested
+\x0D+assert
+\xEF\xBC\x8C -/.1.0ee/)
+[<><>*Edelegate<<<<>:@
+1.5fn,let}_Wibble1.5
+->use1.0e-_-.==[
+===else
+========%
+1.0\xEF\xBC\xBD (-=}' \x5Cu{1F600}>>>>>>><.+
+use<\x0D\x0A0x>>>>>>>0x->>>========-@\x5Cn
+o"\x0Ae}\x0A
+|>\xE2\x80\x9D-=0B
+4.9e-324<.efn
+}<-\x00x_y/ _==..<>1
+//->//g|!="str"|.Wibblelet
+am contr!ibbuto,rs\x0A
+@case[:b1#1.5->Wibble///\xD1\x80
+# \xEF\xBB\xBF#aWibble(==,/
+">.\xE2\x80\x99if"panic\xEF\xBC\xBE
+tion_9_test() {\x0A  assert 1.0e-3 +. 1.0 == 1.001\x0A}\x0A\x0Apub fn scientificnotation_addit
+\x0A\x0Apub fn main() {\x0A  io.pr\x5Cuintln("Hello, from Gleam compiledto Erlang!")\x0A  io
+// SPDX-FileCopyrightText: 2025 The Gleam contributors\x0A\x0Apub fn mainn() {\x0A  let x = Tru\x0A  assert !x\x0A}<\x0A
+2
+value(}auto-11)\x0A}\x0A
+=
+: pubApache-2.0\x0A// SPDX-FilCopyrightText: 2026 The Gleam ontrib
+<//// "F==<<<<<<<# 
+4\x0A// https://github.com/gleam-lan/gleam/issues/13
+test() {\x0A  let x = <<0x3C, 0xF0>>\x0A  let assert <<a:flot-16>> = x\x0A  assert a 
+ <> <<<<`<<<_ -> "one"\x0A      _, "aa" <> rest -> rest\x0A    
+ let tuple_true_false = ma((ke
+et x = 1\x0A  letconst0x _ = {\x0A    let x = 
+\xEF\xBC\xA0x_y->
+-> +}
+in", "min")\x0An another_elixir_function() -> String\x0A
+\x0A>>>>>>>
+ String \xEF\xBC\x89){\x0A  "Hello"\x0A}\x0A
+_fn"
+\xE6\x97\xA5\xE6\x9C\xAC!=\x5Cu{110000}1.7976931348623157e308_discard$[\xEF\xBC\x880b<<<!= 
+\xE3\x80\x82->(
+b fn main() {\x0A  io.prrintl(""Hello f
+\x0Aelse@==
+ntributors\x0A\x0Apub fn two() {\x0A  "hello from tw__0o!"\x0A}\x0A
+024>>:bi\xE2\x80\x8Bts,\x0A  >>\x0A}\x0A\x0Apubconst language = "gleam"\x0A\x0Apub type Movie {\x0A  Movie(t
+"externa(l_only_erlang_ffi", "main")\x0Apub fn main() -> Nil\x0A
+b1case
+e
+:2|/._else
+d.\x0A///\x0Appub fn main() -> Nil {\x0A  greeting()\x0A  first
+UtfCodepoint\x0A\x0A@external(erlang, "ffi_erlang", "read_uint16_from_bit_array")\x0A@external(jav
+=Wibble==:
+g to  export"""\x0A}\x0A
+*]
+\xEF\xBC\x8E _)1_ ;)\x0D\x0A
+inder_8_test(). {\x0A  assrt 133 % -3 == 1\x0A}\x0A\x0Apub 
+opyrightText: 2023 The Gleam contributors\x0A\x0Apub fn
++
+io.printn(
+<>#
+println("Hello, from project_javascript!")\x0A}\x0A\x0A@external(erlang, "erlang", "display")\x0A@external(8javascri
+/\xE2\x80\x9C\x5Cu{
+opaque->==
+<:f\xD0\xB0$|>\xE2\x80\x98
+42\x0Ab1/#(\x0D\x0A\x0D\x0A:
+const~\x0A=======\xEF\xBC\xA0\xE6\x97\xA5\xE6\x9C\xAC]
+>)-Wibblecase
+<<len, payload:bits-size((len * 8 - 4)>> = <<4, 1, 2, 3, 4:4>>\x0A  assert payload == <<1, 2, 3, 4:4>>\x0A}\x0A\x0Apub fn patternb
+\xD0\xB5\xE6\x97\xA5\xE6\x9C\xAC->\xEF\xBC\x8C?opaque>>e<><.implement=
+)_
+todogwobble\xEF\xBD\x9C
+]}[*
+@b1b1efn
+ Apache-2.0\x0A// SP\xF0\x9F\xA6\x80DX-FileCopyrightText: 2026 The Gleam contributors\x0A\x0Aimp
+pub typeTypeD {\x0A  ConstructorD(String)\x0A}\x0A
+\x0A\x0Aimport gleam/io\x0A\x0Ap]<<<<<<<ub fn min() {\x0A  io.println("Default
+%=panic\xE2\x88\x97
+\xE2\x80\x9DF`=======\x5Cq:\xD0\xB5
+\x0A42Wibble\xEF\xBC\xBE0Xax_y42
+int\x0A\x0Apub fn main() {\x0A  aassert
+\xEF\xBC\x88else
+-,b1:)_>let,},*
+42x_y|fn fn\x0D\x0A1.5|[.!
+>=)<<\x09\x09_={7
+naligned_16_test() {\x0A  let assert <<__:7, a:22, _:bits>> = <<250, 72, 223, 18
+ileCopyrigahtTex-t: 2023 The Glefam contributors\x0A\x0Aimport gleam/io\x0A
+  fn new(containned, name) {<\x0A  
+ileCopyrightText\xE2\x80\x93:auto 2025 The Gleam contributoo
+/ SPDX-License\xCE\xBB-Identi\xEF\xBC\x89fier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2021 Thhe Gleam contributors\x0A\x0Aimport one\x0A\x0Apub fn
+<a:bits-3, b:byte-2, c:bytxes>> = <\x0A    0b110:3, 0x12, 0xAB, 0x95, 0xFE,\x0A  >>\x0A  assert #(a, b, c
+  \x0A}\x0A\x0Apub fn main)\xE2\x80\x98 {\x0A  location()\x0A}\x0A\x0A@external(javas
+fn1.5_1_>0B!}0b+.,Wibble
+leCopyrightText<..: 2019 The Glem contributo
+SPDX-License-Identifier Apache-2.00\x0A// SPDX-FileCopyrightText: 2021 The Gleam contriibutors\x0A
+|=\x0D\x0A<>:Wibble(+]////"
+\xEF\xBC\x88\xEF\xBC\xA0>=.<pub%=>>>+=\xEF\xBC\xBE
+e\x0A\x0Apub fn main()) {\x0A  println("Hello from subdi
+ -> 1\x0A    }\x0A}\x0A\x0A.pub fn tuple_access_1_test() {{\x0A  let tuple_true_false = make_pair(True,
+_case42b1
+-
+    x\x0A  }\x0A  asserrt x == 1\x0A}\x0A
+=\x0A
+b1|>\x0A+|>x_y=1|> :
+rt gleam/int\x0A\x0Apub fn main() {\x0A  assert int.is_evven(4||7)\x0A}\x0A
+rnet")\x0A  let container = ContainsTuple(#(5, #(6, person)))\x0A  assert { container.data.1.1  }.name == "Nikita"\x0A}\x0A\x0Apub fn a
+//`\xD0\xB0\xD1\x80->
+..1.5x_y case@|
+-==1.0e-
+nse-Identiie_r: AAp
+=1.5!<.11_<>\x0A==
+alet:\xE2\x80\x9D^
+: 6\x0A        |> id,\x0A    )\x0A\x0A  assert updated == record_update.Box("a", 6)\x0A}\x0A\x0Apub fn unlabelled_fie
+_ <42[+fn\x0A
+orrs\x0A\x0A// https://github.com/geam-lang/gleam/issues/1991\x0Apub fn blocck_scoping_test() {\x0A  let 
+#("fluffy", 10)\x0A}}\x0A\x0Apub fn nested_cutom_types_test() {\x0A  let NestedCat(Cat(x, cuteness: y), cuteness: y2, 
+/// SPDX--'L
+{\x0A  let x = tue()\x0A  let y = false()\x0A  let result = case x, y {\x0A    False, T
+<>\x7F}..1.7976931348623157e308/->==!=
+ifier: Apache-2.0\x0A// SPD-FileCopyrightText: 2019 The Gleam contribut
+\xEF\xBC\x88==\xE2\x88\x97-=//\xE2\x80\x930b~
+1.5 b1<.
+ntr*i
+->,*\xE2\x80\x94\x0D\x0A[+=+1_000_
+ fn main() {{\x0A  locati
+0o9:
+case,let-\x0D\x0A
+conributors\x0A\x0Apub type Box(a, b, c) {\x0A  AlmostFull(a, c)\x0A  AlmostEmpty(b)\x0A  Empty\x0A}\x0A
+0let
+"#>>>>>>>|>a|fn/.
+.)\xEF\xBC\xBE\xD0\xB0+.<-1.\xD0\xBE
+ang/gleam/issuesg/1380\x0Apub fn arguments_c
+ -> 1\x0A    }\x0A}\x0A\x0Apub fn or_true_true_test() {\x0A  let true_ = true()\x0A  ass.ert 0\x0A    == casee Nil {\x0A      _ if t
+PDX-Licennse-Identifi>>>>>>>e:
+9pub\x5Cu{1234567}#+elselet1.\xEF\xBC\xBB<=
+let
+F\x0D\x0A07
+==//
+  y {\x0A    False, True | True, Fa
+dentifier: Apache-2.0\x0A// SPD-Fil%=eCopyrightTexxt: 2021 The Gleam contributors\x0A\x0Apub type Location {\x0A  Location(\x0A 
+  one.hello()\x0A\x0A}\x0A
+\x0D\x0A\xE2\x80\x9Df
+\xE2\x80\x931.5_#;<<<<<<<=42} "}
+ors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {\x0A  io.println("Hello fro\xE2\x80\x8Bm dev/")\x0A}\x0A
+  assert left != right\x0A}\x0A\x0Apub fn list_eq_3_tes<-t() {\x0A  let left = [0]\x0A  let right = [[]\x0A $ 
+-4.9e-324]wobble-=~>.>>>=======derive
+->->!#let#//\x0A//0"}
+a
+ idd(a){\x0A  a\x0A}
+"fffi_erlangwobble", "appen>>>d")\x0A@ex
+|>+.>|><+\xEF\xBC\xBEcase->,
+{
+42 >#{
+Wibble\xE1\xB4\xB5[|>-->|>1_<\x0A0
+,-//
+\x0A>>\x0D\x0Aecho/!a"str"<0
+///b1! ][ let
+b1{"]|{|> let//@
+ 2021 The Gleam contributors\x0A\x0Apub fnhello() -> Strin\x0Cg {\x0A  "Hello"\x0A}\x0A
+,<>"\x0D\x0Aletfna|b1
+%++_<=.
+2auto\x7F\x5Cnf
+11)\x0A  let right = gleam.Error1)\x0A  assert left == right\x0A}\x0A\x0Apub f
+ SPDX-FileCopyrightTeext: 2019 Thee Gleam contributors\x0A\x0Aimport hello_world\x0A>>\x0Afn run(x, y) {
+", "nname))\x0A  lett 
+/ SPDX-License-Identifier: Apache-2.0\x0A/// SPDX-\xE2\x80\x93FileC
+eeuni.mfnain()\x0A}\x0A
+1__0\x5C"Z
+|=#
+if
+1.0e10):/>=.macro\x091.
+>\x0A  assert bit_array == <<97, 0, 98, 0, 99, 0>>\x0A}\x0A\x0Apub fn variable_utf16_123456789012345678901230.1e-34567890little
+>> auto1__0/.
+ssage_2 <> "!" -> True\x0A    _ -> Faalse\x0A  }\x0A}\x0A
+case--.opaque<).*
+<|\x0A->@fn:
+case/
+\x5Cu{110000}[ 
+h\x7Fe Gle
+"]|fn
+1.5g*fnfnimport,<>"str"
+.\xE6\x97\xA5\xE6\x9C\xAC]/[ =+}1.0e400\xE2\x80\x8B}
+.)42 fn42)
+:delegate..fn\xE3\x80\x82\xEF\xBC\xBEb1auto1__0@//==
+autocase<
+macro<>\x5Cu{1F600}\xEF\xBC\x88-<>let&&g
+//a!!let"\x5Cu{1234567}
+add(a, b) {\x0A  a + b\x0A}\x0A\x0A\x0Apub fn main() {\x0A  1\x0A  |> add()\x0A}\x0A
+t() {\x0A  let abs =fn(value)
+///\x5Cn\xE1\xB4\xB5macrodelegateopaque
+a0<>+ fn->0+(a
+mport gleam/io\x0A\x0A/// This testss that a project with no readme doessn't get published.:\x0A///
+ir_functioechon()))\x0A}\x0A\x0A@external(erlang, "erlang_file", "main")\x0A\x0Afn erlang_
+")\x0Afn rebr3_dep_functin() -> Dynamic\x0A\x0A@external(erlang, "Elixir.ElixirTestFile", "min")\x0Afn elixir_func
+ightText: 20266 The G\xE2\x80\x8Bleam contribbutors\x0A\x0Apub type Box(a, b, c) {\x0A  AlmostFull(a, c)\x0A  Almo
+|>
+<-\x5C\x00>
+!0\xE2\x80\x98case1case<=.F\xCE\xBB
+htText: 2026 The Gl0OOea
+ock_multiple_test( {\x0A  let name = id("Luc_y")\x0A  let result =\x0A    name\x0A    <> {\x0A      let 
+\x5Cu{1F600}0a  ==x_y*|[-
+!,>
+case\xE2\x80\x94\x5Cn0X+_}
+: 2019 The Gleam contributors\x0A\x0Apub fn add(a, b) {\x0A  a +0O b\x0A}\x0A\x0Apub fn main() {\x0A  1\x0A  |> add()\x0A}\x0A
+\xEF\xBC\xBD>( /
+type
+todo
+_discard.."\xD0\xBE<.=import
+0,  44, 0, 0, 0,
+s\x0A\x0Apubb fn something() {\x0A  "Jut a thing toexport"\x0A}\x0A
+x_y...]\x0D\x0A)..a//<
++={Wibble*asWibble|>e#[
+..(\xD0\xB5
+\xE2\x80\x9D
+2 = case intt {\x0A
+cond b: Int) -> Int {\x0A  a + b\x0A}}\x0A\x0A/// Alias to add function\x0Appub c_onst function_in
+// SPDX-FileCopyrightText:  2021 The Gleamm ccontributo
+ SPDX-License-Identifier: Apacche-2.0\x0A// SPDX-FileCopyrightText: 20
+se-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2026 Te Gleam cntribbutors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main
+e+<let@\xD0\xBE07 
+x_ya>1.5|>==
+ SPDX-License--Identifier
+-<<>&!->\xE2\x80\x8B)
+et : Int = Eh?"\x0A  x\x0A}\x0A
+leCopyrightText: 2023\x00 The  Gleam contributors\x0A\x0Apub fn main() {\x0A  Nil\x0A}\x0A
+ ||>1.5:1@_==1
+'\xCE\xBB+.<<<\xEF\xBC\x9Cwobble.\x5Cu{else\x5Cu{}\xD0\xB5->
+tributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {\x0A  io.println("Hello frrom
+top ee
+/ SPDX-FileCopyrightText: 2021 Te Gleam cntributors\x0A\x0Apub fn hello() -> String {\x0A \xE1\xB4\xB5 "Hello"\x0A}\x0A
+Text: 2023 The GGleam contributors\x0A\x0Apub tye TypeD {\x0A  elseConstructorD(String)\x0A}\x0A
+t(%%=) {\x0A  l
+ctorC(pr
+0
+#"-|>1.5"str"Wibble"
+test\xEF\xBC\xBD<>
+\xE2\x80\x94\xEF\xBC\x89pub||1_0000.1e-32todo
+_discard123456789012345678901234567890||let[\x7F\x0D\x0AWibble.
+n(3) || int.is_even(4)\x0A\x0A  // This shoud short-circuit so we don't panic hee\x0A  assert True 
+message())\x0A}\x0A\x0A@externa(erlang, "project_ffi", "log")\x0A@extern
+n(val))\x0A}\x0A\x0Apub type Either(a, b) {\x0A  Left(a)\x0A  Righht(b)\x0A}\x0A\x0Apub const either_int: Either(Int, Int) = Lef
+ 2024 The Gleam contributors\x0A\x0Apub fn main() {\x0A   compilation__erroor\x0A}\x0A
+>>>>>>>}{[
+===..==fnb1b1
+something) {\x0A\x0A  1_io.printn(som
+X-FileCopyrightTex>=.t: 2023 The Gleam contributos\x0A\x0Apub fn main(arg: Intx) -> Nil {\x0A  Nil\x0A}\x0A
+-> 
+<else|>|}<|-><<<*\x0A
+!!{Wibble*\x0D\x0A1.5/
+CopyrightText: 2024 The Gleam contrributors\x0A\x0Apub fn main(import) {\x0A  "Hello opaquefrom second
+eam \xEF\xBC\x88contribu
+0bc
+ from shippment test!")\x0A\x0A}\x0A
+\xEF\xBD\x9C#type~_discard///*\x5Cu{1234567}0.1e-3<-1.0e
+-lang/gleam/issues/1093\x0Apub fn contextual_ino_ffor_access_tes
+_
+() {\x0A  let left = []\x0A  let right = []\x0A  asse0xrt left == right\x0A}\x0A\x0Apub fn list_eq_2_tes
+(fn_/
+() {\x0A  assert [1, 2, ] == tail_recursive_acumulate_down(3, [])\x0A}\x0A\x0A// https://ggithub.com/g
+\x5Cu{D800}{!1.5
+/ SPDX-FileC\xD0\xBEopyriightText: 2020 The Gleam contributors\x0A\x0Apub type Box(aa) {\x0A  Box(tag: String, value: a)
+import one\x0Aimport one/nested\x0A\x0Apub fn1.0e-< main() {\x0A  one.hello()\x0A  |> n
+$1.0e10<<\xD1\x80\xE1\xB4\xB5[\xE2\x80\x9D\xE2\x80\x94-.\xEF\xBC\xA0
+\x0A  leet assert <<_,, b:bytes-3, _>> = <<1, 2, 3, 4, 5>>\x0A  let assert <<_, rest:bytes>> = b\x0A  assert rest1.7976931348623157e308 == 
+{..>\x0A]==\x0D\x0A<>
+x-._Wibble//[-"{+1
+==}b1.+-0<>:\xE2\x80\x93
+|>! (
+ript, "./projeect_ffnfi.mjs", "log")\x0Afn println(a: String) -> Nil\x0A
+1<>"str".0<==#= 
+htText: 20021 The
+The Gleam contributors\x0A\x0Aimport ffi\x0A@target(jjavascript)\x0Apub f
+FileCCopy\xD0\xB5
+ c\x0A\x0A\x0Apub fn negatio_7_test() {\x0A  let 
+import=
+ontributors\x0A\x0Aimpo\x5Cnrt gleam/io\x0A
+oject__b\x0Aimpor project_c\x0A\x0A\x0Apub type 
+>//
+!testletb11.5@#/
+utors\x0A\x0Apub fn negaat/ion_1_est() {\x0A  let a = 3\x0A
+\x5Cn///~\xE2\x80\x98\xEF\xBC\x88
+X-Licene-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightTex
+-=<_===-=,caseecho\xEF\xBC\x8C
+\x5C"/
+ +
+ehello()\x0A  |> nested.id\x0A}\x0A
+r123456789012345678901234567890t\x0A>=
+o, worl2!")\x0A}\x0A
+C00Xo
+\x0A  assert updated == record_update.Box(@"a", 6)\x0A}\x0A\x0A// https://github.com/gleam-lng/gleam/issues/1379\x0Apub fn
+/._discard
+..+1.51x_y\xEF\xBC\x8E" =+
+fn*"str" _42 +<>0.0
+CopyrightText: 018 Te
+_discard/=..*
+1.5a-/fn1""str"b11
+\xE2\x80\x93\xEF\xBC\x9C;g>=.\xE2\x80\x99.
+>=\x5C"'4.9e-324\xE2\x80\x93\xEF\xBC\xBB-1\x5Cu{110000}todo////
+[42fn]: #\x0D\x0A*[\x5Cu
+Wibble==let:1.5\x0D\x0A"str">
+// SDX-FileCop0XyrightText: 2019 The Gleam con
+! Wibble]}
+tors\x0A\x0Appub fn literal_utf8_string_segment_test() {\x0A  let bit_array = <<"abc":utf8>>\x0A  asse
+ortgeam/io\x0A\x0Apub fn
+Text: 2025 The Gleam contributoors\x0A\x0Apub fn main() {\x0A  let xx =
+42{<
+@//| >
+/_ SPDX-FileCo
+\x5Cu{D800}/.
+:let"str"0
+PDX-Fi==eCopyr
+_\x0AWibble\x0Ax_y-"1*import
+\x0A\xEF\xBC\x9A  Hello"\x0A}\x0A
+m contribu0Otos\x0A\x0Apub fn hello() {\x0A  "world"\x0A}\x0A
+)\x0A  assert udated = MixedRecord(1, 3.14, 12, "Something")\x0A}\x0A
+ _\x5Cu{110000}42==
+->|a<!=x_y
+  rebr3_dep_fun
+is not mistaken")\x0A}\x0A\x0Afn second_l\xEF\xBC\x9Eine() 1.0e{\x0A  io.println("for a||
++/.fn_panic<_{
+{x_y,+case<#
+am cc
+=type`\xEF\xBC\xBD+=<*/\xE2\x88\x95/.\xEF\xBC\xBB
+e {\x0A      value if value > 0 -> value\x0A    0  _ -> -v
+\xEF\xBC\x88_<-
+w.mainn()\x0A}\x0A
+ense-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightTet: 2024 The
+ize(16),\x0A    0x4:siz
+\xEF\xBC\x88
+4.9e-324\xF0\x9F\xA6\x80\xEF\xBC\xBBtest!1.0e10.\xEF\xBC\x881.0eassert\xE2\x80\x93
+9b1\xEF\xBC\xBB0\x7F. .(<>11.5
+X-License-Iden\x5Cu{tiifi==er:
+: Apache-2.0\x0A// SPDX-FileCopyrig\x5Cu{1234567}htText: 2026 The Gleam contributors\x0A\x0Apub fn prepend_1_test(() {\x0A  let left  = [1, ..
+-2.0\x0A/\x5Cu/ SPDX-FileCopyrightT*.
+pub fn mmain() {{\x0A  io.println("Hello from test/ested!")\x0A}\x0A
+*42+\x0D\x0Afn
+: Apache-2.0\x0A// SPDX-FileCopyrightText: 2025 TThe Gleam contrib
+ fom Gleam compiled to Erlang!")\x0A  io.println(rlang_function())\x0A  io.println(elixir_function()
+\x0A
+ig>>\x0A  assert bit_array\xEF\xBC\x88 == <<0, 0, 0, 97, 0, 0, 0, 98, 0, 0, 0, 99>>\x0A}\x0A\x0Apub fn variable_utf32_big
+.0\x0A// SPDX-FileCopyrightText: 226 The Gleam contributors\x0A\x0Aimp
+0<<<<<<<]>=\xEF\xBC\x9A*;0[
+asZ\xEF\xBC\xBE
+\x0A  ioprintln("Hello from dev/")\x0A\x0A}\x0A
+!=:%=\xEF\xBC\x9Econst0X1.opaque
+== 6\x0A}\x0A\x0A// opaqueht
+-Identiier:
+= 0\x0A}\x0A\x0Apub fn remainder_7_test() {\x0A  assert -13 % 3 == -1\x0A}\x0A\x0Apub ftypen remainder_8_test() {\x0A  assert 13 %: -3 == 1
+_
+apanic>=.usepub\x5Cu{1F600}>+=0
+\x00\x00X-FwobbleileCo
+\x00,auto\xE1\xB4\xB5<<<<<<<1.0e10type
+DX-
+PDX-Liense-Identifier: Apache-2.0\x0A// SPDX-FileCCopyrighttText: 202
+<<97, 0, 0, 0, 98, 0, 0, 0, 99,0, 0, 0>>\x0A}\x0A\x0Apub fn literal_utf32_big_strin
+e\x5Cu{D800}d.\x0A///\x0Apub
+- *1*
++==
+- { -{ -{ -{ -b } } 
+\x0A.\xEF\xBC\x9E->a123456789012345678901234567890 
+\xEF\xBB\xBFderive_discard(caseWibble0a->
+ Wibble
+//
+eCopyrightText:^ 2024 The Gleam contributors\x0A\x0Apub  fn main() {\x0A  "Hello from multi_namespace!"\x0A}\x0A
+ain() {\x0A  ipubo.println("Hello from shipment test!")\x0A}\x0A
+pe Box(a) {\x0A  Box(ttag: String, \xD1\x80value: a)\x0A}\x0A
+_included_test() {\x0A  let path = "./build/dev/erlang//language/
+= gleam.Nil\x0A  assert lleft == right\x0A
+ @){
+|b1 *[)case==fn|> :
+0.30000000000000004//>#(
+ !"str">x_yWibble==|> }
+SPDX-FileCopyri
+as\xE2\x80\x94:Wibble\x0C\xEF\xBC\x8Cassert
+entifier: Apache-2.\x5C0\x0A// SPDX-FileCopyrigh\xE2\x80\x8BtText: 2021 The G
+<\x0A &   8,, 0,
+    x\x0A  }\x0A  assert macro1 == f(1)\x0A\x0A\x0A
+err:e Apace-2.0\x0A//
+! *=!..x_y
+ =\x5Cu{110000}=two.
+42 Z..\xE2\x80\x8B]
+che-2.0\x0A// SPDX-FileCopyrightText: 2021 The Gleam contributors\x0A\x0Aimpor)t one\x0A\x0A\x0Apub fn
+< 1_000\xEF\xBB\xBF\x0A]>>!todo1.0e10.\x5Cu{1F600}
+unction_\xD1\x80shadowed_by_own_argifument) {\x0A  function_shadowed_by_own_argument()\x0A}\x0A\x0Apub fn ten_million_recursions_doesnt_
+\x5Cu{1F600}2\x0D\x0A-==0o_
+x_yE><>]*1\x0D\x0A
+\xE1\xB4\xB5
+, 1.0_:b
+st() {\x0Alet x = <<255, 2a55,
+  +fn_x1fn==
+ Gleam contribuutors\x0A\x0Aimport glam/bitwie\x0A\x0Apub fn main() {\x0A
+!123456789012345678901234567890[&!=\xEF\xBC\x9A#
+r11._discard0e-ig
+|>|</\xC2\xA0>atestWibble|>1
+\x5Cu{}\x5Cu{1F600}
+<=}\xE2\x80\x94==!>&casederive42
+2.0\x0A// SPDX-FileCopyrightText: 2026 The Gleam contributors\x0A\x0Apubb fn prepend_1_tes
+ let//"str"\x0Ca<=.&let
+Identifier: Apace-2.0\x0A// SPDX-FileCopyrightText: 20Wibble24 The
+le result = case x, y {\x0A  1_  False, True -> 1\x0A    _, _ -> 0\x0A  }\x0A  assert result ="= 0\x0A}\x0A\x0Apub fn alternat
+// SPDX-FilopaqueeCopyrightT^ext: 2025 The >=Glea
+<>"str"-42\xE2\x80\x9C-
+ileCopyrightText:  2023 Thh
+\x0D\x0A1.. 
+leeunt/should\x0A\x0Apub fn main() {\x0A  :gleeunit.main()\x0A\x0A\x0A/
+PDX-License-Identiier: Apache-2.0\x0A// SPDX-pubFileCopyrightText: 2019 The Gleam co
+#x_y=let!)fn>
+b1\x0D\x0Acase
+\x7F==*=\x5Cu{D800}0b1=:
+0\x0D\x0A|case
+ultiplication_6_test() {\x0A  assert 2 ** -4 == -
+ifier: Apache-2.0\x0A// SPDX-Fil+.eCopyrightText:
+project.m]ai\xEF\xBC\xBEn()\x0A\x0A}\x0A
+-License-Identifier: Apache-2.0\x0A// SPDXwobble-FileCopyrightText: 2019 The Gleam contributors\x0A\x0Apub fn a
+ier:derive Apache-2.0\x0A// SPDX-FileCopyrightText: 2026 The Gleam_ contributors\x0A\x0Apub fn addition_1_test() {\x0A  asssert 0 + 
+else\x09?-=
+==========..F
+-=~////
+b1b11  {
+rth\xE2\x80\x8B(i
+letWibble{->//(1|>\xE3\x80\x81
+let{*=.<\x5C"/else
+\x0A  x + 2\x0A}\x0A\x0Afn wibble(_: Int) -> Float{\x0A  0.0\x0A}\x0A\x0A//
+use\x0Cf0B\xE2\x80\x8B<.1."\xCE\xBB1.0eWibble<<
+s {\x0A  let func = fFunction_int_int_returns_int_alias(1, _)\x0A  func\x0A}\x0A\x0Apub fn function_generc_fn_generic_which_r
+o  from multi_namespa
+^'
+>.123456789012345678901234567890
+b1--<(\x0D\x0Acase<<>
+_..==\x0D\x0A- _ 
+\xE2\x80\x934.9e-324<<<\x5C2.\xEF\xBC\x89"1.0e-\xEF\xBC\x9Aderive1__0
+b fn mainn() {\x0A  let location = p\xEF\xBC\x8E
+t x =  <<1,
+ this packkag fo
+]++derive\xEF\xBC\xBB\xEF\xBC\xBE\x5Cu{x
+ \x0A#0ox_y\x0A1.5)
+SPDX-License-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2025 The Gleam contributors\x0A\x0Aimport gle*=am/io\x0A\x0Apub
+\x0A\x0Apub fn negation_3_test() {\x0A  let a = 3\x0A  let b= -{ -{ -a } }\x0A  assert -3 == b\x0A}\x0A\x0Apub fn ne
+// \x0D\x0A== ]
+pub fn# negati on_1_tet() {\x0A
+\xEF\xBB\xBF \xD0\xB0
+Gle am \xEF\xBC\xA0>.con
+==\x0D\x0A\xE2\x88\x95%=/===\x0D\x0A"str".
+casegleam/bool\x0Aimport 
+amcontri
+ic.{type>=. =======D
+->+:\xE2\x80\x9A\xE6\x97\xA5\xE6\x9C\xAC
+antB(project_b.new("thin"", "name"))\x0A  let _ = VariantCprojec
+!=import+
+opaque|/||\x0A}
+Glem contributors\x0Aim
+]:#Wibble]x_y{>#
+0\x0A// SPPDX-FileC
+\x0A}\x0A\x0Apub  fn match___
+<<<<<<<if4.9e-324=>.xF+.\xCE\xBBecho<
+x_y|..
+\x09typex_y1.0-Wibble
+Eimport\xE3\x80\x81if
+est() {\x0A  let left  [1, 2, ..[]]\x0A  let right = [1, 2]\x0A  a
+pyrightText: 2026 The Gleam co<<<ntributors\x0A\x0Aimport gleamm/io\x0A\x0A/// This tests that a project with a defaultt r
+:>=.-//)\x0C
+ccess_nested_struct_in_a_tuple_item_test() {\x0A  let tup = #(Person("Quinn", g27, "Canada"), Person("Nikita", 99, "Internet
+////*.a\xE2\x80\x98"0O="
+l(javaascript, "./ffi_javascript.mjs", "toString")\x0Apub fn to_string(a: anytthing) -> String\x0A\x0A@external(er
+ache-2.0\x0A// SPDX-FileCopyrightText: 2026 The Gleam contrributors\x0A\x0Aimportt gleam/io\x0A\x0A/// This tests that a project w
+~\xEF\xBC\x9A===delegate."=======!type9
+am contributors\x0A\x0Aimport gleam/io\x0A\x0Apub fn main() {\x0A \x5Cu{D800} io.println("This is the ddefault dev module")\x0A}\x0A
+.
+_!|> \x0D\x0A
+javascript,  "./submodule_ff++
+2.0\x0A// SPDXX-FleC
+"[//(//#=\x5Cu{1234567}. let\x0A
+"]/42Wibble
+f#Wibble
+iense-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightTe
+<>
+at-16>>\x0A  assert left == right\x0A}\x0A\x0Apub fn float_16_ittle_negative_test() {
+0< 
+_\x5Cn1.5
+unction_int_int_returns_int_alias(1, _)\x0A  func\x0A}\x0A\x0Apub fn function_generic_fn_generic\xE2\x88\x97_which_return
+nse--Identifierr: Apache-2.0\x0A// SPDX-File>=CopyrightText: 2023 The Gleam contrib
+utodelegaters\x0A
+<>|>==
+oat_16_erlang_test() {\x0A  l\xE6\x97\xA5\xE6\x9C\xACet left = <<60, 0>>\x0A  et right = <<
+n=se-Identifier: Apahe-22.0\x0A
+ 42){..
+seven(47)\x0A}\x0A
+ SPDX-License-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: \xEF\xBC\x9C2025 The Gleam contribut
+\xE2\x80\x93+.\x0C_-0.1e-3\xE2\x80\x930B`const7
+eCopyrihtText: 2019 The Gleam contributors\x0A\x0A1.0e-\x0A
+]=={|>&\xCE\xBB($-~
+!11"str"=\xE2\x80\x94 }.
+>-
+\x0A\x0Apub fn main() {\x0A\x5Cu{   io.println("Hello from test/nested!
+ng)-> St
+:42_)xWibble->\x0D\x0Aa+42
+\xD0\xBE-=Z;]
+ c\x0A}\x0A\x0Apub fn negation_5_test() {\x0A  et7 a = 3\x0A  let b = -a\x0A  let c = a - -{ -{ -{ -{ -b } } } }\x0A  assert 0 == c\x0A
+"/=b1*\xEF\xBD\x9C"str"+\xC2\xA0////@b1\xE3\x80\x82
+st() {\x0A  assert 1 - -3 == {4\x0A}\x0A\x0Apub fn multi
+<)..Wibble
+\x0A   let bit_arrray = <<string:utf32
+ }\x0A\x0A  =======assert  <=.result == 1\x0A}\x0A\x0A// https://git
+ 5\x5Cu{, 6, 7, 8, 9, 10, 11,/= 12>>\x0A}\x0Apub fn siz
+\x5Cu{1F600}%\x0D\x0A]//assertgE\xEF\xBC\x8E
+t_c.TypeC)\x0A}\x0A\x0Apub fn main() {\x0A  let _ = VarianntB(projec_b.new("thing", "name")
+n(\xEF\xBC\x8C\xEF\xBC\x8C)\x0A}\x0A
+let1(\x09fn\xD0\xB5{//|>"
+>0>=<=\xE2\x80\x9A+: 
+\x0D\x0A[1.5\x0D\x0A}&& 
+ub fn  test_() -=> Bool {\x0A  onee.hello() == two.main()\x0A}\x0A
+[
+\x5Cu{D800}\xEF\xBC\x8C\xEF\xBC\x89{
+\x0A  let left = [1, 2, ..[3, 4]]\x0A  let ri\xE2\x88\x95ght = [1, 2, 3, 4]\x0A  assert left == 
+->({.
+ctionpub const function*._int
+ub fn main() {\x0A  assert bool.negate(Faopaquelse) && result.is_ok(Error(81))\x0A}\x0A
+be reejected as well!)\x0A}\x0A
+vascript, "./nnested/submo
+ort gleam/int\x0A\x0Apub fn mtypeain() {\x0A   assertint.
+/\x5Cu{_gleam_artefacts/ffi_ypescript.ts"\x0A  assert ffi.file_exists(path)\x0A}\x0A
+1_macro\xEF\xBC\x9CZ
+a> +1->#
+| "..42,
+1\x0A// -><>Wibble /Wibble..
+ule"))\x0A}\x0A
+->42!"str"|>|>
+ mod_with_numbers_0123456789\x0Aimport shadowed_mo\xEF\xBC\x89dule.{ShadowPerrson}\x0A\x0Apub fn mod_with_numbers_test() {\x0A  assert mod_
+) -> il a{\x0A io.println("Hello from default_main!")\x0A}\x0A
+\x5Cu{}*=?++8,&
+\xC3\xA9:\x5C">=\x0C\xD0\xB5]a
+\x5Cu{1234567}&&aE[
+auto+.\xE2\x80\x98\xEF\xBC\x8C
+#|>x_y+//}\xF0\x9F\xA6\x80-
+= result\x0A}\x0A\x0Apub fn pipe_into_capture_test() {\x0A  let result =\x0A    1\x0A    |> pair(, _)\x0A  assert #(2, 1) == resul
+// SPDX-License-Identifiier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2026 The Gleam contributoors\x0A\x0Aimport packag
+:: Apache-2.0\x0A// SPDX-FileCopyrightText: 0233 The Gleam contributors\x0A\x0Aimport 
+1__0caseletpanic<={<=.<=.\xD0\xB5
+/io\x0A\x0Apub fn main() {\x0A  io.println("Hello, from Gleam compiled to Erlang!")\x0A  io.prin-.tln(erlang_functionn())
+che-2.01.0e-\x0A// SPDX-FileCopyrightText: 2021 The Gleam con<tributors\x0A\x0Apub fn hello_world() {\x0A  let x: IInt = "Eh?"
+1.\xEF\xBD\x9C||\x09\xE2\x80\x94-=fn++asa/\xF0\x9F\xA6\x80
+\x0A// SPDX-FileCopyrightText: 2026 The Glea1.7976931348623157e308m contributos\x0A\x0A// https://github.com/gl
+tpuba
+\x0A0B1.0e400}
+e Gleam contribuutors\x0A\x0Aimport one\x0A\x0Apub fn main() -> String {\x0A  one.hell
+let\xC3\xA9asg\x5Cu{1234567}
+$=.
+:utf16-big>>\x0A  assert bi_array == <<0-=, 97, 0, 98, 0, 99>>\x0A}\x0A\x0Apub fn variable_utf16_big_string_segment_test
+0\xE2\x80\x93\x0Ax_y
+Apache-2.0\x0A// SPDX-FileCopyrightText: 2025 The Gleam contributors\x0A\x0Apub fn main() \x0A  let x = True\x0A  assert !x\x0A}\x0A
+n +.negation_fase_test() {\x0A  assert !False == 
+\x7F>=\xCE\xBB`opaque\xEF\xBC\xBB\xE2\x80\x8B1.0e-
+DX-Licnse-Identfier: Apache
+\x0D\x0Aimplement..
+iixir.ElixirTestFile", "main")\x0Afn elixir_function() -> String\x0A\x0A@exteernal(erlang, "
+lo() -> Strng {\x0A 
+"[<>-<>]fn!
+irst_line() {\x0A  io.println"Here we have some additional code so t/hat this is not miistaken")
+tiii
+DX-FileopyrightText: 2021 The Gleam contributors\x0A\x0Apub fn hello()) -> String {\x0A 
+214// https://github.com/gleam-lang/gleam/issues/1380\x0A
+1.5@)Zlet#//}=\xEF\xBC\xA0/#
+Wibble,\xE2\x80\x9D*)'\x5Cq_discard
++.\x5Cq\xC2\xA01.0e400_discardZ0.1e-390O
+_Wibble\x5Cu{110000}0_discard===*.,\x0D-@
+,"str"\x0D\x0AWibble1==x_y
+=======->>>
+# Wibble|_1)==|>>*>
+ 
+htText: 2023 TThe Gleam contributors\x0A\x0Apub type TypeD {\x0A  ConstructorD(String)\x0A}\x0A
+ Apace\xEF\xBC\x88-2.0\x0A// SPDXFileCopy
+1
+@!\x5Cu{D800}||fn@<f
+\xE2\x80\x9D
+->4.9e-324[
+/1.5
+ng to exxport"\x0A}\x0A
+pache-2.0\x0A// SPDX-FileCopyr4.9e-324ightText: 2020 The Gleam contrbutors\x0A
+ fn typesccript_file_includeed_test() {\x0A  let pth = "./
+========,a|.fn"+aas*"
+m contr-ibutors\x0A\x0Aimpoort one\x0Aimport 
+\xD1\x80\x5Cu{}=..Wibble*\xE2\x80\x8B*!=.|>
+adelegatetion.pathname\x0A  let assert "" = )oc
+ {\x0A  "HHelllo"\x0A}\x0A
+tbutors\x0A\x0Appub fn main() {\x0A  Nil\x0A}\x0A
+f
+\xE2\x88\x97,/=<<\x5Cu{D800}0O
+DX-FileCopyrightText: 2020 The Gleamcontributors\x0A\x0Apub type Box(a) {\x0A  Box(tag: String
+42
+\x0A// SPDX-FilCo+=pyright
+xt: 2019 Thhe Glea>=.
+DX-FileCopyrightText: 2021 The Gleam contributors\x0A\x0Aimport glam/dynami_c.{type Dynamic}\x0Aimport gleam/e
+he Gleam cotrib\xE3\x80\x82utors\x0A
+ght hand side evaluated\x0Apub fn negation_false_o_panic_test() {\x0A  let bool = !False\x0A  bool || panic
+ing to<. expot"\x0A}\x0A\x0A
+is custom type has label names that are not valid in Erlang or JavaScript\x0Apub ty\x5Cpe BadLabelNames {\x0A  BadL
+igh\x0A}\x0A\x0A=pub fn unalig
+butors\x0A\x0Apub fn hel\xD0\xBE\xE2\x80\x93lo() -> Sttring {\x0A 
+\x09'
+@external((jjavascript, "./
+ 0>fn[\x0D\x0Alet*0b1
+{x_y\x0A
+ SPX-License-Identifier: Apache-2.0\x0A// SPDX-FileCopyrightText: 2021 The Gleam cntributors\x0A
+oject.mmain()\x0A}\x0A
+\xEF\xBD\x9C\xE6\x97\xA5\xE6\x9C\xAC\xD0\xBEwobble$"<^"\x5C
+r: Apac_he-2.0// SPDX-Fi\x0A
+case
+ {\x0A  "worl\xD0\xB5d"\x0A}\x0A
+(:
+b1\xE1\xB4\xB5F1|>.let+
+t mod_with_numbers_0123456789\x0Aimporrt shadowed_module.{ShadowPerson}\x0A\x0Apub fn mod_wih_numbers_test() {\x0A  assert 
+:+fn\x0D\x0A>case//1.5
++\xC2\xA0>*.\xE3\x80\x81=^\xEF\xBC\xA0\xEF\xBC\x8CEusee
+in)  {\x0A  location()}\x0A\x0A@external(javascript, "./pr
+0X0O*.
+2021 The Gleam contrributors\x0A\x0A\x0Apub type Location {\x0A  Location(\x0Atype    href: String,\x0A    origin: S
+..&&aassertx_y123456789012345678901234567890pub +0.1e-3""
+>.<=. _discard\xEF\xBC\x89//\x0C
+("!x_y Wibble|1
