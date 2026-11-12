@@ -1,5 +1,5 @@
-## port-of: src-span/src/lib.rs
-## port-status: draft
+## port-part-of: src-span/src/lib.rs
+## (only a part of that file is ported so far: when the rest is, this becomes `port-of` with a `port-status`)
 #
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: 2021 The Gleam contributors

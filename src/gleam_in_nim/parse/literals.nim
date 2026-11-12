@@ -1,5 +1,5 @@
-## port-of: compiler-core/src/parse.rs
-## port-status: draft
+## port-part-of: compiler-core/src/parse.rs
+## (only a part of that file is ported so far: when the rest is, this becomes `port-of` with a `port-status`)
 #
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: 2020 The Gleam contributors

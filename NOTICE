@@ -1,0 +1,12 @@
+gleam in nim
+Copyright 2026 Pietro Peterlongo
+
+This repository contains translations to Nim of parts of the Gleam compiler
+(https://github.com/gleam-lang/gleam), version 1.19.2, commit
+ed41eace2dd89054eb2d744c33925261d1eff32e, which is
+Copyright The Gleam contributors and licensed under the Apache License,
+Version 2.0. A copy of that licence is in LICENSE-APACHE.
+
+The translated files are those that start with a `port-of` or `port-part-of`
+line naming the Rust file they come from. They have been changed: they are
+translations from Rust to Nim.

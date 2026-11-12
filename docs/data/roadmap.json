@@ -39,9 +39,9 @@
       "title": "The front end",
       "goal": "Gleam source in, a tree out, the same tree the Rust compiler builds. The plan thread fills in this phase and the next ones.",
       "steps": [
-        {"id": "lexer", "kind": "port", "status": "started", "title": "The lexer",
+        {"id": "lexer", "kind": "port", "status": "done", "title": "The lexer",
          "what": "Source text to tokens: the first piece of the compiler in Nim, checked token by token against the Rust lexer.",
-         "post": "", "pr": ""}
+         "post": "lexer", "pr": "7"}
       ]
     }
   ]

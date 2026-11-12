@@ -1,5 +1,5 @@
-## port-of: compiler-core/src/parse/tests.rs
-## port-status: draft
+## port-part-of: compiler-core/src/parse/tests.rs
+## port-part-of-note: the tests of that file that exercise the lexer
 ##
 ## The upstream tests that exercise the lexer. Tests that upstream runs
 ## through the parser (`assert_error!` with a `LexError`) are checked here at
