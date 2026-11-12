@@ -1,0 +1,13 @@
+# The Rust half of the parser's differential test: a driver over upstream's
+# parser, read from a copy of the pinned checkout (see build.sh for why a copy).
+[package]
+name = "parse-driver"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+gleam-core = { path = "../../../build/parse-oracle/gleam/compiler-core" }
+camino = "1"
+
+[workspace]
