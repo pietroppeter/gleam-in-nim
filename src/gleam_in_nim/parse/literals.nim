@@ -14,6 +14,15 @@
 import std/[options, strutils]
 import pkg/bigints
 
+type LiteralFloatValue* = distinct float
+  ## The value of a float literal: an `f64` that is never NaN, so it can be
+  ## compared for equality. Upstream `LiteralFloatValue(f64)`.
+
+func value*(self: LiteralFloatValue): float =
+  float(self)
+
+func `==`*(a, b: LiteralFloatValue): bool {.borrow.}
+
 func parseIntValue*(value: string): Option[BigInt] =
   ## Parses an Int value to a bigint.
   var radix = 10

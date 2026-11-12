@@ -22,14 +22,16 @@
 
 import std/[macros, options, strutils, unicode, tables, typetraits]
 import pkg/bigints
-import ./rust_debug_tables
+import ./[rust_debug_tables, rust_enum]
+export rust_enum
 
-type Unit* = object ## Rust's `()`.
 
 const renamedFields* = {
   # Nim field name, Rust field name: the names that could not be kept.
   "stop": "end",
   "typ": "type_",
+  "returns": "return_",
+  "tupl": "tuple",
 }.toTable
 
 func snakeCase*(name: string): string =
@@ -190,6 +192,11 @@ proc debugFmt*[T](x: T, indent: string, into: var string) =
     into.add $x
   elif T is SomeFloat:
     into.add rustFloat(x)
+  elif T is distinct:
+    # a tuple struct with one field: `LiteralFloatValue(1.0)`
+    into.add baseName($T) & "(\n" & indent & step
+    debugFmt(distinctBase(x), indent & step, into)
+    into.add ",\n" & indent & ")"
   elif T is enum:
     into.add withoutPrefix($x)
   elif T is Option:
@@ -230,15 +237,11 @@ proc debugFmt*[T](x: T, indent: string, into: var string) =
           variant = withoutPrefix($value)
         else:
           hasPayload = true
-          const payloadName = baseName($typeof(value))
-          if payloadName == typeName & variant and payloadName != typeName:
+          when value is StructVariant:
             # struct variant: `Int { ... }`
-            when value is ref:
-              fmtStruct(value[], variant, indent, into)
-            elif value is object:
-              fmtStruct(value, variant, indent, into)
-            else:
-              doAssert false
+            fmtStruct(value, variant, indent, into)
+          elif value is ref StructVariant:
+            fmtStruct(value[], variant, indent, into)
           else:
             # tuple variant: `Function(...)`
             into.add variant & "(\n" & indent & step

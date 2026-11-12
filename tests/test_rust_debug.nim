@@ -13,16 +13,16 @@ type
     teList
     teTodo
 
-  ToyExprInt = object
+  ToyExprInt = object of StructVariant
     location: SrcSpan
     value: string
     intValue: BigInt
 
-  ToyExprVar = object
+  ToyExprVar = object of StructVariant
     location: SrcSpan
     name: string
 
-  ToyExprList = object
+  ToyExprList = object of StructVariant
     location: SrcSpan
     elements: seq[ToyExpr]
     tail: Option[ref ToyExpr]
