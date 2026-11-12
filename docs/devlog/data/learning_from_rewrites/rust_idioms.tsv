@@ -1,0 +1,18 @@
+match	1430	case on the kind of an object variant
+.clone()	1413	nothing for a ref, a plain copy for a value
+SrcSpan	1346	the same small object of two uint32
+EcoString	1217	string
+lifetimes (<'a)	776	nothing: the garbage collector keeps things alive
+if let, let else	515	if with isSome, or case
+? (early return)	417	the error convention of the porting guide
+#[derive]	401	mostly free in Nim; == and hash by hand for refs
+Arc<T>	364	ref object
+HashMap	359	Table
+enum	191	enum, or object variant when it carries data
+struct	239	object
+Box<T>	131	ref object
+RefCell	48	a ref with fields that change
+trait	21	procs, or methods when there are several types
+dyn	17	methods or a proc value
+async, await	25	plain calls (only the build tool is async)
+unsafe	1	nothing

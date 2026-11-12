@@ -130,30 +130,31 @@
         {
           "id": "rewrites",
           "kind": "research",
-          "status": "started",
+          "status": "done",
           "title": "Other rewrites",
           "what": "How a big project is rewritten in another language, by people and by AI: what worked, what did not, what to copy.",
-          "post": "",
-          "pr": ""
+          "post": "learning-from-rewrites",
+          "pr": "6"
         },
         {
           "id": "practices",
           "kind": "tooling",
-          "status": "started",
+          "status": "done",
           "title": "How to develop",
           "what": "Specs, decision records, tooling to verify the port and tooling for Pietro to review it.",
-          "post": "",
-          "pr": ""
+          "post": "how-we-work",
+          "pr": "6"
         },
         {
           "id": "harvest-tests",
           "kind": "tooling",
-          "status": "planned",
+          "status": "done",
           "title": "Harvest the upstream Rust tests",
           "what": "Many upstream tests keep inputs and expected values in Rust macros, not in snapshot files: 918 formatter assertions, 374 inference assertions, lexer and parser assertions, dependency modules of backend tests. Extract them to JSON test vectors.",
           "done_when": "Every upstream assertion macro call is available as data, with counts per component in the coverage map.",
-          "post": "",
-          "pr": ""
+          "post": "how-we-work",
+          "pr": "6",
+          "owner": "Learn from other compiler rewrites"
         },
         {
           "id": "erlang-in-ci",

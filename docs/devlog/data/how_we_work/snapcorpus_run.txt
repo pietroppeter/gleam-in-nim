@@ -1,0 +1,10 @@
+snapshots: 4377 at gleam 1.19.2, 2535 embed their Gleam source, from 101 Rust test files
+  compiler-core: docs                  49 (0 with source)
+  compiler-core: erlang               483 (476 with source)
+  compiler-core: error                 42 (0 with source)
+  compiler-core: javascript           843 (843 with source)
+  compiler-core: parse                264 (203 with source)
+  compiler-core: type_               1016 (1013 with source)
+  language-server: tests             1530 (0 with source)
+  test-package-compiler: tests         41 (0 with source)
+wrote docs/data/snapshots.json
