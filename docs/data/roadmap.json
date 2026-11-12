@@ -28,10 +28,10 @@
          "post": "", "pr": ""},
         {"id": "rewrites", "kind": "research", "status": "done", "title": "Other rewrites",
          "what": "How a big project is rewritten in another language, by people and by AI: what worked, what did not, what to copy.",
-         "post": "learning-from-rewrites", "pr": ""},
+         "post": "learning-from-rewrites", "pr": "6"},
         {"id": "practices", "kind": "tooling", "status": "done", "title": "How to develop",
          "what": "Specs, decision records, tooling to verify the port and tooling for Pietro to review it.",
-         "post": "how-we-work", "pr": ""}
+         "post": "how-we-work", "pr": "6"}
       ]
     },
     {
