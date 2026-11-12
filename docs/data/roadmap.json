@@ -415,7 +415,7 @@
           "what": "Type inference from nothing: type variables, unification, generalisation, and why Gleam needs no annotations.",
           "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
           "post": "what-a-type-checker-is",
-          "pr": "",
+          "pr": "21",
           "owner": "Explain compiler stages from scratch"
         },
         {
@@ -488,11 +488,11 @@
         {
           "id": "explain-exhaustiveness",
           "kind": "research",
-          "status": "planned",
+          "status": "done",
           "title": "From scratch: checking a case",
           "what": "How a compiler knows a case forgot something: patterns, decision trees, missing patterns.",
           "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
-          "post": "",
+          "post": "checking-a-case",
           "pr": "",
           "owner": "Explain compiler stages from scratch"
         },

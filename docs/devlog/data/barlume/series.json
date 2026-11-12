@@ -5,7 +5,7 @@
     {"stage": "Parser", "question": "How do words become a tree?", "takes": "tokens", "gives": "a syntax tree", "post": "what-a-parser-is"},
     {"stage": "Names and scopes", "question": "What does each name refer to?", "takes": "a syntax tree", "gives": "a tree where every name points at its definition", "post": "names-and-scopes"},
     {"stage": "Type checker", "question": "How can a compiler know the type of everything without being told?", "takes": "a syntax tree", "gives": "a typed tree, or a type error", "post": "what-a-type-checker-is"},
-    {"stage": "Exhaustiveness", "question": "How does it know a `case` forgot something?", "takes": "typed patterns", "gives": "a decision tree, or a missing pattern", "post": ""},
+    {"stage": "Exhaustiveness", "question": "How does it know a `case` forgot something?", "takes": "typed patterns", "gives": "a decision tree, or a missing pattern", "post": "checking-a-case"},
     {"stage": "Code generation", "question": "How does a tree become a program in another language?", "takes": "a typed tree", "gives": "Erlang or JavaScript, as text", "post": ""}
   ]
 }
