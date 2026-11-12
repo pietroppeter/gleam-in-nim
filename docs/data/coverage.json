@@ -442,10 +442,10 @@
       "stage": "erlang",
       "rust_code": 256,
       "rust_tests": 379,
-      "status": "planned",
-      "nim": "",
+      "status": "started",
+      "nim": "src/gleam_in_nim/erlang_term_format.nim",
       "post": "",
-      "notes": ""
+      "notes": "Draft: translated, 21 upstream tests replayed, 500 random terms round-tripped through Erlang. Paused before the verify pass and the explainer."
     },
     {
       "module": "format",
