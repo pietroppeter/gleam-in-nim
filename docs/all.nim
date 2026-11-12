@@ -5,4 +5,6 @@
 {.warning[UnusedImport]: off.}
 import index, roadmap, coverage, agents
 import devlog/index as devlogIndex
+import devlog/how_gleam_compiles
+import devlog/the_port_plan
 import devlog/workflow
