@@ -1,0 +1,11 @@
+total area: 9.14159
+Hello, BEAM!
+src/roots.gleam:11
+Ok(Rectangle(4.0, 4.0))
+src/roots.gleam:12
+Error(UnknownShape("hexagon"))
+src/roots.gleam:13
+Ok(#(1, <<2, 3>>))
+7 / 0 = 0
+add 2 to 40: 42
+the clock is ticking

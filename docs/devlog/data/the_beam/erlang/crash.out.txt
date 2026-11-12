@@ -1,0 +1,2 @@
+worker <0.79.0> died: badarith
+the observer is fine, thanks for asking
