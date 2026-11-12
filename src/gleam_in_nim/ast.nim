@@ -40,12 +40,12 @@
 
 import std/[options, sets, strutils]
 import pkg/bigints
-import ./[analyse, build, exhaustiveness, reference, rust_enum, src_span, typ]
+import ./[analyse, build, exhaustiveness, reference, rust_enum, src_span]
 import ./parse/literals
 import ./typ/[error, expression, fields, printer]
 
 export options, bigints
-export analyse, build, exhaustiveness, reference, rust_enum, src_span, typ
+export analyse, build, exhaustiveness, reference, rust_enum, src_span
 export literals, error, expression, fields, printer
 
 const
@@ -63,6 +63,24 @@ const
     ## The fields whose name is not the upstream one in camelCase: Nim name,
     ## Rust name. `type`, `return`, `end` and `tuple` are keywords, and a Nim
     ## identifier cannot end with an underscore.
+
+type
+  # `Publicity` is upstream among the small enums below. It is here because
+  # `Type` (in the file included next) has a field of it.
+  PublicityKind* = enum
+    pbPublic
+    pbPrivate
+    pbInternal
+
+  PublicityInternal* = object of StructVariant
+    attributeLocation*: Option[SrcSpan]
+
+  Publicity* = object
+    case kind*: PublicityKind
+    of pbPublic, pbPrivate: discard
+    of pbInternal: vInternal*: PublicityInternal
+
+include ./typ/in_tree
 
 type
   SpannedString* = (SrcSpan, string)
@@ -199,19 +217,6 @@ type
     of tyHole: vHole*: TypeAstHole
 
   # -- Small enums -----------------------------------------------------------
-
-  PublicityKind* = enum
-    pbPublic
-    pbPrivate
-    pbInternal
-
-  PublicityInternal* = object of StructVariant
-    attributeLocation*: Option[SrcSpan]
-
-  Publicity* = object
-    case kind*: PublicityKind
-    of pbPublic, pbPrivate: discard
-    of pbInternal: vInternal*: PublicityInternal
 
   Layer* = enum
     laValue ## The default.
@@ -992,6 +997,79 @@ type
       ## This is used in code generation to know when definitions can be safely omitted.
 
 include ./ast/untyped
+include ./ast/typed
+
+type
+  TypedArg* = Arg[Type]
+  TypedRecordConstructor* = RecordConstructor[Type]
+  TypedRecordConstructorArg* = RecordConstructorArg[Type]
+  TypedFunction* = Function[Type, TypedExpr]
+  TypedImport* = Import[string]
+  TypedModuleConstant* = ModuleConstant[Type]
+  TypedCustomType* = CustomType[Type]
+  TypedTypeAlias* = TypeAlias[Type]
+  TypedDefinition* = Definition[Type, TypedExpr, string]
+  TypedMultiPattern* = MultiPattern[Type]
+  TypedClause* = Clause[TypedExpr, Type]
+  TypedClauseGuard* = ClauseGuard[Type]
+  TypedPattern* = Pattern[Type]
+  TypedBitArraySize* = BitArraySize[Type]
+  TypedTailPattern* = TailPattern[Type]
+  TypedExprBitArraySegment* = BitArraySegment[TypedExpr, Type]
+  TypedConstantBitArraySegment* = BitArraySegment[TypedConstant, Type]
+  TypedPatternBitArraySegment* = BitArraySegment[TypedPattern, Type]
+  TypedConstantBitArraySegmentOption* = BitArrayOption[TypedConstant]
+  TypedUse* = Use[Type, TypedExpr]
+  TypedUseAssignment* = UseAssignment[Type]
+  TypedStatement* = Statement[Type, TypedExpr]
+  TypedAssignment* = Assignment[Type, TypedExpr]
+  TypedAssert* = Assert[TypedExpr]
+  TypedCallArg* = CallArg[TypedExpr]
+
+  TypedDefinitions* = object
+    imports*: seq[TypedImport]
+    constants*: seq[TypedModuleConstant]
+    customTypes*: seq[TypedCustomType]
+    typeAliases*: seq[TypedTypeAlias]
+    functions*: seq[TypedFunction]
+
+  BoundVariableNameKind* = enum
+    bvShorthandLabel ## A record's labelled field introduced with the shorthand syntax.
+    bvListTail
+    bvRegular ## Any other variable name.
+
+  BoundVariableNameShorthandLabel* = object of StructVariant
+    name*: string
+
+  BoundVariableNameListTail* = object of StructVariant
+    name*: string
+    tailLocation*: SrcSpan
+      ## The location of the whole tail, from the `..` prefix until the end of the variable.
+
+  BoundVariableNameRegular* = object of StructVariant
+    name*: string
+
+  BoundVariableName* = object
+    case kind*: BoundVariableNameKind
+    of bvShorthandLabel: vShorthandLabel*: BoundVariableNameShorthandLabel
+    of bvListTail: vListTail*: BoundVariableNameListTail
+    of bvRegular: vRegular*: BoundVariableNameRegular
+
+  BoundVariable* = object
+    ## A variable bound inside a pattern.
+    name*: BoundVariableName
+    location*: SrcSpan
+    typ*: Type
+
+  PatternUnusedArguments* = object
+    positional*: seq[Type]
+    labelled*: seq[(string, Type)]
+
+  BitArraySegmentTruncation* = object
+    truncatedValue*: BigInt ## The value that would end up being truncated.
+    truncatedInto*: BigInt ## What the value would be truncated into.
+    valueLocation*: SrcSpan ## The span of the segment's value being truncated.
+    segmentBits*: int64 ## The size of the segment.
 
 type
   UntypedClauseGuard* = ClauseGuard[Unit]

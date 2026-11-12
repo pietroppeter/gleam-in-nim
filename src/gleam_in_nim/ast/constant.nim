@@ -140,7 +140,69 @@ type
     of coInvalid: vInvalid*: ConstantInvalid[T]
     of coTodo: vTodo*: ConstantTodo[T]
 
-type UntypedConstant* = Constant[Unit]
+  # -- From `type_.rs` -------------------------------------------------------
+  #
+  # `ValueConstructor` and `ValueConstructorVariant` are upstream in
+  # `type_.rs`. They are here because they and `Constant` hold each other: a
+  # constant that names a value keeps its `ValueConstructor`, and the
+  # constructor of a module constant keeps the constant (decision 0011).
+
+  ValueConstructorVariantKind* = enum
+    vcLocalVariable ## A locally defined variable or function parameter
+    vcModuleConstant ## A module constant
+    vcModuleFn ## A function belonging to the module
+    vcRecord ## A constructor for a custom type
+
+  ValueConstructorVariantLocalVariable* = object of StructVariant
+    location*: SrcSpan
+    origin*: VariableOrigin
+
+  ValueConstructorVariantModuleConstant* = object of StructVariant
+    documentation*: Option[string]
+    location*: SrcSpan
+    module*: string
+    name*: string
+    literal*: Constant[Type]
+    implementations*: Implementations
+
+  ValueConstructorVariantModuleFn* = object of StructVariant
+    name*: string
+    fieldMap*: Option[FieldMap]
+    module*: string
+    arity*: int
+    location*: SrcSpan
+    documentation*: Option[string]
+    implementations*: Implementations
+    externalErlang*: Option[(string, string)]
+    externalJavascript*: Option[(string, string)]
+    purity*: Purity
+
+  ValueConstructorVariantRecord* = object of StructVariant
+    name*: string
+    arity*: int
+    fieldMap*: Option[FieldMap]
+    location*: SrcSpan
+    module*: string
+    variantsCount*: int
+    variantIndex*: int
+    documentation*: Option[string]
+
+  ValueConstructorVariant* = object
+    case kind*: ValueConstructorVariantKind
+    of vcLocalVariable: vLocalVariable*: ValueConstructorVariantLocalVariable
+    of vcModuleConstant: vModuleConstant*: ValueConstructorVariantModuleConstant
+    of vcModuleFn: vModuleFn*: ValueConstructorVariantModuleFn
+    of vcRecord: vRecord*: ValueConstructorVariantRecord
+
+  ValueConstructor* = object
+    publicity*: Publicity
+    deprecation*: Deprecation
+    variant*: ValueConstructorVariant
+    typ*: Type
+
+type
+  UntypedConstant* = Constant[Unit]
+  TypedConstant* = Constant[Type]
 
 func binOpPrecedence*[T](self: Constant[T]): uint8 =
   case self.kind
