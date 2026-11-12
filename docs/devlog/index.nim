@@ -21,6 +21,6 @@ fixed); what must stay true lives in the [roadmap](../roadmap/) and the [coverag
 
 nbCards "the posts, newest first":
   for p in posts:
-    nbCard(p.title, p.slug & "/", &"{p.date} · {p.kind}", (if p.kind == "port": nkGleam elif p.kind == "research": nkNim else: nkInfo)):
+    nbCard(p.title, p.slug & "/", &"{p.stamp} · {p.kind}", (if p.kind == "port": nkGleam elif p.kind == "research": nkNim else: nkInfo)):
       nbText p.lede
 nbSave

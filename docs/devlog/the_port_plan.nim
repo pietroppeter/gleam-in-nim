@@ -1,4 +1,4 @@
-## devlog: 12 Nov 2026 I | The port plan | Seven phases, seven milestones, one rule: print what the reference prints.
+## devlog: 12 Nov 2026 K | The port plan | Seven phases, seven milestones, one rule: print what the reference prints.
 ## kind: plan
 import std/[json, os, strformat, strutils, tables]
 import nimib

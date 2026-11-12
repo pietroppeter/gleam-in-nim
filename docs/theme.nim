@@ -220,6 +220,9 @@ details.fold[open] > summary { border-bottom: 1px dashed var(--line); margin-bot
 body > footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; line-height: 1.5; }
 body > footer p { margin: 0 0 .5rem; }
 body > footer a { color: var(--muted); }
+/* the notebook that made the page, folded at its foot */
+body > footer details.source { margin-top: .8rem; color: var(--ink); }
+body > footer details.source > summary { color: var(--muted); font-size: .86rem; }
 
 @media (max-width: 480px) {
   body { font-size: 16.5px; padding: 0 .9rem 3rem; }
