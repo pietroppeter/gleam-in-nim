@@ -1,0 +1,48 @@
+name: Smoke
+
+# Compiles a tiny Gleam package with the pinned reference compiler and runs the output on the
+# BEAM (from Erlang source and from abstract forms) and on Node: tools/smoke.sh. It proves this
+# CI can execute compiled code, which the port's back ends will need for their own output.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: smoke-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      # Gleam 1.19 needs OTP 27 or newer; rebar3 is not needed, nothing here is built with it
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: "28"
+          install-rebar: false
+          install-hex: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/cache@v4
+        with:
+          path: reference/bin
+          key: reference-bin-${{ hashFiles('reference/PIN') }}
+
+      - name: The pinned reference compiler, source and binary
+        run: reference/fetch.sh
+
+      - name: Versions
+        run: |
+          erl -noshell -eval 'io:format("OTP ~s, erts ~s~n", [erlang:system_info(otp_release), erlang:system_info(version)]), halt().'
+          node --version
+          reference/bin/gleam --version
+
+      - name: Smoke test
+        run: sh tools/smoke.sh
