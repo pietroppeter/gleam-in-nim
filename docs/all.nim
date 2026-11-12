@@ -18,6 +18,7 @@ import devlog/a_corpus_of_real_gleam
 import devlog/how_gleam_compiles
 import devlog/the_port_plan
 import devlog/the_pretty_printer
+import devlog/the_syntax_tree
 import devlog/what_the_reference_says
 import devlog/what_a_lexer_is
 import devlog/what_a_parser_is
