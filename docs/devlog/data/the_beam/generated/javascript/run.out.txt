@@ -1,0 +1,5 @@
+total area: 9.14159
+Hello, BEAM!
+7 / 0 = 0
+add 2 to 40: 42
+the clock is ticking

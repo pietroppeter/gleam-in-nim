@@ -1,0 +1,14 @@
+error: Type mismatch
+  ┌─ src/errs.gleam:4:14
+  │
+4 │   let b = id("one")
+  │              ^^^^^
+
+Expected type:
+
+    Int
+
+Found type:
+
+    String
+

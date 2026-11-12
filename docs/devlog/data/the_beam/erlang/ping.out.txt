@@ -1,0 +1,2 @@
+pong process <0.79.0> got ping
+main process <0.9.0> got pong

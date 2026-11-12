@@ -1,0 +1,40 @@
+31 forms
+{attribute,0,module,shapes}
+{attribute,0,compile,
+           [no_auto_import,nowarn_ignored,nowarn_unused_vars,
+            nowarn_unused_function,nowarn_nomatch,inline]}
+{attribute,0,export,
+           [{area,1},
+            {describe,1},
+            {widen,2},
+            {parse,2},
+            {total_area,1},
+            {greeting,1},
+            {make_adder,1},
+            {safe_divide,2},
+            {header,1},
+            {not_yet,0}]}
+{attribute,0,export_type,[{shape,0},{parse_error,0}]}
+{attribute,0,moduledoc,
+           <<" A tiny module that touches most of what the code generator has to handle.">>}
+{function,21,area,1,
+    [{clause,21,
+         [{var,21,'Shape'}],
+         [],
+         [{'case',22,
+              {var,22,'Shape'},
+              [{clause,23,
+                   [{tuple,23,[{atom,23,circle},{var,23,'R'}]}],
+                   [],
+                   [{op,23,'*',
+                        {op,23,'*',{float,7,3.14159},{var,23,'R'}},
+                        {var,23,'R'}}]},
+               {clause,24,
+                   [{tuple,24,
+                        [{atom,24,rectangle},{var,24,'W'},{var,24,'H'}]}],
+                   [],
+                   [{op,24,'*',{var,24,'W'},{var,24,'H'}}]},
+               {clause,25,
+                   [{atom,25,dot}],
+                   [],
+                   [{op,25,'+',{float,25,0.0}}]}]}]}]}
