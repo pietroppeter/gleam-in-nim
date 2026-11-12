@@ -1,0 +1,10 @@
+{
+  "rust_lines_file": 5722,
+  "rust_lines_ported": 3803,
+  "rust_comment_lines_ported": 1548,
+  "trait_functions": 81,
+  "trait_associated_types": 24,
+  "position_kinds": 26,
+  "nim_lines": 3034,
+  "nim_comment_lines": 1491
+}

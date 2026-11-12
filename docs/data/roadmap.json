@@ -547,15 +547,15 @@
         {
           "id": "erlang-builder",
           "kind": "port",
-          "status": "started",
+          "status": "done",
           "title": "Erlang source builder",
           "what": "The structured builder that writes Erlang text (the textual half of erlang-generation).",
           "done_when": "Builder unit tests pass.",
           "components": [
             "erlgen"
           ],
-          "post": "",
-          "pr": "",
+          "post": "the-erlang-builder",
+          "pr": "27",
           "owner": "Port the Erlang backend foundations"
         },
         {
@@ -804,7 +804,7 @@
           "kind": "port",
           "status": "done",
           "title": "Erlang term format encoder",
-          "what": "The encoder of Erlang's External Term Format that the binary builder writes through, and a small BigInt module for the integers of the source.",
+          "what": "The encoder of Erlang's External Term Format that the binary builder writes through.",
           "done_when": "Upstream tests pass; Erlang decodes what we encode to the same terms.",
           "components": [
             "erlgen"

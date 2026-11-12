@@ -1,0 +1,2 @@
+ok: fuzz, 50000 scripts, 8374942 calls, 1764776 lines of output identical, 7621 of the scripts end in an internal error
+ok: floats, 1 scripts, 1000002 calls, 1000005 lines of output identical, 0 of the scripts end in an internal error

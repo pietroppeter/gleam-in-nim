@@ -85,6 +85,7 @@ nbText: """
 | `'a` lifetimes | nothing |
 | `#[derive(Debug, Clone, PartialEq, Eq, Hash)]` | nothing for values; `==` and `hash` by hand for refs. *See the traps* |
 | `impl Display` | `proc `$`` |
+| `format!("{x}")` and `{x:.1}` of an `f64` | `formatFloat` of `erlang_generation` (to be moved when a second module needs it). *Never `$`: see the traps* |
 | `panic!`, `unreachable!`, `.expect("...")` | `raiseAssert "..."`, `doAssert`. *Keep the message* |
 | `tracing::...` | leave out |
 | `#[test] fn name()` | `test "name":` in the test file of the module. *Same name, so a failure can be found upstream* |
@@ -118,6 +119,9 @@ nbText: """
 | `Pattern::Constructor { .. }` (its fields) | `PatternConstructorFields` | `PatternConstructor` is a type of `type_.rs` |
 | `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
 | `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
+| `ErlangBuilder` (the trait of `erlang-generation`) | no type: each builder has procs with the names of the trait's functions | two implementations, so plain procs; code for both builders is generic |
+| `()` as the associated types of `ErlangBuilder` | `Unit` of `rust_enum` | a `start` proc must return a value for its `end` proc to take |
+| `string` (the function of `ErlangBuilder`) | `stringExpression` | `string` is the type |
 
 Add a row when a name cannot be kept. Search this table before inventing one.
 

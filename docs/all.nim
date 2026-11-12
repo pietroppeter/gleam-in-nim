@@ -7,6 +7,7 @@ import index, roadmap, coverage, agents, decisions, porting
 import devlog/index as devlogIndex
 import devlog/elm_roots
 import devlog/the_beam
+import devlog/the_erlang_builder
 import devlog/the_erlang_term_format
 import devlog/how_we_work
 import devlog/learning_from_rewrites

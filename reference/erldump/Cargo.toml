@@ -1,0 +1,16 @@
+# The Erlang builder oracle: links the real `erlang-generation` crate at the
+# pinned commit and replays scripts of builder calls, in the line format that
+# tools/erldump.nim replays with the Nim port.
+[package]
+name = "erldump"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+erlang-generation = { git = "https://github.com/gleam-lang/gleam", rev = "ed41eace2dd89054eb2d744c33925261d1eff32e" }
+src-span = { git = "https://github.com/gleam-lang/gleam", rev = "ed41eace2dd89054eb2d744c33925261d1eff32e" }
+ecow = "0"
+num-bigint = "0.5.1"
+
+[workspace]
