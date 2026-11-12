@@ -1,0 +1,13 @@
+{
+  "about": "Results of tests/differential/diagnostic/run.sh: random diagnostics written by the Nim port and by upstream's Diagnostic::write (diagnostic.rs at the pin, over codespan-reporting, termcolor and unicode-width at the versions of upstream's lock file), outputs compared byte for byte. Half of the diagnostics are written with colours.",
+  "runs": [
+    {"seed": 1, "diagnostics": 20000, "differences": 0},
+    {"seed": 7, "diagnostics": 20000, "differences": 0},
+    {"seed": 11, "diagnostics": 20000, "differences": 0},
+    {"seed": 2026, "diagnostics": 20000, "differences": 0}
+  ],
+  "recorded_cases": 60,
+  "crates": {"codespan-reporting": "0.13.1", "termcolor": "1.4.1", "unicode-width": "0.2.2"},
+  "rust_lines": {"diagnostic.rs": 157, "codespan-reporting (the six files ported)": 3073},
+  "snapshots_with_diagnostics": 1233
+}

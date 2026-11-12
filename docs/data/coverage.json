@@ -192,10 +192,10 @@
       "stage": "errors",
       "rust_code": 157,
       "rust_tests": 0,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "done",
+      "nim": "src/gleam_in_nim/diagnostic.nim",
+      "post": "the-error-renderer",
+      "notes": "With ports of the crates under it: codespan_reporting.nim, termcolor.nim, unicode_width.nim."
     },
     {
       "module": "compiler-core/docs",

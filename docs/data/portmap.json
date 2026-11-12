@@ -3,8 +3,8 @@
   "code": 105534,
   "totals": {
     "todo": {
-      "files": 132,
-      "code": 102012
+      "files": 131,
+      "code": 101880
     },
     "draft": {
       "files": 3,
@@ -15,8 +15,8 @@
       "code": 0
     },
     "conformant": {
-      "files": 4,
-      "code": 2936
+      "files": 5,
+      "code": 3068
     },
     "skip": {
       "files": 0,
@@ -46,10 +46,10 @@
     },
     {
       "crate": "compiler-core",
-      "todo": 67873,
+      "todo": 67741,
       "draft": 429,
       "verified": 0,
-      "conformant": 1726,
+      "conformant": 1858,
       "skip": 0
     },
     {
@@ -996,8 +996,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "src/gleam_in_nim/diagnostic.nim"
+      ]
     },
     {
       "path": "compiler-core/src/docs.rs",

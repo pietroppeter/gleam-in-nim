@@ -2,6 +2,7 @@
 ## sorted, so two branches adding tests rarely conflict.
 {.warning[UnusedImport]: off.}
 import test_ast
+import test_diagnostic
 import test_erlang_term_format
 import test_graphemes
 import test_lexer
