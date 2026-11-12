@@ -5,4 +5,5 @@
 {.warning[UnusedImport]: off.}
 import index, roadmap, coverage, agents
 import devlog/index as devlogIndex
+import devlog/elm_roots
 import devlog/workflow

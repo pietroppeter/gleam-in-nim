@@ -1,0 +1,16 @@
+warning: Unused imported module
+  ┌─ src/errs.gleam:1:1
+  │
+1 │ import gleam/list
+  │ ^^^^^^^^^^^^^^^^^ This imported module is never used
+
+Hint: You can safely remove it.
+
+error: Unknown module value
+  ┌─ src/errs.gleam:4:8
+  │
+4 │   list.mapp([1, 2], fn(x) { x })
+  │        ^^^^ Did you mean `map`?
+
+The module `gleam/list` does not have a `mapp` value.
+
