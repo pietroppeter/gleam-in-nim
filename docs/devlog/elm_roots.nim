@@ -404,7 +404,7 @@ nbText: """
    becomes an "invalid" node with a fresh type variable. No exceptions for control flow.
 3. **Inference ports naturally.** `Type` as a `ref object` with a mutable variable state, as in
    the sketch. Four kinds of type. No levels. Generalise per call graph group. The surrounding
-   machinery is larger than the idea: `type_/expression.rs` alone is 5,385 lines, most of it
+   machinery is larger than the idea: `type_/expression.rs` alone is 5,219 lines, most of it
    error cases and their hints.
 4. **Exhaustiveness is a component of its own,** shared by the checker (missing and unreachable
    patterns) and by the backends (decision trees). It deserves its own step and explainer.

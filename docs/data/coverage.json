@@ -442,10 +442,10 @@
       "stage": "erlang",
       "rust_code": 256,
       "rust_tests": 379,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "done",
+      "nim": "src/gleam_in_nim/erlang_term_format.nim",
+      "post": "the-erlang-term-format",
+      "notes": "Conformant. The debug-only Drop check of ListEnder is not ported. BigInt is the bigints package (decision 0009); num-bigint's to_bytes_le is a helper in the module."
     },
     {
       "module": "format",

@@ -3,8 +3,8 @@
   "code": 105534,
   "totals": {
     "todo": {
-      "files": 136,
-      "code": 102760
+      "files": 135,
+      "code": 102598
     },
     "draft": {
       "files": 0,
@@ -15,8 +15,8 @@
       "code": 0
     },
     "conformant": {
-      "files": 3,
-      "code": 2774
+      "files": 4,
+      "code": 2936
     },
     "skip": {
       "files": 0,
@@ -70,10 +70,10 @@
     },
     {
       "crate": "erlang-term-format",
-      "todo": 162,
+      "todo": 0,
       "draft": 0,
       "verified": 0,
-      "conformant": 0,
+      "conformant": 162,
       "skip": 0
     },
     {
@@ -2792,8 +2792,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "src/gleam_in_nim/erlang_term_format.nim"
+      ]
     },
     {
       "path": "erlang-term-format/src/tests.rs",
@@ -2805,8 +2807,10 @@
       "test": true,
       "snaps": 0,
       "cases": 21,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "tests/test_erlang_term_format.nim"
+      ]
     },
     {
       "path": "format/src/lib.rs",

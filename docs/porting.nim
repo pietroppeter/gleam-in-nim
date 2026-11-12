@@ -33,6 +33,13 @@ nbText: """
    ## port-status: draft
    ```
 
+   A crate outside `compiler-core` is one module named after the crate
+   (`erlang-term-format/src/lib.rs` is `src/gleam_in_nim/erlang_term_format.nim`). A test that
+   calls functions upstream keeps private imports the module with `{.all.}`, so the module
+   exports only what upstream makes `pub`. Expected data too long to retype (arrays of bytes)
+   is extracted by a script into `tests/data/`, and the test compares it with the reference
+   checkout when there is one.
+
 4. **Names.** Types keep their name. Functions, fields and variables go from `snake_case` to
    `camelCase`. Enum values get the short prefix Nim style asks for when they would clash. A name
    that is a Nim keyword, or that ends with an underscore (not allowed in Nim), takes the nearest
