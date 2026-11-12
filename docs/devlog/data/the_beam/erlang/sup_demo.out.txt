@@ -1,0 +1,2 @@
+tally is 42 in process <0.80.0>
+tally is 0 in process <0.81.0>
