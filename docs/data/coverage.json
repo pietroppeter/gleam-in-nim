@@ -92,10 +92,10 @@
       "stage": "parse",
       "rust_code": 10201,
       "rust_tests": 1214,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "started",
+      "nim": "src/gleam_in_nim/ast.nim, ast/untyped.nim, ast/constant.nim",
+      "post": "the-syntax-tree",
+      "notes": "The untyped tree: every type, and the functions for all type parameters or for the untyped tree. The typed half (typed.rs, visit.rs, find_node) comes with the type checker."
     },
     {
       "module": "compiler-core/ast_folder",
@@ -313,9 +313,9 @@
       "rust_code": 6759,
       "rust_tests": 2962,
       "status": "started",
-      "nim": "src/gleam_in_nim/parse/literals.nim, parse/error.nim",
+      "nim": "src/gleam_in_nim/parse/literals.nim, parse/error.nim, parse/extra.nim",
       "post": "lexer",
-      "notes": "So far: the values of number literals and the errors of the lexer. The parser is next."
+      "notes": "So far: the values of number literals and the errors of the lexer. ModuleExtra (comments, empty lines). The parser is next."
     },
     {
       "module": "compiler-core/parse/lexer",
@@ -502,10 +502,10 @@
       "stage": "parse",
       "rust_code": 234,
       "rust_tests": 124,
-      "status": "started",
+      "status": "done",
       "nim": "src/gleam_in_nim/src_span.nim",
-      "post": "lexer",
-      "notes": "So far: SrcSpan, with stop for end. LineNumbers is not ported."
+      "post": "the-syntax-tree",
+      "notes": "SrcSpan with stop for end; LineNumbers with upstream's tests. Offsets are int."
     }
   ]
 }
