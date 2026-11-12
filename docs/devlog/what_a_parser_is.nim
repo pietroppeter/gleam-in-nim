@@ -1,4 +1,4 @@
-## devlog: 12 Nov 2026 P | What a parser is | From a list of words to a tree: grammars, a procedure per rule, and two small stacks that know multiplication comes first. The second stage, built from nothing, then found in Gleam, Nim and Nimony.
+## devlog: 12 Nov 2026 Q | What a parser is | From a list of words to a tree: grammars, a procedure per rule, and two small stacks that know multiplication comes first. The second stage, built from nothing, then found in Gleam, Nim and Nimony.
 ## kind: research
 import std/[strformat, strutils]
 import nimib
