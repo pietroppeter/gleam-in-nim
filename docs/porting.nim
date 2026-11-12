@@ -197,6 +197,7 @@ nim r tools/portmap.nim todo               # what nobody ported yet, smallest fi
 nim r tools/snapcorpus.nim list compiler-core/src/parse   # upstream snapshots of a folder
 nim r tools/harvest.nim cases format/src --macro:assert_format   # upstream test cases as JSON
 nim r -d:release tools/difftest.nim format --candidate:PATH --fast:10   # compare with gleam
+nim r tools/golden.nim list | nim r tools/difftest.nim erlang --candidate:PATH --cases:-   # compare with the corpus goldens
 nim r tests/all.nim                        # our tests
 ```
 
