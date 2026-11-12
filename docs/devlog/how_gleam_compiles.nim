@@ -2,6 +2,7 @@
 ## kind: research
 import std/[json, os, strformat, strutils]
 import nimib
+import tabelline, tabelline/nimib
 import ../blocks
 
 nbInit
@@ -43,15 +44,30 @@ nbText: fmt"""
 
 A compiler is a program that reads a program and writes a program. Almost all of them do it as a
 relay race, where each runner hands a richer data structure to the next:
+"""
 
-| Stage | Takes | Gives | Catches |
-|---|---|---|---|
-| Lexer | characters | tokens (`pub`, `fn`, a name, `(`...) | a stray `$`, an unterminated string |
-| Parser | tokens | a syntax tree | a missing bracket |
-| Analysis | syntax tree | the same tree with meaning: names resolved, types attached | `1 + "a"`, unknown variables |
-| Lowering and optimisation | typed tree | one or more simpler intermediate representations | (makes it fast) |
-| Code generation | the last representation | machine code, bytecode, or source in another language | |
+block:
+  type Row = object
+    stage, takes, gives, catches: string
+  let rows = @[
+    Row(stage: "Lexer", takes: "characters", gives: "tokens (`pub`, `fn`, a name, `(`...)",
+        catches: "a stray `$`, an unterminated string"),
+    Row(stage: "Parser", takes: "tokens", gives: "a syntax tree", catches: "a missing bracket"),
+    Row(stage: "Analysis", takes: "syntax tree",
+        gives: "the same tree with meaning: names resolved, types attached",
+        catches: "`1 + \"a\"`, unknown variables"),
+    Row(stage: "Lowering and optimisation", takes: "typed tree",
+        gives: "one or more simpler intermediate representations", catches: "(makes it fast)"),
+    Row(stage: "Code generation", takes: "the last representation",
+        gives: "machine code, bytecode, or source in another language", catches: ""),
+  ]
+  let t = tabella(rows, rownameCol = "stage"):
+    tabHeader "The relay race", "what each stage takes, gives and catches"
+    fmtMarkdown ["gives", "catches"]
+    optCssTheme()
+  nbTable t
 
+nbText: """
 The front (lexer, parser, analysis) is where a language's personality lives. The back is where the
 engineering budget usually goes: rustc has several intermediate representations and hands the last
 one to LLVM; Go builds an SSA form and emits machine code itself; Nim lowers to C and lets a C
@@ -105,17 +121,35 @@ Upstream draws its own pipeline in `docs/compiler/README.md`; this is that pictu
 names and sizes of the pin. Lines are Rust source without tests.
 """
 
-proc componentTable(areas: varargs[string]): string =
-  result = "| Component | Rust lines | Test lines | Snapshots | Notes |\n|---|---:|---:|---:|---|\n"
-  for component in coverage["components"]:
-    if component["area"].getStr in areas:
-      result.add "| " & component["title"].getStr & " | " &
-        thousands(component["rust_loc"].getInt) & " | " &
-        thousands(component["rust_test_loc"].getInt) & " | " &
-        thousands(component["snapshots"].getInt) & " | " &
-        component["notes"].getStr & " |\n"
+template componentTable(areas: varargs[string]) =
+  ## The components of some areas of the compiler, with their sizes at the pin.
+  block:
+    type Row = object
+      component: string
+      rust, tests, snapshots: int
+      notes: string
+    var rows: seq[Row]
+    for component in coverage["components"]:
+      if component["area"].getStr in areas:
+        rows.add Row(
+          component: component["title"].getStr,
+          rust: component["rust_loc"].getInt,
+          tests: component["rust_test_loc"].getInt,
+          snapshots: component["snapshots"].getInt,
+          notes: component["notes"].getStr,
+        )
+    let t = tabella(rows, rownameCol = "component"):
+      colsLabel {"rust": "Rust lines", "tests": "test lines"}
+      fmtInteger ["rust", "tests", "snapshots"]
+      fmtMarkdown "notes"
+      optCssTheme()
+    nbTable t
 
-nbText: "### Front end: text to tree\n\n" & componentTable("frontend") & """
+nbText: "### Front end: text to tree"
+
+componentTable("frontend")
+
+nbText: """
 
 The lexer and the parser are both written by hand. The parser is recursive descent, with one
 exception that its header comment explains well: binary operators use a small precedence stack
@@ -128,7 +162,11 @@ set of generic definitions: `UntypedExpr` straight out of the parser, and `Typed
 analysis, where every node carries its type.
 """
 
-nbText: "### Analysis: tree to typed tree\n\n" & componentTable("analysis") & """
+nbText: "### Analysis: tree to typed tree"
+
+componentTable("analysis")
+
+nbText: """
 
 This is the heart, and it is where most of our effort will go.
 
@@ -153,7 +191,11 @@ out as `PartialFailure`: a usable typed tree *and* a list of errors. The languag
 this, and so do the snapshot tests, which often expect several errors from one input.
 """
 
-nbText: "### Back end: typed tree to text\n\n" & componentTable("backend") & """
+nbText: "### Back end: typed tree to text"
+
+componentTable("backend")
+
+nbText: """
 
 Two backends, two styles. The JavaScript backend builds a **document** (text plus places where a
 line may break) and lets the pretty printer lay it out in 80 columns. It is the same pretty printer
@@ -168,7 +210,11 @@ now hands straight to the Erlang compiler without printing and reparsing text. F
 news twice: the text builder needs no pretty printer, and the binary builder can wait.
 """
 
-nbText: "### Around the compiler\n\n" & componentTable("foundations", "build", "tooling") & """
+nbText: "### Around the compiler"
+
+componentTable("foundations", "build", "tooling")
+
+nbText: """
 
 Three things here are worth knowing before we meet them.
 
@@ -229,18 +275,58 @@ stable) but from tooling: the language server and its code actions, fault tolera
 errors, decision tree code generation. The lesson for a port: the language is the small part.
 
 ## Gleam next to other compilers
+"""
 
-| | Written in | Parser | Types | Middle | Emits |
-|---|---|---|---|---|---|
-| **Gleam** | Rust | hand written | Hindley-Milner, no type classes | none | Erlang or JavaScript source |
-| Elm | Haskell | hand written combinators | Hindley-Milner, a few built in constraints | optimisation on a small IR | JavaScript |
-| Erlang (erlc) | Erlang | generated (yecc) | dynamic; Dialyzer is separate | Core Erlang, then several BEAM passes | BEAM bytecode |
-| Elixir | Elixir and Erlang | generated (yecc) | gradual set theoretic types, arriving | macro expansion to Erlang abstract format | BEAM bytecode via erlc |
-| TypeScript | TypeScript, now Go | hand written | structural, flow sensitive | none: types are erased | JavaScript |
-| Go | Go | hand written | nominal and structural | SSA | machine code |
-| Rust | Rust | hand written | traits, lifetimes | HIR, THIR, MIR, then LLVM | machine code |
-| Nim | Nim | hand written | static, generics, macros | transformations on the AST | C, C++ or JavaScript source |
+block:
+  type Row = object
+    compiler, writtenIn, parser, types, middle, emits: string
+  let rows = @[
+    Row(compiler: "**Gleam**", writtenIn: "Rust", parser: "hand written",
+        types: "Hindley-Milner, no type classes",
+        middle: "none",
+        emits: "Erlang or JavaScript source"),
+    Row(compiler: "Elm", writtenIn: "Haskell", parser: "hand written combinators",
+        types: "Hindley-Milner, a few built in constraints",
+        middle: "optimisation on a small IR",
+        emits: "JavaScript"),
+    Row(compiler: "Roc", writtenIn: "Rust, being rewritten in Zig", parser: "hand written",
+        types: "Hindley-Milner with abilities",
+        middle: "monomorphisation, then reference counting on a lower IR",
+        emits: "machine code or WebAssembly"),
+    Row(compiler: "Erlang (erlc)", writtenIn: "Erlang", parser: "generated (yecc)",
+        types: "dynamic; Dialyzer is separate",
+        middle: "Core Erlang, then several BEAM passes",
+        emits: "BEAM bytecode"),
+    Row(compiler: "Elixir", writtenIn: "Elixir and Erlang", parser: "generated (yecc)",
+        types: "gradual set theoretic types, arriving",
+        middle: "macro expansion to Erlang abstract format",
+        emits: "BEAM bytecode via erlc"),
+    Row(compiler: "TypeScript", writtenIn: "TypeScript, now Go", parser: "hand written",
+        types: "structural, flow sensitive",
+        middle: "none: types are erased",
+        emits: "JavaScript"),
+    Row(compiler: "Go", writtenIn: "Go", parser: "hand written",
+        types: "nominal and structural",
+        middle: "SSA",
+        emits: "machine code"),
+    Row(compiler: "Rust", writtenIn: "Rust", parser: "hand written",
+        types: "traits, lifetimes",
+        middle: "HIR, THIR, MIR, then LLVM",
+        emits: "machine code"),
+    Row(compiler: "Nim", writtenIn: "Nim", parser: "hand written",
+        types: "static, generics, macros",
+        middle: "transformations on the AST",
+        emits: "C, C++ or JavaScript source"),
+  ]
+  let t = tabella(rows):
+    tabHeader "Gleam and 8 relatives", "how each compiler is built"
+    colsLabel {"compiler": "", "writtenIn": "written in"}
+    fmtMarkdown "compiler"
+    tabSourceNote md("The row for Roc is written from memory: `roc-lang.org` and Roc's repository could not be read from where this page is built.")
+    optCssTheme()
+  nbTable t
 
+nbText: """
 Gleam's nearest relatives are Elm (the type system and the care for error messages) and Elixir
 (reaching the BEAM by producing Erlang's own syntax tree, which Gleam started doing this year).
 Its nearest relative in *shape* is, pleasingly, Nim: a typed tree walked by backends that print
@@ -248,7 +334,7 @@ source code for another compiler to finish. We are porting a source-to-source co
 language whose own compiler is one.
 
 Like nearly every production compiler in the table, Gleam's parser is hand written. And like
-TypeScript, it has a famous rewrite in its family tree: its own, from Erlang to Rust.
+TypeScript and Roc, it has a famous rewrite in its family tree: its own, from Erlang to Rust.
 
 ## What this changes for the port
 
@@ -274,6 +360,7 @@ The next post turns this into a plan.
 - Jules Jacobs, [How to compile pattern matching](https://julesjacobs.com/notes/patternmatching/patternmatching.pdf).
 - Luc Maranget, [Compiling pattern matching to good decision trees](https://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf).
 - Christian Lindig, *Strictly Pretty* (2000).
+- [Roc](https://github.com/roc-lang/roc), for its row in the table of compilers (not read for this page: see the note under the table).
 - [The Erlang abstract format](https://www.erlang.org/doc/apps/erts/absform.html).
 - [insta](https://insta.rs), the snapshot testing tool upstream uses.
 - Sizes and dates: measured with `git` on the pinned checkout; the data is in
