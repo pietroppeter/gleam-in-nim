@@ -3,7 +3,8 @@
 import std/[json, os, strformat, strutils, sequtils, options]
 import nimib
 import ../blocks
-import gleam_in_nim/[bigint, erlang_term_format]
+import pkg/bigints
+import gleam_in_nim/erlang_term_format
 
 nbInit
 nb.usePost()
@@ -22,8 +23,9 @@ nbText: fmt"""
   Term Format ([The BEAM, explained](../the-beam/) has the story). The crate that writes those
   bytes, `erlang-term-format`, is 255 lines of Rust. It is now
   `src/gleam_in_nim/erlang_term_format.nim`.
-- It needed big integers, which Nim's standard library does not have, so there is a small
-  `bigint.nim` too. It will also serve the lexer, the parser and the backends.
+- It needs big integers. They come from `bigints`, the one package the compiler may import
+  (the lexer step chose it, [decision 0009](../../decisions/)). A first version of this step
+  had a small module of its own; it is gone.
 - Three checks, in growing order of trust: the {upstreamTests} upstream tests, replayed from the
   bytes written in the Rust file; the first form of a real `.abstr` file written by the
   reference compiler, reproduced byte for byte; and {terms} random terms ({kilobytes} kB of
@@ -84,7 +86,7 @@ Integers are where the care goes: the encoder picks the smallest form that fits.
 nbCode:
   for text in ["255", "256", "-1", "2147483648", "123123123123123123"]:
     var number = newTermBuilder()
-    number.bigint(parseBigInt(text).get)
+    number.bigint(initBigInt(text))
     echo text.align(18), "  ", show(number)
 
 nbText: """
@@ -112,29 +114,27 @@ is loud anyway: the length stays zero and Erlang rejects the file.
 """, nkNim, "One thing left out")
 
 nbText: """
-## Big integers, the small way
+## Big integers: one package, one helper
 
 A Gleam `Int` literal can have any number of digits, so upstream uses the crate `num-bigint`
-everywhere an integer of the source is held. The port uses only Nim's standard library
-(porting guide, rule 6), which has no such type. `src/gleam_in_nim/bigint.nim` is a small
-module of ours, not a port: a sign and a magnitude in base 2^32, with the names and the results
-of the `num-bigint` operations the compiler calls. I counted them in the Rust before writing
-it: construction from an `i64`, parsing in a radix, sign and zero tests, negation, comparison,
-`to_u8`, `to_i32`, `to_i64`, the bytes of the magnitude, the number of bits, and printing.
+everywhere an integer of the source is held. Nim's standard library has no such type. When
+this step started I wrote a small module for it. Meanwhile the lexer step met the same need
+and settled it with a decision record: the compiler imports
+[nim-lang/bigints](https://github.com/nim-lang/bigints), and nothing else. Two modules for one
+job is one too many, so mine was deleted and the encoder now uses the package.
+
+The encoder asks three things of a big integer: does it fit a byte, does it fit 32 bits, and
+what are the bytes of its magnitude. The package answers the first two (`toInt`). The third is
+`to_bytes_le` in num-bigint and has no twin in `bigints`, so the ported module carries it as a
+helper, with num-bigint's name and results:
 """
 
 nbCode:
-  let huge = parseBigInt("1" & "0".repeat(30)).get
-  echo huge, " needs ", huge.bits, " bits"
-  echo "bytes, least significant first: ", huge.toBytesLe.bytes.mapIt($it).join(" ")
-  echo "fits an i64? ", huge.toI64.isSome, "   hexadecimal ff is ", parseBigInt("ff", 16).get
-
-nbNote("""
-Arithmetic between two big integers (add, multiply, divide) is not there yet: this step did not
-need it. Some call sites upstream start from `BigInt::one()`, so a little arithmetic will be
-wanted; the step that first meets it adds the operation, with tests against Erlang, which has
-big integers built in and is an oracle one `erl` away.
-""", nkQuestion, "Not yet in bigint.nim")
+  let huge = initBigInt("1" & "0".repeat(30))
+  let (sign, bytes) = huge.toBytesLe
+  echo huge, ": ", sign, ", ", bytes.len, " bytes, least significant first"
+  echo bytes.mapIt($it).join(" ")
+  echo "fits 32 bits? ", toInt[int32](huge).isSome
 
 nbText: fmt"""
 ## Checked by Erlang
@@ -211,8 +211,8 @@ nbText: """
 2. **Erlang is an oracle for more than programs.** The escript pattern of this step (we write
    bytes and source, Erlang compares) works unchanged for whole `.abstr` files: decode ours,
    decode the reference's, compare terms, and on a difference print both as text.
-3. **`bigint.nim` exists.** The lexer keeps literals as text, but the parser, bit arrays and
-   both backends will want it. It grows by need.
+3. **Big integers are `bigints` everywhere.** The `Int` token of the lexer and the encoder
+   now share one type, so a literal travels from source to bytes without a conversion.
 4. **For the porting guide:** a crate outside `compiler-core` becomes one module named after
    the crate; tests that call private functions import the module with `{.all.}`; expected
    data too long to retype is extracted to `tests/data/` and checked against the reference
@@ -229,8 +229,9 @@ nbText: """
 - [External Term Format](https://www.erlang.org/doc/apps/erts/erl_ext_dist.html), Erlang documentation.
 - `erlang-term-format/src/lib.rs` and `tests.rs`, and `erlang-generation/src/lib.rs` (the caller
   of `bigint`), in Gleam at the pin, v1.19.2.
-- [num-bigint](https://docs.rs/num-bigint/), for the behaviour `bigint.nim` reproduces.
-- In this repository: `src/gleam_in_nim/erlang_term_format.nim`, `src/gleam_in_nim/bigint.nim`,
+- [num-bigint](https://docs.rs/num-bigint/), for `to_bytes_le`, and
+  [nim-lang/bigints](https://github.com/nim-lang/bigints), the package used.
+- In this repository: `src/gleam_in_nim/erlang_term_format.nim`,
   `tests/test_erlang_term_format.nim`, `tests/erlang_term_format_oracle.escript`.
 """
 

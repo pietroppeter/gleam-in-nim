@@ -20,9 +20,9 @@
 ## extracted from the Rust file into `tests/data/erlang_term_format/expected.txt`, one line per
 ## test, and each test below builds the same term as its upstream namesake. Three more checks
 ## follow the upstream tests: the data file against the reference checkout (when there is one),
-## the BigInt module, and a round trip through real Erlang (when `escript` is installed).
+## `toBytesLe`, and a round trip through real Erlang (when `escript` is installed).
 import std/[os, strutils, tables, options, random, osproc, sequtils, re]
-import gleam_in_nim/bigint
+import pkg/bigints
 import gleam_in_nim/erlang_term_format {.all.}
 
 const dataDir = currentSourcePath().parentDir / "data" / "erlang_term_format"
@@ -121,10 +121,10 @@ test "large_tuple":
     etf.smallInteger(1)
 
 test "large_big":
-  etf.largeBig(parseBigInt("1".repeat(1500)).get)
+  etf.largeBig(initBigInt("1".repeat(1500)))
 
 test "negative_large_big":
-  etf.largeBig(-parseBigInt("1".repeat(1500)).get)
+  etf.largeBig(-initBigInt("1".repeat(1500)))
 
 doAssert ran == toSeq(expected.keys), "an upstream test was not replayed"
 echo "erlang_term_format: ", ran.len, " upstream tests replayed"
@@ -147,29 +147,16 @@ block:
   else:
     echo "erlang_term_format: no reference checkout, expected bytes not compared with upstream"
 
-# --- BigInt -------------------------------------------------------------------------------------
+# --- toBytesLe (num-bigint's, written here because `bigints` has none) ----------------------------
 
 block:
-  doAssert $initBigInt(0) == "0" and initBigInt(0).isZero and initBigInt(0).sign == NoSign
   doAssert initBigInt(0).toBytesLe == (NoSign, @[0'u8])
-  doAssert $initBigInt(low(int64)) == "-9223372036854775808"
-  doAssert initBigInt(low(int64)).toI64 == some(low(int64))
-  doAssert initBigInt(high(int64)).toI64 == some(high(int64))
-  doAssert parseBigInt("9223372036854775808").get.toI64.isNone
-  doAssert parseBigInt("-9223372036854775809").get.toI64.isNone
-  doAssert initBigInt(255).toU8 == some(255'u8) and initBigInt(256).toU8.isNone and initBigInt(-1).toU8.isNone
-  doAssert initBigInt(-2147483648).toI32 == some(low(int32)) and initBigInt(2147483648).toI32.isNone
-  doAssert initBigInt(258).toBytesLe == (Plus, @[2'u8, 1]) and initBigInt(-258).toBytesBe == (Minus, @[1'u8, 2])
-  doAssert parseBigInt("ff", 16).get == initBigInt(255) and parseBigInt("-0b1", 2).isNone
-  doAssert parseBigInt("1_000").get == initBigInt(1000) and parseBigInt("_1").isNone and parseBigInt("").isNone
-  doAssert parseBigInt("-0").get.isZero and parseBigInt("12a").isNone and parseBigInt("+7").get == initBigInt(7)
-  doAssert initBigInt(0).bits == 0 and initBigInt(255).bits == 8 and initBigInt(-256).bits == 9
-  doAssert parseBigInt("1" & "0".repeat(40)).get.bits == 133
-  doAssert initBigInt(-5) < initBigInt(-4) and initBigInt(-1) < initBigInt(0) and initBigInt(3) < parseBigInt("1" & "0".repeat(30)).get
-  let big = "123456789012345678901234567890123456789012345678901234567890"
-  doAssert $parseBigInt(big).get == big and $(-parseBigInt(big).get) == "-" & big
-  doAssert $parseBigInt("1000000000000000000").get == "1000000000000000000"
-  echo "bigint: ok"
+  doAssert initBigInt(258).toBytesLe == (Plus, @[2'u8, 1])
+  doAssert initBigInt(-258).toBytesLe == (Minus, @[2'u8, 1])
+  doAssert initBigInt(255).toBytesLe == (Plus, @[255'u8])
+  doAssert initBigInt(low(int64)).toBytesLe == (Minus, @[0'u8, 0, 0, 0, 0, 0, 0, 128])
+  doAssert initBigInt("1" & "0".repeat(30)).toBytesLe.bytes.len == 13
+  echo "toBytesLe: ok"
 
 # --- a quirk kept ------------------------------------------------------------------------------
 # `bigint` never chooses LARGE_BIG_EXT: past 255 bytes of magnitude the length byte of
@@ -178,7 +165,7 @@ block:
 # so the port must too. If upstream fixes it, this is the test that will need to change.
 
 block:
-  let number = parseBigInt("1".repeat(700)).get
+  let number = initBigInt("1".repeat(700))
   doAssert number.toBytesLe.bytes.len == 291
   var etf = newTermBuilder()
   etf.bigint(number)
@@ -235,7 +222,7 @@ proc randomTerm(rng: var Rand, depth: int): Term =
     var text = if rng.rand(1) == 0: "-" else: ""
     text.add rng.sample("123456789")
     for _ in 2 .. digits: text.add rng.sample("0123456789")
-    Term(kind: tInt, number: parseBigInt(text).get)
+    Term(kind: tInt, number: initBigInt(text))
   of tFloat:
     Term(kind: tFloat, value: rng.sample([0.0, -0.0, 1.2, -1.1, 1e300, 5e-324, 123456.789, rng.rand(1.0), rng.rand(1e15) - 5e14]))
   of tBinary:

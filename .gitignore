@@ -1,4 +1,5 @@
 deps/
+build/
 nimcache/
 # every page is generated (docs/all.nim) and built by CI (.github/workflows/pages.yml)
 *.html
@@ -16,3 +17,5 @@ tests/test_*
 tools/corpus
 # what the tools of the port write while they work (tools/difftest.nim, compiled tools)
 build/
+tools/links
+tools/drift

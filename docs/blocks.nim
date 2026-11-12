@@ -62,6 +62,9 @@ func headingsOf*(markdownText: string): seq[(int, string)] =
     if line.startsWith("## "): result.add (2, line[3 .. ^1].strip.stripInline)
     elif line.startsWith("### "): result.add (3, line[4 .. ^1].strip.stripInline)
 
+func unescapeHtml(s: string): string =
+  s.multiReplace(("&lt;", "<"), ("&gt;", ">"), ("&quot;", "\""), ("&#39;", "'"), ("&amp;", "&"))
+
 func addHeadingIds(html: string, up = false): string =
   ## `<h2>Text</h2>` becomes `<h2 id="text">Text</h2>`; on a page with contents (`up`), also a
   ## way back to them, drawn by CSS so the heading's text stays the same for anchors and quotes.
@@ -77,7 +80,7 @@ func addHeadingIds(html: string, up = false): string =
       let b = result.find(close, a)
       if b < 0: break
       let inner = result[a + open.len ..< b]
-      res.add result[i ..< a] & "<" & tag & " id=\"" & slugify(stripInline(inner).replace("&amp;", "&")) & "\">" & inner &
+      res.add result[i ..< a] & "<" & tag & " id=\"" & slugify(unescapeHtml(stripInline(inner))) & "\">" & inner &
         (if up: "<a class=\"up\" href=\"#contents\" aria-label=\"Back to the contents\"></a>" else: "") & close
       i = b + close.len
     res.add result[i .. ^1]
@@ -85,8 +88,6 @@ func addHeadingIds(html: string, up = false): string =
 
 # --------------------------------------------------------------------------------- highlighting
 
-func unescapeHtml(s: string): string =
-  s.multiReplace(("&lt;", "<"), ("&gt;", ">"), ("&quot;", "\""), ("&#39;", "'"), ("&amp;", "&"))
 
 type Lang = object
   names: seq[string]       ## the tags of a fence
@@ -424,6 +425,14 @@ proc devlogPosts*(): seq[Post] =
     let p = readPost(path)
     if p.slug.len > 0: result.add p
   result.sort(proc (a, b: Post): int = cmp((b.day.format("yyyyMMdd"), b.letter), (a.day.format("yyyyMMdd"), a.letter)))
+  for i in 1 ..< result.len:
+    doAssert result[i].letter.len > 0 and (result[i].date, result[i].letter) != (result[i - 1].date, result[i - 1].letter),
+      result[i].file & " and " & result[i - 1].file & ": two posts of " & result[i].date & " with the letter " &
+      result[i].letter & " (take the next free one)"
+
+func stamp*(p: Post): string =
+  ## `12 Nov 2026 A`: the date and the letter that orders the posts of a day, as the cards show it.
+  p.date & (if p.letter.len > 0: " " & p.letter else: "")
 
 # -------------------------------------------------------------------------------------- the page
 
@@ -497,12 +506,17 @@ func pageHeader(blk: JsonNode, nb: Nb): string =
 
 func pageFooter(blk: JsonNode, nb: Nb): string =
   let source = nb.doc.context{"source_path"}.getStr
+  let highlighted = nb.doc.context{"source_highlighted"}.getStr   # the notebook itself, set by nbInit
   "<footer><p>Written in Nim with <a href=\"https://github.com/pietroppeter/nimib\">nimib</a> 🐳, tables by " &
     "<a href=\"https://github.com/pietroppeter/tabelline\">tabelline</a>. The code on this page ran when it was built" &
     (if source.len > 0: &""" from <a href="{repoUrl}/blob/main/{source}">{source}</a>.""" else: ".") & "</p>" &
     "<p>gleam in nim is an independent project made to learn, by Pietro Peterlongo with Claude. " &
     "<a href=\"https://gleam.run\">Gleam</a> is made by Louis Pilfold and the Gleam contributors; " &
-    "this project is not affiliated with it.</p></footer>" & bodyScript
+    "this project is not affiliated with it.</p>" &
+    (if highlighted.len == 0: "" else:
+      """<details class="fold source"><summary>Show the nimib source of this page</summary>""" &
+      """<pre><code class="nohighlight nim hljs">""" & highlighted & "</code></pre></details>") &
+    "</footer>" & bodyScript
 
 func emptyPartial(blk: JsonNode, nb: Nb): string = ""
 
@@ -555,6 +569,6 @@ proc usePost*(nb: var Nb, toc = true) =
   nb.doc.filename = docsDir / "devlog" / p.slug / "index.html"
   nb.usePage(section = "Devlog", cadence = "dated post", title = p.title & " · gleam in nim",
              description = p.lede, homeHref = "../", backLabel = "Devlog", wordmarkHref = "../../")
-  nb.add newNbTitle(kicker = &"""{p.longDate} · <span class="kind {p.kind}">{p.kind}</span>""",
+  nb.add newNbTitle(kicker = &"""{p.longDate} {p.letter} · <span class="kind {p.kind}">{p.kind}</span>""",
                     title = p.title, lede = p.lede)
   if toc: nb.addToc()

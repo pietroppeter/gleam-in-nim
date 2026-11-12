@@ -4,8 +4,23 @@
 ## SPDX-License-Identifier: Apache-2.0
 ## SPDX-FileCopyrightText: 2026 The Gleam contributors
 ## Translated to Nim from Gleam v1.19.2 for the gleam-in-nim project.
-import std/options
-import bigint
+import std/[options, strutils]
+import pkg/bigints
+
+type
+  Sign* = enum
+    ## `num_bigint::Sign`, in its order.
+    Minus, NoSign, Plus
+
+func toBytesLe*(number: BigInt): tuple[sign: Sign, bytes: seq[uint8]] =
+  ## `number.to_bytes_le()` of num-bigint, which `bigints` does not have: the sign, and the bytes
+  ## of the magnitude, least significant first, with no zero byte on top. Zero is `(NoSign, [0])`.
+  let zero = initBigInt(0)
+  result.sign = if number < zero: Minus elif number == zero: NoSign else: Plus
+  var hex = abs(number).toString(16)
+  if hex.len mod 2 == 1: hex = "0" & hex
+  for i in countdown(hex.len - 2, 0, 2):
+    result.bytes.add uint8(parseHexInt(hex[i .. i + 1]))
 
 type
   ListEnder* = object
@@ -155,9 +170,9 @@ proc atom*(self: var TermBuilder, atom: string) =
 
 proc bigint*(self: var TermBuilder, value: BigInt) =
   ## Pushes the most compact representation of the given big int.
-  if (let v = value.toU8; v.isSome):
+  if (let v = toInt[uint8](value); v.isSome):
     self.smallInteger(v.get)
-  elif (let v = value.toI32; v.isSome):
+  elif (let v = toInt[int32](value); v.isSome):
     self.integer(v.get)
   else:
     self.smallBig(value)

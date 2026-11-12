@@ -3,8 +3,8 @@
   "code": 105534,
   "totals": {
     "todo": {
-      "files": 137,
-      "code": 104324
+      "files": 135,
+      "code": 102598
     },
     "draft": {
       "files": 0,
@@ -15,8 +15,8 @@
       "code": 0
     },
     "conformant": {
-      "files": 2,
-      "code": 1210
+      "files": 4,
+      "code": 2936
     },
     "skip": {
       "files": 0,
@@ -46,10 +46,10 @@
     },
     {
       "crate": "compiler-core",
-      "todo": 70028,
+      "todo": 68302,
       "draft": 0,
       "verified": 0,
-      "conformant": 0,
+      "conformant": 1726,
       "skip": 0
     },
     {
@@ -2138,8 +2138,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "src/gleam_in_nim/parse/lexer.nim"
+      ]
     },
     {
       "path": "compiler-core/src/parse/tests.rs",
@@ -2164,8 +2166,10 @@
       "test": false,
       "snaps": 0,
       "cases": 0,
-      "status": "todo",
-      "nim": []
+      "status": "conformant",
+      "nim": [
+        "src/gleam_in_nim/parse/token.nim"
+      ]
     },
     {
       "path": "compiler-core/src/paths.rs",

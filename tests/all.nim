@@ -3,5 +3,7 @@
 {.warning[UnusedImport]: off.}
 import test_erlang_term_format
 import test_graphemes
+import test_lexer
+import test_lexer_golden
 import test_pretty
 import test_tools

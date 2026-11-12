@@ -10,6 +10,7 @@ import devlog/the_beam
 import devlog/the_erlang_term_format
 import devlog/how_we_work
 import devlog/learning_from_rewrites
+import devlog/lexer
 import devlog/workflow
 import devlog/gleam_and_its_people
 import devlog/where_gleam_decisions_live

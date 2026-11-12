@@ -191,15 +191,15 @@
         {
           "id": "lexer",
           "kind": "port",
-          "status": "started",
+          "status": "done",
           "title": "Lexer",
           "what": "Text to tokens, with comments and lexical errors.",
           "done_when": "Lexer assertions from parse/tests.rs pass; tokens of every corpus file match in kind and position.",
           "components": [
             "lexer"
           ],
-          "post": "",
-          "pr": "",
+          "post": "lexer",
+          "pr": "7",
           "owner": "Port the Gleam lexer to Nim"
         },
         {

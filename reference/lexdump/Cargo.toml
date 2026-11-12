@@ -1,0 +1,12 @@
+# The lexer oracle: links the real Gleam lexer at the pinned commit and dumps
+# its token stream in a line format that tools/lexdump.nim reproduces.
+[package]
+name = "lexdump"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+gleam-core = { git = "https://github.com/gleam-lang/gleam", rev = "ed41eace2dd89054eb2d744c33925261d1eff32e" }
+
+[workspace]
