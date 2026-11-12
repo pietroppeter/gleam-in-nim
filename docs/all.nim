@@ -18,3 +18,4 @@ import devlog/how_gleam_compiles
 import devlog/the_port_plan
 import devlog/the_pretty_printer
 import devlog/what_a_lexer_is
+import devlog/what_a_parser_is

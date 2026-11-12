@@ -210,7 +210,7 @@
           "what": "Characters to tokens, explained for someone who never wrote a compiler: a toy lexer in Nim, then Gleam, Nim and Nimony.",
           "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
           "post": "what-a-lexer-is",
-          "pr": "",
+          "pr": "14",
           "owner": "Explain compiler stages from scratch"
         },
         {
@@ -258,11 +258,11 @@
         {
           "id": "explain-parser",
           "kind": "research",
-          "status": "planned",
+          "status": "done",
           "title": "From scratch: what a parser is",
           "what": "Tokens to a syntax tree: grammars, recursive descent, operator precedence, with the toy, Gleam and Nimony.",
           "done_when": "The post is on the site; its toy stage (Barlume, docs/devlog/data/barlume/) runs as the page is built.",
-          "post": "",
+          "post": "what-a-parser-is",
           "pr": "",
           "owner": "Explain compiler stages from scratch"
         },
