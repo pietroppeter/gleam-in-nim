@@ -1,0 +1,16 @@
+error: Inexhaustive patterns
+   ┌─ src/errs.gleam:8:3
+   │  
+ 8 │ ╭   case shape {
+ 9 │ │     Circle(..) -> "circle"
+10 │ │   }
+   │ ╰───^
+
+This case expression does not have a pattern for all possible values. If it
+is run on one of the values without a pattern then it will crash.
+
+The missing patterns are:
+
+    Rectangle(width:, height:)
+    Dot
+

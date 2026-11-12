@@ -1,0 +1,24 @@
+warning: Unused function argument
+  ┌─ src/errs.gleam:6:14
+  │
+6 │ pub fn width(shape: Shape) -> Float {
+  │              ^^^^^ This argument is never used
+
+Hint: You can ignore it with an underscore: `_shape`.
+
+error: Unknown record field
+  ┌─ src/errs.gleam:7:9
+  │
+7 │   shape.width
+  │         ^^^^^ This field does not exist
+
+The value being accessed has this type:
+
+    Shape
+
+It does not have fields that are common across all variants.
+
+Note: The field you are trying to access is not defined consistently across
+all variants of this custom type. To fix this, ensure that all variants
+include the field with the same name, position, and type.
+
