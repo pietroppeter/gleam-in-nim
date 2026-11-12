@@ -1,0 +1,26 @@
+# The bugs mutants.sh plants, one per line: file, text to find, text to put in its place
+# (tabs between them; \n for a line break inside a text).
+version_ranges.nim	if r < l: l else: r	if r <= l: l else: r
+version_ranges.nim	elif l.kind == bkIncluded and l.value == r.value:	elif false:
+version_ranges.nim	elif l.value > r.value:	elif l.value >= r.value:
+version_ranges.nim	    stop.value <= start.value	    stop.value < start.value
+version_ranges.nim	    # Singleton interval are allowed\n    start.value <= stop.value	    start.value < stop.value
+version_ranges.nim	if left.kind == bkExcluded and right.kind == bkIncluded:\n    left.value < right.value	if false:\n    left.value < right.value
+version_ranges.nim	if left.kind == bkIncluded and right.kind == bkExcluded:\n    left.value < right.value	if false:\n    left.value < right.value
+version_ranges.nim	if leftStart.value <= rightStart.value: rightStart else: leftStart	if leftStart.value < rightStart.value: rightStart else: leftStart
+version_ranges.nim	      if cmp(left.value, right.value) <= 0: -1 else: 1\n  of bkExcluded:\n    case right.kind\n    # left:     ]---	      if cmp(left.value, right.value) < 0: -1 else: 1\n  of bkExcluded:\n    case right.kind\n    # left:     ]---
+version_ranges.nim	          if start.value == stop.value:\n            result.add $start.value	          if cmp(start.value, stop.value) == 0:\n            result.add $start.value
+version_ranges.nim	    of bkExcluded: version <= segment.start.value	    of bkExcluded: version < segment.start.value
+version_ranges.nim	    of bkUnbounded: strictlyLowerThan(start.value)	    of bkUnbounded: lowerThan(start.value)
+hexpm/version.nim	    return cmp(ord(left.kind), ord(right.kind))	    return cmp(ord(right.kind), ord(left.kind))
+hexpm/version.nim	  elif left.len == 0:\n    1	  elif left.len == 0:\n    -1
+hexpm/version.nim	    cmp(left.len, right.len)	    0
+hexpm/version.nim	left.pre == right.pre and left.build == right.build	left.pre == right.pre
+hexpm/version.nim	Version(major: self.major, minor: self.minor + 1, patch: 0, pre: @[], build: none(string))	Version(major: self.major, minor: self.minor + 1, patch: 0, pre: self.pre, build: none(string))
+hexpm/version/parser.nim	      range = `and`(range, higherThan(self.version().bumpPatch()))	      range = `and`(range, strictlyHigherThan(self.version()))
+hexpm/version/parser.nim	    fail Error(kind: ekMinorVersionMissing, vMinorVersionMissing: major)	    raise
+hexpm/version/lexer.nim	    if value > uint64(high(uint32)):\n      return none(uint32)	    if value > uint64(high(uint32)):\n      return some(uint32(value and 0xFFFFFFFF'u64))
+hexpm/version/lexer.nim	    if input[0] != '0':	    if true:
+hexpm/version/lexer.nim	(c >= ord('A') and c <= ord('Z'))	(c >= ord('A') and c < ord('Z'))
+rust_debug.nim	    return codePoint < 0x20 or codePoint == 0x7F	    return codePoint < 0x20
+rust_debug.nim	    else: return true\n  false	    else: return false\n  false

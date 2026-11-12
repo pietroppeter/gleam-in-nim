@@ -118,6 +118,9 @@ nbText: """
 | `Pattern::Constructor { .. }` (its fields) | `PatternConstructorFields` | `PatternConstructor` is a type of `type_.rs` |
 | `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
 | `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
+| `Token::Eq` and the other tokens of a version requirement (hexpm) | `vtEq` | the tokens of Gleam source are `tk` |
+| `Version::parse`, `Range::new`, `From<..> for Range` (hexpm) | `parse`, `newRange`, `toRange` | Nim has no associated functions |
+| `Ranges::from_iter` (version-ranges) | `fromIntervals` | Nim has no `FromIterator` |
 
 Add a row when a name cannot be kept. Search this table before inventing one.
 
@@ -172,6 +175,21 @@ guarantees. Where a `u8` or a `u64` is kept unsigned, mind the wrap.
   `b`. Keep that order when unfolding it.
 - **String formatting.** `format!("{:?}", s)` is Rust's debug form (quotes, escapes), not `$`.
   Where an output contains a debug form, port the escaping rules, do not approximate them.
+- **Two modules that use each other.** Rust allows it (`hexpm::version` runs its `parser`,
+  which builds a `Version`); Nim does not. The parent declares the types, then `include`s the
+  child, which keeps its own file and its own `port-of` header (`hexpm/version.nim`,
+  `ast.nim`).
+- **`==` and `<` can disagree.** Rust derives `PartialEq` and lets a type write its own `Ord`:
+  two Hex versions that differ only in build metadata are not equal and neither is smaller.
+  Port each comparison as the one upstream wrote there (`==`, or `cmp`): do not turn
+  `a == b` into `cmp(a, b) == 0`, nor the reverse.
+- **`max` of two equal things.** `std::cmp::max(a, b)` returns `b` when they compare equal,
+  Nim's `max(a, b)` returns `a`. It shows when equal is not identical (see the line above).
+- **Overflow in release mode.** The reference binary is built without overflow checks, so
+  `u32 + 1` wraps there, as `uint32` does in Nim. Keep the unsigned type and the wrap is
+  ported for free (`~> 4294967295.2` is an empty range, upstream too).
+- **The debug form of a string or a char** (`{:?}`) is `debugStr` and `debugChar` of
+  `rust_debug.nim`, whose table of escaped characters was asked of Rust itself.
 - **Integer division and remainder** agree for positive numbers and both truncate toward zero
   (`div`, `mod`). Shifts on signed numbers do not: use the unsigned type upstream uses.
 

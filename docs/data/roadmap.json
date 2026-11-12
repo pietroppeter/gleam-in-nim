@@ -828,18 +828,33 @@
           "owner": "Port the Erlang backend foundations"
         },
         {
+          "id": "hex-versions",
+          "kind": "port",
+          "status": "done",
+          "title": "Hex versions and requirements",
+          "what": "Versions, their order, the requirement syntax (`~> 1.2 and < 2.0.0`) and the sets of ranges it stands for: hexpm's version module and the version-ranges crate.",
+          "done_when": "Upstream's version tests pass, and versions, ranges and their operations print the same as the Rust on random cases.",
+          "components": [
+            "deps"
+          ],
+          "post": "versions-and-ranges",
+          "pr": "PRNUM",
+          "owner": "Set up explainer workflow and repo"
+        },
+        {
           "id": "dependency-resolution",
           "kind": "port",
-          "status": "planned",
-          "title": "Hex versions and dependency resolution",
-          "what": "Version and requirement parsing, the PubGrub solver, the manifest.",
+          "status": "started",
+          "title": "Dependency resolution",
+          "what": "The requirement of gleam.toml (hex, path, git), the PubGrub solver, the manifest.",
           "done_when": "Resolver tests pass.",
           "components": [
             "deps",
             "config"
           ],
           "post": "",
-          "pr": ""
+          "pr": "",
+          "owner": "Set up explainer workflow and repo"
         },
         {
           "id": "hex-client",

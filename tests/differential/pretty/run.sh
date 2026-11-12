@@ -23,7 +23,7 @@ printings="$(wc -l < "$work/rust.txt")"
 if cmp -s "$work/rust.txt" "$work/nim.txt"; then
   echo "pretty printer: $count documents, $printings printings, identical (seed $seed)"
 else
-  line="$(cmp "$work/rust.txt" "$work/nim.txt" | sed 's/.*line //')"
+  line="$(cmp "$work/rust.txt" "$work/nim.txt" | sed 's/.*line //' || true)"
   echo "pretty printer: outputs differ at printing $line (seed $seed)"
   echo "document: $(sed -n "$(( (line - 1) / 10 + 1 ))p" "$work/documents.txt")"
   echo "rust: $(sed -n "${line}p" "$work/rust.txt")"
