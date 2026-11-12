@@ -1,0 +1,7 @@
+# The snapshot of the Gleam compiler that this project ports.
+# One fact per line, KEY=VALUE, read by reference/fetch.sh and by the tools.
+REPO=https://github.com/gleam-lang/gleam
+TAG=v1.19.2
+COMMIT=ed41eace2dd89054eb2d744c33925261d1eff32e
+DATE=2026-10-12
+BINARY=https://github.com/gleam-lang/gleam/releases/download/v1.19.2/gleam-v1.19.2-x86_64-unknown-linux-musl.tar.gz

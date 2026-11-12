@@ -1,5 +1,5 @@
 ## port-of: erlang-term-format/src/lib.rs
-## port-status: draft
+## port-status: conformant
 ##
 ## SPDX-License-Identifier: Apache-2.0
 ## SPDX-FileCopyrightText: 2026 The Gleam contributors

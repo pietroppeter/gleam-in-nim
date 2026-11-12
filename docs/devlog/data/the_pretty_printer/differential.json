@@ -1,0 +1,14 @@
+{
+  "about": "Results of tests/differential/pretty/run.sh: random documents printed by the Nim port and by the Rust crate pretty-arena at the pin, outputs compared byte for byte.",
+  "widths": [0, 1, 2, 3, 5, 8, 13, 20, 40, 80],
+  "runs": [
+    {"seed": 1, "documents": 20000, "differences": 0},
+    {"seed": 7, "documents": 20000, "differences": 0},
+    {"seed": 2026, "documents": 5000, "differences": 0}
+  ],
+  "grapheme_cases": 766,
+  "unicode": "17.0.0",
+  "unicode_segmentation": "1.13.3",
+  "rust_lines": 1541,
+  "upstream_tests_commit": "bc1d344c3"
+}

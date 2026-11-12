@@ -1,5 +1,5 @@
 ## port-of: erlang-term-format/src/tests.rs
-## port-status: draft
+## port-status: conformant
 ##
 ## SPDX-License-Identifier: Apache-2.0
 ## SPDX-FileCopyrightText: 2026 The Gleam contributors
@@ -171,6 +171,40 @@ block:
   doAssert $parseBigInt("1000000000000000000").get == "1000000000000000000"
   echo "bigint: ok"
 
+# --- a quirk kept ------------------------------------------------------------------------------
+# `bigint` never chooses LARGE_BIG_EXT: past 255 bytes of magnitude the length byte of
+# SMALL_BIG_EXT wraps around (`bytes.len() as u8` upstream) and Erlang cannot read the term.
+# The reference compiler does the same (docs/devlog/data/the_erlang_term_format/big_literal.sh),
+# so the port must too. If upstream fixes it, this is the test that will need to change.
+
+block:
+  let number = parseBigInt("1".repeat(700)).get
+  doAssert number.toBytesLe.bytes.len == 291
+  var etf = newTermBuilder()
+  etf.bigint(number)
+  doAssert etf.intoVec[0 .. 3] == @[131'u8, 110, uint8(291 - 256), 0]
+  doAssert etf.intoVec.len == 4 + 291
+  echo "erlang_term_format: the length byte of a 291 byte integer wraps, as upstream"
+
+# --- the first form of a real .abstr file ------------------------------------------------------
+# docs/devlog/data/the_beam/generated/erlang/shapes.abstr was written by the reference gleam.
+# It is a list of forms, and the first is `{attribute, 0, module, shapes}`.
+
+block:
+  let file = currentSourcePath().parentDir.parentDir / "docs" / "devlog" / "data" / "the_beam" / "generated" / "erlang" / "shapes.abstr"
+  let reference = cast[seq[uint8]](readFile(file))
+  var etf = newTermBuilder()
+  let forms = etf.startList()
+  etf.smallTuple(4)
+  etf.atom("attribute")
+  etf.usize(0)
+  etf.atom("module")
+  etf.atom("shapes")
+  let ours = etf.intoVec   # the list is left open on purpose: only its start is compared
+  forms.consume()
+  doAssert ours[0 .. 1] == reference[0 .. 1] and ours[6 .. ^1] == reference[6 ..< ours.len]
+  echo "erlang_term_format: the first form of shapes.abstr, byte for byte (", ours.len - 6, " bytes)"
+
 # --- a round trip through real Erlang -----------------------------------------------------------
 # Random terms are encoded with the builder and also written as Erlang source. Erlang decodes
 # the bytes with binary_to_term and compares with what it parses from the source.
@@ -255,3 +289,10 @@ block:
     let (output, code) = execCmdEx(escript & " " & quoteShell(currentSourcePath().parentDir / "erlang_term_format_oracle.escript") & " " & quoteShell(file))
     doAssert code == 0 and output.strip == "ok 500", "Erlang disagrees:\n" & output[0 ..< min(output.len, 2000)]
     echo "erlang_term_format: 500 random terms decoded by Erlang to the same terms"
+    if existsEnv("RECORD_RESULTS"):
+      # for the devlog post: what was run, where it can read it
+      let erlang = execCmdEx("erl -noshell -eval 'io:format(\"~s\",[erlang:system_info(otp_release)]), halt().'").output.strip
+      var bytes = 0
+      for line in lines: bytes += line.find('\t') div 2
+      writeFile(currentSourcePath().parentDir.parentDir / "docs" / "devlog" / "data" / "the_erlang_term_format" / "roundtrip.json",
+        "{\"terms\": 500, \"bytes\": " & $bytes & ", \"mismatches\": 0, \"otp\": \"" & erlang & "\", \"upstream_tests\": " & $ran.len & "}\n")

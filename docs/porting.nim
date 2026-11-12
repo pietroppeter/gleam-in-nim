@@ -25,6 +25,12 @@ nbText: """
    If the Rust does something odd, the Nim does the same odd thing, with a comment if it helps.
 2. **One Rust file, one Nim file.** `compiler-core/src/parse/lexer.rs` is
    `src/gleam_in_nim/parse/lexer.nim`. The tests of a file are ported with it, under `tests/`.
+   A crate outside `compiler-core` is one module named after the crate
+   (`erlang-term-format/src/lib.rs` is `src/gleam_in_nim/erlang_term_format.nim`). A test that
+   calls functions upstream keeps private imports the module with `{.all.}`, so the module
+   exports only what upstream makes `pub`. Expected data too long to retype (arrays of bytes)
+   is extracted by a script into `tests/data/`, and the test compares it with the reference
+   checkout when there is one.
 3. **Say what you ported.** The file starts with its origin and its state. The port map and the
    licence notice both read these two lines:
 
@@ -65,7 +71,7 @@ nbText: """
 | `HashMap<K, V>`, `HashSet<K>` | `Table[K, V]`, `HashSet[K]`. *Never let their order reach the output: see the traps* |
 | `im::HashMap` (persistent) | `Table`. *A Nim table is a value: assigning it copies, which gives the same meaning; speed comes later* |
 | `u32`, `usize`, `i64` | `uint32`, `int`, `int64`. *Spans stay `uint32`* |
-| `BigInt` | a small module of ours. *To be ported when the first file needs it* |
+| `BigInt` | `BigInt` of `gleam_in_nim/bigint`, a small module of ours. *It has the `num-bigint` operations met so far, under the same names in camelCase; add the next one there, with tests, when a file needs it* |
 | `x.clone()` | `x`. *For a ref, sharing is what `Arc::clone` did; for a value, Nim copies* |
 | `&mut self` method | `proc p(self: var S)` or `proc p(self: S)` for a ref |
 | `impl Trait for T` (one or two types) | plain procs with the same names |
@@ -93,6 +99,8 @@ nbText: """
 | Rust | Nim | Why |
 | --- | --- | --- |
 | `type_` (module and fields) | `typ` | Nim identifiers cannot end with an underscore |
+| `break_` (pretty printer) | `breakDoc` | `break` is a keyword |
+| `nil` (pretty printer) | `emptyDocument` | `nil` is a keyword |
 
 Add a row when a name cannot be kept. Search this table before inventing one.
 

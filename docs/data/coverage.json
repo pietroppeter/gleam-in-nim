@@ -442,10 +442,10 @@
       "stage": "erlang",
       "rust_code": 256,
       "rust_tests": 379,
-      "status": "started",
+      "status": "done",
       "nim": "src/gleam_in_nim/erlang_term_format.nim",
-      "post": "",
-      "notes": "Draft: translated, 21 upstream tests replayed, 500 random terms round-tripped through Erlang. Paused before the verify pass and the explainer."
+      "post": "the-erlang-term-format",
+      "notes": "Conformant. The debug-only Drop check of ListEnder is not ported. BigInt is src/gleam_in_nim/bigint.nim, ours, without arithmetic yet."
     },
     {
       "module": "format",
@@ -492,10 +492,10 @@
       "stage": "format",
       "rust_code": 1542,
       "rust_tests": 0,
-      "status": "planned",
-      "nim": "",
-      "post": "",
-      "notes": ""
+      "status": "done",
+      "nim": "src/gleam_in_nim/pretty.nim",
+      "post": "the-pretty-printer",
+      "notes": "No arena: documents are refs. Grapheme counting in graphemes.nim. Float to_doc not ported yet."
     },
     {
       "module": "src-span",
