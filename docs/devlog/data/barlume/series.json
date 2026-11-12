@@ -3,7 +3,7 @@
   "parts": [
     {"stage": "Lexer", "question": "How does text become words?", "takes": "characters", "gives": "tokens", "post": "what-a-lexer-is"},
     {"stage": "Parser", "question": "How do words become a tree?", "takes": "tokens", "gives": "a syntax tree", "post": "what-a-parser-is"},
-    {"stage": "Names and scopes", "question": "What does each name refer to?", "takes": "a syntax tree", "gives": "a tree where every name points at its definition", "post": ""},
+    {"stage": "Names and scopes", "question": "What does each name refer to?", "takes": "a syntax tree", "gives": "a tree where every name points at its definition", "post": "names-and-scopes"},
     {"stage": "Type checker", "question": "How can a compiler know the type of everything without being told?", "takes": "a syntax tree", "gives": "a typed tree, or a type error", "post": ""},
     {"stage": "Exhaustiveness", "question": "How does it know a `case` forgot something?", "takes": "typed patterns", "gives": "a decision tree, or a missing pattern", "post": ""},
     {"stage": "Code generation", "question": "How does a tree become a program in another language?", "takes": "a typed tree", "gives": "Erlang or JavaScript, as text", "post": ""}
