@@ -1,4 +1,4 @@
-## devlog: 12 Nov 2026 M | Speaking Erlang in bytes | The encoder under Gleam's binary Erlang output, ported and checked by Erlang itself. It found a number the reference compiler cannot write.
+## devlog: 12 Nov 2026 N | Speaking Erlang in bytes | The encoder under Gleam's binary Erlang output, ported and checked by Erlang itself. It found a number the reference compiler cannot write.
 ## kind: port
 import std/[json, os, strformat, strutils, sequtils, options]
 import nimib
